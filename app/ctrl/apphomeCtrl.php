@@ -6,6 +6,7 @@ use app\model\user\UserModel;
 
 use app\model\tram\OrderModel;
 use app\ormModel\Itemlog;
+use app\ormModel\Itemlogp;
 use app\ormModel\User;
 use think\facade\Db;
 
@@ -54,26 +55,15 @@ class apphomeCtrl extends commonCtrl
 			OrderModel::insertMoneypath_proportion($v['uid'], $v['smoney'],"152", $mpcontent, $v['id'], $v['arate']);
 		}
 
-		$list = self::DB()->query("SELECT * from `itemlogp` where status = 0 and stime < ".time())->fetchAll();
-		$mpcontent = '推广返利';
-		foreach($list as $k=>$v){
-			//记录变更已返还
-			self::DB()->update("itemlogp",[
-			"status" => 1
-			], [
-				"id[=]" => $v['id']
-			]);	
-			$uinfo = self::DB()->select("user",['money'],[
-				"id[=]" => $v['uid']
-			]);
+        $list2 = Itemlogp::where([['status', '=', 0], ['stime', '<', time()]])->select();
+		$mpcontent2 = '推广返利';
+		foreach($list2 as $k=>$v){
+			//记录变更
+            Itemlogp::update(['status' => 1], ['id' => $v['id']]);
 			//用户加钱
-			self::DB()->update("user",[
-			"money" => $uinfo[0]['money'] + $v['smoney']
-			], [
-				"id[=]" => $v['uid']
-			]);
+            User::update(['money' => Db::raw('money+'.$v['smoney'])], ['id' => $v['uid']]);
 			//余额记录
-			OrderModel::insertMoneypath_proportion($v['uid'],$v['smoney'],"153",$mpcontent,$v['item_no'],$v['bili']);
+			OrderModel::insertMoneypath_proportion($v['uid'], $v['smoney'],"153", $v['lown'].'级'.$mpcontent, $v['item_no'], $v['jlbl']);
 		}
 	}
 	
