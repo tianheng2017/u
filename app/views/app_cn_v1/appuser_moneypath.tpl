@@ -250,7 +250,7 @@ function seldata(){
 					}
 					
 					if(res["data"][i]["mtype"]=="161"){
-						mtypev="USDT提现";
+						mtypev="提现";
 						moneyoi="-";
 					}
 					if(res["data"][i]["mtype"]=="163"){
@@ -274,7 +274,7 @@ function seldata(){
 									''+mtypev+
 									'<div class="item-footer">'+res["data"][i]["time"]+'</div>'+
 								'</div>'+
-								'<div class="item-after" style="'+scolor+'">'+moneyoi+res["data"][i]["money"]+' USDT</div>'+
+								'<div class="item-after" style="'+scolor+'">'+moneyoi+res["data"][i]["money"]+'</div>'+
 							'</div>'+
 						'</li>';
 					$(".datadiv").append(datahtml);

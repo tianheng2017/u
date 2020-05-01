@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 13:12:45
+/* Smarty version 3.1.30, created on 2020-05-01 13:13:25
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabafcdaf3a69_59693743',
+  'unifunc' => 'content_5eabaff528d1f1_99180897',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ee184f7d11fa2b3b7fce13bd22a00d94a230bdd8' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_index.tpl',
-      1 => 1588309963,
+      1 => 1588309981,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eabafcdaf3a69_59693743 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eabaff528d1f1_99180897 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -268,12 +268,12 @@ function content_5eabafcdaf3a69_59693743 (Smarty_Internal_Template $_smarty_tpl)
                             <a class="external" href="<?php echo WSURLSHOW('appuser','recharge');?>
 "
                                style="text-align:center;border: 1px solid #242426;border-radius: 12px;background:#242426;min-width:4rem;display:inline-block;position:absolute;left:0;top: 35px;width:48%;height: 44px;line-height: 44px;font-size: 16px;color:#BC9568;">
-                                充币
+                                充值
                             </a>
                             <a class="external" href="<?php echo WSURLSHOW('appuser','presentation');?>
 "
                                style="text-align:center;border: 1px solid #BC9568;border-radius: 12px;background: #BC9568;min-width:4rem;display:inline-block;position:absolute;right:0;top: 35px;width:48%;height: 44px;line-height: 44px;font-size: 16px;">
-                                提币
+                                提现
                             </a>
                         </div>
                     </div>
