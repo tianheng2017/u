@@ -144,9 +144,12 @@ class apphomeCtrl extends commonCtrl
 			"status" => 0
 		]);
 		if($insert_id){
+		    echo 1;
 			if($uinfo['superioruid'] != 0){
+                echo 2;
 			    if (($money >= 1000) && ($money%1000 == 0)){
-                    $yjjl = self::$webconfig['yjjl']['val']/100;
+                    echo 3;
+                    $yjjl = intval(self::$webconfig['yjjl']['val'])/100;
                     self::DB()->insert("itemlogp", [
                         "item_no" => $insert_id,
                         "uid" => $uinfo['superioruid'],
@@ -165,7 +168,7 @@ class apphomeCtrl extends commonCtrl
                     $uinfo2 = self::DB()->select("user",['money','id','superioruid'],['id'=>$uinfo['superioruid']]);
                     $uinfo2 = $uinfo2[0];
                     if($uinfo2['superioruid'] != 0){
-                        $ejjl = self::$webconfig['ejjl']['val']/100;
+                        $ejjl = intval(self::$webconfig['ejjl']['val'])/100;
                         self::DB()->insert("itemlogp", [
                             "item_no" => $insert_id,
                             "uid" => $uinfo2['superioruid'],
