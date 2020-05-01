@@ -5,6 +5,9 @@ namespace app\ctrl;
 use app\model\user\UserModel;
 
 use app\model\tram\OrderModel;
+use app\ormModel\Itemlog;
+use app\ormModel\User;
+use think\facade\Db;
 
 class apphomeCtrl extends commonCtrl
 {
@@ -25,15 +28,12 @@ class apphomeCtrl extends commonCtrl
 		
 		if(in_array(strtolower(self::$WsAction), $ActionUnloginArr)){
 			//免登录
-			
 		}else{
 			//未登录跳登录页
 			if(!UserModel::haslogin()){
 				HeaderLocationCA("appuser","login");
 			}
 		}
-		
-		
 		if(UserModel::haslogin()){
 			$myuserinfo = self::DB()->query("SELECT id,username,name,money,money2,money3,proportion,coinaddress,authentication FROM `user` WHERE id='".$_SESSION['userinfo']['id']."' ")->fetchAll();
 			self::$myuserinfo=$myuserinfo[0];
@@ -43,28 +43,17 @@ class apphomeCtrl extends commonCtrl
 	
 	public function auto_task()
 	{
-		$list = self::DB()->query("SELECT * from `itemlog` where status = 0 and stime < ".time())->fetchAll();
+		$list = Itemlog::where([['status', '=', 0], ['stime', '<', time()]])->select();
 		$mpcontent = '投资返利';
-		foreach($list as $k=>$v){
-			//记录变更已返还
-			self::DB()->update("itemlog",[
-			"status" => 1
-			], [
-				"id[=]" => $v['id']
-			]);
-			
-			$uinfo = self::DB()->select("user",['money'],[
-				"id[=]" => $v['uid']
-			]);
-			//用户加钱
-			self::DB()->update("user",[
-			"money" => $uinfo[0]['money'] + $v['smoney']
-			], [
-				"id[=]" => $v['uid']
-			]);
+		foreach($list as $k => $v){
+			//记录变更
+			Itemlog::update(['status' => 1], ['id' => $v['id']]);
+            //返还本息
+			User::update(['money' => Db::raw('money+'.$v['smoney'])], ['id' => $v['uid']]);
 			//余额记录
-			OrderModel::insertMoneypath_proportion($v['uid'],$v['smoney'],"152",$mpcontent,$v['id'],$v['arate']);
+			OrderModel::insertMoneypath_proportion($v['uid'], $v['smoney'],"152", $mpcontent, $v['id'], $v['arate']);
 		}
+
 		$list = self::DB()->query("SELECT * from `itemlogp` where status = 0 and stime < ".time())->fetchAll();
 		$mpcontent = '推广返利';
 		foreach($list as $k=>$v){

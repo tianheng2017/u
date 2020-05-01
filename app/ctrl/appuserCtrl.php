@@ -53,7 +53,7 @@ class appuserCtrl extends commonCtrl
 			$arr.= $v.',';
 		}
 		$arr = '('.rtrim($arr,',').')';
-		//有效用户（充值超过100的个数）
+		//有效用户（充值金额超过100的个数）
 		$data = self::DB()->query("SELECT uid FROM moneypath where (mtype = 111 or mtype = 113 ) and money >= 100  and  uid in ".$arr." group by uid ")->fetchAll();
 		$num = count($data);
 		if($num >=20){
