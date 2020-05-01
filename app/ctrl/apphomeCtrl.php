@@ -147,7 +147,7 @@ class apphomeCtrl extends commonCtrl
             Db::startTrans();
             try {
                 if($uinfo['superioruid'] != 0){
-                    if (($money >= 1000) && ($money%1000 == 0)){
+                    if (($money >= 1000) && ($money % 1000 == 0)){
                         $yjjl = intval(self::$webconfig['yjjl']['val'])/100;
                         Itemlogp::create([
                             "item_no" => $insert_id,
