@@ -169,7 +169,7 @@ class apphomeCtrl extends commonCtrl
                         Itemlogp::create([
                             "item_no" => $insert_id,
                             "uid" => $uinfo2['superioruid'],
-                            "fuid" => $uinfo2['id'],
+                            "fuid" => $uinfo['id'],
                             "money" => $money,
                             "smoney" => $money * (1 + $item['arate']/100/365) * $ejjl,
                             "item_id" => $item['id'],
