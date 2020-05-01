@@ -144,45 +144,52 @@ class apphomeCtrl extends commonCtrl
 			"status" => 0
 		]);
 		if($insert_id){
-			if($uinfo['superioruid'] != 0){
-			    if (($money >= 1000) && ($money%1000 == 0)){
-                    $yjjl = intval(self::$webconfig['yjjl']['val'])/100;
-                    Itemlogp::create([
-                        "item_no" => $insert_id,
-                        "uid" => $uinfo['superioruid'],
-                        "fuid" => $uinfo['id'],
-                        "money" => $money,
-                        "smoney" => $money * $item['arate']/100/365 * $item['day_num'] * $yjjl,
-                        "item_id" => $item['id'],
-                        "lown" => 1,
-                        "jlbl" => $yjjl,
-                        "time" => time(),
-                        "stime" => time() + ($item['day_num'] * 86400),
-                        "status" => 0
-                    ]);
-                }
-                if ($money >= 1000){
-                    $uinfo2 = self::DB()->select("user",['money','id','superioruid'],['id'=>$uinfo['superioruid']]);
-                    $uinfo2 = $uinfo2[0];
-                    if($uinfo2['superioruid'] != 0){
-                        $ejjl = intval(self::$webconfig['ejjl']['val'])/100;
+            Db::startTrans();
+            try {
+                if($uinfo['superioruid'] != 0){
+                    if (($money >= 1000) && ($money%1000 == 0)){
+                        $yjjl = intval(self::$webconfig['yjjl']['val'])/100;
                         Itemlogp::create([
                             "item_no" => $insert_id,
-                            "uid" => $uinfo2['superioruid'],
+                            "uid" => $uinfo['superioruid'],
                             "fuid" => $uinfo['id'],
                             "money" => $money,
-                            "smoney" => $money * $item['arate']/100/365 * $item['day_num'] * $ejjl,
+                            "smoney" => $money * $item['arate']/100/365 * $item['day_num'] * $yjjl,
                             "item_id" => $item['id'],
-                            "lown" => 2,
-                            "jlbl" => $ejjl,
+                            "lown" => 1,
+                            "jlbl" => $yjjl,
                             "time" => time(),
                             "stime" => time() + ($item['day_num'] * 86400),
                             "status" => 0
                         ]);
                     }
+                    if ($money >= 1000){
+                        $uinfo2 = User::where('id', $uinfo['superioruid'])->field('money,id,superioruid')->find();
+                        if($uinfo2['superioruid'] != 0){
+                            $ejjl = intval(self::$webconfig['ejjl']['val'])/100;
+                            Itemlogp::create([
+                                "item_no" => $insert_id,
+                                "uid" => $uinfo2['superioruid'],
+                                "fuid" => $uinfo['id'],
+                                "money" => $money,
+                                "smoney" => $money * $item['arate']/100/365 * $item['day_num'] * $ejjl,
+                                "item_id" => $item['id'],
+                                "lown" => 2,
+                                "jlbl" => $ejjl,
+                                "time" => time(),
+                                "stime" => time() + ($item['day_num'] * 86400),
+                                "status" => 0
+                            ]);
+                        }
+                    }
                 }
-			}
-			User::update(['money' => Db::raw('money-').$money], ['id' => $uinfo['id']]);
+                User::update(['money' => Db::raw('money-').$money], ['id' => $uinfo['id']]);
+                Db::commit();
+            } catch (\Exception $e) {
+                Db::rollback();
+                error(-1008 , "存入失败");
+            }
+
 			$mpcontent = '项目投资';
 			OrderModel::insertMoneypath($uinfo['id'],$money,"151",$mpcontent,$id);
 			$_SESSION['itemlog_id'] = $insert_id;
