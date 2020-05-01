@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 14:32:11
+/* Smarty version 3.1.30, created on 2020-05-01 14:37:25
   from "E:\u.xiangxin.me\app\views\app_cn_v1\apphome_itemdetail.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabc26b511d94_98348308',
+  'unifunc' => 'content_5eabc3a51193a5_60622696',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b94554951edf80151dfda6a3871f3655f98a7e04' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\apphome_itemdetail.tpl',
-      1 => 1588314721,
+      1 => 1588314747,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eabc26b511d94_98348308 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eabc3a51193a5_60622696 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -304,7 +304,7 @@ function content_5eabc26b511d94_98348308 (Smarty_Internal_Template $_smarty_tpl)
 				</div>
 				<div style="width: 100%;background: #2C2C2E;height: 97px;position: fixed;bottom: 0;">
 					<button id="start" style="cursor:pointer;font-size:18px;width:90%;color:#fff;background:linear-gradient(128deg,rgba(223,199,161,1) 0%,rgba(188,149,104,1) 100%);
-box-shadow:0px 6px 21px 0px rgba(191,153,109,0.1);border-radius:4px;height: 50px;margin: 20px auto;position: fixed;bottom: 0;border: unset;left: 5%;">立即买入</button>
+box-shadow:0px 6px 21px 0px rgba(191,153,109,0.1);border-radius:4px;height: 50px;margin: 20px auto;position: fixed;bottom: 0;border: unset;left: 5%;">立即存入</button>
 				</div>
 			</div>
         </div>

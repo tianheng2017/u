@@ -156,7 +156,7 @@ class apphomeCtrl extends commonCtrl
 		$insert_id = self::DB()->insert("itemlog", [
 			"uid" => $uinfo['id'],
 			"money" => $money,
-			"smoney" => $money * (100+$item['arate'])/100,
+			"smoney" => $money * (100+$item['arate'])/100/365*$item['day_num'],
 			"item_id" => $item['id'],
 			"arate" => $item['arate'],
 			"day_num" => $item['day_num'],

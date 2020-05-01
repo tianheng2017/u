@@ -159,7 +159,7 @@
 						<div style="display: inline-block;position: absolute;right: 20px;color: #727272;font-size: 16px;">
 							<span id="user_money"><{$uinfo.money}></span>
 							<span> 元</span>
-							<button id="recharge" style="cursor:pointer;width: 70px;height:26px;line-height:26px;display: inline-block;color:#8E929F;border-radius:4px;border:1px solid rgba(151,151,151,0.1);font-size: 14px;margin-left: 5px;">转入</button>
+							<button id="recharge" style="cursor:pointer;width: 70px;height:26px;line-height:26px;display: inline-block;color:#8E929F;border-radius:4px;border:1px solid rgba(151,151,151,0.1);font-size: 14px;margin-left: 5px;">充值</button>
 						</div>
 					</div>
 				</div>
@@ -189,13 +189,13 @@
 						<p style="width:100%;font-size: 16px;line-height: 30px;margin-bottom: 10px;">温馨提示</p>
 						<ul class="ul1">
 							<li style="text-align: left;width: 100%;margin-bottom: 10px;color: #727679;">
-								<p style="display: inline-block;width: 90%;">单笔存币限额 100-1000000 USDT。</p>
+								<p style="display: inline-block;width: 90%;">单笔存入限额 100-1000000 元。</p>
 							</li>
 							<li style="text-align: left;width: 100%;margin-bottom: 10px;color: #727679;">
-								<p style="display: inline-block;width: 90%;">存币时间按UTC+8时间计算，当日存币，次日0点计息。</p>
+								<p style="display: inline-block;width: 90%;">存币时间按UTC+8时间计算，当日存入，次日0点计息。</p>
 							</li>
 							<li style="text-align: left;width: 100%;margin-bottom: 10px;color: #727679;">
-								<p style="display: inline-block;width: 90%;">定期存币不支持提前支取，存币到期后，本金+利息将自动转入余额。</p>
+								<p style="display: inline-block;width: 90%;">定期存入不支持提前支取，存币到期后，本金+利息将自动转入余额。</p>
 							</li>
 						</ul>
 					</div>
