@@ -278,6 +278,7 @@ class adminuserCtrl extends commonCtrl
 			"time" => time(),
             'isty' => post('isty'),
             'tymoney' => post('tymoney'),
+            'coupon' => post('coupon'),
 		], [
 			"id[=]" => post('id')
 		]);
