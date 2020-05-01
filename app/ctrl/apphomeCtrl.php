@@ -63,7 +63,7 @@ class apphomeCtrl extends commonCtrl
 			//推广奖励到账
             User::update(['money' => Db::raw('money+'.$v['smoney'])], ['id' => $v['uid']]);
 			//余额记录
-			OrderModel::insertMoneypath_proportion($v['fid'], $v['smoney'],"153", $v['lown'].'级'.$mpcontent, $v['item_no'], $v['jlbl']);
+			OrderModel::insertMoneypath_proportion($v['uid'], $v['smoney'],"153", $v['lown'].'级'.$mpcontent, $v['item_no'], $v['jlbl']);
 		}
 	}
 	
