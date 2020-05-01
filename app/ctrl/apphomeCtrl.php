@@ -166,23 +166,38 @@ class apphomeCtrl extends commonCtrl
 		]);
 		if($insert_id){
 			if($uinfo['superioruid'] != 0){
-				$bili = self::$webconfig['bili']['val'];
-				$day_num =  self::$webconfig['day_num']['val'];
-				$fbili = self::$webconfig['fbili']['val'] + 1;
-				$moneyp = ($money * $item['bili'] / 100) * pow($fbili, $day_num);
+				$yjjl = self::$webconfig['yjjl']['val']/100;
 				self::DB()->insert("itemlogp", [
 					"item_no" => $insert_id,
 					"uid" => $uinfo['superioruid'],
 					"fuid" => $uinfo['id'],
 					"money" => $money,
-					"smoney" => $moneyp,
+					"smoney" => $money * (1 + $item['arate']/100/365) * $yjjl,
 					"item_id" => $item['id'],
-					"bili" => $bili,
-					"day_num" => $day_num,
+					"lown" => 1,
+					"jlbl" => $yjjl,
 					"time" => time(),
 					"stime" => time() + ($item['day_num'] * 86400),
 					"status" => 0
-				]);	
+				]);
+                $uinfo2 = self::DB()->select("user",['money','id','superioruid'],['id'=>$uinfo['superioruid']]);
+                $uinfo2 = $uinfo2[0];
+                if($uinfo2['superioruid'] != 0){
+                    $ejjl = self::$webconfig['ejjl']['val']/100;
+                    self::DB()->insert("itemlogp", [
+                        "item_no" => $insert_id,
+                        "uid" => $uinfo2['superioruid'],
+                        "fuid" => $uinfo2['id'],
+                        "money" => $money,
+                        "smoney" => $money * (1 + $item['arate']/100/365) * $ejjl,
+                        "item_id" => $item['id'],
+                        "lown" => 2,
+                        "jlbl" => $ejjl,
+                        "time" => time(),
+                        "stime" => time() + ($item['day_num'] * 86400),
+                        "status" => 0
+                    ]);
+                }
 			}
 			self::DB()->update("user",[
 				"money" => $uinfo['money']-$money
