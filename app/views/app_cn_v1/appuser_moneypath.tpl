@@ -238,17 +238,14 @@ function seldata(){
                             moneyoic="支出 ";
                         }
 					}
-					if(res["data"][i]["mtype"]=="152"){
-						mtypev="接单收益 | ID:"+res["data"][i]["additionalid"];
-						scolor="color:#43c578;";
-						moneyoi="+";
-						moneyoic="收入";
-					}
+                    if(res["data"][i]["mtype"]=="152"){
+                        mtypev="投资返利 | ID:"+res["data"][i]["additionalid"];
+                        moneyoi="+";
+                    }
 					if(res["data"][i]["mtype"]=="153"){
-						mtypev="团队返利 | ID:"+res["data"][i]["additionalid"];
+						mtypev="推广返利 | ID:"+res["data"][i]["additionalid"];
 						moneyoi="+";
 					}
-					
 					if(res["data"][i]["mtype"]=="161"){
 						mtypev="提现";
 						moneyoi="-";
