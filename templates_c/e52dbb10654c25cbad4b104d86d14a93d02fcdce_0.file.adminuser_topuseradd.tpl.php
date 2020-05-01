@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 14:13:53
-  from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_itemedit.tpl" */
+/* Smarty version 3.1.30, created on 2020-05-01 14:01:06
+  from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_topuseradd.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabbe211393d0_06298345',
+  'unifunc' => 'content_5eabbb22e58e63_19031169',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'ff352f8a6c8efae8bce7cfa6624b1eaff005772b' => 
+    'e52dbb10654c25cbad4b104d86d14a93d02fcdce' => 
     array (
-      0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_itemedit.tpl',
-      1 => 1588313541,
+      0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_topuseradd.tpl',
+      1 => 1577708588,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eabbe211393d0_06298345 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eabbb22e58e63_19031169 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -118,84 +118,49 @@ function content_5eabbe211393d0_06298345 (Smarty_Internal_Template $_smarty_tpl)
                                     <div class="row">
                                         <form class="col s12" id="dataform">
                                             <div class="row">
+                                                
+
                                                 <div class="input-field col s6">
-                                                    <input id="username" name="item_name" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['item_name'];?>
-" type="text">
-                                                    <label for="username">项目名称</label>
+                                                    <input id="username" name="username" type="text">
+                                                    <label for="username">用户名</label>
                                                 </div>
+                                                <div class="input-field col s6" style="display:;">
+                                                    <input id="password" value="" name="password" type="password">
+                                                    <label for="password">密码</label>
+                                                </div>
+												
+												
 												<div class="input-field col s6" style="display:;">
-                                                    <input id="passwordtwo" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['arate'];?>
-" name="arate" type="text">
-                                                    <label for="passwordtwo">年化率（%）</label>
+                                                    <input id="passwordtwo" value="" name="passwordtwo" type="password">
+                                                    <label for="passwordtwo">安全密码</label>
                                                 </div>
+												
 												<div class="input-field col s6" style="display:;">
-                                                    <input id="passwordtwo" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['day_num'];?>
-" name="day_num" type="text">
-                                                    <label for="passwordtwo">产品天数</label>
+                                                    <input id="proportion" value="0" name="proportion" type="text">
+                                                    <label for="proportion">团队抽成比例（*%）0-100</label>
                                                 </div>
-												 <div class="input-field col s6">
-                                                    <input id="username" name="name" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['name'];?>
-" type="text">
-                                                    <label for="username">简称</label>
+												
+												
+                                                <div class="input-field col s12">
+                                                    <input id="remarks" name="remarks" type="text" value="">
+                                                    <label for="remarks">备注</label>
                                                 </div>
-                                                <div class="input-field col s6" style="display:;">
-                                                    <input id="password" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['desc'];?>
-" name="desc" type="text">
-                                                    <label for="password">描述</label>
-                                                </div>
-												<div class="input-field col s6" style="display:;">
-                                                    <input id="passwordtwo" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['rrule'];?>
-" name="rrule" type="text">
-                                                    <label for="passwordtwo">收益规则</label>
-                                                </div>
-												<div class="input-field col s6" style="display:;">
-                                                    <input id="passwordtwo" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['srule'];?>
-" name="srule" type="text">
-                                                    <label for="passwordtwo">存入规则</label>
-                                                </div>
-												<div class="input-field col s6">
-                                                    <input id="username" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['deposit_time'];?>
-" name="deposit_time" type="text">
-                                                    <label for="username">存入时间</label>
-                                                </div>
-                                                <div class="input-field col s6" style="display:;">
-                                                    <input id="password" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['sec_time'];?>
-" name="sec_time" type="text">
-                                                    <label for="password">取出时间</label>
-                                                </div>
-                                                <div class="input-field col s6" style="display:;">
-                                                    <input id="password" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['isty'];?>
-" name="isty" type="number">
-                                                    <label for="password">类型：0.普通项目 1.新手体验金项目</label>
-                                                </div>
-                                                <div class="input-field col s6" style="display:;">
-                                                    <input id="password" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['tymoney'];?>
-" name="tymoney" type="text">
-                                                    <label for="password">体验金额度</label>
-                                                </div>
-                                                <div class="input-field col s6" style="display:;">
-                                                    <input id="coupon" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['coupon'];?>
-" name="coupon" type="text">
-                                                    <label for="password">赠送优惠券金额（0为不赠送）</label>
-                                                </div>
-                                                <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['id'];?>
-">
                                             </div>
                                             <div class="row adddiv">
                                                 <div class="input-field col s12">
-                                                    <div class="btn cyan waves-effect waves-light right btnvideoadd">修改
+                                                    <div class="btn cyan waves-effect waves-light right btnvideoadd">添加
                                                         <i class="mdi-content-send right"></i>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row jxadddiv" style="display: none">
                                                 <div class="input-field col s12">
-                                                    <div class="btn cyan waves-effect waves-light right btnjxadd">继续修改
+                                                    <div class="btn cyan waves-effect waves-light right btnjxadd">继续添加
                                                         <i class="mdi-content-send right"></i>
                                                     </div>
                                                 </div>
                                                 <div class="input-field col s12">
-                                                    <div class="btn right disabled">修改！！
+                                                    <div class="btn right disabled">添加！！
                                                         <i class="mdi-content-send right"></i>
                                                     </div>
                                                 </div>
@@ -323,7 +288,7 @@ function content_5eabbe211393d0_06298345 (Smarty_Internal_Template $_smarty_tpl)
         $(".btnvideoadd").click(function () {
             $(".adddiv").fadeOut();$(".jxadddiv").fadeIn();
             var options = {
-                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'itemedit_do');?>
+                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'topuseradddo');?>
 ",
                 type: 'post',
                 dataType: 'text',

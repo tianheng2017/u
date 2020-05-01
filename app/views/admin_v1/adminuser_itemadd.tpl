@@ -85,13 +85,9 @@
                                                     <input id="username" name="item_name" type="text">
                                                     <label for="username">项目名称</label>
                                                 </div>
-                                                <div class="input-field col s6" style="display:;">
-                                                    <input id="password" value="" name="type" type="text">
-                                                    <label for="password">类型：1.中文 2.英文</label>
-                                                </div>	
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="" name="arate" type="text">
-                                                    <label for="passwordtwo">年化率</label>
+                                                    <label for="passwordtwo">年化率（%）</label>
                                                 </div>
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="" name="day_num" type="text">
@@ -128,6 +124,10 @@
                                                 <div class="input-field col s6" style="display:;">
                                                     <input id="password" value="0.0000" name="tymoney" type="text">
                                                     <label for="password">体验金额度</label>
+                                                </div>
+                                                <div class="input-field col s6" style="display:;">
+                                                    <input id="coupon" value="<{$data.coupon}>" name="coupon" type="text">
+                                                    <label for="password">赠送优惠券金额（0为不赠送）</label>
                                                 </div>
                                                 <!--  <div class="input-field col s6" style="display:;">
                                                  <input id="passwordtwo" value="" name="yield_time" type="text">

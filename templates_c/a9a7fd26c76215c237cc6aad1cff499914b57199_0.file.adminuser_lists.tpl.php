@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 14:18:37
-  from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_itemlist.tpl" */
+/* Smarty version 3.1.30, created on 2020-05-01 14:01:03
+  from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_lists.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabbf3dbeacc8_76353239',
+  'unifunc' => 'content_5eabbb1f31d9a4_24275374',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'a4b939720a9bffd897e2d8fb2264de464cc8ea41' => 
+    'a9a7fd26c76215c237cc6aad1cff499914b57199' => 
     array (
-      0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_itemlist.tpl',
-      1 => 1588313916,
+      0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_lists.tpl',
+      1 => 1577716434,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eabbf3dbeacc8_76353239 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eabbb1f31d9a4_24275374 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -75,23 +75,23 @@ function content_5eabbf3dbeacc8_76353239 (Smarty_Internal_Template $_smarty_tpl)
 /assets/exquisiteui/js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="<?php echo VIEW_ROOTPATH;?>
 /assets/exquisiteui/css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <style>
-        .cyan {
-            background-color: #2C2C2E !important;
-        }
-        .side-nav li{
-            background: #2c2c2e;
-        }
-        .cyan.darken-2{
-            background-color: #2c2c2e!important;
-        }
-        ul.side-nav.fixed{
-            background: #2c2c2e;
-        }
-        ul.side-nav.fixed li:hover, ul.side-nav.fixed li.active{
-            background-color: #454850;
-        }
-    </style>
+	<style>
+		.cyan {
+			background-color: #2C2C2E !important;
+		}
+		.side-nav li{
+			background: #2c2c2e;
+		}
+		.cyan.darken-2{
+			background-color: #2c2c2e!important;
+		}
+		ul.side-nav.fixed{
+			background: #2c2c2e;
+		}
+		ul.side-nav.fixed li:hover, ul.side-nav.fixed li.active{
+			background-color: #454850;
+		}
+	</style>
 </head>
 
 <body>
@@ -147,7 +147,7 @@ function content_5eabbf3dbeacc8_76353239 (Smarty_Internal_Template $_smarty_tpl)
 -第<?php echo $_smarty_tpl->tpl_vars['page']->value;?>
 页</div>
 									
-									<!-- <div class="input-field col s10">
+									<div class="input-field col s10">
 										<input class="querykeywords" id="querykeywords" name="querykeywords" value="<?php echo $_smarty_tpl->tpl_vars['querykeywords']->value;?>
 " placeholder="请输入用户ID或用户名" type="text">
 										<label for="first_name">搜索</label>
@@ -156,7 +156,7 @@ function content_5eabbf3dbeacc8_76353239 (Smarty_Internal_Template $_smarty_tpl)
 										<div class="btn cyan waves-effect waves-light right seabtna">查询
 											<i class="mdi-content-send right"></i>
 										</div>
-									</div> -->
+									</div>
                                 </ul>
                             </div>
 
@@ -189,17 +189,28 @@ function content_5eabbf3dbeacc8_76353239 (Smarty_Internal_Template $_smarty_tpl)
                                     <thead>
                                     <tr>
 										<th data-field="">ID</th>
-                                        <th data-field="">项目名称</th>
-										<th data-field="">语言</th>
-										<th data-field="">年化率</th>
-										<th data-field="">产品天数</th>
-                                        <th data-field="">赠送优惠券</th>
-										<th data-field="">简称</th>
-										<th data-field="">收益规则</th>
-										<th data-field="">存入规则</th>
-                                      	<th data-field="">存入时间</th>
-										<th data-field="">取出时间</th>								
-										<th data-field="">添加时间</th>
+                                        <th data-field="">用户名</th>
+										<th data-field="">姓名</th>
+										<th data-field="">上级</th>
+										<th data-field="">余额（<?php echo PFCOINNAME;?>
+）</th>
+										<!--th data-field="">额度（<?php echo PFCOINNAME;?>
+）</th>
+										<th data-field="">总接单</th>
+										
+										<th data-field="">接单收益比例</th>
+										<th data-field="">团队返利比例</th-->
+                                      	<th data-field="">有效用户</th>
+										
+										<th data-field="">收币地址</th>
+										
+										<th data-field="">认证模块</th>
+										
+										<th data-field="">备注</th>
+										
+										<th data-field="">注册时间</th>
+										<th data-field="">状态</th>
+										
 										<th data-field="">操作</th>
 										
 										
@@ -215,48 +226,93 @@ foreach ($_from as $_smarty_tpl->tpl_vars['datai']->value) {
 ">
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
 </td>
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['item_name'];?>
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['username'];?>
 </td>
-										<td class="tdtcenter"><?php if ($_smarty_tpl->tpl_vars['datai']->value['type'] == 1) {?>
-											<span style="background: #87dde6;color:#fff;padding: 4px 10px;border-radius: 2px;">	中文</span>
-											<?php }?>
-											<?php if ($_smarty_tpl->tpl_vars['datai']->value['type'] == 2) {?>
-											<span style="background: #00bcd4;color:#fff;padding: 4px 10px;border-radius: 2px;">	英文</span>
-											<?php }?>
-                                        </td>
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['arate'];?>
-%</td>
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['day_num'];?>
-天</td>
-                                        <td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['coupon'];?>
-元</td>
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['name'];?>
 </td>
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['rrule'];?>
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['superiorusername'];?>
 </td>
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['srule'];?>
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['money'];?>
 </td>
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['deposit_time'];?>
+										<!--td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['money2'];?>
 </td>
-                                        <td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['sec_time'];?>
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['allinvestment'];?>
+</td>
+										
+										
+										
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['proportion'];?>
+%</td>
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['proportionp'];?>
+%</td-->
+                                        <td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['auto_ratiopn'];?>
 </td>
 										
 										
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['time'];?>
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['coinaddress'];?>
 </td>
 										
-									
+										<td class="tdtcenter">
+											<?php if ($_smarty_tpl->tpl_vars['datai']->value['authentication'] == 0) {?>
+											<span style="background: #acacac;color:#fff;padding: 4px 10px;border-radius: 2px;">	未认证</span>
+											<?php }?>
+											<?php if ($_smarty_tpl->tpl_vars['datai']->value['authentication'] == 1) {?>
+											<span style="background: #87dde6;color:#fff;padding: 4px 10px;border-radius: 2px;">	审核中</span>
+											<?php }?>
+											<?php if ($_smarty_tpl->tpl_vars['datai']->value['authentication'] == 2) {?>
+											<span style="background: #00bcd4;color:#fff;padding: 4px 10px;border-radius: 2px;">	认证成功</span>
+											<?php }?>
+											<?php if ($_smarty_tpl->tpl_vars['datai']->value['authentication'] == -1) {?>
+											<span style="background: #ff5a92;color:#fff;padding: 4px 10px;border-radius: 2px;">	认证失败</span>
+											<?php }?>
+										</td>
+										
+										
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['remarks'];?>
+</td>
+										
+										
+										<td class="tdtcenter fontcolorb6b6b6 fontweight100"><?php echo $_smarty_tpl->tpl_vars['datai']->value['regtime'];?>
+</td>
+										
+										<td class="tdtcenter">
+											<?php if ($_smarty_tpl->tpl_vars['datai']->value['state'] == 1) {?>
+											<span style="background: #00bcd4;color:#fff;padding: 4px 10px;border-radius: 2px;">	正常</span>
+											<?php }?>
+											<?php if ($_smarty_tpl->tpl_vars['datai']->value['state'] == -1) {?>
+											<span style="background: #ff5a92;color:#fff;padding: 4px 10px;border-radius: 2px;">	冻结</span>
+											<?php }?>
+										</td>
+										
 										
 										
                                         <td class="tdtcenter">
 											
-									
-											<a href="<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'itemedit');?>
+											<a style="display:none;" href="<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'userlogin');?>
 /id/<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
-/" class="purple lighten-2 waves-effect waves-light btn modal-trigger  light-blue">编辑</a>			
-										<!-- 	<div onclick="sendmoneyidM('<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
-')" class="orange darken-1 waves-effect waves-light btn modal-trigger  light-blue" href="#modal3">删除</div> -->			
-	
+/" target="_blank" class="btn cyan">模拟登录</a>
+											
+											<div style="display:none;" onclick="uppasidM('<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
+')" class="purple lighten-2 waves-effect waves-light btn modal-trigger  light-blue" href="#modal1">修改密码</div>
+
+											<a href="<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'upuserinfo');?>
+/id/<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
+/" class="purple lighten-2 waves-effect waves-light btn modal-trigger  light-blue">用户编辑</a>			
+											
+											
+											<div onclick="sendmoneyidM('<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
+')" class="orange darken-1 waves-effect waves-light btn modal-trigger  light-blue" href="#modal3">后台充值</div>			
+											
+											
+											<?php if ($_smarty_tpl->tpl_vars['datai']->value['state'] == 1) {?>
+											<div onclick="upstopM('<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
+')" class="btn">点击冻结</div>
+											<?php } else { ?>
+											<div onclick="upstopM('<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
+')" class="btn cyan">点击解冻</div>
+											<?php }?>
+											
+										
 										</td>
 										
 										
@@ -285,7 +341,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
 
 
-							<!-- 	<div>
+								<div>
 								<br><br><br>
 								截止<?php echo date("Y-m-d",time());?>
 ，共注册：<span style="color: #E31;"><?php echo $_smarty_tpl->tpl_vars['allusernumber']->value;?>
@@ -294,7 +350,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 </span><?php echo PFCOINNAME;?>
 
 								
-								</div> -->
+								</div>
                             </div>
 
 

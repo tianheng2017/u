@@ -85,7 +85,7 @@
                                                 </div>
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="<{$data.arate}>" name="arate" type="text">
-                                                    <label for="passwordtwo">年化率</label>
+                                                    <label for="passwordtwo">年化率（%）</label>
                                                 </div>
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="<{$data.day_num}>" name="day_num" type="text">
