@@ -217,18 +217,18 @@
                             <span style="font-size: 16px;color:#B8B8B8;margin-left: 10px;vertical-align: middle;">我的资产</span>
                         </div>
                         <div style="height: 60px;width: 100%;">
-                            <span style="display: block;font-size: 13px;color: #727679;">账户总资产（USDT）</span>
+                            <span style="display: block;font-size: 13px;color: #727679;">账户总资产</span>
                             <span style="display: block;margin-top: 10px;font-size: 22px;color: #BC9568;font-weight: bold;"><{number_format($myuserinfo["money"], 4, '.', '')}></span>
-                            <span style="display: block;color:#727679;font-size: 12px;margin-top: 5px;">≈ ¥<{number_format(($myuserinfo["money"])*7, 4, '.', '')}></span>
+                            <!--span style="display: block;color:#727679;font-size: 12px;margin-top: 5px;">≈ ¥<{number_format(($myuserinfo["money"]), 4, '.', '')}></span-->
                         </div>
                         <div style="width: 100%;position: relative;">
                             <a class="external" href="<{WSURLSHOW('appuser','recharge')}>"
                                style="text-align:center;border: 1px solid #242426;border-radius: 12px;background:#242426;min-width:4rem;display:inline-block;position:absolute;left:0;top: 35px;width:48%;height: 44px;line-height: 44px;font-size: 16px;color:#BC9568;">
-                                充币
+                                充值
                             </a>
                             <a class="external" href="<{WSURLSHOW('appuser','presentation')}>"
                                style="text-align:center;border: 1px solid #BC9568;border-radius: 12px;background: #BC9568;min-width:4rem;display:inline-block;position:absolute;right:0;top: 35px;width:48%;height: 44px;line-height: 44px;font-size: 16px;">
-                                提币
+                                提现
                             </a>
                         </div>
                     </div>

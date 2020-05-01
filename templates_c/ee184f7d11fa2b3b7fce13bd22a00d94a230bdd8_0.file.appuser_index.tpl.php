@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 12:17:11
+/* Smarty version 3.1.30, created on 2020-05-01 13:12:45
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eaba2c718f6d5_74826398',
+  'unifunc' => 'content_5eabafcdaf3a69_59693743',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ee184f7d11fa2b3b7fce13bd22a00d94a230bdd8' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_index.tpl',
-      1 => 1578400758,
+      1 => 1588309963,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eaba2c718f6d5_74826398 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eabafcdaf3a69_59693743 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -258,11 +258,11 @@ function content_5eaba2c718f6d5_74826398 (Smarty_Internal_Template $_smarty_tpl)
                             <span style="font-size: 16px;color:#B8B8B8;margin-left: 10px;vertical-align: middle;">我的资产</span>
                         </div>
                         <div style="height: 60px;width: 100%;">
-                            <span style="display: block;font-size: 13px;color: #727679;">账户总资产（USDT）</span>
+                            <span style="display: block;font-size: 13px;color: #727679;">账户总资产</span>
                             <span style="display: block;margin-top: 10px;font-size: 22px;color: #BC9568;font-weight: bold;"><?php echo number_format($_smarty_tpl->tpl_vars['myuserinfo']->value["money"],4,'.','');?>
 </span>
-                            <span style="display: block;color:#727679;font-size: 12px;margin-top: 5px;">≈ ¥<?php echo number_format(($_smarty_tpl->tpl_vars['myuserinfo']->value["money"])*7,4,'.','');?>
-</span>
+                            <!--span style="display: block;color:#727679;font-size: 12px;margin-top: 5px;">≈ ¥<?php echo number_format(($_smarty_tpl->tpl_vars['myuserinfo']->value["money"]),4,'.','');?>
+</span-->
                         </div>
                         <div style="width: 100%;position: relative;">
                             <a class="external" href="<?php echo WSURLSHOW('appuser','recharge');?>
