@@ -183,7 +183,7 @@ class apphomeCtrl extends commonCtrl
                         }
                     }
                 }
-                User::update(['money' => Db::raw('money-').$money], ['id' => $uinfo['id']]);
+                User::update(['money' => Db::raw('money-'.$money)], ['id' => $uinfo['id']]);
                 Db::commit();
             } catch (\Exception $e) {
                 Db::rollback();
