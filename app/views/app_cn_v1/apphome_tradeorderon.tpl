@@ -231,16 +231,16 @@
                 </div>
                 <div style="height: 180px;width: 95%;background: #242426;border-radius: 12px;margin: 0 auto;">
                     <div style="height: 75px;width: 100%;padding: 20px 3%;">
-                        <p style="color:#727679;">存单金额（USDT）</p>
+                        <p style="color:#727679;">存单金额</p>
                         <p style="font-size: 40px;color: #BC9568;font-weight: bold;"><{$moneya151}></p>
                     </div>
                     <div style="width:100%;">
                         <div style="width: 49%;padding: 15px 3%;display: inline-block">
-                            <p style="color:#727679;margin-top: 16px;">昨日存单（USDT）</p>
+                            <p style="color:#727679;margin-top: 16px;">昨日存单</p>
                             <p style="font-size: 24px;color: #BC9568;"><{$zmoneya151}></p>
                         </div>
                         <div style="width: 49%;padding: 15px 3%;display: inline-block">
-                            <p style="color:#727679">累积获得回报（USDT）</p>
+                            <p style="color:#727679">累积获得回报</p>
                             <p style="font-size: 24px;color: #BC9568;"><{$moneya152}></p>
                         </div>
                     </div>

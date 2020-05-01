@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 13:09:58
+/* Smarty version 3.1.30, created on 2020-05-01 13:14:40
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_moneypath.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabaf269ad361_11255246',
+  'unifunc' => 'content_5eabb040709ca2_55792920',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fe3df882719eda5c573c1206b048aed07e861e98' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_moneypath.tpl',
-      1 => 1578361574,
+      1 => 1588310065,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eabaf269ad361_11255246 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eabb040709ca2_55792920 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -299,7 +299,7 @@ function seldata(){
 					}
 					
 					if(res["data"][i]["mtype"]=="161"){
-						mtypev="USDT提现";
+						mtypev="提现";
 						moneyoi="-";
 					}
 					if(res["data"][i]["mtype"]=="163"){
@@ -323,7 +323,7 @@ function seldata(){
 									''+mtypev+
 									'<div class="item-footer">'+res["data"][i]["time"]+'</div>'+
 								'</div>'+
-								'<div class="item-after" style="'+scolor+'">'+moneyoi+res["data"][i]["money"]+' USDT</div>'+
+								'<div class="item-after" style="'+scolor+'">'+moneyoi+res["data"][i]["money"]+'</div>'+
 							'</div>'+
 						'</li>';
 					$(".datadiv").append(datahtml);
