@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 12:57:51
+/* Smarty version 3.1.30, created on 2020-05-01 13:20:03
   from "E:\u.xiangxin.me\app\views\app_cn_v1\apphome_tradeorderon.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabac4fa55fc1_71273485',
+  'unifunc' => 'content_5eabb183eb97b7_01793873',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f6e03c885ed15387892417e862322a538f1664b8' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\apphome_tradeorderon.tpl',
-      1 => 1578531802,
+      1 => 1588310364,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eabac4fa55fc1_71273485 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eabb183eb97b7_01793873 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -278,18 +278,18 @@ function content_5eabac4fa55fc1_71273485 (Smarty_Internal_Template $_smarty_tpl)
                 </div>
                 <div style="height: 180px;width: 95%;background: #242426;border-radius: 12px;margin: 0 auto;">
                     <div style="height: 75px;width: 100%;padding: 20px 3%;">
-                        <p style="color:#727679;">存单金额（USDT）</p>
+                        <p style="color:#727679;">存单金额</p>
                         <p style="font-size: 40px;color: #BC9568;font-weight: bold;"><?php echo $_smarty_tpl->tpl_vars['moneya151']->value;?>
 </p>
                     </div>
                     <div style="width:100%;">
                         <div style="width: 49%;padding: 15px 3%;display: inline-block">
-                            <p style="color:#727679;margin-top: 16px;">昨日存单（USDT）</p>
+                            <p style="color:#727679;margin-top: 16px;">昨日存单</p>
                             <p style="font-size: 24px;color: #BC9568;"><?php echo $_smarty_tpl->tpl_vars['zmoneya151']->value;?>
 </p>
                         </div>
                         <div style="width: 49%;padding: 15px 3%;display: inline-block">
-                            <p style="color:#727679">累积获得回报（USDT）</p>
+                            <p style="color:#727679">累积获得回报</p>
                             <p style="font-size: 24px;color: #BC9568;"><?php echo $_smarty_tpl->tpl_vars['moneya152']->value;?>
 </p>
                         </div>

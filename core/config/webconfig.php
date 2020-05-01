@@ -21,7 +21,7 @@ define('PAGELISTPALLNUMSLEFTNUM',3);
 define('SelPageApiDataNumber',20);  //前台异步列表加载条数
 
 
-define('PFCOINNAME','USDT'); 
+define('PFCOINNAME','RMB');
 
 
 /**
@@ -33,7 +33,7 @@ define('MODULE','app');
 /**
  * 全局调试模式控制变量
  */
-define('DEBUG',true);
+define('DEBUG',false);
 
 
 define('SESSION_STARTFLAG',true);

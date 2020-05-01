@@ -15,7 +15,7 @@ include 'core/config/webconfig.php';  //加载系统配置文件
 if(DEBUG){
 	ini_set('display_errors','On');
 }else{
-	ini_set('display_errors','On');
+	ini_set('display_errors','Off');
 }
 
 include CORE.'common/front_functions.php';  //加载前置函数
