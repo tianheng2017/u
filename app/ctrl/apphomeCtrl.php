@@ -182,11 +182,7 @@ class apphomeCtrl extends commonCtrl
                     }
                 }
 			}
-			self::DB()->update("user",[
-				"money" => $uinfo['money']-$money
-			], [
-				"id[=]" => $uinfo['id']
-			]);
+			User::update(['money' => Db::raw('money-').$money], ['id' => $uinfo['id']]);
 			$mpcontent = '项目投资';
 			OrderModel::insertMoneypath($uinfo['id'],$money,"151",$mpcontent,$id);
 			$_SESSION['itemlog_id'] = $insert_id;
