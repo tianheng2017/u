@@ -158,7 +158,7 @@
 						<div style="display: inline-block;color: #727272;font-size: 16px;">可用余额</div>
 						<div style="display: inline-block;position: absolute;right: 20px;color: #727272;font-size: 16px;">
 							<span id="user_money"><{$uinfo.money}></span>
-							<span> USDT</span>
+							<span> 元</span>
 							<button id="recharge" style="cursor:pointer;width: 70px;height:26px;line-height:26px;display: inline-block;color:#8E929F;border-radius:4px;border:1px solid rgba(151,151,151,0.1);font-size: 14px;margin-left: 5px;">转入</button>
 						</div>
 					</div>
@@ -170,14 +170,14 @@
 							<input style="color: #fff;font-size: 18px;height: 50px;line-height: 50px;" type="text" id="money" placeholder="请输入存入金额" onkeyup="value=value.replace(/^\D*(\d*(?:\.\d{0,4})?).*$/g, '$1')">
 						</div>
 						<div style="position: absolute;top: 45px;right: 10px;font-size: 16px;">
-							<span style="color: #727272;">USDT</span>
+							<span style="color: #727272;">元</span>
 							<span style="color: #BD9669;margin-left: 15px;cursor: pointer;" id="all">全部</span>
 						</div>
 					</div>
 					<div style="margin-top: 80px;font-size: 16px;padding: 15px 0 0 0;border-top: 1px solid #333333;">
 						<div>
 							<p style="position: absolute;color: #727272;">预期到账收益:</p>
-							<p style="position: absolute;right: 20px;color: #727272;" id="yqsy">0 USDT</p>
+							<p style="position: absolute;right: 20px;color: #727272;" id="yqsy">0 元</p>
 						</div>
 						<div>
 							<p style="position: absolute;color: #727272;margin-top: 30px;">到期日期:</p>

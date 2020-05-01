@@ -257,7 +257,7 @@
 				</div>
 				<div style="width: 100%;background: #2C2C2E;height: 97px;position: fixed;bottom: 0;">
 					<button id="start" style="cursor:pointer;font-size:18px;width:90%;color:#fff;background:linear-gradient(128deg,rgba(223,199,161,1) 0%,rgba(188,149,104,1) 100%);
-box-shadow:0px 6px 21px 0px rgba(191,153,109,0.1);border-radius:4px;height: 50px;margin: 20px auto;position: fixed;bottom: 0;border: unset;left: 5%;">立即买入</button>
+box-shadow:0px 6px 21px 0px rgba(191,153,109,0.1);border-radius:4px;height: 50px;margin: 20px auto;position: fixed;bottom: 0;border: unset;left: 5%;">立即存入</button>
 				</div>
 			</div>
         </div>
