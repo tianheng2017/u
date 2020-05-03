@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-03 13:39:29
+/* Smarty version 3.1.30, created on 2020-05-03 13:59:43
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_myteam.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eae5911ca34b5_87349239',
+  'unifunc' => 'content_5eae5dcf228d13_56733801',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3751be86c063b00be2a18f731935177f7a4f7c2c' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_myteam.tpl',
-      1 => 1588484367,
+      1 => 1588485575,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eae5911ca34b5_87349239 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eae5dcf228d13_56733801 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -225,7 +225,7 @@ function content_5eae5911ca34b5_87349239 (Smarty_Internal_Template $_smarty_tpl)
 							</a>
 						</div>
 						<div style="text-align: center;width: 100%;">
-							我的邀请
+							团队返利
 						</div>
 						<div onclick="javascript:window.location.href='/appuser/invitation'" style="color: #727679;display: inline-block;width: 80px;text-align: right;cursor: pointer;">
 							邀请码
@@ -276,12 +276,12 @@ foreach ($_from as $_smarty_tpl->tpl_vars['tradeorder']->value) {
 							</div>
 							<div style="margin-top: 10px;">
 								<div style="width: 49%;font-size: 13px;color:#727679;text-align: left;display: inline-block;">
-									<span>下级返利比例</span>
-									<span><?php echo $_smarty_tpl->tpl_vars['flbl']->value;?>
+									<span>返利比例</span>
+									<span><?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['flbl'];?>
 %</span>
 								</div>
 								<div style="width: 49%;font-size: 14px;color: #BC9568;text-align: right;display: inline-block;">
-									返利金额 <?php echo number_format($_smarty_tpl->tpl_vars['tradeorder']->value['smoney']-$_smarty_tpl->tpl_vars['tradeorder']->value['money'],2,'.','');?>
+									预计返利 <?php echo number_format($_smarty_tpl->tpl_vars['tradeorder']->value['smoney']-$_smarty_tpl->tpl_vars['tradeorder']->value['money'],2,'.','');?>
  元
 								</div>
 							</div>

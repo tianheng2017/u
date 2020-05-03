@@ -184,7 +184,7 @@
 							</a>
 						</div>
 						<div style="text-align: center;width: 100%;">
-							我的邀请
+							团队返利
 						</div>
 						<div onclick="javascript:window.location.href='/appuser/invitation'" style="color: #727679;display: inline-block;width: 80px;text-align: right;cursor: pointer;">
 							邀请码
@@ -216,20 +216,20 @@
 						<li>
 							<div>
 								<div style="width: 49%;font-size: 16px;text-align: left;display: inline-block;">
-									下级ID：<{$tradeorder['uid']}>
+									下级ID：<{$tradeorder.uid}>
 								</div>
 								<div style="width: 49%;font-size: 13px;color: #727679;text-align: right;display: inline-block;">
 									<span>项目金额</span>
-									<span STYLE="margin-left: 5px;"><{$tradeorder['money']}>元</span>
+									<span STYLE="margin-left: 5px;"><{$tradeorder.money}>元</span>
 								</div>
 							</div>
 							<div style="margin-top: 10px;">
 								<div style="width: 49%;font-size: 13px;color:#727679;text-align: left;display: inline-block;">
-									<span>下级返利比例</span>
-									<span><{$flbl}>%</span>
+									<span>返利比例</span>
+									<span><{$tradeorder.flbl}>%</span>
 								</div>
 								<div style="width: 49%;font-size: 14px;color: #BC9568;text-align: right;display: inline-block;">
-									返利金额 <{number_format($tradeorder['smoney']-$tradeorder['money'],2,'.','')}> 元
+									预计返利 <{number_format($tradeorder.smoney - $tradeorder.money,2,'.','')}> 元
 								</div>
 							</div>
 							

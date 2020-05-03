@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 13:13:25
+/* Smarty version 3.1.30, created on 2020-05-03 13:53:16
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabaff528d1f1_99180897',
+  'unifunc' => 'content_5eae5c4cbff786_98076555',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ee184f7d11fa2b3b7fce13bd22a00d94a230bdd8' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_index.tpl',
-      1 => 1588309981,
+      1 => 1588485182,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eabaff528d1f1_99180897 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eae5c4cbff786_98076555 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -297,7 +297,7 @@ function content_5eabaff528d1f1_99180897 (Smarty_Internal_Template $_smarty_tpl)
 ">
                                 <img src="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/img/tuandui.png"/>
-                                <p>我的邀请</p>
+                                <p>团队返利</p>
                                 <i class="right_icon"></i>
                             </a>
                         </li>

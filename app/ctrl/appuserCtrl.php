@@ -1653,7 +1653,7 @@ class appuserCtrl extends commonCtrl
 
         $ids = Regpath::where([['uid', '=', $_SESSION['userinfo']['id']], ['lown', 'in', [1,2]]])->column('uidsubordinate');
 
-        $tradeorders = Itemlog::whereIn('uid', $ids)->order('id','desc')->select();
+        $tradeorders = Itemlog::whereIn('uid', $ids)->where('status', 0)->order('id','desc')->select();
         foreach($tradeorders as $k=>$v){
             $tradeorders[$k]['timesv'] = round( (time()-$v['time']) / ($v['stime']-$v['time']) * 100 ,2);
             if($tradeorders[$k]['timesv']>100){
@@ -1695,11 +1695,11 @@ class appuserCtrl extends commonCtrl
 			$tradeorders[$k]['flbl'] = $this->get_flbl($tradeorders[$k]['uid']);
         }
         $this->assign('tradeorders', $tradeorders);
-
 		$this->display();
 	}
 
-	private function get_flbl($uid){
+	private function get_flbl($uid)
+    {
 	    $lown = Regpath::where(['uid' => $_SESSION['userinfo']['id'], 'uidsubordinate' => $uid])->value('lown');
 	    if ($lown == 1){
 	        return self::$webconfig['yjjl']['val'];
