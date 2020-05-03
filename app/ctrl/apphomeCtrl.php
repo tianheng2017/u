@@ -5,6 +5,7 @@ namespace app\ctrl;
 use app\model\user\UserModel;
 
 use app\model\tram\OrderModel;
+use app\ormModel\Coupon;
 use app\ormModel\Itemlog;
 use app\ormModel\Itemlogp;
 use app\ormModel\Moneypath;
@@ -54,6 +55,16 @@ class apphomeCtrl extends commonCtrl
 			User::update(['money' => Db::raw('money+'.$v['smoney'])], ['id' => $v['uid']]);
 			//余额记录
 			OrderModel::insertMoneypath_proportion($v['uid'], $v['smoney'],"152", $mpcontent, $v['id'], $v['arate']);
+			//发放优惠券
+            if ($v['coupon'] > 0){
+                Coupon::create([
+                    'uid'           =>  $v['uid'],
+                    'money'         =>  $v['coupon'],
+                    'item_id'       =>  $v['item_id'],
+                    'item_no'       =>  $v['id'],
+                    'create_time'   =>  time(),
+                ]);
+            }
 		}
 
         $list2 = Itemlogp::where([['status', '=', 0], ['stime', '<', time()]])->select();
