@@ -267,6 +267,9 @@ class adminuserCtrl extends commonCtrl
         if (intval(post('price')) == 0){
             echo "请设置项目金额";exit;
         }
+        if (post('day_num') < 2){
+            echo "产品天数不能低于2天";exit;
+        }
 		$res = self::DB()->update("itemlist",[
 			"item_name" => post('item_name'),
             "price" => post('price'),
@@ -302,6 +305,9 @@ class adminuserCtrl extends commonCtrl
         }
         if (intval(post('price')) == 0){
             echo "请设置项目金额";exit;
+        }
+        if (post('day_num') < 2){
+            echo "产品天数不能低于2天";exit;
         }
 		$last_insert_id = self::DB()->insert("itemlist", [
 				"item_name" => post('item_name'),

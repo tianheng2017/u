@@ -95,7 +95,7 @@ class apphomeCtrl extends commonCtrl
     {
         $id = $_GET['id'];
         $item = self::DB()->query("SELECT * from `itemlist` where id ='".$id."'")->fetchAll();
-        $time1 = date('m-d', strtotime("+3 days"));
+        $time1 = date('m-d', strtotime("+2 days"));
         $time2 = date('Y-m-d', strtotime("+".$item[0]['day_num']." days"));
         $this->assign('time1',$time1);
         $this->assign('time2',$time2);
@@ -265,15 +265,11 @@ class apphomeCtrl extends commonCtrl
 			
             $item = self::DB()->select("itemlist","*",['id[=]'=>$v['item_id']]);
             $item = $item[0];
-            $day_num =  ceil((time() - $v['time'])/3600/24)-1;
+            $day_num =  ceil((time() - $v['time'])/3600/24)-2;
 
-			if ($v['isty']){
-                $moneyp = $v['smoney'] * $item['arate']/100/$item['day_num'] * $day_num;
-                $tradeorders[$k]['sy'] = number_format($moneyp,2,'.','');
-            }else{
-                $moneyp = $v['money'] * $item['arate']/100/$item['day_num'] * $day_num;
-                $tradeorders[$k]['sy'] = number_format($moneyp,2,'.','');
-            }
+            $moneyp = ($v['smoney'] - $v['money'])/($item['day_num']-2) * $day_num;
+            $tradeorders[$k]['sy'] = round($moneyp,2);
+
 			$m152 += $moneyp;
 		}
 		
@@ -300,7 +296,7 @@ class apphomeCtrl extends commonCtrl
 		$ids = Moneypath::where(['mtype' => 152, 'uid' => self::$myuserinfo['id']])->column('additionalid');
 		$money1 = Itemlog::where('status',1)->whereIn('id', $ids)->sum('money');
         $money2 = Itemlog::where('status',1)->whereIn('id', $ids)->sum('smoney');
-		$moneya152 = $money2 - $money1;
+		$moneya152 = round($money2 - $money1,2);
 		
 		$this->assign('moneya152',$moneya152);
 

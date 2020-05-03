@@ -229,12 +229,16 @@
                 <div style="height: 60px;line-height: 60px;font-size: 16px;text-align: center;">
                     存单
                 </div>
-                <div style="height: 180px;width: 95%;background: #242426;border-radius: 12px;margin: 0 auto;">
-                    <div style="height: 75px;width: 100%;padding: 20px 3%;">
-                        <p style="color:#727679;">存单金额</p>
+                <div style="height: 120px;width: 95%;background: #242426;border-radius: 12px;margin: 0 auto;">
+                    <div style="height: 75px;width: 49%;padding: 20px 3%;display: inline-block;text-align: center;">
+                        <p style="color:#727679;">存单总额</p>
                         <p style="font-size: 40px;color: #BC9568;font-weight: bold;"><{$moneya151}></p>
                     </div>
-                    <div style="width:100%;">
+                    <div style="height: 75px;width: 49%;padding: 20px 3%;display: inline-block;text-align: center;">
+                        <p style="color:#727679">累积获得回报</p>
+                        <p style="font-size: 40px;color: #BC9568;"><{$moneya152}></p>
+                    </div>
+                    <!--div style="width:100%;">
                         <div style="width: 49%;padding: 15px 3%;display: inline-block">
                             <p style="color:#727679;margin-top: 16px;">昨日存单</p>
                             <p style="font-size: 24px;color: #BC9568;"><{$zmoneya151}></p>
@@ -243,7 +247,7 @@
                             <p style="color:#727679">累积获得回报</p>
                             <p style="font-size: 24px;color: #BC9568;"><{$moneya152}></p>
                         </div>
-                    </div>
+                    </div-->
                 </div>
                 <div style="height: 55px;line-height: 55px;padding: 0 3%;font-size: 16px;color: #B8B8B8;">
                     持有产品
@@ -264,7 +268,7 @@
                     </div>
                     <div>
 						<span style="font-size:12px;text-align:center;color:#727679;border-radius: 1px;min-width:7rem;padding: 5px;display:inline-block;position:absolute;right:.7rem;top: .6rem;">
-							数量：<{$tradeorder['money']}>
+							项目金额 <{$tradeorder['money']}> 元
 						</span>
                     </div>
 

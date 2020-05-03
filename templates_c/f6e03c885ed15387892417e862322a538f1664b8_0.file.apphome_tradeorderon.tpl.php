@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 13:20:03
+/* Smarty version 3.1.30, created on 2020-05-03 16:17:31
   from "E:\u.xiangxin.me\app\views\app_cn_v1\apphome_tradeorderon.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabb183eb97b7_01793873',
+  'unifunc' => 'content_5eae7e1bc4d277_51981662',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f6e03c885ed15387892417e862322a538f1664b8' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\apphome_tradeorderon.tpl',
-      1 => 1588310364,
+      1 => 1588493850,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eabb183eb97b7_01793873 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eae7e1bc4d277_51981662 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -276,13 +276,18 @@ function content_5eabb183eb97b7_01793873 (Smarty_Internal_Template $_smarty_tpl)
                 <div style="height: 60px;line-height: 60px;font-size: 16px;text-align: center;">
                     存单
                 </div>
-                <div style="height: 180px;width: 95%;background: #242426;border-radius: 12px;margin: 0 auto;">
-                    <div style="height: 75px;width: 100%;padding: 20px 3%;">
-                        <p style="color:#727679;">存单金额</p>
+                <div style="height: 120px;width: 95%;background: #242426;border-radius: 12px;margin: 0 auto;">
+                    <div style="height: 75px;width: 49%;padding: 20px 3%;display: inline-block;text-align: center;">
+                        <p style="color:#727679;">存单总额</p>
                         <p style="font-size: 40px;color: #BC9568;font-weight: bold;"><?php echo $_smarty_tpl->tpl_vars['moneya151']->value;?>
 </p>
                     </div>
-                    <div style="width:100%;">
+                    <div style="height: 75px;width: 49%;padding: 20px 3%;display: inline-block;text-align: center;">
+                        <p style="color:#727679">累积获得回报</p>
+                        <p style="font-size: 40px;color: #BC9568;"><?php echo $_smarty_tpl->tpl_vars['moneya152']->value;?>
+</p>
+                    </div>
+                    <!--div style="width:100%;">
                         <div style="width: 49%;padding: 15px 3%;display: inline-block">
                             <p style="color:#727679;margin-top: 16px;">昨日存单</p>
                             <p style="font-size: 24px;color: #BC9568;"><?php echo $_smarty_tpl->tpl_vars['zmoneya151']->value;?>
@@ -293,7 +298,7 @@ function content_5eabb183eb97b7_01793873 (Smarty_Internal_Template $_smarty_tpl)
                             <p style="font-size: 24px;color: #BC9568;"><?php echo $_smarty_tpl->tpl_vars['moneya152']->value;?>
 </p>
                         </div>
-                    </div>
+                    </div-->
                 </div>
                 <div style="height: 55px;line-height: 55px;padding: 0 3%;font-size: 16px;color: #B8B8B8;">
                     持有产品
@@ -321,8 +326,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['tradeorder']->value) {
                     </div>
                     <div>
 						<span style="font-size:12px;text-align:center;color:#727679;border-radius: 1px;min-width:7rem;padding: 5px;display:inline-block;position:absolute;right:.7rem;top: .6rem;">
-							数量：<?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['money'];?>
-
+							项目金额 <?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['money'];?>
+ 元
 						</span>
                     </div>
 
