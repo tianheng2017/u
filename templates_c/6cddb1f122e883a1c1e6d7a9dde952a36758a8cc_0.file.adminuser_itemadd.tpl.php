@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 14:12:23
+/* Smarty version 3.1.30, created on 2020-05-03 09:46:43
   from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_itemadd.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabbdc7c80f47_31330148',
+  'unifunc' => 'content_5eae228327d941_44257244',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6cddb1f122e883a1c1e6d7a9dde952a36758a8cc' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_itemadd.tpl',
-      1 => 1588313541,
+      1 => 1588470400,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eabbdc7c80f47_31330148 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eae228327d941_44257244 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -118,11 +118,14 @@ function content_5eabbdc7c80f47_31330148 (Smarty_Internal_Template $_smarty_tpl)
                                     <div class="row">
                                         <form class="col s12" id="dataform">
                                             <div class="row">
-                                                
 
                                                 <div class="input-field col s6">
                                                     <input id="username" name="item_name" type="text">
                                                     <label for="username">项目名称</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="price" name="price" type="text">
+                                                    <label for="price">项目金额</label>
                                                 </div>
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="" name="arate" type="text">
@@ -130,11 +133,7 @@ function content_5eabbdc7c80f47_31330148 (Smarty_Internal_Template $_smarty_tpl)
                                                 </div>
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="" name="day_num" type="text">
-                                                    <label for="passwordtwo">产品天数</label>
-                                                </div>
-												 <div class="input-field col s6">
-                                                    <input id="username" name="name" type="text">
-                                                    <label for="username">简称</label>
+                                                    <label for="passwordtwo">投资天数</label>
                                                 </div>
                                                 <div class="input-field col s6" style="display:;">
                                                     <input id="password" value="" name="desc" type="text">

@@ -79,11 +79,14 @@
                                     <div class="row">
                                         <form class="col s12" id="dataform">
                                             <div class="row">
-                                                
 
                                                 <div class="input-field col s6">
                                                     <input id="username" name="item_name" type="text">
                                                     <label for="username">项目名称</label>
+                                                </div>
+                                                <div class="input-field col s6">
+                                                    <input id="price" name="price" type="text">
+                                                    <label for="price">项目金额</label>
                                                 </div>
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="" name="arate" type="text">
@@ -91,11 +94,7 @@
                                                 </div>
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="" name="day_num" type="text">
-                                                    <label for="passwordtwo">产品天数</label>
-                                                </div>
-												 <div class="input-field col s6">
-                                                    <input id="username" name="name" type="text">
-                                                    <label for="username">简称</label>
+                                                    <label for="passwordtwo">投资天数</label>
                                                 </div>
                                                 <div class="input-field col s6" style="display:;">
                                                     <input id="password" value="" name="desc" type="text">

@@ -83,6 +83,10 @@
                                                     <input id="username" name="item_name" value="<{$data.item_name}>" type="text">
                                                     <label for="username">项目名称</label>
                                                 </div>
+                                                <div class="input-field col s6">
+                                                    <input id="price" name="price" value="<{$data.price}>" type="text">
+                                                    <label for="price">项目金额</label>
+                                                </div>
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="<{$data.arate}>" name="arate" type="text">
                                                     <label for="passwordtwo">年化率（%）</label>
@@ -90,10 +94,6 @@
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="<{$data.day_num}>" name="day_num" type="text">
                                                     <label for="passwordtwo">产品天数</label>
-                                                </div>
-												 <div class="input-field col s6">
-                                                    <input id="username" name="name" value="<{$data.name}>" type="text">
-                                                    <label for="username">简称</label>
                                                 </div>
                                                 <div class="input-field col s6" style="display:;">
                                                     <input id="password" value="<{$data.desc}>" name="desc" type="text">

@@ -152,10 +152,8 @@
                                         <th data-field="">投资人id</th>
 										<th data-field="">项目id</th>
 										<th data-field="">产品天数</th>
-										<th data-field="">返利比列</th>
 										<th data-field="">投资金额</th>
 										<th data-field="">返利金额</th>
-										
 										<th data-field="">存入时间</th>
                                       	<th data-field="">返利时间</th>
 										<th data-field="">返利状态</th>
@@ -175,10 +173,8 @@
 										<td class="tdtcenter"><{$datai['fuid']}></td>											
 										<td class="tdtcenter"><{$datai['item_id']}></td>
 										<td class="tdtcenter"><{$datai['day_num']}></td>
-										<td class="tdtcenter"><{$datai['bili']}></td>
 										<td class="tdtcenter"><{$datai['money']}></td>
 										<td class="tdtcenter"><{$datai['smoney']}></td>
-					
 										<td class="tdtcenter"><{$datai['time']}></td>
 										<td class="tdtcenter"><{$datai['stime']}></td>
 										<td class="tdtcenter"><{if $datai['status']==0}>

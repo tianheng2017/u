@@ -201,12 +201,12 @@
 					</div>
 					<div style="color: #727679;font-size: 14px;margin-top: 7px;">
 						<div style="display:inline-block;width: 49%;text-align: center;">
-							<span>推荐用户数</span>
+							<span>一级下线</span>
 							<span style="color: #fff;margin-left: 3px;"><{$countteaml1}> 人</span>
 						</div>
 						<div style="display:inline-block;width: 49%;text-align: center;">
-							<span>返利比例</span>
-							<span style="color: #fff;margin-left: 3px;"><{$proportion}> %</span>
+							<span>二级下线</span>
+							<span style="color: #fff;margin-left: 3px;"><{$countteaml2}> 人</span>
 						</div>
 					</div>
 				</div>
@@ -219,8 +219,8 @@
 									下级ID<{$tradeorder['uid']}>
 								</div>
 								<div style="width: 49%;font-size: 13px;color: #727679;text-align: right;display: inline-block;">
-									<span>购买数量</span>
-									<span STYLE="margin-left: 5px;"><{$tradeorder['money']}>USDT</span>
+									<span>项目金额</span>
+									<span STYLE="margin-left: 5px;"><{$tradeorder['money']}>元</span>
 								</div>
 							</div>
 							<div style="margin-top: 10px;">
@@ -229,7 +229,7 @@
 									<span><{$bili}>%</span>
 								</div>
 								<div style="width: 49%;font-size: 14px;color: #BC9568;text-align: right;display: inline-block;">
-									返利<{number_format($tradeorder['smoney']-$tradeorder['money'],2,'.','')}>USDT 享<{$fbili}>%复利
+									返利<{number_format($tradeorder['smoney']-$tradeorder['money'],2,'.','')}>元
 								</div>
 							</div>
 							

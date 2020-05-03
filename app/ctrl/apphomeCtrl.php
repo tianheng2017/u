@@ -112,6 +112,8 @@ class apphomeCtrl extends commonCtrl
         $item = self::DB()->query("SELECT * from `itemlist` where id ='".$id."'")->fetchAll();
 		$uinfo = self::DB()->select("user",['money'],['id'=>$_SESSION['userinfo']['id']]);
 		$day = date('Y.m.d',(time() + ($item[0]['day_num'] * 86400)));
+		$yqsy = round($item[0]['day_num'] * $item[0]['arate']/100/365 * $item[0]['price'],4);
+        $this->assign('yqsy',$yqsy);
         $this->assign('item',$item[0]);
 		$this->assign('day',$day);
 		$this->assign('uinfo',$uinfo[0]);
@@ -120,22 +122,19 @@ class apphomeCtrl extends commonCtrl
 	
 	public function itemstartdo()
     {
-		$money = $_POST['money'];
 		$id = $_POST['id'];
-		if (!is_numeric($money) || $money < 100 || $money > 1000000) {
-            error(-1001 , "存入金额有误");
-        }
 		$uinfo = self::DB()->select("user",['money','id','superioruid'],['id'=>$_SESSION['userinfo']['id']]);
 		$uinfo = $uinfo[0];
-		if($money > $uinfo['money']){
+        $item = self::DB()->select("itemlist","*",['id[=]'=>$id]);
+        $item = $item[0];
+		if($item['price'] > $uinfo['money']){
 			error(-1002 , "余额不足");
 		}
-		$item = self::DB()->select("itemlist","*",['id[=]'=>$id]);
-		$item = $item[0];
+
 		$insert_id = self::DB()->insert("itemlog", [
 			"uid" => $uinfo['id'],
-			"money" => $money,
-			"smoney" => $money * (1 + $item['arate']/100/365 * $item['day_num']),
+			"money" => $item['price'],
+			"smoney" => $item['price'] * (1 + $item['arate']/100/365 * $item['day_num']),
 			"item_id" => $item['id'],
 			"arate" => $item['arate'],
 			"day_num" => $item['day_num'],
@@ -147,14 +146,14 @@ class apphomeCtrl extends commonCtrl
             Db::startTrans();
             try {
                 if($uinfo['superioruid'] != 0){
-                    if (($money >= 1000) && ($money % 1000 == 0)){
+                    if (($item['price'] >= 1000) && ($item['price'] % 1000 == 0)){
                         $yjjl = intval(self::$webconfig['yjjl']['val'])/100;
                         Itemlogp::create([
                             "item_no" => $insert_id,
                             "uid" => $uinfo['superioruid'],
                             "fuid" => $uinfo['id'],
-                            "money" => $money,
-                            "smoney" => $money * $item['arate']/100/365 * $item['day_num'] * $yjjl,
+                            "money" => $item['price'],
+                            "smoney" => $item['price'] * $item['arate']/100/365 * $item['day_num'] * $yjjl,
                             "item_id" => $item['id'],
                             "lown" => 1,
                             "jlbl" => $yjjl,
@@ -163,7 +162,7 @@ class apphomeCtrl extends commonCtrl
                             "status" => 0
                         ]);
                     }
-                    if ($money >= 1000){
+                    if ($item['price'] >= 1000){
                         $uinfo2 = User::where('id', $uinfo['superioruid'])->field('money,id,superioruid')->find();
                         if($uinfo2['superioruid'] != 0){
                             $ejjl = intval(self::$webconfig['ejjl']['val'])/100;
@@ -171,8 +170,8 @@ class apphomeCtrl extends commonCtrl
                                 "item_no" => $insert_id,
                                 "uid" => $uinfo2['superioruid'],
                                 "fuid" => $uinfo['id'],
-                                "money" => $money,
-                                "smoney" => $money * $item['arate']/100/365 * $item['day_num'] * $ejjl,
+                                "money" => $item['price'],
+                                "smoney" => $item['price'] * $item['arate']/100/365 * $item['day_num'] * $ejjl,
                                 "item_id" => $item['id'],
                                 "lown" => 2,
                                 "jlbl" => $ejjl,
@@ -183,7 +182,7 @@ class apphomeCtrl extends commonCtrl
                         }
                     }
                 }
-                User::update(['money' => Db::raw('money-'.$money)], ['id' => $uinfo['id']]);
+                User::update(['money' => Db::raw('money-'.$item['price'])], ['id' => $uinfo['id']]);
                 Db::commit();
             } catch (\Exception $e) {
                 Db::rollback();
@@ -191,7 +190,7 @@ class apphomeCtrl extends commonCtrl
             }
 
 			$mpcontent = '项目投资';
-			OrderModel::insertMoneypath($uinfo['id'],$money,"151",$mpcontent,$id);
+			OrderModel::insertMoneypath($uinfo['id'],$item['price'],"151",$mpcontent,$id);
 			$_SESSION['itemlog_id'] = $insert_id;
 			success(1000 , "存入成功");
 		} else {

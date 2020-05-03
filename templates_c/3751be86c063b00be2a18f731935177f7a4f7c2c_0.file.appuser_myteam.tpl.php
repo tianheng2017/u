@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 13:14:44
+/* Smarty version 3.1.30, created on 2020-05-03 11:59:24
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_myteam.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabb044748509_77585624',
+  'unifunc' => 'content_5eae419cdb4d38_56009510',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3751be86c063b00be2a18f731935177f7a4f7c2c' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_myteam.tpl',
-      1 => 1578922090,
+      1 => 1588478362,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eabb044748509_77585624 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eae419cdb4d38_56009510 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -244,14 +244,14 @@ function content_5eabb044748509_77585624 (Smarty_Internal_Template $_smarty_tpl)
 					</div>
 					<div style="color: #727679;font-size: 14px;margin-top: 7px;">
 						<div style="display:inline-block;width: 49%;text-align: center;">
-							<span>推荐用户数</span>
+							<span>一级下线</span>
 							<span style="color: #fff;margin-left: 3px;"><?php echo $_smarty_tpl->tpl_vars['countteaml1']->value;?>
  人</span>
 						</div>
 						<div style="display:inline-block;width: 49%;text-align: center;">
-							<span>返利比例</span>
-							<span style="color: #fff;margin-left: 3px;"><?php echo $_smarty_tpl->tpl_vars['proportion']->value;?>
- %</span>
+							<span>二级下线</span>
+							<span style="color: #fff;margin-left: 3px;"><?php echo $_smarty_tpl->tpl_vars['countteaml2']->value;?>
+ 人</span>
 						</div>
 					</div>
 				</div>
@@ -269,9 +269,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['tradeorder']->value) {
 
 								</div>
 								<div style="width: 49%;font-size: 13px;color: #727679;text-align: right;display: inline-block;">
-									<span>购买数量</span>
+									<span>项目金额</span>
 									<span STYLE="margin-left: 5px;"><?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['money'];?>
-USDT</span>
+元</span>
 								</div>
 							</div>
 							<div style="margin-top: 10px;">
@@ -282,8 +282,7 @@ USDT</span>
 								</div>
 								<div style="width: 49%;font-size: 14px;color: #BC9568;text-align: right;display: inline-block;">
 									返利<?php echo number_format($_smarty_tpl->tpl_vars['tradeorder']->value['smoney']-$_smarty_tpl->tpl_vars['tradeorder']->value['money'],2,'.','');?>
-USDT 享<?php echo $_smarty_tpl->tpl_vars['fbili']->value;?>
-%复利
+元
 								</div>
 							</div>
 							

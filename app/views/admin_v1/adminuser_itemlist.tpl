@@ -148,19 +148,16 @@
                                     <tr>
 										<th data-field="">ID</th>
                                         <th data-field="">项目名称</th>
-										<th data-field="">语言</th>
-										<th data-field="">年化率</th>
+										<th data-field="">项目金额</th>
+										<th data-field="">年化收益</th>
 										<th data-field="">产品天数</th>
                                         <th data-field="">赠送优惠券</th>
-										<th data-field="">简称</th>
 										<th data-field="">收益规则</th>
 										<th data-field="">存入规则</th>
                                       	<th data-field="">存入时间</th>
 										<th data-field="">取出时间</th>								
 										<th data-field="">添加时间</th>
 										<th data-field="">操作</th>
-										
-										
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -168,55 +165,25 @@
                                     <tr class="usertr<{$datai['id']}>">
 										<td class="tdtcenter"><{$datai['id']}></td>
 										<td class="tdtcenter"><{$datai['item_name']}></td>
-										<td class="tdtcenter"><{if $datai['type']==1}>
-											<span style="background: #87dde6;color:#fff;padding: 4px 10px;border-radius: 2px;">	中文</span>
-											<{/if}>
-											<{if $datai['type']==2}>
-											<span style="background: #00bcd4;color:#fff;padding: 4px 10px;border-radius: 2px;">	英文</span>
-											<{/if}>
-                                        </td>
+										<td class="tdtcenter"><{$datai['price']}></td>
 										<td class="tdtcenter"><{$datai['arate']}>%</td>
 										<td class="tdtcenter"><{$datai['day_num']}>天</td>
                                         <td class="tdtcenter"><{$datai['coupon']}>元</td>
-										<td class="tdtcenter"><{$datai['name']}></td>
 										<td class="tdtcenter"><{$datai['rrule']}></td>
 										<td class="tdtcenter"><{$datai['srule']}></td>
 										<td class="tdtcenter"><{$datai['deposit_time']}></td>
                                         <td class="tdtcenter"><{$datai['sec_time']}></td>
-										
-										
 										<td class="tdtcenter"><{$datai['time']}></td>
-										
-									
-										
-										
                                         <td class="tdtcenter">
-											
-									
 											<a href="<{WSURLSHOW($WsCtrlClass,'itemedit')}>/id/<{$datai['id']}>/" class="purple lighten-2 waves-effect waves-light btn modal-trigger  light-blue">编辑</a>			
-										<!-- 	<div onclick="sendmoneyidM('<{$datai['id']}>')" class="orange darken-1 waves-effect waves-light btn modal-trigger  light-blue" href="#modal3">删除</div> -->			
-	
+										<!-- 	<div onclick="sendmoneyidM('<{$datai['id']}>')" class="orange darken-1 waves-effect waves-light btn modal-trigger  light-blue" href="#modal3">删除</div> -->
 										</td>
-										
-										
                                     </tr>
                                     <{/foreach}>
                                     </tbody>
                                 </table>
-								
-								
-								
 								</form>
-								
-								
-                                
-
-
 								<{include file="public/pagination.tpl"}>
-
-
-
-
 							<!-- 	<div>
 								<br><br><br>
 								截止<{date("Y-m-d",time())}>，共注册：<span style="color: #E31;"><{$allusernumber}></span>个用户， 
@@ -224,8 +191,6 @@
 								
 								</div> -->
                             </div>
-
-
                         </div>
                     </div>
                     <!--card stats end-->

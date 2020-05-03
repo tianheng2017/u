@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 14:13:53
+/* Smarty version 3.1.30, created on 2020-05-03 09:50:49
   from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_itemedit.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabbe211393d0_06298345',
+  'unifunc' => 'content_5eae237935be53_96711152',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ff352f8a6c8efae8bce7cfa6624b1eaff005772b' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_itemedit.tpl',
-      1 => 1588313541,
+      1 => 1588470515,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eabbe211393d0_06298345 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eae237935be53_96711152 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -123,6 +123,11 @@ function content_5eabbe211393d0_06298345 (Smarty_Internal_Template $_smarty_tpl)
 " type="text">
                                                     <label for="username">项目名称</label>
                                                 </div>
+                                                <div class="input-field col s6">
+                                                    <input id="price" name="price" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['price'];?>
+" type="text">
+                                                    <label for="price">项目金额</label>
+                                                </div>
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['arate'];?>
 " name="arate" type="text">
@@ -132,11 +137,6 @@ function content_5eabbe211393d0_06298345 (Smarty_Internal_Template $_smarty_tpl)
                                                     <input id="passwordtwo" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['day_num'];?>
 " name="day_num" type="text">
                                                     <label for="passwordtwo">产品天数</label>
-                                                </div>
-												 <div class="input-field col s6">
-                                                    <input id="username" name="name" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['name'];?>
-" type="text">
-                                                    <label for="username">简称</label>
                                                 </div>
                                                 <div class="input-field col s6" style="display:;">
                                                     <input id="password" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['desc'];?>

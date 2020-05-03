@@ -1648,8 +1648,11 @@ class appuserCtrl extends commonCtrl
 		
 		$countteaml1 = self::DB()->query("SELECT COUNT(*) countteaml1 FROM `regpath` WHERE uid='".self::$myuserinfo['id']."' and lown=1 ")->fetchAll();
 		$countteaml1 = $countteaml1[0]['countteaml1']?: 0;
-		
 		$this->assign('countteaml1',$countteaml1);
+
+        $countteaml2 = self::DB()->query("SELECT COUNT(*) countteaml1 FROM `regpath` WHERE uid='".self::$myuserinfo['id']."' and lown=2 ")->fetchAll();
+        $countteaml2 = $countteaml2[0]['countteaml2']?: 0;
+        $this->assign('countteaml2',$countteaml2);
 
         $moneya153 = self::DB()->query("SELECT SUM(money) summoney FROM moneypath where mtype = 153 and  uid = '".$_SESSION['userinfo']['id']."'")->fetchAll();
         $teamfanli = $moneya153[0]['summoney']?: 0;

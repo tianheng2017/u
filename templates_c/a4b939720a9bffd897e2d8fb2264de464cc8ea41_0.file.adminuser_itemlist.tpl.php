@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 14:18:37
+/* Smarty version 3.1.30, created on 2020-05-03 09:58:46
   from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_itemlist.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabbf3dbeacc8_76353239',
+  'unifunc' => 'content_5eae2556893226_33485205',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a4b939720a9bffd897e2d8fb2264de464cc8ea41' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_itemlist.tpl',
-      1 => 1588313916,
+      1 => 1588471123,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eabbf3dbeacc8_76353239 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eae2556893226_33485205 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -190,19 +190,16 @@ function content_5eabbf3dbeacc8_76353239 (Smarty_Internal_Template $_smarty_tpl)
                                     <tr>
 										<th data-field="">ID</th>
                                         <th data-field="">项目名称</th>
-										<th data-field="">语言</th>
-										<th data-field="">年化率</th>
+										<th data-field="">项目金额</th>
+										<th data-field="">年化收益</th>
 										<th data-field="">产品天数</th>
                                         <th data-field="">赠送优惠券</th>
-										<th data-field="">简称</th>
 										<th data-field="">收益规则</th>
 										<th data-field="">存入规则</th>
                                       	<th data-field="">存入时间</th>
 										<th data-field="">取出时间</th>								
 										<th data-field="">添加时间</th>
 										<th data-field="">操作</th>
-										
-										
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -217,21 +214,14 @@ foreach ($_from as $_smarty_tpl->tpl_vars['datai']->value) {
 </td>
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['item_name'];?>
 </td>
-										<td class="tdtcenter"><?php if ($_smarty_tpl->tpl_vars['datai']->value['type'] == 1) {?>
-											<span style="background: #87dde6;color:#fff;padding: 4px 10px;border-radius: 2px;">	中文</span>
-											<?php }?>
-											<?php if ($_smarty_tpl->tpl_vars['datai']->value['type'] == 2) {?>
-											<span style="background: #00bcd4;color:#fff;padding: 4px 10px;border-radius: 2px;">	英文</span>
-											<?php }?>
-                                        </td>
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['price'];?>
+</td>
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['arate'];?>
 %</td>
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['day_num'];?>
 天</td>
                                         <td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['coupon'];?>
 元</td>
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['name'];?>
-</td>
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['rrule'];?>
 </td>
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['srule'];?>
@@ -240,26 +230,15 @@ foreach ($_from as $_smarty_tpl->tpl_vars['datai']->value) {
 </td>
                                         <td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['sec_time'];?>
 </td>
-										
-										
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['time'];?>
 </td>
-										
-									
-										
-										
                                         <td class="tdtcenter">
-											
-									
 											<a href="<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'itemedit');?>
 /id/<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
 /" class="purple lighten-2 waves-effect waves-light btn modal-trigger  light-blue">编辑</a>			
 										<!-- 	<div onclick="sendmoneyidM('<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
-')" class="orange darken-1 waves-effect waves-light btn modal-trigger  light-blue" href="#modal3">删除</div> -->			
-	
+')" class="orange darken-1 waves-effect waves-light btn modal-trigger  light-blue" href="#modal3">删除</div> -->
 										</td>
-										
-										
                                     </tr>
                                     <?php
 }
@@ -269,21 +248,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
                                     </tbody>
                                 </table>
-								
-								
-								
 								</form>
-								
-								
-                                
-
-
 								<?php $_smarty_tpl->_subTemplateRender("file:public/pagination.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-
-
-
-
 
 							<!-- 	<div>
 								<br><br><br>
@@ -296,8 +263,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 								
 								</div> -->
                             </div>
-
-
                         </div>
                     </div>
                     <!--card stats end-->

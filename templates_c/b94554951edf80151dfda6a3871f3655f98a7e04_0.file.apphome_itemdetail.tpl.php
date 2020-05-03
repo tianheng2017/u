@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 14:37:25
+/* Smarty version 3.1.30, created on 2020-05-03 11:08:00
   from "E:\u.xiangxin.me\app\views\app_cn_v1\apphome_itemdetail.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabc3a51193a5_60622696',
+  'unifunc' => 'content_5eae35900b9e53_30213509',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b94554951edf80151dfda6a3871f3655f98a7e04' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\apphome_itemdetail.tpl',
-      1 => 1588314747,
+      1 => 1588475275,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eabc3a51193a5_60622696 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eae35900b9e53_30213509 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -228,28 +228,34 @@ function content_5eabc3a51193a5_60622696 (Smarty_Internal_Template $_smarty_tpl)
 				</div>
 				<div style="padding:88px 15px 50px;border-bottom: 5px solid #242426;">
 					<div>
-						<div style="display:inline-block;width: 49%;text-align: left;color: #727679;font-size: 13px;">
-							年化收益率
+						<div style="display:inline-block;width: 32%;text-align: left;color: #727679;font-size: 13px;">
+							项目金额
 						</div>
-						<div style="display:inline-block;width: 49%;text-align: left;color: #727679;font-size: 13px;">
+						<div style="display:inline-block;width: 32%;text-align: left;color: #727679;font-size: 13px;">
+							年化收益
+						</div>
+						<div style="display:inline-block;width: 32%;text-align: left;color: #727679;font-size: 13px;">
 							产品期限
 						</div>
 					</div>
 					<div style="margin-top: 5px;">
-						<div style="font-size:30px;display:inline-block;width: 49%;text-align: left;color: #BD966A;">
+						<div style="font-size:28px;display:inline-block;width: 32%;text-align: left;color: #BD966A;">
+							<?php echo $_smarty_tpl->tpl_vars['item']->value['price'];?>
+
+						</div>
+						<div style="font-size:28px;display:inline-block;width: 32%;text-align: left;color: #FFF;">
 							<?php echo $_smarty_tpl->tpl_vars['item']->value['arate'];?>
 %
 						</div>
-						<div style="font-size:30px;display:inline-block;width: 49%;text-align: left;color: #FFF;">
+						<div style="font-size:28px;display:inline-block;width: 32%;text-align: left;color: #FFF;">
 							<?php echo $_smarty_tpl->tpl_vars['item']->value['day_num'];?>
 天
 						</div>
 					</div>
 					<div style="margin-top: 10px;">
 						<ul class="ul1">
-							<li>储存存款</li>
-							<li>储存存款</li>
-							<li>储存存款</li>
+							<li>高收益</li>
+							<li>低风险</li>
 						</ul>
 					</div>
 				</div>
@@ -294,17 +300,16 @@ function content_5eabc3a51193a5_60622696 (Smarty_Internal_Template $_smarty_tpl)
 					</div>
 					<div>
 						<ul class="ul2">
-							<li>USDT定存是为投资用户提供的加密资产增值服务产品，用户存入后不可撤销，到期前不可取出</li>
+							<li>用户存入后不可撤销，到期前不可取出</li>
 							<li>收益规则：当日存入，次日确认后开始计息</li>
 							<li>取出时间：到期后利息连同本金自动转入账户余额</li>
 							<li>到账时间：当日取出，当日到账</li>
-							<li>备注：根据市场情况，定期利率略有波动，收益按照存入时利率计算</li>
 						</ul>
 					</div>
 				</div>
 				<div style="width: 100%;background: #2C2C2E;height: 97px;position: fixed;bottom: 0;">
 					<button id="start" style="cursor:pointer;font-size:18px;width:90%;color:#fff;background:linear-gradient(128deg,rgba(223,199,161,1) 0%,rgba(188,149,104,1) 100%);
-box-shadow:0px 6px 21px 0px rgba(191,153,109,0.1);border-radius:4px;height: 50px;margin: 20px auto;position: fixed;bottom: 0;border: unset;left: 5%;">立即存入</button>
+box-shadow:0px 6px 21px 0px rgba(191,153,109,0.1);border-radius:4px;height: 50px;margin: 20px auto;position: fixed;bottom: 0;border: unset;left: 5%;">立即买入</button>
 				</div>
 			</div>
         </div>

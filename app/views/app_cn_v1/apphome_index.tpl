@@ -264,45 +264,21 @@
                         </div>
                         <div style="margin-top: 10px;">
                             <span style="text-align:left;width:49%;display:inline-block;font-size:24px;font-family:DINAlternate-Bold,DINAlternate;font-weight:bold;color:rgba(188,149,104,1);">
-                                <{$order['arate']}>%
+                                <{$order['price']}>元
                             </span>
-                            <span style="text-align:center;width:49%;display:inline-block;color: #cccccc;font-size:14px;">
-                                <{$order['name']}>
+                            <span style="text-align:center;width:49%;display:inline-block;color: #cccccc;font-size:18px;">
+                                <{$order['arate']}>%
                             </span>
                         </div>
                         <div style="margin: 5px 0 10px;">
                             <span style="text-align:left;color:#727679;font-size:12px;width:49%;display:inline-block;">
-                                年化收益率
+                                项目金额
                             </span>
                             <span style="text-align:center;color:#727679;font-size:12px;width:49%;display:inline-block;">
-                                高收益 低风险 300元起投
+                                年化收益率
                             </span>
                         </div>
                     </div>
-                    <!--div class="coininfodivlay2" id="<{$order['id']}>" onclick="join(this);">
-                        <div style="position: absolute;top: 20px;left: 25px;">
-                            <div class="coininfotxt3" style="text-align: left;width: 100%;">
-                                <i style="font-size: 16px;color:#fff;">
-                                    <{$order['day_num']}>天 | <{$order['item_name']}>
-                                </i>
-                            </div>
-                            <div class="coininfotxt4"
-                                 style="text-align: left;width: 100%;margin-left: 0;color: #A8A8A7;margin-top: 1.3rem;font-size: 13px;">
-                                <{$order['name']}>
-                            </div>
-                        </div>
-                        <div style="right: 30px;text-align: right;">
-                            <div class="coininfotxtdiv">
-                                <div class="coininfotxt1" style="color:#D4AF37;font-size: 24px;">
-                                    <{$order['arate']}>%
-                                </div>
-                                <div class="coininfotxt2"
-                                     style="color:#A8A8A7;font-size: 13px;margin-top: 1.6rem;overflow:unset;">
-                                    年化收益率
-                                </div>
-                            </div>
-                        </div>
-                    </div-->
                     <{/foreach}>
                 </div>
             </div>

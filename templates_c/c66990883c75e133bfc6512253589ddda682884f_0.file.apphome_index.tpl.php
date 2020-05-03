@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 12:57:43
+/* Smarty version 3.1.30, created on 2020-05-03 11:35:45
   from "E:\u.xiangxin.me\app\views\app_cn_v1\apphome_index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabac47f0c176_58926212',
+  'unifunc' => 'content_5eae3c11500f15_07054552',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c66990883c75e133bfc6512253589ddda682884f' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\apphome_index.tpl',
-      1 => 1578403974,
+      1 => 1588476943,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eabac47f0c176_58926212 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eae3c11500f15_07054552 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -330,52 +330,23 @@ foreach ($_from as $_smarty_tpl->tpl_vars['order']->value) {
                         </div>
                         <div style="margin-top: 10px;">
                             <span style="text-align:left;width:49%;display:inline-block;font-size:24px;font-family:DINAlternate-Bold,DINAlternate;font-weight:bold;color:rgba(188,149,104,1);">
+                                <?php echo $_smarty_tpl->tpl_vars['order']->value['price'];?>
+元
+                            </span>
+                            <span style="text-align:center;width:49%;display:inline-block;color: #cccccc;font-size:18px;">
                                 <?php echo $_smarty_tpl->tpl_vars['order']->value['arate'];?>
 %
-                            </span>
-                            <span style="text-align:center;width:49%;display:inline-block;color: #cccccc;font-size:14px;">
-                                <?php echo $_smarty_tpl->tpl_vars['order']->value['name'];?>
-
                             </span>
                         </div>
                         <div style="margin: 5px 0 10px;">
                             <span style="text-align:left;color:#727679;font-size:12px;width:49%;display:inline-block;">
-                                年化收益率
+                                项目金额
                             </span>
                             <span style="text-align:center;color:#727679;font-size:12px;width:49%;display:inline-block;">
-                                高收益 低风险 300元起投
+                                年化收益率
                             </span>
                         </div>
                     </div>
-                    <!--div class="coininfodivlay2" id="<?php echo $_smarty_tpl->tpl_vars['order']->value['id'];?>
-" onclick="join(this);">
-                        <div style="position: absolute;top: 20px;left: 25px;">
-                            <div class="coininfotxt3" style="text-align: left;width: 100%;">
-                                <i style="font-size: 16px;color:#fff;">
-                                    <?php echo $_smarty_tpl->tpl_vars['order']->value['day_num'];?>
-天 | <?php echo $_smarty_tpl->tpl_vars['order']->value['item_name'];?>
-
-                                </i>
-                            </div>
-                            <div class="coininfotxt4"
-                                 style="text-align: left;width: 100%;margin-left: 0;color: #A8A8A7;margin-top: 1.3rem;font-size: 13px;">
-                                <?php echo $_smarty_tpl->tpl_vars['order']->value['name'];?>
-
-                            </div>
-                        </div>
-                        <div style="right: 30px;text-align: right;">
-                            <div class="coininfotxtdiv">
-                                <div class="coininfotxt1" style="color:#D4AF37;font-size: 24px;">
-                                    <?php echo $_smarty_tpl->tpl_vars['order']->value['arate'];?>
-%
-                                </div>
-                                <div class="coininfotxt2"
-                                     style="color:#A8A8A7;font-size: 13px;margin-top: 1.6rem;overflow:unset;">
-                                    年化收益率
-                                </div>
-                            </div>
-                        </div>
-                    </div-->
                     <?php
 }
 }

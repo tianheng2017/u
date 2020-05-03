@@ -151,37 +151,31 @@
 				<div class="coininfodivlay" style="width:100%;margin-top: 70px!important;height: 133px!important;border-top:unset;border-bottom: 14px solid #242426;">
 					<div style="padding: 0 0 15px 0;">
 						<div style="display: inline-block;font-size: 18px;"><{$item['item_name']}></div>
-						<div style="display: inline-block;position: absolute;right: 20px;color: #727272;font-size: 16px;top: 20px;">年化收益率：<span id="nhnl"><{$item.arate}></span>%</div>
+						<div style="display: inline-block;position: absolute;right: 20px;color: #727272;font-size: 16px;top: 20px;">年化收益率：<span><{$item.arate}></span>%</div>
 						<span id="day_num" style="display: none"><{$item.day_num}></span>
 					</div>
 					<div style="padding-top: 10px;">
 						<div style="display: inline-block;color: #727272;font-size: 16px;">可用余额</div>
 						<div style="display: inline-block;position: absolute;right: 20px;color: #727272;font-size: 16px;">
-							<span id="user_money"><{$uinfo.money}></span>
+							<span><{$uinfo.money}></span>
 							<span> 元</span>
 							<button id="recharge" style="cursor:pointer;width: 70px;height:26px;line-height:26px;display: inline-block;color:#8E929F;border-radius:4px;border:1px solid rgba(151,151,151,0.1);font-size: 14px;margin-left: 5px;">充值</button>
 						</div>
 					</div>
 				</div>
-				<div class="coininfodivlay" style="width:100%;margin-top:10px!important;height: 183px!important;border: unset;">
-					<div style="position: relative;">
-						<div style="position: absolute;">
-							<p style="width:100%;font-size: 16px;line-height: 30px;">交易规则</p>
-							<input style="color: #fff;font-size: 18px;height: 50px;line-height: 50px;" type="text" id="money" placeholder="请输入存入金额" onkeyup="value=value.replace(/^\D*(\d*(?:\.\d{0,4})?).*$/g, '$1')">
-						</div>
-						<div style="position: absolute;top: 45px;right: 10px;font-size: 16px;">
-							<span style="color: #727272;">元</span>
-							<span style="color: #BD9669;margin-left: 15px;cursor: pointer;" id="all">全部</span>
-						</div>
-					</div>
-					<div style="margin-top: 80px;font-size: 16px;padding: 15px 0 0 0;border-top: 1px solid #333333;">
+				<div class="coininfodivlay" style="width:100%;margin-top:10px!important;height: 153px!important;border: unset;">
+					<div style="font-size: 16px;padding: 15px 0 0 0;">
 						<div>
-							<p style="position: absolute;color: #727272;">预期到账收益:</p>
-							<p style="position: absolute;right: 20px;color: #727272;" id="yqsy">0 元</p>
+							<p style="position: absolute;color: #727272;">项目金额:</p>
+							<p style="position: absolute;right: 20px;color: #727272;"><{$item['price']}> 元</p>
 						</div>
 						<div>
-							<p style="position: absolute;color: #727272;margin-top: 30px;">到期日期:</p>
-							<p style="position: absolute;right: 20px;margin-top: 30px;color: #727272;"><{$day}></p>
+							<p style="position: absolute;color: #727272;margin-top: 30px;">预期到账收益:</p>
+							<p style="position: absolute;right: 20px;color: #727272;margin-top: 30px;"><{$yqsy}> 元</p>
+						</div>
+						<div>
+							<p style="position: absolute;color: #727272;margin-top: 60px;">到期日期:</p>
+							<p style="position: absolute;right: 20px;margin-top: 60px;color: #727272;"><{$day}></p>
 						</div>
 					</div>
 				</div>
@@ -189,13 +183,10 @@
 						<p style="width:100%;font-size: 16px;line-height: 30px;margin-bottom: 10px;">温馨提示</p>
 						<ul class="ul1">
 							<li style="text-align: left;width: 100%;margin-bottom: 10px;color: #727679;">
-								<p style="display: inline-block;width: 90%;">单笔存入限额 100-1000000 元。</p>
+								<p style="display: inline-block;width: 90%;">存入时间按UTC+8时间计算，当日存入，次日0点计息。</p>
 							</li>
 							<li style="text-align: left;width: 100%;margin-bottom: 10px;color: #727679;">
-								<p style="display: inline-block;width: 90%;">存币时间按UTC+8时间计算，当日存入，次日0点计息。</p>
-							</li>
-							<li style="text-align: left;width: 100%;margin-bottom: 10px;color: #727679;">
-								<p style="display: inline-block;width: 90%;">定期存入不支持提前支取，存币到期后，本金+利息将自动转入余额。</p>
+								<p style="display: inline-block;width: 90%;">定期存入不支持提前支取，到期后，本金+利息将自动转入余额。</p>
 							</li>
 						</ul>
 					</div>
@@ -215,54 +206,20 @@ box-shadow:0px 6px 21px 0px rgba(191,153,109,0.1);border-radius:4px;height: 50px
 <script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/scrollmenu.js"></script>
 <script src='<{VIEW_ROOTPATH}>/assets/alert/js/alert.js'></script>
 <script type="text/javascript">
-	$('#all').on('click',function () {
-		var user_money = parseFloat($('#user_money').text());
-		$("#money").val(user_money);
-		clac();
-	});
-	$('#money').keyup(function () {
-		clac();
-	});
-	function clac(){
-		var money = parseFloat($("#money").val());
-		var nhnl = parseFloat($('#nhnl').text());
-		var day_num = parseInt($('#day_num').text());
-		if (money){
-			$('#yqsy').text((day_num * nhnl/100)/365*money);
-		}else{
-			$('#yqsy').text(0);
-		}
-	}
 	$('#recharge').on('click',function () {
 		window.location = '/appuser/recharge';
 	});
 	$('#start').on('click',function () {
-		var money = $("#money").val();
 		var id = <{$item.id}>;
 		var options = {
 			url: "<{WSURLSHOW($WsCtrlClass,'itemstartdo')}>",
 			type: 'post',
 			dataType: 'json',
-			data:{id:id,money:money},
+			data:{id:id},
 			success: function (data) {
 				if (data['code'] == "1000") {
 					self.location = "<{WSURLSHOW($WsCtrlClass,'itemsuccess')}>";
-					//wu.showMessage({
-					//	title: "存入成功！",
-					//	backgroundColor: '#09f',
-					//	duration: 3000
-					//});
-					//setTimeout(function(){
-						//self.location = "<{WSURLSHOW($WsCtrlClass,'index')}>";
-					//},3000);
 				} else {
-					if (data['code'] == "-1001") {
-						wu.showMessage({
-							title: "存入金额有误",
-							backgroundColor: 'red',
-							duration: 3000
-						});
-					}
 					if (data['code'] == "-1002") {
 						wu.showMessage({
 							title: "余额不足",

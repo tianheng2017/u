@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 14:01:00
+/* Smarty version 3.1.30, created on 2020-05-03 11:27:14
   from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_itemlogp.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabbb1cb5b5c3_42007957',
+  'unifunc' => 'content_5eae3a12c8fb17_68580250',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'aeb604ab1e59c2559da8435ded59557d7c6382fe' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_itemlogp.tpl',
-      1 => 1577708538,
+      1 => 1588476433,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eabbb1cb5b5c3_42007957 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eae3a12c8fb17_68580250 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -194,10 +194,8 @@ function content_5eabbb1cb5b5c3_42007957 (Smarty_Internal_Template $_smarty_tpl)
                                         <th data-field="">投资人id</th>
 										<th data-field="">项目id</th>
 										<th data-field="">产品天数</th>
-										<th data-field="">返利比列</th>
 										<th data-field="">投资金额</th>
 										<th data-field="">返利金额</th>
-										
 										<th data-field="">存入时间</th>
                                       	<th data-field="">返利时间</th>
 										<th data-field="">返利状态</th>
@@ -228,13 +226,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['datai']->value) {
 </td>
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['day_num'];?>
 </td>
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['bili'];?>
-</td>
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['money'];?>
 </td>
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['smoney'];?>
 </td>
-					
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['time'];?>
 </td>
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['stime'];?>

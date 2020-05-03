@@ -260,13 +260,16 @@ class adminuserCtrl extends commonCtrl
 	
 	public function itemedit_do()
 	{
-//        $res = self::DB()->query("SELECT count(*) num from `itemlist` where isty=1")->fetchAll()[0]['num'];
-//        if (post('isty') == 1 && $res>0){
-//            echo "新手体验金项目只能存在一个";exit;
-//        }
+        $res = self::DB()->query("SELECT count(*) num from `itemlist` where isty=1")->fetchAll()[0]['num'];
+        if (post('isty') == 1 && $res>0){
+            echo "新手体验金项目只能存在一个";exit;
+        }
+        if (intval(post('price')) == 0){
+            echo "请设置项目金额";exit;
+        }
 		$res = self::DB()->update("itemlist",[
 			"item_name" => post('item_name'),
-			"type" => post('type'),
+            "price" => post('price'),
 			"arate" => post('arate'),
 			"day_num" => post('day_num'),
 			"name" => post('name'),
@@ -297,9 +300,12 @@ class adminuserCtrl extends commonCtrl
         if (post('isty') == 1 && $res>0){
             echo "新手体验金项目只能存在一个";exit;
         }
+        if (intval(post('price')) == 0){
+            echo "请设置项目金额";exit;
+        }
 		$last_insert_id = self::DB()->insert("itemlist", [
 				"item_name" => post('item_name'),
-				"type" => post('type'),
+				"price" => post('price'),
 				"arate" => post('arate'),
 				"day_num" => post('day_num'),
 				"name" => post('name'),
@@ -333,9 +339,9 @@ class adminuserCtrl extends commonCtrl
 			$data[$i]['time'] = date('Y-m-d H:i:s',$data[$i]['time']);
 			$data[$i]['stime'] = date('Y-m-d H:i:s',$data[$i]['stime']);
 			if ($data[$i]['isty']){
-                $data[$i]['lx'] = number_format($data[$i]['smoney'], 2, '.', '');
+                $data[$i]['lx'] = number_format($data[$i]['smoney'], 4, '.', '');
             }else{
-                $data[$i]['lx'] = number_format($data[$i]['smoney'] - $data[$i]['money'], 2, '.', '');
+                $data[$i]['lx'] = number_format($data[$i]['smoney'] - $data[$i]['money'], 4, '.', '');
             }
 		}
 		$sqlall="SELECT id FROM `itemlog`";
@@ -360,10 +366,8 @@ class adminuserCtrl extends commonCtrl
 		for($i=0;$i<count($data);$i++){
 			$data[$i]['time'] = date('Y-m-d H:i:s',$data[$i]['time']);
 			$data[$i]['stime'] = date('Y-m-d H:i:s',$data[$i]['stime']);
-			//$info = self::DB()->query("select username FROM `user` where id = ".$v['uid'])->fetchAll();
-			//$data[$i]['name'] =  $info[0]['username'];
-			//$info =  self::DB()->query("select username FROM `user` where id = ".$v['fuid'])->fetchAll();
-			//$data[$i]['fname'] =   $info[0]['username'];
+			$info = self::DB()->query("select day_num FROM `itemlist` where id = ".$data[$i]['item_id'])->fetchAll();
+			$data[$i]['day_num'] =  $info[0]['day_num'];
 		}
 		$sqlall="SELECT id FROM `itemlogp`";
 		$dallnum = self::DB()->query($sqlall)->fetchAll();
