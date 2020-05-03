@@ -7,6 +7,7 @@ use app\model\user\UserModel;
 use app\model\tram\OrderModel;
 use app\ormModel\Itemlog;
 use app\ormModel\Itemlogp;
+use app\ormModel\Moneypath;
 use app\ormModel\User;
 use think\facade\Db;
 
@@ -214,7 +215,7 @@ class apphomeCtrl extends commonCtrl
 		//$tradeorders = self::DB()->query("SELECT * from `tradeorder` where state = 1 and uid = '".$_SESSION['userinfo']['id']."'")->fetchAll();
 		
 	   //新增
-		$tradeorders = self::DB()->query("SELECT * from `itemlog` where uid = '".$_SESSION['userinfo']['id']."' order by id desc")->fetchAll();	
+        $tradeorders = Itemlog::where('uid', $_SESSION['userinfo']['id'])->order('id','desc')->select()->toArray();
 
 		$m152 = 0;
 		foreach($tradeorders as $k=>$v){
@@ -290,21 +291,19 @@ class apphomeCtrl extends commonCtrl
 		$moneya151 = $moneya151[0]['summoney']?: 0;
 		
 		$this->assign('moneya151',abs($moneya151));
-		
-		
+
 		$zmoneya151 = self::DB()->query("SELECT SUM(money) summoney FROM moneypath where mtype = 151 and time > '".$ztimev."' and time < '".$jtimev."' and uid='".self::$myuserinfo['id']."' ")->fetchAll();
 		$zmoneya151 = $zmoneya151[0]['summoney']?: 0;
 		
 		$this->assign('zmoneya151',abs($zmoneya151));
-		
-		
-		$moneya152 = self::DB()->query("SELECT SUM(money) summoney FROM moneypath where mtype = 152 and uid='".self::$myuserinfo['id']."' ")->fetchAll();
-		$moneya152 = $moneya152[0]['summoney']?: 0;
-		
-		//$this->assign('moneya152',$moneya152);
-		$this->assign('moneya152',number_format($m152 + $moneya152,2,'.',''));
 
+		$ids = Moneypath::where(['mtype' => 152, 'uid' => self::$myuserinfo['id']])->column('additionalid');
+		$money1 = Itemlog::where('status',1)->whereIn('id', $ids)->sum('money');
+        $money2 = Itemlog::where('status',1)->whereIn('id', $ids)->sum('smoney');
+		$moneya152 = $money2 - $money1;
 		
+		$this->assign('moneya152',$moneya152);
+
 		$this->display();
 	}
 

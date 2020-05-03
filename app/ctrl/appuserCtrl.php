@@ -6,6 +6,7 @@ use app\model\user\UserModel;
 
 use app\model\tram\OrderModel;
 use app\ormModel\Itemlog;
+use app\ormModel\Itemlogp;
 use app\ormModel\Regpath;
 
 class appuserCtrl extends commonCtrl
@@ -1653,7 +1654,7 @@ class appuserCtrl extends commonCtrl
 
         $ids = Regpath::where([['uid', '=', $_SESSION['userinfo']['id']], ['lown', 'in', [1,2]]])->column('uidsubordinate');
 
-        $tradeorders = Itemlog::whereIn('uid', $ids)->where('status', 0)->order('id','desc')->select();
+        $tradeorders = Itemlog::whereIn('uid', $ids)->where('status', 0)->order('id','desc')->select()->toArray();
         foreach($tradeorders as $k=>$v){
             $tradeorders[$k]['timesv'] = round( (time()-$v['time']) / ($v['stime']-$v['time']) * 100 ,2);
             if($tradeorders[$k]['timesv']>100){
@@ -1669,6 +1670,7 @@ class appuserCtrl extends commonCtrl
 
             $tradeorders[$k]['time'] = date('Y-m-d',$v['time']);
             $tradeorders[$k]['stime'] = date('Y-m-d',$v['stime']);
+
             $info =  self::DB()->query("SELECT item_name from `itemlist` where id = '".$v['item_id']."'")->fetchAll();
             $tradeorders[$k]['item_name'] = $info[0]['item_name'];
             if($v['status'] == 0){
@@ -1693,6 +1695,8 @@ class appuserCtrl extends commonCtrl
 			$tradeorders[$k]['timesv'] = $tradeorders[$k]['statusd4'];
 
 			$tradeorders[$k]['flbl'] = $this->get_flbl($tradeorders[$k]['uid']);
+
+			$tradeorders[$k]['yjfl'] = Itemlogp::where('item_no', $tradeorders[$k]['id'])->value('smoney');
         }
         $this->assign('tradeorders', $tradeorders);
 		$this->display();

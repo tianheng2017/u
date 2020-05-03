@@ -259,13 +259,6 @@
                                 <i class="right_icon"></i>
                             </a>
                         </li>
-                        <!--li>
-                            <a class="external" href="<{WSURLSHOW('apphome','itemlogp')}>">
-                                <img src="<{VIEW_ROOTPATH}>/assets/wap/img/yeji.png"/>
-                                <p>我的业绩</p>
-                                <i class="right_icon"></i>
-                            </a>
-                        </li-->
                         <li>
                             <a class="external" href="<{WSURLSHOW($WsCtrlClass,'account')}>">
                                 <img src="<{VIEW_ROOTPATH}>/assets/wap/img/anquan.png"/>

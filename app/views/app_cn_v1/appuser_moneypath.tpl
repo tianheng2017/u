@@ -239,7 +239,7 @@ function seldata(){
                         }
 					}
                     if(res["data"][i]["mtype"]=="152"){
-                        mtypev="投资返利 | ID:"+res["data"][i]["additionalid"];
+                        mtypev="本息返还 | ID:"+res["data"][i]["additionalid"];
                         moneyoi="+";
                     }
 					if(res["data"][i]["mtype"]=="153"){

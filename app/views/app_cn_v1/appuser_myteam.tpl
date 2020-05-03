@@ -193,7 +193,7 @@
 				</div>
 				<div style="padding-top:90px;width: 100%;text-align: center;padding-bottom: 28px;border-bottom: 13px solid #242426;">
 					<div style="color: #727679;font-size: 14px;">
-						<span>团队总返利</span>
+						<span>历史总返利</span>
 						<!--img src="<{VIEW_ROOTPATH}>/assets/wap/img/msg.png" alt="" style="cursor: pointer;vertical-align: middle;margin-left: 3px;"onclick="javascript:window.location.href='/appuser/cashbackinfo'"-->
 					</div>
 					<div style="color: #BC9568;font-size: 30px;line-height: 65px;">
@@ -229,7 +229,7 @@
 									<span><{$tradeorder.flbl}>%</span>
 								</div>
 								<div style="width: 49%;font-size: 14px;color: #BC9568;text-align: right;display: inline-block;">
-									预计返利 <{number_format($tradeorder.smoney - $tradeorder.money,2,'.','')}> 元
+									预计返利 <{$tradeorder.yjfl}> 元
 								</div>
 							</div>
 							
@@ -269,8 +269,6 @@
 									<{/if}>
 								</div>
 							</div>
-							
-							
 							<div style="position: relative;">
 								<div style="width: 49%;font-size: 5px;color:#727679;text-align: left;display: inline-block;">
 									<span>存单时间</span>

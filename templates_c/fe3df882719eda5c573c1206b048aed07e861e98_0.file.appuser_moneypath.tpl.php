@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-01 17:08:57
+/* Smarty version 3.1.30, created on 2020-05-03 15:15:07
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_moneypath.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eabe729730d55_10733470',
+  'unifunc' => 'content_5eae6f7bdc44b6_95545131',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fe3df882719eda5c573c1206b048aed07e861e98' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_moneypath.tpl',
-      1 => 1588324127,
+      1 => 1588490105,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eabe729730d55_10733470 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eae6f7bdc44b6_95545131 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -288,7 +288,7 @@ function seldata(){
                         }
 					}
                     if(res["data"][i]["mtype"]=="152"){
-                        mtypev="投资返利 | ID:"+res["data"][i]["additionalid"];
+                        mtypev="本息返还 | ID:"+res["data"][i]["additionalid"];
                         moneyoi="+";
                     }
 					if(res["data"][i]["mtype"]=="153"){

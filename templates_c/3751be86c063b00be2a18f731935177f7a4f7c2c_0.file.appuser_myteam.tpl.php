@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-03 13:59:43
+/* Smarty version 3.1.30, created on 2020-05-03 14:39:56
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_myteam.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eae5dcf228d13_56733801',
+  'unifunc' => 'content_5eae673cb6f359_41145233',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3751be86c063b00be2a18f731935177f7a4f7c2c' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_myteam.tpl',
-      1 => 1588485575,
+      1 => 1588487994,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eae5dcf228d13_56733801 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eae673cb6f359_41145233 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -234,7 +234,7 @@ function content_5eae5dcf228d13_56733801 (Smarty_Internal_Template $_smarty_tpl)
 				</div>
 				<div style="padding-top:90px;width: 100%;text-align: center;padding-bottom: 28px;border-bottom: 13px solid #242426;">
 					<div style="color: #727679;font-size: 14px;">
-						<span>团队总返利</span>
+						<span>历史总返利</span>
 						<!--img src="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/img/msg.png" alt="" style="cursor: pointer;vertical-align: middle;margin-left: 3px;"onclick="javascript:window.location.href='/appuser/cashbackinfo'"-->
 					</div>
@@ -281,7 +281,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['tradeorder']->value) {
 %</span>
 								</div>
 								<div style="width: 49%;font-size: 14px;color: #BC9568;text-align: right;display: inline-block;">
-									预计返利 <?php echo number_format($_smarty_tpl->tpl_vars['tradeorder']->value['smoney']-$_smarty_tpl->tpl_vars['tradeorder']->value['money'],2,'.','');?>
+									预计返利 <?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['yjfl'];?>
  元
 								</div>
 							</div>
@@ -358,8 +358,6 @@ $_smarty_tpl->_assignInScope('tradeorder', $_tmp_array);
 									<?php }?>
 								</div>
 							</div>
-							
-							
 							<div style="position: relative;">
 								<div style="width: 49%;font-size: 5px;color:#727679;text-align: left;display: inline-block;">
 									<span>存单时间</span>
