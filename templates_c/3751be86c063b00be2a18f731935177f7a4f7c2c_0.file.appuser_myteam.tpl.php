@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-03 11:59:24
+/* Smarty version 3.1.30, created on 2020-05-03 13:39:29
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_myteam.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eae419cdb4d38_56009510',
+  'unifunc' => 'content_5eae5911ca34b5_87349239',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3751be86c063b00be2a18f731935177f7a4f7c2c' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_myteam.tpl',
-      1 => 1588478362,
+      1 => 1588484367,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eae419cdb4d38_56009510 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eae5911ca34b5_87349239 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -234,9 +234,9 @@ function content_5eae419cdb4d38_56009510 (Smarty_Internal_Template $_smarty_tpl)
 				</div>
 				<div style="padding-top:90px;width: 100%;text-align: center;padding-bottom: 28px;border-bottom: 13px solid #242426;">
 					<div style="color: #727679;font-size: 14px;">
-						<span>我的团队返利金额</span>
-						<img src="<?php echo VIEW_ROOTPATH;?>
-/assets/wap/img/msg.png" alt="" style="cursor: pointer;vertical-align: middle;margin-left: 3px;"onclick="javascript:window.location.href='/appuser/cashbackinfo'">
+						<span>团队总返利</span>
+						<!--img src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/img/msg.png" alt="" style="cursor: pointer;vertical-align: middle;margin-left: 3px;"onclick="javascript:window.location.href='/appuser/cashbackinfo'"-->
 					</div>
 					<div style="color: #BC9568;font-size: 30px;line-height: 65px;">
 						<?php echo $_smarty_tpl->tpl_vars['teamfanli']->value;?>
@@ -265,7 +265,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['tradeorder']->value) {
 						<li>
 							<div>
 								<div style="width: 49%;font-size: 16px;text-align: left;display: inline-block;">
-									下级ID<?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['uid'];?>
+									下级ID：<?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['uid'];?>
 
 								</div>
 								<div style="width: 49%;font-size: 13px;color: #727679;text-align: right;display: inline-block;">
@@ -276,13 +276,13 @@ foreach ($_from as $_smarty_tpl->tpl_vars['tradeorder']->value) {
 							</div>
 							<div style="margin-top: 10px;">
 								<div style="width: 49%;font-size: 13px;color:#727679;text-align: left;display: inline-block;">
-									<span>下级提成比例</span>
-									<span><?php echo $_smarty_tpl->tpl_vars['bili']->value;?>
+									<span>下级返利比例</span>
+									<span><?php echo $_smarty_tpl->tpl_vars['flbl']->value;?>
 %</span>
 								</div>
 								<div style="width: 49%;font-size: 14px;color: #BC9568;text-align: right;display: inline-block;">
-									返利<?php echo number_format($_smarty_tpl->tpl_vars['tradeorder']->value['smoney']-$_smarty_tpl->tpl_vars['tradeorder']->value['money'],2,'.','');?>
-元
+									返利金额 <?php echo number_format($_smarty_tpl->tpl_vars['tradeorder']->value['smoney']-$_smarty_tpl->tpl_vars['tradeorder']->value['money'],2,'.','');?>
+ 元
 								</div>
 							</div>
 							

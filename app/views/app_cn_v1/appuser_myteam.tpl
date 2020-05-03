@@ -193,8 +193,8 @@
 				</div>
 				<div style="padding-top:90px;width: 100%;text-align: center;padding-bottom: 28px;border-bottom: 13px solid #242426;">
 					<div style="color: #727679;font-size: 14px;">
-						<span>我的团队返利金额</span>
-						<img src="<{VIEW_ROOTPATH}>/assets/wap/img/msg.png" alt="" style="cursor: pointer;vertical-align: middle;margin-left: 3px;"onclick="javascript:window.location.href='/appuser/cashbackinfo'">
+						<span>团队总返利</span>
+						<!--img src="<{VIEW_ROOTPATH}>/assets/wap/img/msg.png" alt="" style="cursor: pointer;vertical-align: middle;margin-left: 3px;"onclick="javascript:window.location.href='/appuser/cashbackinfo'"-->
 					</div>
 					<div style="color: #BC9568;font-size: 30px;line-height: 65px;">
 						<{$teamfanli}>
@@ -216,7 +216,7 @@
 						<li>
 							<div>
 								<div style="width: 49%;font-size: 16px;text-align: left;display: inline-block;">
-									下级ID<{$tradeorder['uid']}>
+									下级ID：<{$tradeorder['uid']}>
 								</div>
 								<div style="width: 49%;font-size: 13px;color: #727679;text-align: right;display: inline-block;">
 									<span>项目金额</span>
@@ -225,11 +225,11 @@
 							</div>
 							<div style="margin-top: 10px;">
 								<div style="width: 49%;font-size: 13px;color:#727679;text-align: left;display: inline-block;">
-									<span>下级提成比例</span>
-									<span><{$bili}>%</span>
+									<span>下级返利比例</span>
+									<span><{$flbl}>%</span>
 								</div>
 								<div style="width: 49%;font-size: 14px;color: #BC9568;text-align: right;display: inline-block;">
-									返利<{number_format($tradeorder['smoney']-$tradeorder['money'],2,'.','')}>元
+									返利金额 <{number_format($tradeorder['smoney']-$tradeorder['money'],2,'.','')}> 元
 								</div>
 							</div>
 							

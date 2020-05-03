@@ -5,6 +5,8 @@ namespace app\ctrl;
 use app\model\user\UserModel;
 
 use app\model\tram\OrderModel;
+use app\ormModel\Itemlog;
+use app\ormModel\Regpath;
 
 class appuserCtrl extends commonCtrl
 {
@@ -177,19 +179,19 @@ class appuserCtrl extends commonCtrl
 			echo "10006";exit();//安全密码长度不能小于6位！
 		}
 		
-		if(!empty($_SESSION["ucode"])&&!empty($_SESSION["ucode"]["codeusername"])&&$_SESSION["ucode"]["codeusername"]==$username&&!empty($_SESSION["ucode"]["code"])&&$_SESSION["ucode"]["code"]==post('codeusername')&&!empty($_SESSION["ucode"]["time"])){
-			if((time()-$_SESSION["ucode"]["time"]>60*5)){
-				echo "1007";exit();//验证码已超时，请重新发送！
-			}else{
-				if($_SESSION["ucode"]["code"]==post('codeusername')){
-					
-				}else{
-					echo "1008";exit();//验证码错误！
-				}
-			}
-		}else{
-			echo "1009";exit();//验证码错误！
-		}
+//		if(!empty($_SESSION["ucode"])&&!empty($_SESSION["ucode"]["codeusername"])&&$_SESSION["ucode"]["codeusername"]==$username&&!empty($_SESSION["ucode"]["code"])&&$_SESSION["ucode"]["code"]==post('codeusername')&&!empty($_SESSION["ucode"]["time"])){
+//			if((time()-$_SESSION["ucode"]["time"]>60*5)){
+//				echo "1007";exit();//验证码已超时，请重新发送！
+//			}else{
+//				if($_SESSION["ucode"]["code"]==post('codeusername')){
+//
+//				}else{
+//					echo "1008";exit();//验证码错误！
+//				}
+//			}
+//		}else{
+//			echo "1009";exit();//验证码错误！
+//		}
 		
 		
 		$datasuperioruid = self::DB()->select("user", [
@@ -310,10 +312,6 @@ class appuserCtrl extends commonCtrl
         if(!empty($_SESSION["ucode"])&&!empty($_SESSION["ucode"]["time"])&&(time()-$_SESSION["ucode"]["time"]<60)){
             echo "".(60-time()+$_SESSION["ucode"]["time"])."";exit();//发送频率过快，请稍等		s
         }
-//        $pattern="/^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\d{8}$/";
-//        if(mb_strlen($codeusername,'utf8')<6 || !preg_match($pattern,$codeusername)){
-//            echo "1005";exit();
-//        }
         $codeval = rand(100000,999999);
         $text=$codeval;
         $mobile = trim($codeusername);
@@ -1640,17 +1638,12 @@ class appuserCtrl extends commonCtrl
 		$user[0]['proportion'] = $this->auto_ratio($_SESSION['userinfo']['id']);
 		
 		$this->assign('proportion',$user[0]['proportion']);
-
-//		$countteamall = self::DB()->query("SELECT COUNT(*) countteamall FROM `regpath` WHERE uid='".self::$myuserinfo['id']."' ")->fetchAll();
-//		$countteamall = $countteamall[0]['countteamall']?: 0;
-//
-//		$this->assign('countteamall',$countteamall);
 		
 		$countteaml1 = self::DB()->query("SELECT COUNT(*) countteaml1 FROM `regpath` WHERE uid='".self::$myuserinfo['id']."' and lown=1 ")->fetchAll();
 		$countteaml1 = $countteaml1[0]['countteaml1']?: 0;
 		$this->assign('countteaml1',$countteaml1);
 
-        $countteaml2 = self::DB()->query("SELECT COUNT(*) countteaml1 FROM `regpath` WHERE uid='".self::$myuserinfo['id']."' and lown=2 ")->fetchAll();
+        $countteaml2 = self::DB()->query("SELECT COUNT(*) countteaml2 FROM `regpath` WHERE uid='".self::$myuserinfo['id']."' and lown=2 ")->fetchAll();
         $countteaml2 = $countteaml2[0]['countteaml2']?: 0;
         $this->assign('countteaml2',$countteaml2);
 
@@ -1658,20 +1651,14 @@ class appuserCtrl extends commonCtrl
         $teamfanli = $moneya153[0]['summoney']?: 0;
         $this->assign('teamfanli', $teamfanli);
 
-        $ids = self::DB()->query("SELECT id FROM user WHERE superioruid = '".$_SESSION['userinfo']['id']."'")->fetchAll();
-        $ids = array_column($ids,'id');
+        $ids = Regpath::where([['uid', '=', $_SESSION['userinfo']['id']], ['lown', 'in', [1,2]]])->column('uidsubordinate');
 
-        $tradeorders = self::DB()->query("SELECT * from `itemlog` where uid in('".implode(',',$ids)."') order by id desc")->fetchAll();
+        $tradeorders = Itemlog::whereIn('uid', $ids)->order('id','desc')->select();
         foreach($tradeorders as $k=>$v){
             $tradeorders[$k]['timesv'] = round( (time()-$v['time']) / ($v['stime']-$v['time']) * 100 ,2);
             if($tradeorders[$k]['timesv']>100){
                 $tradeorders[$k]['timesv'] = 100;
             }
-			
-			
-			
-			
-			
 			$tradeorders[$k]['time1'] = date('Y-m-d',$tradeorders[$k]['time']);
 			$tradeorders[$k]['time2'] = date('Y-m-d',$tradeorders[$k]['time']+3600*24);
 			
@@ -1679,11 +1666,7 @@ class appuserCtrl extends commonCtrl
 			$tradeorders[$k]['timev2'] = date('Y-m-d H:i:s',$tradeorders[$k]['time']+3600*24);
 			
 			$tradeorders[$k]['stime1'] = date('Y-m-d',$tradeorders[$k]['stime']);
-			
-			
-			
-			
-			
+
             $tradeorders[$k]['time'] = date('Y-m-d',$v['time']);
             $tradeorders[$k]['stime'] = date('Y-m-d',$v['stime']);
             $info =  self::DB()->query("SELECT item_name from `itemlist` where id = '".$v['item_id']."'")->fetchAll();
@@ -1708,16 +1691,24 @@ class appuserCtrl extends commonCtrl
 			}
 			
 			$tradeorders[$k]['timesv'] = $tradeorders[$k]['statusd4'];
+
+			$tradeorders[$k]['flbl'] = $this->get_flbl($tradeorders[$k]['uid']);
         }
         $this->assign('tradeorders', $tradeorders);
 
-        $bili = self::$webconfig['bili']['val'];
-        $fbili = self::$webconfig['fbili']['val'];
-        $this->assign('bili', $bili);
-        $this->assign('fbili', $fbili);
-
 		$this->display();
 	}
+
+	private function get_flbl($uid){
+	    $lown = Regpath::where(['uid' => $_SESSION['userinfo']['id'], 'uidsubordinate' => $uid])->value('lown');
+	    if ($lown == 1){
+	        return self::$webconfig['yjjl']['val'];
+        }else if ($lown == 2){
+            return self::$webconfig['ejjl']['val'];
+        }else{
+	        return 0;
+        }
+    }
 	
 	
 	//我的团队接口
