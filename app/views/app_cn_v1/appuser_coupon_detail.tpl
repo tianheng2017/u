@@ -318,7 +318,7 @@
                 wu.hideToast();
             }, 3000);
             var formData = new FormData();
-            formData.append("id", $('id').val());
+            formData.append("id", $('#id').val());
             var options = {
                 url: "<{WSURLSHOW($WsCtrlClass,'coupon_tx')}>",
                 type: 'post',

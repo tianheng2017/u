@@ -1844,7 +1844,7 @@ class appuserCtrl extends commonCtrl
     }
 
     public function coupon(){
-	    $data = Coupon::where('status',1)->select()->toArray();
+	    $data = Coupon::where(['status'=>1, 'uid'=>self::$myuserinfo['id']])->select()->toArray();
 	    foreach ($data as $k => $v){
 	        $list = Itemlist::find($v['item_id']);
 	        $data[$k]['name'] = $list['item_name'];

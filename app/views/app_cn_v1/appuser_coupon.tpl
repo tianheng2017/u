@@ -383,21 +383,25 @@
                 </div>
                 <div style="width: 100%;padding: 10px;margin-top: 70px;text-align: center;">
                     <ul>
-                        <{foreach from=$data item=$v}>
-                        <li>
-                            <div class="stamp stamp03">
-                                <div class="par">
-                                    <p><{$v.name}> 优惠劵</p>
-                                    <sub class="sign">￥</sub>
-                                    <span><{$v.money}></span>
-                                    <p>获得时间：<{$v.create_time}></p>
+                        <{if $data}>
+                            <{foreach from=$data item=$v}>
+                            <li>
+                                <div class="stamp stamp03">
+                                    <div class="par">
+                                        <p><{$v.name}> 优惠劵</p>
+                                        <sub class="sign">￥</sub>
+                                        <span><{$v.money}></span>
+                                        <p>获得时间：<{$v.create_time}></p>
+                                    </div>
+                                    <div class="copy">
+                                        <a href="<{WSURLSHOW($WsCtrlClass,'coupon_detail')}>/id/<{$v.id}>" class="link external">立即提现</a>
+                                    </div>
                                 </div>
-                                <div class="copy">
-                                    <a href="<{WSURLSHOW($WsCtrlClass,'coupon_detail')}>/id/<{$v.id}>" class="link external">立即提现</a>
-                                </div>
-                            </div>
-                        </li>
-                        <{/foreach}>
+                            </li>
+                            <{/foreach}>
+                        <{else}>
+                        <li style="color:#B8B8B8;">暂无优惠券</li>
+                        <{/if}>
                     </ul>
                 </div>
             </div>

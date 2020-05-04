@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 16:18:11
+/* Smarty version 3.1.30, created on 2020-05-04 16:43:56
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_coupon_detail.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafcfc362ba96_97465591',
+  'unifunc' => 'content_5eafd5cc940c73_73646939',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '60561f8461c9f453f4134ce619b0678e844b8052' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_coupon_detail.tpl',
-      1 => 1588580288,
+      1 => 1588581835,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafcfc362ba96_97465591 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafd5cc940c73_73646939 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -308,6 +308,8 @@ function content_5eafcfc362ba96_97465591 (Smarty_Internal_Template $_smarty_tpl)
                     </div>
                 </div>
                 <form action="#" id="form_post" name="form_post" method="post">
+                    <input type="hidden" name="id" id="id" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['id'];?>
+">
                     <div style="padding: 0 3%;background: #2C2C2E;height: 370px;padding-top: 50px;">
                         <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
                             <div>
@@ -384,7 +386,7 @@ function content_5eafcfc362ba96_97465591 (Smarty_Internal_Template $_smarty_tpl)
                 wu.hideToast();
             }, 3000);
             var formData = new FormData();
-            formData.append("id", id);
+            formData.append("id", $('#id').val());
             var options = {
                 url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'coupon_tx');?>
 ",

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 15:59:16
+/* Smarty version 3.1.30, created on 2020-05-04 16:53:15
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_coupon.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafcb54ed66e0_69956093',
+  'unifunc' => 'content_5eafd7fb0924a5_85766514',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '22a4276cc821cc96210111610c53c56b3d5f0370' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_coupon.tpl',
-      1 => 1588579154,
+      1 => 1588582390,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafcb54ed66e0_69956093 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafd7fb0924a5_85766514 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -424,35 +424,39 @@ function content_5eafcb54ed66e0_69956093 (Smarty_Internal_Template $_smarty_tpl)
                 </div>
                 <div style="width: 100%;padding: 10px;margin-top: 70px;text-align: center;">
                     <ul>
-                        <?php
+                        <?php if ($_smarty_tpl->tpl_vars['data']->value) {?>
+                            <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['data']->value, 'v');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
 ?>
-                        <li>
-                            <div class="stamp stamp03">
-                                <div class="par">
-                                    <p><?php echo $_smarty_tpl->tpl_vars['v']->value['name'];?>
+                            <li>
+                                <div class="stamp stamp03">
+                                    <div class="par">
+                                        <p><?php echo $_smarty_tpl->tpl_vars['v']->value['name'];?>
  优惠劵</p>
-                                    <sub class="sign">￥</sub>
-                                    <span><?php echo $_smarty_tpl->tpl_vars['v']->value['money'];?>
+                                        <sub class="sign">￥</sub>
+                                        <span><?php echo $_smarty_tpl->tpl_vars['v']->value['money'];?>
 </span>
-                                    <p>获得时间：<?php echo $_smarty_tpl->tpl_vars['v']->value['create_time'];?>
+                                        <p>获得时间：<?php echo $_smarty_tpl->tpl_vars['v']->value['create_time'];?>
 </p>
-                                </div>
-                                <div class="copy">
-                                    <a href="<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'coupon_detail');?>
+                                    </div>
+                                    <div class="copy">
+                                        <a href="<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'coupon_detail');?>
 /id/<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
 " class="link external">立即提现</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
-                        <?php
+                            </li>
+                            <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
+                        <?php } else { ?>
+                        <li style="color:#B8B8B8;">暂无优惠券</li>
+                        <?php }?>
                     </ul>
                 </div>
             </div>
@@ -490,82 +494,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 <?php echo '<script'; ?>
  src="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/scrollmenu/js/scrollmenu.js"><?php echo '</script'; ?>
->
-<?php echo '<script'; ?>
- type="text/javascript">
-    function coupon_tx(id) {
-        var confirmis=confirm("确定提现该优惠劵吗？");
-        if (confirmis==true){
-
-            var formData = new FormData();
-            formData.append("id", id);
-            var options = {
-                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'coupon_tx');?>
-",
-                type: 'post',
-                dataType: 'json',
-                processData: false,
-                contentType: false,
-                data: formData,
-                success: function (res) {
-                    if (res["state"] == "success" && res["code"] == 1) {
-                        wu.showMessage({
-                            title: "提交成功，审核中！",
-                            backgroundColor: '#2bde62',
-                            duration: 3000
-                        });
-                        setTimeout(function () {
-                            location.href = "<?php echo WSURLSHOW('appuser','withdrawal');?>
-";
-                        }, 1000);
-                    } else {
-                        var msg = "网络异常！";
-
-                        if (res["code"] == -1001) {
-                            msg = "参数异常！";
-                        }
-                        if (res["code"] == -1020) {
-                            msg = "优惠卷不存在！";
-                        }
-                        if (res["code"] == -1021) {
-                            msg = "数据错误！";
-                        }
-                        if (res["code"] == -1010) {
-                            msg = "请上传收款二维码！";
-                        }
-                        if (res["code"] == -1011) {
-                            msg = "收款二维码格式有误！";
-                        }
-                        if (res["code"] == -1008) {
-                            msg = "提交中途异常！";
-                        }
-                        if (res["code"] == -1006) {
-                            msg = "提交失败！";
-                        }
-                        wu.showMessage({
-                            title: msg,
-                            backgroundColor: 'red',
-                            duration: 3000
-                        });
-                    }
-                },
-                complete: function (XMLHttpRequest, textStatus) {
-                },
-                error: function () {
-                    wu.showMessage({
-                        title: "网络异常！",
-                        backgroundColor: 'red',
-                        duration: 3000
-                    });
-                }
-            };
-            $.ajax(options);
-            return false;
-        }else{
-            return false;
-        }
-    }
-<?php echo '</script'; ?>
 >
 </body>
 </html><?php }
