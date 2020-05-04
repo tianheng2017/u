@@ -54,6 +54,11 @@
         ul.side-nav.fixed li:hover, ul.side-nav.fixed li.active{
             background-color: #454850;
         }
+        .file-field .btn, .file-field .btn-large {
+            height: 2.3rem;
+            line-height: 2.3rem;
+            margin-top: 1rem;
+        }
     </style>
 </head>
 

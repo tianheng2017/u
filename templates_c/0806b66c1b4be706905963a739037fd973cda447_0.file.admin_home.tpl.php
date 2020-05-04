@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 17:22:44
+/* Smarty version 3.1.30, created on 2020-05-04 21:13:01
   from "E:\u.xiangxin.me\app\views\admin_v1\admin_home.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafdee4865617_09997726',
+  'unifunc' => 'content_5eb014dd8130d5_10686225',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0806b66c1b4be706905963a739037fd973cda447' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\admin_home.tpl',
-      1 => 1588584163,
+      1 => 1588597979,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5eafdee4865617_09997726 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eb014dd8130d5_10686225 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -87,6 +87,11 @@ function content_5eafdee4865617_09997726 (Smarty_Internal_Template $_smarty_tpl)
         }
         ul.side-nav.fixed li:hover, ul.side-nav.fixed li.active{
             background-color: #454850;
+        }
+        .file-field .btn, .file-field .btn-large {
+            height: 2.3rem;
+            line-height: 2.3rem;
+            margin-top: 1rem;
         }
     </style>
 </head>
@@ -217,6 +222,7 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['webconfigi']->value) {
 ?>
+                                                    <?php if ($_smarty_tpl->tpl_vars['webconfigi']->value['name'] != "rechargeimg") {?>
                                                     <div class="input-field col s6">
                                                         <input id="<?php echo $_smarty_tpl->tpl_vars['webconfigi']->value['name'];?>
 " name="<?php echo $_smarty_tpl->tpl_vars['webconfigi']->value['name'];?>
@@ -226,12 +232,23 @@ foreach ($_from as $_smarty_tpl->tpl_vars['webconfigi']->value) {
 "><?php echo $_smarty_tpl->tpl_vars['webconfigi']->value['content'];?>
 </label>
                                                     </div>
+                                                    <?php }?>
                                                     <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
+                                                </div>
+
+                                                <div class="file-field input-field col s12">
+                                                    <label for="first_name">网站收款二维码</label>
+                                                    <input class="file-path validate" id="rechargeimg" name="rechargeimg" value="<?php echo $_smarty_tpl->tpl_vars['webconfig']->value['rechargeimg']['val'];?>
+" type="text" onclick="imguM()" />
+                                                    <div class="btn">
+                                                        <span>上传</span>
+                                                        <input id="logof" type="file" />
+                                                    </div>
                                                 </div>
 
                                                 <div class="row">
@@ -449,7 +466,34 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         return false;
     });
 
-    
+    function imguM(){
+        var formData = new FormData();
+        var name = $("#logof").val();
+        formData.append("file",$("#logof")[0].files[0]);
+        formData.append("name",name);
+        $.ajax({
+            url : "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'imguploaddo');?>
+",
+            type : 'POST',
+            data : formData,
+            processData : false,
+            contentType : false,
+            success : function(responseStr) {
+                if(responseStr==""){
+                    Materialize.toast('<span style="color: #ef192c">上传失败!</span>', 3000);
+                }else {
+                    Materialize.toast('<span style="color: #0fef72">上传成功!</span>', 3000);
+                    $("#rechargeimg").val(responseStr);
+                    $(".logoimg").attr("src","<?php echo INSTALL_DIR;?>
+/upload/images/a/"+responseStr);
+                }
+            },
+            error : function(responseStr) {
+                Materialize.toast('<span style="color: #ef192c">上传失败!</span>', 3000);
+                return;
+            }
+        });
+    }
 	
 	
 	
