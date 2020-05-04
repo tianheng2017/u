@@ -776,7 +776,7 @@ class appuserCtrl extends commonCtrl
         $coupon = Coupon::where(['id'=>$id, 'uid'=>$userc[0]['id']])->find();
 
         if (empty($coupon)){
-            error(-1020 , "优惠劵不存在");
+            error(-1020 , "此优惠劵不存在");
         }
 
         if(count($userc)>0){

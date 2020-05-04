@@ -32,57 +32,75 @@
         width: initial;
         border: 0;
     }
+
     .ios .navbar {
         background-color: rgba(255, 255, 255, 0.11);
     }
-    .coininfodivlay{
-        border-top: 1px solid #ffffff42;
-        margin:.6em 0 1em 0;
-        background: #232323 !important;
-        font-size: 20px;
-        padding: 15px 25px 15px 25px;
-        position: relative;
+
+    .coininfodivlay {
+        /*
+        width:90%;
+        background: #5186d6;
+        margin:2%;
+        border-radius: 7px;
+        */
+
+        margin: .6em 0 1em 0;
+        background: rgba(255, 255, 255, 0.11);
+
+        padding: 1rem 3%;
+
+        position: unset!important;
     }
-    .coininfoicodiv{
-        width:2rem;height:2rem;border-radius: 6px;background: #fff;padding:.2rem;
+
+    .coininfoicodiv {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 6px;
+        padding: .2rem;
         display: inline-block;
     }
-    .coininfotxtdiv{
-        width:66%;
+
+    .coininfotxtdiv {
+        width: 66%;
         line-height: 1rem;
         display: inline-block;
         vertical-align: top;
     }
-    .coininfotxt1{
-        width:100%;color:#fff;font-size:.9rem;
+
+    .coininfotxt1 {
+        width: 100%;
+        color: #fff;
+        font-size: .9rem;
     }
-    .coininfotxt2{
-        color:#fff;
+
+    .coininfotxt2 {
+        color: #fff;
         font-size: .7rem;
         overflow: hidden;
         margin-top: 0.2rem;
     }
-    .coininfotxt3{
-        width:97%;text-align:right;color:#fff;font-size:1.2rem;
+
+    .coininfotxt3 {
+        width: 97%;
+        text-align: right;
+        color: #fff;
+        font-size: 1.2rem;
     }
-    .coininfotxt4{
-        width:97%;text-align:right;color:#fff;font-size:.7rem;
+
+    .coininfotxt4 {
+        width: 76%;
+        margin-left: 12%;
+        text-align: center;
+        color: #fff;
+        font-size: 1rem;
+        word-break: break-all;
     }
-    .coininfotxt12{
-        color:#fff;
-        font-size: .7rem;
-        margin-top: 0.2rem;
-    }
-    .coininfotxtsondiv12 {
-        width: 49%;
-        color: #8cdfff;
-        padding: 3px 0 3px 3%;
-        border: 1px solid rgba(190, 244, 255, 0.1);
-        display: inline-block;
-    }
+
     .container {
         padding: 0;
     }
+
     .user-menu li a {
         display: block;
         padding: 10px 20px;
@@ -90,47 +108,120 @@
         border-radius: 0;
         text-align: center;
     }
+
     .user-menu li {
         margin-bottom: 0;
         width: 50%;
         float: left;
         border: 0.5px solid rgba(40, 51, 80, 0);
     }
-    .user-menu li a img{
+
+    .user-menu li a img {
         width: 1.7rem;
         height: 1.7rem;
     }
-    .user-menu li a:before{
+
+    .user-menu li a:before {
         float: inherit;
     }
-    .menu-footer{
-        background-color: #242424;
-        border-top: 1px solid rgba(62, 62, 62, 0.88);
-        color:#D3D3D3;
-    }
-    .menu-footer li span{
-        color: #D3D3D3;
-    }
-    .coininfodivlay ul li{
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        float: left;
-        width: 33.33%;
+
+    .coinnavspan {
+        width: 32.5%;
         text-align: center;
-        margin-bottom: 5px;
+        display: inline-block;
+        padding: 5px 0;
+        background: rgba(255, 255, 255, 0.06);
     }
-    .coininfodivlay ul li p{
-        color: #8E8D92;
-        font-size: 16px;
+
+    canvas {
+        width: 50%;
+        border: 12px solid rgb(255, 255, 255);
     }
-    ul li{
-        width: 100%;
-        margin: 2px auto 0;
-        border-radius:12px;
-        list-style: none;
-        padding: 15px 5px;
-        cursor: pointer;
+
+    .ios .login-box .list .item-content {
+        border: 1px solid #c0c0c0;
+        border-radius: 100px;
+        margin-top: 1em;
+        padding: 0 10px;
+    }
+    .page-content{
+        background: #2C2C2E;
+    }
+    .coininfodivlay{
+        background: #2C2C2C !important;
+        margin-bottom: 10px!important;
+        border-top:unset!important;
+    }
+    .ios .navbar{
+        background: #232323!important;
+    }
+    .ios .block{
+        margin: 5px 0 35px 0;
+        background: #2c2c2c;
+    }
+    .ios .login-box .list .item-content{
+        border: 1px solid #565656;
+    }
+    .ios .button.button-fill, .ios .button.button-fill-ios {
+        background-color: #26A07B !important;
+    }
+    .coininfoicodiv{
+        border-radius: 30px;
+    }
+    .coininfotxtdiv{
+        margin-top: 5px;
+    }
+    ::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: #616467 !important;
+    }
+
+    ::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #616467 !important;
+    }
+
+    :-ms-input-placeholder {
+        /* IE 10+ */
+        color: #616467 !important;
+    }
+
+    :-moz-placeholder {
+        /* Firefox 18- */
+        color: #616467 !important;
+    }
+    body{
+        font-family:PingFangSC-Regular,PingFang SC;
+    }
+    input{
+        border: 2px solid #404040!important;
+        width: 100%!important;
+        height: 60px!important;
+        color: #fff!important;
+        font-size: 16px!important;
+    }
+    .img-upload {
+        display: block;
+        position: relative;
+        background-color: #2C2C2C;
+        border: 1px solid #565656;
+        border-radius: 5px;
+        text-align: center;
+        padding-top: 100%;
+        height: 0;
+        overflow: hidden;
+        top: 0.6rem;
+    }
+
+    .img-upload .text i {
+        background-color: #09f;
+        display: block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
         margin-bottom: 10px;
     }
 </style>
@@ -145,7 +236,7 @@
         width: 100%;
         height: 140px;
         padding: 0 10px;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         position: relative;
         overflow: hidden;
     }
@@ -277,7 +368,7 @@
     <div class="statusbar"></div>
     <div class="view view-main">
         <div class="page">
-            <div class="page-content" style="padding-bottom: 100px;background: #2C2C2C;">
+            <div class="page-content" style="padding-bottom: 100px;background: #242426;">
                 <div class="navbar" style="position: fixed;background: #2C2C2E!important;font-size: 16px;height: 60px;">
                     <div class="navbar-inner">
                         <div class="left" style="font-weight: bold;color: #fff;">
@@ -285,7 +376,7 @@
                                 <i class="icon icon-back"></i>
                             </a>
                         </div>
-                        <div style="text-align: center;width: 100%;">
+                        <div style="text-align: center;width: 100%;margin-left: -50px;">
                             我的优惠卷
                         </div>
                     </div>
@@ -322,20 +413,20 @@
 <script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/bscroll.js"></script>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/scrollmenu.js"></script>
 <script type="text/javascript">
-    function coupon_tx(val) {
+    function coupon_tx(id) {
         var confirmis=confirm("确定提现该优惠劵吗？");
         if (confirmis==true){
-            wu.showLoadingBg();
-            setTimeout(() => {
-                //隐藏loading
-                wu.hideToast();
-            }, 3000);
+
+            var formData = new FormData();
+            formData.append("id", id);
             var options = {
                 url: "<{WSURLSHOW($WsCtrlClass,'coupon_tx')}>",
                 type: 'post',
                 dataType: 'json',
-                data: 'id='+val,
-                success: function (data) {
+                processData: false,
+                contentType: false,
+                data: formData,
+                success: function (res) {
                     if (res["state"] == "success" && res["code"] == 1) {
                         wu.showMessage({
                             title: "提交成功，审核中！",

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 14:41:46
+/* Smarty version 3.1.30, created on 2020-05-04 15:07:35
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafb92a063960_00958323',
+  'unifunc' => 'content_5eafbf3702b770_65107088',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ee184f7d11fa2b3b7fce13bd22a00d94a230bdd8' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_index.tpl',
-      1 => 1588555364,
+      1 => 1588576053,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafb92a063960_00958323 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafbf3702b770_65107088 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -302,20 +302,20 @@ function content_5eafb92a063960_00958323 (Smarty_Internal_Template $_smarty_tpl)
                             </a>
                         </li>
                         <li>
-                            <a class="external" href="<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'invitation');?>
-">
-                                <img src="<?php echo VIEW_ROOTPATH;?>
-/assets/wap/img/yaoqing.png"/>
-                                <p>邀请好友</p>
-                                <i class="right_icon"></i>
-                            </a>
-                        </li>
-                        <li>
                             <a class="external" href="<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'coupon');?>
 ">
                                 <img src="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/img/yeji.png"/>
                                 <p>优惠卷</p>
+                                <i class="right_icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="external" href="<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'invitation');?>
+">
+                                <img src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/img/yaoqing.png"/>
+                                <p>邀请好友</p>
                                 <i class="right_icon"></i>
                             </a>
                         </li>

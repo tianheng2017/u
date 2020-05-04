@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 15:26:55
-  from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_coupon.tpl" */
+/* Smarty version 3.1.30, created on 2020-05-04 15:09:06
+  from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_presentation.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafc3bf4068c8_78630796',
+  'unifunc' => 'content_5eafbf92c63e55_31060403',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '22a4276cc821cc96210111610c53c56b3d5f0370' => 
+    'cffcb46aff6386fa8d0231e37221078b842f2b17' => 
     array (
-      0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_coupon.tpl',
-      1 => 1588577213,
+      0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_presentation.tpl',
+      1 => 1588564745,
       2 => 'file',
     ),
   ),
@@ -20,13 +20,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafc3bf4068c8_78630796 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafbf92c63e55_31060403 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#2196f3">
     <title><?php echo $_smarty_tpl->tpl_vars['webconfig']->value['webtitle']['val'];?>
@@ -185,24 +186,24 @@ function content_5eafc3bf4068c8_78630796 (Smarty_Internal_Template $_smarty_tpl)
         margin-top: 1em;
         padding: 0 10px;
     }
-    .page-content{
-        background: #2C2C2E;
-    }
-    .coininfodivlay{
-        background: #2C2C2C !important;
-        margin-bottom: 10px!important;
-        border-top:unset!important;
-    }
-    .ios .navbar{
-        background: #232323!important;
-    }
-    .ios .block{
-        margin: 5px 0 35px 0;
-        background: #2c2c2c;
-    }
-    .ios .login-box .list .item-content{
-        border: 1px solid #565656;
-    }
+	.page-content{
+		background: #2C2C2E;
+	}
+	.coininfodivlay{
+		background: #2C2C2C !important;
+		margin-bottom: 10px!important;
+		border-top:unset!important;
+	}
+	.ios .navbar{
+		background: #232323!important;
+	}
+	.ios .block{
+		margin: 5px 0 35px 0;
+		background: #2c2c2c;
+	}
+	.ios .login-box .list .item-content{
+		border: 1px solid #565656;
+	}
     .ios .button.button-fill, .ios .button.button-fill-ios {
         background-color: #26A07B !important;
     }
@@ -266,194 +267,75 @@ function content_5eafc3bf4068c8_78630796 (Smarty_Internal_Template $_smarty_tpl)
         margin-bottom: 10px;
     }
 </style>
-<style type="text/css">
-    .stamp * {
-        padding: 0;
-        margin: 0;
-        list-style:none;
-        font-family:"Microsoft YaHei", 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
-    }
-    .stamp {
-        width: 100%;
-        height: 140px;
-        padding: 0 10px;
-        margin-bottom: 20px;
-        position: relative;
-        overflow: hidden;
-    }
-    .stamp:before {
-        content: '';
-        position: absolute;
-        top:0;
-        bottom:0;
-        left:10px;
-        right:10px;
-        z-index: -1;
-    }
-    .stamp .par {
-        float: left;
-        padding: 16px 15px;
-        width: 220px;
-        border-right:2px dashed rgba(255, 255, 255, .3);
-        text-align: left;
-    }
-    .stamp .par p {
-        color:#fff;
-        font-size: 16px;
-        line-height: 21px;
-        text-align: center;
-    }
-    .stamp .par span {
-        font-size: 50px;
-        color:#fff;
-        margin-right: 5px;
-        line-height: 65px;
-    }
-    .stamp .par .sign {
-        font-size: 34px;
-    }
-    .stamp .par sub {
-        position: relative;
-        top:-5px;
-        color:rgba(255, 255, 255, .8);
-    }
-    .stamp .copy {
-        display: inline-block;
-        padding:21px 14px;
-        width:100px;
-        vertical-align: text-bottom;
-        font-size: 30px;
-        color:rgb(255,255,255);
-        text-align: center;
-        line-height: initial;
-    }
-    .stamp .copy p {
-        font-size: 16px;
-        margin-top: 15px;
-    }
-    .stamp01 {
-        background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 5px, #F39B00 5px);
-        background-size: 15px 15px;
-        background-position: 9px 3px;
-    }
-    .stamp01:before {
-        background-color:#F39B00;
-    }
-    .stamp02 {
-        background: radial-gradient(transparent 0, transparent 5px, #D24161 5px);
-        background-size: 15px 15px;
-        background-position: 9px 3px;
-    }
-    .stamp02:before {
-        background-color:#D24161;
-    }
-    .stamp03 {
-        /*background: radial-gradient(transparent 0, transparent 5px, #7EAB1E 5px);*/
-        background-size: 15px 15px;
-        background-position: 9px 3px;
-    }
-    .stamp03:before {
-        background-color:#7EAB1E;
-    }
-    .stamp03 .copy {
-        padding: 10px 6px 10px 12px;
-        font-size: 24px;
-        margin-top: 45px;
-    }
-    .stamp03 .copy p {
-        font-size: 14px;
-        margin-top: 5px;
-        margin-bottom: 8px;
-    }
-    .stamp03 .copy a {
-        background-color:#fff;
-        color:#333;
-        font-size: 14px;
-        text-decoration:none;
-        padding:5px 10px;
-        border-radius:3px;
-        display: block;
-    }
-    .stamp04 {
-        width: 390px;
-        background: radial-gradient(rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 4px, #50ADD3 4px);
-        background-size: 12px 8px;
-        background-position: -5px 10px;
-    }
-    .stamp04:before {
-        background-color:#50ADD3;
-        left: 5px;
-        right: 5px;
-    }
-    .stamp04 .copy {
-        padding: 10px 6px 10px 12px;
-        font-size: 24px;
-    }
-    .stamp04 .copy p {
-        font-size: 14px;
-        margin-top: 5px;
-        margin-bottom: 8px;
-    }
-    .stamp04 .copy a {
-        background-color:#fff;
-        color:#333;
-        font-size: 14px;
-        text-decoration:none;
-        padding:5px 10px;
-        border-radius:3px;
-        display: block;
-    }
-</style>
+
 <body style="padding-top: 0;padding-bottom: 0;">
 <div id="app">
     <div class="statusbar"></div>
     <div class="view view-main">
         <div class="page">
-            <div class="page-content" style="padding-bottom: 100px;background: #242426;">
-                <div class="navbar" style="position: fixed;background: #2C2C2E!important;font-size: 16px;height: 60px;">
-                    <div class="navbar-inner">
-                        <div class="left" style="font-weight: bold;color: #fff;">
-                            <a href="javascript:history.go(-1);" class="link icon-only external color-white">
-                                <i class="icon icon-back"></i>
-                            </a>
-                        </div>
-                        <div style="text-align: center;width: 100%;margin-left: -50px;">
-                            我的优惠卷
+            <div class="page-content" style="padding-top:40px;position: unset!important;">
+                <div class="coininfodivlay" style="height: 135px;position: unset!important;">
+                    <div style="width:100%;">
+                        <div>
+                            <!--img style="width: 30px;position: absolute;left: 40%;top: 70px;" src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/images/tether_200_200.png" /-->
+                            <div style="font-size: 18px;color: #5f5f5f;display: block;text-align: center;height: 30px;margin-top: 30px;">账户余额</div>
+                            <div style="color:#BC9568;font-size: 28px;text-align: center;display: block;" class="mymoney1"><?php echo number_format($_smarty_tpl->tpl_vars['myuserinfo']->value["money"],2,'.','');?>
+</div>
                         </div>
                     </div>
                 </div>
-                <div style="width: 100%;padding: 10px;margin-top: 70px;text-align: center;">
-                    <ul>
-                        <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['data']->value, 'v');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
-?>
-                        <li>
-                            <div class="stamp stamp03">
-                                <div class="par">
-                                    <p><?php echo $_smarty_tpl->tpl_vars['v']->value['name'];?>
- 优惠劵</p>
-                                    <sub class="sign">￥</sub>
-                                    <span><?php echo $_smarty_tpl->tpl_vars['v']->value['money'];?>
-</span>
-                                    <p>获得时间：<?php echo $_smarty_tpl->tpl_vars['v']->value['create_time'];?>
-</p>
-                                </div>
-                                <div class="copy">
-                                    <a href="javascript:coupon_tx(<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
-)">立即提现</a>
+                <div class="navbar" style="position: fixed;background: #2C2C2E!important;">
+                    <div class="navbar-inner">
+                        <div class="left" style="font-weight: bold;color: #fff;">
+                            <a href="<?php echo WSURLSHOW('appuser','index');?>
+" class="link icon-only external color-white">
+                                <i class="icon icon-back"></i>
+                            </a>
+                        </div>
+                        <span style="text-align: center;width: 100%;margin-left: 20px;">
+                            提现
+                        </span>
+                        <div class="title text-color-white"></div>
+                        <div class="right">
+                            <a class="external" href="<?php echo WSURLSHOW('appuser','withdrawal');?>
+" style="color: #727679;padding-right: 0.7rem;">
+                                提现记录
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <form action="#" id="form_post" name="form_post" method="post">
+                    <div style="padding: 0 3%;background: #2C2C2E;height: 370px;padding-top: 30px;">
+                        <div style="color:#727679;font-size: 14px;padding-bottom: 10px;">
+                            <input type="number" id="money" name="money" placeholder="请输入提现金额" style="padding: 0 10px;" onkeyup="this.value= this.value.match(/\d+(\.\d{0,2})?/) ? this.value.match(/\d+(\.\d{0,2})?/)[0] : ''">
+                            <p style="color: #2c7fbd;margin-top: 10px;font-size: 10px;padding-left: 10px;">提现手续费 <?php echo $_smarty_tpl->tpl_vars['webconfig']->value['presentationfee']['val'];?>
+ 元</p>
+                        </div>
+                        <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
+                            <div>
+                                <p style="text-align: center;color:red;">上传收款二维码</p>
+                                <div class="block">
+                                    <div class="row">
+                                        <div class="col-50" style="margin-left:25%;">
+                                            <a href="javascript:;" class="img-upload">
+                                                <input type="file" accept="image/png,image/jpeg,image" name="img1" id="sfz1" style="cursor:pointer;width: 100%!important;height: 100%!important;">
+                                                <img src="" alt="" id="sfzimg1">
+                                                <div class="text" style="padding-top: 30%">
+                                                    <i class="f7-icons">+</i>
+                                                    <p>收款二维码</p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </li>
-                        <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
-
-                    </ul>
-                </div>
+                        </div>
+                        <div>
+                            <button id="submits" style="font-size:16px;cursor:pointer;background: #BC9568;border:unset;color:#fff;height: 45px;width: 95%;margin: 0 auto;position: fixed;bottom: 14px;border-radius: 5px;">提交</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -472,10 +354,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 >
 <?php echo '<script'; ?>
  src="<?php echo VIEW_ROOTPATH;?>
-/assets/wap/js/clipboard.min.js"><?php echo '</script'; ?>
->
-<?php echo '<script'; ?>
- src="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/js/app.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
@@ -491,15 +369,30 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 /assets/wap/scrollmenu/js/scrollmenu.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- type="text/javascript">
-    function coupon_tx(id) {
-        var confirmis=confirm("确定提现该优惠劵吗？");
-        if (confirmis==true){
-
+>
+    $(document).ready(function () {
+        $('.img-upload').each(function (i) {
+            i = i + 1;
+            new uploadPreview({
+                UpBtn: 'sfz' + i,
+                ImgShow: 'sfzimg' + i,
+                callback: function (e, file) {
+                    console.log(e, file);
+                    $(e).closest('.img-upload').find('.text').hide();
+                }
+            });
+        });
+        $("#submits").click(function () {
+            wu.showLoadingBg();
+            setTimeout(() => {
+                //隐藏loading
+                wu.hideToast();
+            }, 3000);
             var formData = new FormData();
-            formData.append("id", id);
+            formData.append("img1", $("#sfz1")[0].files[0]);
+            formData.append("money", $("#money").val());
             var options = {
-                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'coupon_tx');?>
+                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'presentationform');?>
 ",
                 type: 'post',
                 dataType: 'json',
@@ -517,27 +410,41 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                             location.href = "<?php echo WSURLSHOW('appuser','withdrawal');?>
 ";
                         }, 1000);
-                    } else {
+                    }
+                    if (res["state"] == "error") {
                         var msg = "网络异常！";
 
                         if (res["code"] == -1001) {
                             msg = "参数异常！";
                         }
-                        if (res["code"] == -1020) {
-                            msg = "优惠卷不存在！";
+
+                        if (res["code"] == -1002) {
+                            msg = "提现金额有误！";
                         }
+                        if (res["code"] == -1003) {
+                            msg = "提现金额最小限1元";
+                        }
+                        if (res["code"] == -1005) {
+                            msg = "请填写收款二维码！";
+                        }
+                        if (res["code"] == -1006) {
+                            msg = "提交失败！";
+                        }
+                        if (res["code"] == -1007) {
+                            msg = "账户余额不足！";
+                        }
+
+                        if (res["code"] == -1008) {
+                            msg = "提交中途异常！";
+                        }
+
                         if (res["code"] == -1010) {
                             msg = "请上传收款二维码！";
                         }
                         if (res["code"] == -1011) {
                             msg = "收款二维码格式有误！";
                         }
-                        if (res["code"] == -1008) {
-                            msg = "提交中途异常！";
-                        }
-                        if (res["code"] == -1006) {
-                            msg = "提交失败！";
-                        }
+
                         wu.showMessage({
                             title: msg,
                             backgroundColor: 'red',
@@ -557,12 +464,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             };
             $.ajax(options);
             return false;
-        }else{
-            return false;
-        }
-    }
+        });
+    });
 <?php echo '</script'; ?>
 >
 </body>
-</html><?php }
+</html>
+<?php }
 }

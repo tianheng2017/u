@@ -253,16 +253,16 @@
                             </a>
                         </li>
                         <li>
-                            <a class="external" href="<{WSURLSHOW($WsCtrlClass,'invitation')}>">
-                                <img src="<{VIEW_ROOTPATH}>/assets/wap/img/yaoqing.png"/>
-                                <p>邀请好友</p>
+                            <a class="external" href="<{WSURLSHOW($WsCtrlClass,'coupon')}>">
+                                <img src="<{VIEW_ROOTPATH}>/assets/wap/img/yeji.png"/>
+                                <p>优惠卷</p>
                                 <i class="right_icon"></i>
                             </a>
                         </li>
                         <li>
-                            <a class="external" href="<{WSURLSHOW($WsCtrlClass,'coupon')}>">
-                                <img src="<{VIEW_ROOTPATH}>/assets/wap/img/yeji.png"/>
-                                <p>优惠卷</p>
+                            <a class="external" href="<{WSURLSHOW($WsCtrlClass,'invitation')}>">
+                                <img src="<{VIEW_ROOTPATH}>/assets/wap/img/yaoqing.png"/>
+                                <p>邀请好友</p>
                                 <i class="right_icon"></i>
                             </a>
                         </li>
