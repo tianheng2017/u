@@ -7,6 +7,8 @@ use app\model\admin\AdminModel;
 use app\model\user\UserModel;
 use app\model\tram\OrderModel;
 use app\ormModel\Itemlist;
+use app\ormModel\Itemlog;
+use app\ormModel\Itemlogp;
 
 class adminuserCtrl extends commonCtrl
 {
@@ -325,6 +327,17 @@ class adminuserCtrl extends commonCtrl
             echo "添加失败！";
         }
 	}
+
+	public function itemdel(){
+	    $id = post('id');
+	    $a = Itemlog::where(['item_id'=>$id,'status'=>0])->count();
+	    $b = Itemlogp::where(['item_id'=>$id,'status'=>0])->count();
+	    if ($a || $b){
+	        echo "删除失败, 该项目有投资者尚未结算!";
+        }else{
+	        echo "成功";
+        }
+    }
 	
 	public function itemlog()
 	{
