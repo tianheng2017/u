@@ -286,10 +286,7 @@
 </div>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.min.js"></script>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/js/framework7.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/upload.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/clipboard.min.js"></script>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/js/app.js"></script>
-<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.qrcode.min.js"></script>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/bscroll.js"></script>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/scrollmenu.js"></script>
 <script>
@@ -344,7 +341,7 @@
                             msg = "充值金额有误！";
                         }
                         if (res["code"] == -1003) {
-                            msg = "充值金额最小限 <{$webconfig.minrechargemoney.val}> USDT";
+                            msg = "充值金额最低 <{$webconfig.minrechargemoney.val}> 元";
                         }
                         if (res["code"] == -1004) {
                             msg = "请填写手机号！";

@@ -9,15 +9,21 @@
     <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7.ios.min.css">
     <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7-icons.css">
     <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/style.css">
+
+
     <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/css/animate.css">
     <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/css/scrollmenu.css">
+
     <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap2/css/style.css">
+
+
     <!--vue_alert_start-->
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/wu-ui.css" />
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/vuealert/js/vue.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/wu-ui.css"/>
+    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/vue.min.js"></script>
     <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/wu-ui.js"></script>
+
     <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/alert/css/alert.css">
 </head>
 <style>
@@ -309,16 +315,19 @@
 </div>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.min.js"></script>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/js/framework7.min.js"></script>
+<script src="<{VIEW_ROOTPATH}>/assets/wap/js/upload.js"></script>
+<script src="<{VIEW_ROOTPATH}>/assets/wap/js/clipboard.min.js"></script>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/js/app.js"></script>
+<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.qrcode.min.js"></script>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/bscroll.js"></script>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/scrollmenu.js"></script>
-<script src='<{VIEW_ROOTPATH}>/assets/alert/js/alert.js'></script>
 <script type="text/javascript">
     function coupon_tx(val) {
         var confirmis=confirm("确定提现该优惠劵吗？");
         if (confirmis==true){
             wu.showLoadingBg();
             setTimeout(() => {
+                //隐藏loading
                 wu.hideToast();
             }, 3000);
             var options = {

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 14:47:11
+/* Smarty version 3.1.30, created on 2020-05-04 14:55:04
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_coupon.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafba6f440852_84140780',
+  'unifunc' => 'content_5eafbc48257593_07373952',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '22a4276cc821cc96210111610c53c56b3d5f0370' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_coupon.tpl',
-      1 => 1588574818,
+      1 => 1588575302,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafba6f440852_84140780 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafbc48257593_07373952 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,27 +37,33 @@ function content_5eafba6f440852_84140780 (Smarty_Internal_Template $_smarty_tpl)
 /assets/wap/css/framework7-icons.css">
     <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/css/style.css">
+
+
     <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/scrollmenu/css/animate.css">
     <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/scrollmenu/css/scrollmenu.css">
+
     <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
 /assets/wap2/css/style.css">
+
+
     <!--vue_alert_start-->
     <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
-/assets/public/vuealert/css/reset.css" />
+/assets/public/vuealert/css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
-/assets/public/vuealert/css/iconfont.css" />
+/assets/public/vuealert/css/iconfont.css"/>
     <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
-/assets/public/vuealert/css/wu-ui.css" />
+/assets/public/vuealert/css/wu-ui.css"/>
     <?php echo '<script'; ?>
  type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
-/assets/vuealert/js/vue.min.js"><?php echo '</script'; ?>
+/assets/public/vuealert/js/vue.min.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
  type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
 /assets/public/vuealert/js/wu-ui.js"><?php echo '</script'; ?>
 >
+
     <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
 /assets/alert/css/alert.css">
 </head>
@@ -371,7 +377,19 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 >
 <?php echo '<script'; ?>
  src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/upload.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/clipboard.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/js/app.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.qrcode.min.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
  src="<?php echo VIEW_ROOTPATH;?>
@@ -382,18 +400,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 /assets/wap/scrollmenu/js/scrollmenu.js"><?php echo '</script'; ?>
 >
 <?php echo '<script'; ?>
- src='<?php echo VIEW_ROOTPATH;?>
-/assets/alert/js/alert.js'><?php echo '</script'; ?>
->
-<?php echo '<script'; ?>
  type="text/javascript">
+$(document).ready(function () {
     function coupon_tx(val) {
         var confirmis=confirm("确定提现该优惠劵吗？");
         if (confirmis==true){
-            wu.showLoadingBg();
-            setTimeout(() => {
-                wu.hideToast();
-            }, 3000);
             var options = {
                 url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'coupon_tx');?>
 ",
@@ -411,8 +422,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                             location.href = "<?php echo WSURLSHOW('appuser','withdrawal');?>
 ";
                         }, 1000);
-                    }
-                    if (res["state"] == "error") {
+                    } else {
                         var msg = "网络异常！";
 
                         if (res["code"] == -1001) {
@@ -456,6 +466,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
             return false;
         }
     }
+});
 <?php echo '</script'; ?>
 >
 </body>
