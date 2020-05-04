@@ -285,7 +285,7 @@ class adminuserCtrl extends commonCtrl
         ],[
             "id" => post('id')
         ]);
-        if($info->id){
+        if($info->item_name){
             echo "成功";
         }else{
             echo "修改失败！";

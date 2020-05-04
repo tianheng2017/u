@@ -141,7 +141,6 @@
                                     <tr>
 										<th data-field="">ID</th>
                                         <th data-field="">幻灯片名称</th>
-										<th data-field="">语言</th>
 										<th data-field="">图片</th>
                                         <th data-field="">状态</th>
 										<th data-field="">添加时间</th>
@@ -153,14 +152,6 @@
                                     <tr class="usertr<{$datai['id']}>">
 										<td class="tdtcenter"><{$datai['id']}></td>
 										<td class="tdtcenter"><{$datai['name']}></td>
-										<td class="tdtcenter">
-                                            <{if $datai['type']==1}>
-											<span style="background: #87dde6;color:#fff;padding: 4px 10px;border-radius: 2px;">	中文</span>
-											<{/if}>
-											<{if $datai['type']==2}>
-											<span style="background: #00bcd4;color:#fff;padding: 4px 10px;border-radius: 2px;">	英文</span>
-											<{/if}>
-                                        </td>
 										<td class="tdtcenter"><{$datai['img']}></td>
 										<td class="tdtcenter">
                                             <{if $datai['status']==1}>

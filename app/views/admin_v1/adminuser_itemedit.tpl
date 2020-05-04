@@ -96,8 +96,8 @@
                                                     <label for="passwordtwo">产品天数(天)</label>
                                                 </div>
                                                 <div class="input-field col s6" style="display:;">
-                                                    <input id="password" value="" name="desc" type="text">
-                                                    <label for="password">产品特色</label>
+                                                    <input id="desc" value="<{$data.desc}>" name="desc" type="text">
+                                                    <label for="desc">产品特色</label>
                                                 </div>
                                                 <div class="input-field col s6" style="display:;">
                                                     <input id="password" value="<{$data.isty}>" name="isty" type="number">

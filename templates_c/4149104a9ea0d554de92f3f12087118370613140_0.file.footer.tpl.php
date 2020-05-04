@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 11:54:04
+/* Smarty version 3.1.30, created on 2020-05-04 14:10:40
   from "E:\u.xiangxin.me\app\views\admin_v1\footer.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eaf91dc2000e8_83628529',
+  'unifunc' => 'content_5eafb1e0a735c5_85069555',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eaf91dc2000e8_83628529 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafb1e0a735c5_85069555 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <footer class="page-footer">
 	<div class="container">

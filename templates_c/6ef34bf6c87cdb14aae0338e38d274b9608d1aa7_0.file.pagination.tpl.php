@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 12:01:14
+/* Smarty version 3.1.30, created on 2020-05-04 14:10:44
   from "E:\u.xiangxin.me\app\views\admin_v1\public\pagination.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eaf938a163f23_87132894',
+  'unifunc' => 'content_5eafb1e45e57f6_17126329',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eaf938a163f23_87132894 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafb1e45e57f6_17126329 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <style>
 .pagination2 li {

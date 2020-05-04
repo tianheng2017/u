@@ -152,7 +152,7 @@
 										<th data-field="">产品天数</th>
 										<th data-field="">年化率</th>
 										<th data-field="">投资金额</th>
-										<th data-field="">返利金额</th>
+										<th data-field="">返还金额</th>
 										<th data-field="">利息</th>
 										<th data-field="">存入时间</th>
                                       	<th data-field="">返利时间</th>

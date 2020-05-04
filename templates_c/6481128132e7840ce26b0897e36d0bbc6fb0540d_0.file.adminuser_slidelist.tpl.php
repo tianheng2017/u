@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 13:51:41
+/* Smarty version 3.1.30, created on 2020-05-04 14:10:44
   from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_slidelist.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafad6d20ce42_12141694',
+  'unifunc' => 'content_5eafb1e45b8e45_75823580',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6481128132e7840ce26b0897e36d0bbc6fb0540d' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_slidelist.tpl',
-      1 => 1577718992,
+      1 => 1588572395,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eafad6d20ce42_12141694 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafb1e45b8e45_75823580 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -183,7 +183,6 @@ function content_5eafad6d20ce42_12141694 (Smarty_Internal_Template $_smarty_tpl)
                                     <tr>
 										<th data-field="">ID</th>
                                         <th data-field="">幻灯片名称</th>
-										<th data-field="">语言</th>
 										<th data-field="">图片</th>
                                         <th data-field="">状态</th>
 										<th data-field="">添加时间</th>
@@ -202,14 +201,6 @@ foreach ($_from as $_smarty_tpl->tpl_vars['datai']->value) {
 </td>
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['name'];?>
 </td>
-										<td class="tdtcenter">
-                                            <?php if ($_smarty_tpl->tpl_vars['datai']->value['type'] == 1) {?>
-											<span style="background: #87dde6;color:#fff;padding: 4px 10px;border-radius: 2px;">	中文</span>
-											<?php }?>
-											<?php if ($_smarty_tpl->tpl_vars['datai']->value['type'] == 2) {?>
-											<span style="background: #00bcd4;color:#fff;padding: 4px 10px;border-radius: 2px;">	英文</span>
-											<?php }?>
-                                        </td>
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['img'];?>
 </td>
 										<td class="tdtcenter">

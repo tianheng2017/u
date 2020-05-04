@@ -74,10 +74,6 @@
                                                     <input id="username" name="name" type="text">
                                                     <label for="username">幻灯片名称</label>
                                                 </div>
-                                                <div class="input-field col s6" style="display:;">
-                                                    <input id="password" value="1" name="type" type="text">
-                                                    <label for="password">类型：1.中文 2.英文</label>
-                                                </div>	
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="" name="img" type="text">
                                                     <label for="passwordtwo">图片地址</label>
