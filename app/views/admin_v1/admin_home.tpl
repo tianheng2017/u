@@ -192,7 +192,7 @@
 
                                                 <div class="file-field input-field col s12">
                                                     <label for="first_name">网站收款二维码</label>
-                                                    <input class="file-path validate" id="rechargeimg" name="rechargeimg" value="<{$webconfig['rechargeimg']['val']}>" type="text" onclick="imguM()" />
+                                                    <input style="width: 500px;" class="file-path validate" id="rechargeimg" name="rechargeimg" value="<{$webconfig['rechargeimg']['val']}>" type="text" onclick="imguM()" />
                                                     <div class="btn">
                                                         <span>上传</span>
                                                         <input id="logof" type="file" />
@@ -408,7 +408,7 @@
 	
 	
 	
-		function getCurrentDate(){                    
+		function getCurrentDate(){
 			var date=new Date();
 			var myYear=date.getFullYear();
 			var myMonth=date.getMonth()+1;

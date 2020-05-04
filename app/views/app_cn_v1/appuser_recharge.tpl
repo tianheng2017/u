@@ -39,7 +39,7 @@
     }
 
     .coininfodivlay {
-		background: #242426 !important;
+		background: #2c2c2c !important;
 
         padding: 0 3% 25px;
 
@@ -242,8 +242,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="coininfodivlay coininfodivlayusdt" style="display:;">
+                    <div style="width:100%;text-align:center;" id="codedivusdt">
+                        <img src="/upload/images/a/<{$webconfig.rechargeimg.val}>" alt="">
+                    </div>
+                    <p style="text-align: center;color:red;margin-top:1rem;">网站收款二维码</p>
+                </div>
                 <form action="#" id="form_post" name="form_post" method="post">
-                    <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
+                    <div style="padding: 0 3%;color: #727679;margin: 0;">
                         <div>
 
                             <input type="number" id="money" name="money" placeholder="请输入充值金额" style="padding: 0 10px;" onkeyup="this.value= this.value.match(/\d+(\.\d{0,2})?/) ? this.value.match(/\d+(\.\d{0,2})?/)[0] : ''">

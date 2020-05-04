@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 21:13:01
+/* Smarty version 3.1.30, created on 2020-05-04 21:25:34
   from "E:\u.xiangxin.me\app\views\admin_v1\admin_home.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eb014dd8130d5_10686225',
+  'unifunc' => 'content_5eb017ce1467c5_77172654',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0806b66c1b4be706905963a739037fd973cda447' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\admin_home.tpl',
-      1 => 1588597979,
+      1 => 1588598732,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5eb014dd8130d5_10686225 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eb017ce1467c5_77172654 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -243,7 +243,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
                                                 <div class="file-field input-field col s12">
                                                     <label for="first_name">网站收款二维码</label>
-                                                    <input class="file-path validate" id="rechargeimg" name="rechargeimg" value="<?php echo $_smarty_tpl->tpl_vars['webconfig']->value['rechargeimg']['val'];?>
+                                                    <input style="width: 500px;" class="file-path validate" id="rechargeimg" name="rechargeimg" value="<?php echo $_smarty_tpl->tpl_vars['webconfig']->value['rechargeimg']['val'];?>
 " type="text" onclick="imguM()" />
                                                     <div class="btn">
                                                         <span>上传</span>
@@ -505,7 +505,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 	
 	
 	
-		function getCurrentDate(){                    
+		function getCurrentDate(){
 			var date=new Date();
 			var myYear=date.getFullYear();
 			var myMonth=date.getMonth()+1;

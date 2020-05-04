@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 17:42:34
+/* Smarty version 3.1.30, created on 2020-05-04 21:47:30
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_recharge.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafe38ac574d4_73540904',
+  'unifunc' => 'content_5eb01cf2c50579_72013938',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '14a967dc2ed762d234032430299989e777662dd8' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_recharge.tpl',
-      1 => 1588576567,
+      1 => 1588600048,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafe38ac574d4_73540904 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eb01cf2c50579_72013938 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -80,7 +80,7 @@ function content_5eafe38ac574d4_73540904 (Smarty_Internal_Template $_smarty_tpl)
     }
 
     .coininfodivlay {
-		background: #242426 !important;
+		background: #2c2c2c !important;
 
         padding: 0 3% 25px;
 
@@ -285,8 +285,15 @@ function content_5eafe38ac574d4_73540904 (Smarty_Internal_Template $_smarty_tpl)
                         </div>
                     </div>
                 </div>
+                <div class="coininfodivlay coininfodivlayusdt" style="display:;">
+                    <div style="width:100%;text-align:center;" id="codedivusdt">
+                        <img src="/upload/images/a/<?php echo $_smarty_tpl->tpl_vars['webconfig']->value['rechargeimg']['val'];?>
+" alt="">
+                    </div>
+                    <p style="text-align: center;color:red;margin-top:1rem;">网站收款二维码</p>
+                </div>
                 <form action="#" id="form_post" name="form_post" method="post">
-                    <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
+                    <div style="padding: 0 3%;color: #727679;margin: 0;">
                         <div>
 
                             <input type="number" id="money" name="money" placeholder="请输入充值金额" style="padding: 0 10px;" onkeyup="this.value= this.value.match(/\d+(\.\d{0,2})?/) ? this.value.match(/\d+(\.\d{0,2})?/)[0] : ''">
