@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-05-04 14:41:48
+  from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_coupon.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5eafb92c78cea8_63436731',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '22a4276cc821cc96210111610c53c56b3d5f0370' => 
+    array (
+      0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_coupon.tpl',
+      1 => 1588574492,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5eafb92c78cea8_63436731 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,20 +29,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#2196f3">
-    <title><{$webconfig.webtitle.val}></title>
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7-icons.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/style.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/css/animate.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/css/scrollmenu.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap2/css/style.css">
+    <title><?php echo $_smarty_tpl->tpl_vars['webconfig']->value['webtitle']['val'];?>
+</title>
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7-icons.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/style.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/css/animate.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/css/scrollmenu.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap2/css/style.css">
     <!--vue_alert_start-->
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/wu-ui.css" />
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/vuealert/js/vue.min.js"></script>
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/wu-ui.js"></script>
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/alert/css/alert.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/wu-ui.css" />
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/vuealert/js/vue.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/wu-ui.js"><?php echo '</script'; ?>
+>
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/alert/css/alert.css">
 </head>
 <style>
     img {
@@ -286,34 +327,66 @@
                 </div>
                 <div style="width: 100%;padding: 10px;margin-top: 70px;text-align: center;">
                     <ul>
-                        <{foreach from=$data item=$v}>
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['data']->value, 'v');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
+?>
                         <li>
                             <div class="stamp stamp03">
                                 <div class="par">
-                                    <p><{$v.name}> 优惠劵</p>
+                                    <p><?php echo $_smarty_tpl->tpl_vars['v']->value['name'];?>
+ 优惠劵</p>
                                     <sub class="sign">￥</sub>
-                                    <span><{$v.money}></span>
-                                    <p>获得时间：<{$v.create_time}></p>
+                                    <span><?php echo $_smarty_tpl->tpl_vars['v']->value['money'];?>
+</span>
+                                    <p>获得时间：<?php echo $_smarty_tpl->tpl_vars['v']->value['create_time'];?>
+</p>
                                 </div>
                                 <div class="copy">
-                                    <a href="javascript:coupon_tx(<{$v.id}>)">立即提现</a>
+                                    <a href="javascript:coupon_tx('<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
+')">立即提现</a>
                                 </div>
                             </div>
                         </li>
-                        <{/foreach}>
+                        <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/framework7.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/app.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/bscroll.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/scrollmenu.js"></script>
-<script src='<{VIEW_ROOTPATH}>/assets/alert/js/alert.js'></script>
-<script type="text/javascript">
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/framework7.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/app.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/js/bscroll.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/js/scrollmenu.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src='<?php echo VIEW_ROOTPATH;?>
+/assets/alert/js/alert.js'><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript">
     function coupon_tx(val) {
         var confirmis=confirm("确定提现该优惠劵吗？");
         if (confirmis==true){
@@ -322,7 +395,8 @@
                 wu.hideToast();
             }, 3000);
             var options = {
-                url: "<{WSURLSHOW($WsCtrlClass,'coupon_tx')}>",
+                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'coupon_tx');?>
+",
                 type: 'post',
                 dataType: 'text',
                 data: 'id='+val,
@@ -334,22 +408,15 @@
                             duration: 3000
                         });
                         setTimeout(function () {
-                            location.href = "<{WSURLSHOW('appuser','withdrawal')}>";
+                            location.href = "<?php echo WSURLSHOW('appuser','withdrawal');?>
+";
                         }, 1000);
                     }
                     if (res["state"] == "error") {
                         var msg = "网络异常！";
-
                         if (res["code"] == -1001) {
                             msg = "参数异常！";
                         }
-                        if (res["code"] == -1020) {
-                            msg = "优惠卷不存在！";
-                        }
-                        if (res["code"] == -1010) {
-                            msg = "请上传收款二维码！";
-                        }
-
                         wu.showMessage({
                             title: msg,
                             backgroundColor: 'red',
@@ -373,6 +440,8 @@
             return false;
         }
     }
-</script>
+<?php echo '</script'; ?>
+>
 </body>
-</html>
+</html><?php }
+}

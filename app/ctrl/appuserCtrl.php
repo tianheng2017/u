@@ -766,16 +766,19 @@ class appuserCtrl extends commonCtrl
     public function coupon_tx()
     {
         $user = self::$myuserinfo;
-        $id = post('id');
-        $coupon = Coupon::where(['id'=>$id, 'uid'=>$user['id']])->find();
-        if (empty($coupon)){
-            error(-1020 , "优惠劵不存在");
-        }
         $userc = self::DB()->select("user" ,[
             "id","money"
         ],["AND" =>[
             "id[=]" => $user['id']
         ]]);
+
+        $id = post('id');
+        $coupon = Coupon::where(['id'=>$id, 'uid'=>$userc[0]['id']])->find();
+
+        if (empty($coupon)){
+            error(-1020 , "优惠劵不存在");
+        }
+
         if(count($userc)>0){
             if(empty($_FILES["img1"])){
                 error(-1010 , "请上传收款二维码");
@@ -816,10 +819,10 @@ class appuserCtrl extends commonCtrl
                 $datetime = new \DateTime;
                 $insert_id = self::DB()->insert("withdrawal", [
                     "uid" => $userc[0]['id'],
-                    'money'=> $money,
-                    'presentationfee'=> $presentationfee,
+                    'money'=> $coupon['money'],
+                    'presentationfee'=> 0,
                     'img1'=> $imgurlval1,
-                    'mtype'=> 1,
+                    'mtype'=> 2,
                     "state" => 1,
                     "time" => $datetime->format('Y-m-d H:i:s')
                 ]);
