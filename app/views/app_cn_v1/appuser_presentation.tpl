@@ -264,7 +264,7 @@
                     <div style="padding: 0 3%;background: #2C2C2E;height: 370px;padding-top: 30px;">
                         <div style="color:#727679;font-size: 14px;padding-bottom: 10px;">
                             <input type="number" id="money" name="money" placeholder="请输入提现金额" style="padding: 0 10px;" onkeyup="this.value= this.value.match(/\d+(\.\d{0,2})?/) ? this.value.match(/\d+(\.\d{0,2})?/)[0] : ''">
-                            <p style="color: #2c7fbd;margin-top: 10px;font-size: 10px;padding-left: 10px;">提现手续费 <{$webconfig.presentationfee.val}> 元</p>
+                            <p style="color: #2c7fbd;margin-top: 10px;font-size: 10px;padding-left: 10px;">最小提现金额 <{$webconfig.minwithdrawal.val}> 元，手续费 <{$webconfig.presentationfee.val}> %</p>
                         </div>
                         <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
                             <div>

@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-05-04 20:13:35
+  from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_upassword.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5eb006ef0684b0_31456749',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'ff94a83bff221f07578176a3d506f580b03cd5ab' => 
+    array (
+      0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_upassword.tpl',
+      1 => 1588594411,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5eb006ef0684b0_31456749 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,16 +29,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#2196f3">
-    <title><{$webconfig.webtitle.val}></title>
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/style.css">
+    <title><?php echo $_smarty_tpl->tpl_vars['webconfig']->value['webtitle']['val'];?>
+</title>
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/style.css">
 	
 	<!--vue_alert_start-->
-	<link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/reset.css" />
-	<link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/iconfont.css" />
-	<link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/wu-ui.css" />
-	<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/vue.min.js"></script>
-	<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/wu-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/wu-ui.css" />
+	<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/vue.min.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/wu-ui.js"><?php echo '</script'; ?>
+>
 	<!--vue_alert_end-->
 	
 </head>
@@ -23,9 +59,6 @@
 		display: initial;
 		width: initial;
 		border: 0;
-	}
-	.ios .navbar {
-		background-color: rgba(255, 255, 255, 0.11);
 	}
 	.ios .login-box .list .item-inner {
     padding-left: 10px;
@@ -75,9 +108,7 @@
 	.ios .list .item-inner{
 		border-bottom: 2px solid #2c2c2c;
 	}
-	.ios .button.button-fill, .ios .button.button-fill-ios {
-		background-color: #26A07B !important;
-	}
+
 
 	.ios .theme-dark .navbar, .navbar.ios .theme-dark, .ios .navbar {
 		background-color: #2C2C2E!important;
@@ -135,35 +166,32 @@
                             <i class="icon icon-back"></i>
                         </a>
                     </div>
-                    <div class="title text-color-white">修改安全密码</div>
+                    <div class="title text-color-white">修改密码</div>
                 </div>
             </div>
             <div class="page-content" style="padding-top: 55px;">
 				<div style="height: 70px;color: #727679;font-size: 14px;text-align: center;padding-top: 10px;background: #2C2C2E;">
-					请为您<span style="color: #fff;"> <{$username}> </span>设置一个<br>
+					请为您<span style="color: #fff;"> <?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+ </span>设置一个<br>
 					<span style="text-align: center;">新密码</span>
 				</div>
                 <div class="login-box block">
 					<form action="#" id="form_post" name="form_post" method="post">
 						<div class="list no-margin no-hairlines">
 							<ul>
-								<li class="item-content">
-									<div class="item-inner">
-										<div class="item-input-wrap">
-											<p style="font-size: 12px;">验证码</p>
-											<input id="codeusername" type="text" name="codeusername" placeholder="输入验证码">
-										</div>
-										<div class="item-after">
-											<button class="button button-fill codeusernamebtn">获取</button>
-										</div>
-									</div>
-								</li>
-								
 								<li class="item-content item-input">
 									<div class="item-inner">
 										<div class="item-input-wrap">
-											<p style="font-size: 12px;">新安全密码</p>
-											<input type="password" name="passwordtwon" placeholder="输入新安全密码">
+											<p style="font-size: 12px;">原密码</p>
+											<input type="password" name="password" placeholder="输入原密码">
+										</div>
+									</div>
+								</li>
+								<li class="item-content item-input">
+									<div class="item-inner">
+										<div class="item-input-wrap">
+											<p style="font-size: 12px;">新密码</p>
+											<input type="password" name="passwordn" placeholder="输入新密码">
 										</div>
 									</div>
 								</li>
@@ -171,7 +199,7 @@
 									<div class="item-inner">
 										<div class="item-input-wrap">
 											<p style="font-size: 12px;">再次输入</p>
-											<input type="password" name="passwordtwon2" placeholder="再次输入新安全密码">
+											<input type="password" name="passwordn2" placeholder="再次输入新密码">
 										</div>
 									</div>
 								</li>
@@ -184,11 +212,21 @@
         </div>
     </div>
 </div>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/framework7.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/app.js"></script>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/framework7.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/app.js"><?php echo '</script'; ?>
+>
 
-<script>
+<?php echo '<script'; ?>
+>
 	$(".poatformbtn").click(function () {
 		wu.showLoadingBg();
 		setTimeout(() => {
@@ -197,7 +235,8 @@
 		}, 3000);
 		
 		var options = {
-			url: "<{WSURLSHOW($WsCtrlClass,'upasswordtwoform')}>",
+			url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'upasswordform');?>
+",
 			type: 'post',
 			dataType: 'json',
 			data: $("#form_post").serialize(),
@@ -241,17 +280,6 @@
 					if(res["data"]["msg"]=="1009"){
 						restxt = "密码相同，无需修改！";
 					}
-					
-					if(res["data"]["msg"]=="1011"){
-						restxt = "验证码已超时，请重新发送！";
-					}
-					if(res["data"]["msg"]=="1012"){
-						restxt = "验证码错误！";
-					}
-					if(res["data"]["msg"]=="1013"){
-						restxt = "验证码错误！";
-					}
-					
 					wu.showMessage({
 						title: restxt,
 						backgroundColor: 'red',
@@ -272,77 +300,10 @@
 		$.ajax(options);
 		return false;
 	});
-	
-	
-	
-	
-	var flagpcode=true;
-	var pcodetime=60;
-	$(".codeusernamebtn").click(function () {
-		var codeusername="<{$myuserinfo['username']}>";
-		
-		if(!flagpcode){
-			return false;
-		}
-		$(".codeusernamebtn").html("发送中···");
-		flagpcode=false;
-		
-		
-		
-		var options = {
-			url: "<{WSURLSHOW($WsCtrlClass,'codeusername')}>",
-			type: 'post',
-			dataType: 'text',
-			data: "codeusername="+codeusername,
-			success: function (data) {
-				if (data.length > 0) {
-					if (data == "1001") {
-						wu.showMessage({
-							title: "发送成功！",
-							backgroundColor: '#2bde62',
-							duration: 3000
-						});
-						var intj=self.setInterval(function (){
-							if(pcodetime==0){
-								window.clearInterval(intj);
-								flagpcode=true;
-								pcodetime=60;
-								$(".codeusernamebtn").html("重新发送");
-							}else{
-								pcodetime=pcodetime-1;
-								$(".codeusernamebtn").html(pcodetime+"s");
-							}
-							
-						},1000);
-					}
-					if (data !="1001") {
-					
-						flagpcode=true;
-						pcodetime=60;
-						$(".codeusernamebtn").html("重新发送");
-						
-						var restxt = "网络异常！";
-						if (data == "1002") {
-							restxt = "发送失败！";
-						}else if (data == "1005") {
-							restxt = "手机号格式有误！";
-						}else{
-							restxt = "发送频率过快，请稍等"+data+"s";
-						}
-						
-						wu.showMessage({
-							title: restxt,
-							backgroundColor: 'red',
-							duration: 3000
-						});
-					}
-				}
-			}
-		};
-		$.ajax(options);
-		return false;
-	});
-</script>
+<?php echo '</script'; ?>
+>
 
 </body>
 </html>
+<?php }
+}

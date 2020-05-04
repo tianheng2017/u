@@ -24,7 +24,7 @@ class commonCtrl extends \core\common
 	public function webconfig($name = "")
 	{
 		if($name == ""){
-			$webconfig = self::DB()->query(" SELECT id,name,val,content FROM `webconfig` ")->fetchAll();
+			$webconfig = self::DB()->query(" SELECT id,name,val,content FROM `webconfig` order by id asc")->fetchAll();
 			$data = array();
 			
 			foreach($webconfig as $k=>$v){

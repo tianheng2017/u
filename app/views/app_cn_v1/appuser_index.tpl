@@ -218,7 +218,7 @@
                         </div>
                         <div style="height: 60px;width: 100%;">
                             <span style="display: block;font-size: 13px;color: #727679;">账户总资产</span>
-                            <span style="display: block;margin-top: 10px;font-size: 22px;color: #BC9568;font-weight: bold;"><{number_format($myuserinfo["money"], 4, '.', '')}></span>
+                            <span style="display: block;margin-top: 10px;font-size: 22px;color: #BC9568;font-weight: bold;"><{number_format($myuserinfo["money"], 2, '.', '')}></span>
                             <!--span style="display: block;color:#727679;font-size: 12px;margin-top: 5px;">≈ ¥<{number_format(($myuserinfo["money"]), 4, '.', '')}></span-->
                         </div>
                         <div style="width: 100%;position: relative;">

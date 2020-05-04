@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-05-04 20:23:27
+  from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_rechargelog.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5eb0093fa0a261_86600775',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'e620e710c3c756e7a530fc5f4a75d8f2da2e07e8' => 
+    array (
+      0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_rechargelog.tpl',
+      1 => 1588595006,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5eb0093fa0a261_86600775 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,20 +30,34 @@
           content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#2196f3">
-    <title><{$webconfig.webtitle.val}></title>
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7-icons.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/style.css">
+    <title><?php echo $_smarty_tpl->tpl_vars['webconfig']->value['webtitle']['val'];?>
+</title>
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7-icons.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/style.css">
 
 
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap2/css/style.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap2/css/style.css">
 
     <!--vue_alert_start-->
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/iconfont.css"/>
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/wu-ui.css"/>
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/vue.min.js"></script>
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/wu-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/wu-ui.css"/>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/vue.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/wu-ui.js"><?php echo '</script'; ?>
+>
     <!--vue_alert_end-->
 
     <style>
@@ -91,10 +129,20 @@
             </div>
         </div>
     </div>
-    <script src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.min.js"></script>
-    <script src="<{VIEW_ROOTPATH}>/assets/wap/js/framework7.min.js"></script>
-    <script src="<{VIEW_ROOTPATH}>/assets/wap/js/app.js"></script>
-    <script>
+    <?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/framework7.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/app.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+>
         $('.path').fadeIn();
         $('.path2').fadeIn();
         var page = 1;
@@ -134,7 +182,8 @@
             }, 3000);
 
             var options = {
-                url: "<{WSURLSHOW($WsCtrlClass,'rechargelogdo')}>/page/" + page,
+                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'rechargelogdo');?>
+/page/" + page,
                 type: 'post',
                 dataType: 'json',
                 data: "",
@@ -169,14 +218,16 @@
                                 //'<div style="word-wrap: break-word;" class="item-footer">Address:'+res["data"][i]["address"]+'</div>'+
 
                                 '</div>' +
-                                '<div class="item-after">' + res["data"][i]["money"] + ' <{PFCOINNAME}></div>' +
+                                '<div class="item-after">' + res["data"][i]["money"] + ' <?php echo PFCOINNAME;?>
+</div>' +
                                 '</div>' +
                                 '</li>';
                             $(".datadiv").append(datahtml);
                         }
 
 
-                        if (page == 1 && res["data"].length <<{SelPageApiDataNumber}>) {
+                        if (page == 1 && res["data"].length <<?php echo SelPageApiDataNumber;?>
+) {
                             selfalg = false;
                             $(".dataloading").fadeOut();
                             $(".datanone").fadeIn();
@@ -219,6 +270,9 @@
             $.ajax(options);
             return false;
         }
-    </script>
+    <?php echo '</script'; ?>
+>
 </body>
 </html>
+<?php }
+}

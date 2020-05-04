@@ -151,13 +151,13 @@
 							</div>
                         </li>
 						
-						<li>
+						<!--li>
                             <a href="<{WSURLSHOW($WsCtrlClass,'upuserinfo')}>" class="item-link item-content external">
                                 <div class="item-inner">
                                     <div class="item-title">修改资料</div>
                                 </div>
                             </a>
-                        </li>
+                        </li-->
 						
 						<li>
                             <span onclick="authenticationM()" class="item-link item-content external">

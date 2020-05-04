@@ -200,12 +200,12 @@ function seldata(){
 				selfalg = false;
 				$(".dataloading").fadeOut();
 				$(".datanone").fadeIn();
-				//wu.hideToast();
-				wu.showMessage({
-					title: "已无更多数据！",
-					backgroundColor: 'red',
-					duration: 3000
-				});
+				wu.hideToast();
+                // wu.showMessage({
+                //     title: "已无更多数据！",
+                //     backgroundColor: 'red',
+                //     duration: 3000
+                // });
 			}
 			if(res["code"]!="1001"&&res["code"]!="1005"){
 				wu.showMessage({

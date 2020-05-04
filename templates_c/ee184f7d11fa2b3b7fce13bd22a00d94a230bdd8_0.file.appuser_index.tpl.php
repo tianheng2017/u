@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 15:45:56
+/* Smarty version 3.1.30, created on 2020-05-04 20:20:13
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafc834e3f015_07676674',
+  'unifunc' => 'content_5eb0087de9ee68_34032120',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ee184f7d11fa2b3b7fce13bd22a00d94a230bdd8' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_index.tpl',
-      1 => 1588576053,
+      1 => 1588594812,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafc834e3f015_07676674 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eb0087de9ee68_34032120 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -259,7 +259,7 @@ function content_5eafc834e3f015_07676674 (Smarty_Internal_Template $_smarty_tpl)
                         </div>
                         <div style="height: 60px;width: 100%;">
                             <span style="display: block;font-size: 13px;color: #727679;">账户总资产</span>
-                            <span style="display: block;margin-top: 10px;font-size: 22px;color: #BC9568;font-weight: bold;"><?php echo number_format($_smarty_tpl->tpl_vars['myuserinfo']->value["money"],4,'.','');?>
+                            <span style="display: block;margin-top: 10px;font-size: 22px;color: #BC9568;font-weight: bold;"><?php echo number_format($_smarty_tpl->tpl_vars['myuserinfo']->value["money"],2,'.','');?>
 </span>
                             <!--span style="display: block;color:#727679;font-size: 12px;margin-top: 5px;">≈ ¥<?php echo number_format(($_smarty_tpl->tpl_vars['myuserinfo']->value["money"]),4,'.','');?>
 </span-->

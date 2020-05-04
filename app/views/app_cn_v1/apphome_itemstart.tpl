@@ -144,7 +144,7 @@
 							</a>
 						</div>
 						<div style="text-align: center;width: 100%;margin-left: -40px;">
-							存入
+							买入
 						</div>
 					</div>
 				</div>
@@ -183,10 +183,10 @@
 						<p style="width:100%;font-size: 16px;line-height: 30px;margin-bottom: 10px;">温馨提示</p>
 						<ul class="ul1">
 							<li style="text-align: left;width: 100%;margin-bottom: 10px;color: #727679;">
-								<p style="display: inline-block;width: 90%;">存入时间按UTC+8时间计算，当日存入，次日0点计息。</p>
+								<p style="display: inline-block;width: 90%;">买入时间按UTC+8时间计算，当日存入，次日0点后计息。</p>
 							</li>
 							<li style="text-align: left;width: 100%;margin-bottom: 10px;color: #727679;">
-								<p style="display: inline-block;width: 90%;">定期存入不支持提前支取，到期后，本金+利息将自动转入余额。</p>
+								<p style="display: inline-block;width: 90%;">不支持提前支取，到期后本金+利息自动结算。</p>
 							</li>
 						</ul>
 					</div>

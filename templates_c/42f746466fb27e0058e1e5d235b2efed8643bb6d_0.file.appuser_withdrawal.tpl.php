@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 16:58:50
+/* Smarty version 3.1.30, created on 2020-05-04 20:51:44
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_withdrawal.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafd94ac92a86_52805747',
+  'unifunc' => 'content_5eb00fe094c5e7_09133500',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '42f746466fb27e0058e1e5d235b2efed8643bb6d' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_withdrawal.tpl',
-      1 => 1588569498,
+      1 => 1588595006,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafd94ac92a86_52805747 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eb00fe094c5e7_09133500 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -251,12 +251,12 @@ function seldata(){
 				selfalg = false;
 				$(".dataloading").fadeOut();
 				$(".datanone").fadeIn();
-				//wu.hideToast();
-				wu.showMessage({
-					title: "已无更多数据！",
-					backgroundColor: 'red',
-					duration: 3000
-				});
+				wu.hideToast();
+                // wu.showMessage({
+                //     title: "已无更多数据！",
+                //     backgroundColor: 'red',
+                //     duration: 3000
+                // });
 			}
 			if(res["code"]!="1001"&&res["code"]!="1005"){
 				wu.showMessage({

@@ -249,8 +249,10 @@ function seldata(){
 					if(res["data"][i]["mtype"]=="161"){
 						mtypev="提现";
 					}
-					if(res["data"][i]["mtype"]=="163"){
+					if(res["data"][i]["mtype"]=="170"){
 						mtypev="优惠券提现";
+                        moneyoi="-";
+                        moneyoic="提现";
 					}
 					if(res["data"][i]["mtype"]=="167"){
 						mtypev="提现手续费";
@@ -258,9 +260,13 @@ function seldata(){
 					if(res["data"][i]["mtype"]=="168"){
 						mtypev="提现手续费";
 					}
+                    if(res["data"][i]["mtype"]=="169"){
+                        mtypev="优惠券获得";
+                        moneyoi="+";
+                        moneyoic="赠送";
+                    }
 					
 					var datahtml = '<li class="item-content">'+
-							//'<div class="item-media"><i class="f7-icons" style="'+scolor+'">money_yen_fill</i></div>'+
 							'<div class="item-media" style="font-weight: bolder;'+scolor+'">'+moneyoic+'</div>'+
 							'<div class="item-inner">'+
 								'<div class="item-title">'+
@@ -288,12 +294,12 @@ function seldata(){
 				selfalg = false;
 				$(".dataloading").fadeOut();
 				$(".datanone").fadeIn();
-				//wu.hideToast();
-				wu.showMessage({
-					title: "已无更多数据！",
-					backgroundColor: 'red',
-					duration: 3000
-				});
+				wu.hideToast();
+				// wu.showMessage({
+				// 	title: "已无更多数据！",
+				// 	backgroundColor: 'red',
+				// 	duration: 3000
+				// });
 			}
 			if(res["code"]!="1001"&&res["code"]!="1005"){
 				wu.showMessage({

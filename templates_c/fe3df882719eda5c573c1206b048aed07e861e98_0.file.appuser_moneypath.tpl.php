@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 17:34:26
+/* Smarty version 3.1.30, created on 2020-05-04 20:23:47
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_moneypath.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafe1a2e291c3_18388839',
+  'unifunc' => 'content_5eb009530dd8f5_34309613',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fe3df882719eda5c573c1206b048aed07e861e98' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_moneypath.tpl',
-      1 => 1588576544,
+      1 => 1588595026,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafe1a2e291c3_18388839 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eb009530dd8f5_34309613 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -298,9 +298,10 @@ function seldata(){
 					if(res["data"][i]["mtype"]=="161"){
 						mtypev="提现";
 					}
-					if(res["data"][i]["mtype"]=="163"){
-						mtypev="佣金提现";
-						moneyoi="-";
+					if(res["data"][i]["mtype"]=="170"){
+						mtypev="优惠券提现";
+                        moneyoi="-";
+                        moneyoic="提现";
 					}
 					if(res["data"][i]["mtype"]=="167"){
 						mtypev="提现手续费";
@@ -308,9 +309,13 @@ function seldata(){
 					if(res["data"][i]["mtype"]=="168"){
 						mtypev="提现手续费";
 					}
+                    if(res["data"][i]["mtype"]=="169"){
+                        mtypev="优惠券获得";
+                        moneyoi="+";
+                        moneyoic="赠送";
+                    }
 					
 					var datahtml = '<li class="item-content">'+
-							//'<div class="item-media"><i class="f7-icons" style="'+scolor+'">money_yen_fill</i></div>'+
 							'<div class="item-media" style="font-weight: bolder;'+scolor+'">'+moneyoic+'</div>'+
 							'<div class="item-inner">'+
 								'<div class="item-title">'+
@@ -339,12 +344,12 @@ function seldata(){
 				selfalg = false;
 				$(".dataloading").fadeOut();
 				$(".datanone").fadeIn();
-				//wu.hideToast();
-				wu.showMessage({
-					title: "已无更多数据！",
-					backgroundColor: 'red',
-					duration: 3000
-				});
+				wu.hideToast();
+				// wu.showMessage({
+				// 	title: "已无更多数据！",
+				// 	backgroundColor: 'red',
+				// 	duration: 3000
+				// });
 			}
 			if(res["code"]!="1001"&&res["code"]!="1005"){
 				wu.showMessage({

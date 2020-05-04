@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-05-04 20:06:36
+  from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_upuserinfo.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5eb0054cc08bb1_34307836',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '2fbe7f98d90434e443af7af5f5deff0e88c8df26' => 
+    array (
+      0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_upuserinfo.tpl',
+      1 => 1578403508,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5eb0054cc08bb1_34307836 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,16 +29,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#2196f3">
-    <title><{$webconfig.webtitle.val}></title>
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/style.css">
+    <title><?php echo $_smarty_tpl->tpl_vars['webconfig']->value['webtitle']['val'];?>
+</title>
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/style.css">
 	
 	<!--vue_alert_start-->
-	<link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/reset.css" />
-	<link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/iconfont.css" />
-	<link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/wu-ui.css" />
-	<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/vue.min.js"></script>
-	<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/wu-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/wu-ui.css" />
+	<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/vue.min.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/wu-ui.js"><?php echo '</script'; ?>
+>
 	<!--vue_alert_end-->
 	
 </head>
@@ -23,6 +59,9 @@
 		display: initial;
 		width: initial;
 		border: 0;
+	}
+	.ios .navbar {
+		height: 55px;
 	}
 	.ios .login-box .list .item-inner {
     padding-left: 10px;
@@ -33,11 +72,10 @@
     border: 1px solid rgba(59, 66, 114, 0.64);
 }
 .ios .button.button-fill, .ios .button.button-fill-ios {
-    background-color: rgba(59, 66, 114, 0.89);
-    border: 1px solid rgba(142, 149, 192, 0.2);
+    background-color: #BC9568!important;
 }
 	.ios .theme-dark .navbar, .navbar.ios .theme-dark, .ios .navbar{
-		background: #282828!important;
+		background: #2C2C2E!important;
 	}
 	.ios .navbar{
 		background: #232323!important;
@@ -72,12 +110,6 @@
 	.ios .list .item-inner{
 		border-bottom: 2px solid #2c2c2c;
 	}
-
-
-	.ios .theme-dark .navbar, .navbar.ios .theme-dark, .ios .navbar {
-		background-color: #2C2C2E!important;
-		height: 55px;
-	}
 	.ios .button.button-fill, .ios .button.button-fill-ios {
 		background-color: #BC9568 !important;
 		border-radius: 5px;
@@ -110,12 +142,6 @@
 	input{
 		border-bottom: 2px solid #313133!important;
 	}
-	.ios .theme-dark .block{
-		margin-top: 10px;
-	}
-	.ios .login-box .list .item-content{
-		margin-top: 9px;
-	}
 </style>
 	
 <body class="theme-dark">
@@ -130,14 +156,10 @@
                             <i class="icon icon-back"></i>
                         </a>
                     </div>
-                    <div class="title text-color-white">修改密码</div>
+                    <div class="title text-color-white">修改资料</div>
                 </div>
             </div>
-            <div class="page-content" style="padding-top: 55px;">
-				<div style="height: 70px;color: #727679;font-size: 14px;text-align: center;padding-top: 10px;background: #2C2C2E;">
-					请为您<span style="color: #fff;"> <{$username}> </span>设置一个<br>
-					<span style="text-align: center;">新密码</span>
-				</div>
+            <div class="page-content" style="padding-top:60px;">
                 <div class="login-box block">
 					<form action="#" id="form_post" name="form_post" method="post">
 						<div class="list no-margin no-hairlines">
@@ -145,26 +167,27 @@
 								<li class="item-content item-input">
 									<div class="item-inner">
 										<div class="item-input-wrap">
-											<p style="font-size: 12px;">原密码</p>
-											<input type="password" name="password" placeholder="输入原密码">
+											<input type="text" name="name" placeholder="姓名" value="<?php echo htmlspecialchars_decode($_smarty_tpl->tpl_vars['myuserinfo']->value['name']);?>
+">
 										</div>
 									</div>
 								</li>
 								<li class="item-content item-input">
 									<div class="item-inner">
 										<div class="item-input-wrap">
-											<p style="font-size: 12px;">新密码</p>
-											<input type="password" name="passwordn" placeholder="输入新密码">
+											<input type="text" name="coinaddress" placeholder="收币地址" value="<?php echo htmlspecialchars_decode($_smarty_tpl->tpl_vars['myuserinfo']->value['coinaddress']);?>
+">
 										</div>
 									</div>
 								</li>
-								<li class="item-content item-input">
-									<div class="item-inner">
-										<div class="item-input-wrap">
-											<p style="font-size: 12px;">再次输入</p>
-											<input type="password" name="passwordn2" placeholder="再次输入新密码">
+								<li>
+									<a href="<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'language');?>
+" class="item-link item-content external">
+										<div class="item-inner">
+											<div class="item-title">语言选择</div>
 										</div>
-									</div>
+										<p style="position: absolute;right: 50px;" id="language"></p>
+									</a>
 								</li>
 							</ul>
 						</div>
@@ -175,11 +198,34 @@
         </div>
     </div>
 </div>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/framework7.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/app.js"></script>
-
-<script>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/framework7.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/app.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.cookie.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
+	var language = localStorage.getItem('language');
+	if (language == 1){
+		$('#language').text('English');
+	}else if(language == 2){
+		$('#language').text('中文');
+	}
+<?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
 	$(".poatformbtn").click(function () {
 		wu.showLoadingBg();
 		setTimeout(() => {
@@ -188,7 +234,8 @@
 		}, 3000);
 		
 		var options = {
-			url: "<{WSURLSHOW($WsCtrlClass,'upasswordform')}>",
+			url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'upuserinfoform');?>
+",
 			type: 'post',
 			dataType: 'json',
 			data: $("#form_post").serialize(),
@@ -211,26 +258,15 @@
 					if(res["data"]["msg"]=="1002"){
 						restxt = "修改失败！";
 					}
-					if(res["data"]["msg"]=="1003"){
-						restxt = "请输入原密码！";
-					}
 					if(res["data"]["msg"]=="1004"){
-						restxt = "请输入新密码！";
+						restxt = "请输入姓名！";
 					}
 					if(res["data"]["msg"]=="1005"){
-						restxt = "请确认新密码！";
+						restxt = "请输入收币地址！";
 					}
-					if(res["data"]["msg"]=="1006"){
-						restxt = "两次输入的密码不同！";
-					}
-					if(res["data"]["msg"]=="1007"){
-						restxt = "密码长度不能小于6位！";
-					}
-					if(res["data"]["msg"]=="1008"){
-						restxt = "原密码有误！";
-					}
+					
 					if(res["data"]["msg"]=="1009"){
-						restxt = "密码相同，无需修改！";
+						restxt = "数据相同，无需修改！";
 					}
 					wu.showMessage({
 						title: restxt,
@@ -252,7 +288,10 @@
 		$.ajax(options);
 		return false;
 	});
-</script>
+<?php echo '</script'; ?>
+>
 
 </body>
 </html>
+<?php }
+}

@@ -1339,7 +1339,7 @@ class adminuserCtrl extends commonCtrl
 		}
 		
 		$withdrawali = self::DB()->select("withdrawal" ,[
-			"id","uid","money","presentationfee","mtype","state"
+			"id","uid","money","presentationfee","mtype","state",'coupon_id',
 		],["AND" =>[
 			"id[=]" => post('id')
 		]]);
@@ -1353,7 +1353,8 @@ class adminuserCtrl extends commonCtrl
 		}
 		
 		$res = self::DB()->update("withdrawal",[
-			"state" => $state
+			"state" => $state,
+            'coupon_id' => $withdrawali[0]["coupon_id"],
 		],["AND" =>[
 			"id[=]" => post('id'),
 			"state[=]" => 1
@@ -1376,7 +1377,7 @@ class adminuserCtrl extends commonCtrl
 			    if ($withdrawali[0]['mtype'] == 2){
 
 			        Coupon::update([
-			            'status' => 1
+			            'status' => 1,
                     ], [
                         'id' => $withdrawali[0]["coupon_id"]
                     ]);
@@ -1401,15 +1402,28 @@ class adminuserCtrl extends commonCtrl
 			}
 			
 			if($state == 2){
-				
-				$datetime = new \DateTime;
-				$mpcontent = "类型：".$mtypename."提现 | 提现ID：".$withdrawali[0]["id"];
-				OrderModel::insertMoneypath($withdrawali[0]["uid"],-$withdrawali[0]["money"],$mtypepv,$mpcontent,$withdrawali[0]["id"],$datetime->format('Y-m-d H:i:s'));
-				
-				if($withdrawali[0]["presentationfee"] > 0){
-					$mpcontent = "类型：提现手续费 | 提现ID：".$withdrawali[0]["id"];
-					OrderModel::insertMoneypath($withdrawali[0]["uid"],-$withdrawali[0]["presentationfee"],$mtypepfv,$mpcontent,$withdrawali[0]["id"],$datetime->format('Y-m-d H:i:s'));
-				}
+                if ($withdrawali[0]['mtype'] == 2){
+
+                    Coupon::update([
+                        'status' => 3,
+                    ], [
+                        'id' => $withdrawali[0]["coupon_id"]
+                    ]);
+
+                    $datetime = new \DateTime;
+                    $mpcontent = "类型：" . $mtypename . "提现 | 提现ID：" . $withdrawali[0]["id"];
+                    OrderModel::insertMoneypath($withdrawali[0]["uid"], $withdrawali[0]["money"], 170, $mpcontent, $withdrawali[0]["id"], $datetime->format('Y-m-d H:i:s'));
+
+                }else {
+                    $datetime = new \DateTime;
+                    $mpcontent = "类型：" . $mtypename . "提现 | 提现ID：" . $withdrawali[0]["id"];
+                    OrderModel::insertMoneypath($withdrawali[0]["uid"], -$withdrawali[0]["money"], $mtypepv, $mpcontent, $withdrawali[0]["id"], $datetime->format('Y-m-d H:i:s'));
+
+                    if ($withdrawali[0]["presentationfee"] > 0) {
+                        $mpcontent = "类型：提现手续费 | 提现ID：" . $withdrawali[0]["id"];
+                        OrderModel::insertMoneypath($withdrawali[0]["uid"], -$withdrawali[0]["presentationfee"], $mtypepfv, $mpcontent, $withdrawali[0]["id"], $datetime->format('Y-m-d H:i:s'));
+                    }
+                }
 			}
 			
 			echo "成功";exit();

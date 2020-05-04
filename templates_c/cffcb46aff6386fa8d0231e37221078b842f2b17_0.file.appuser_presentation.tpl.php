@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 15:45:59
+/* Smarty version 3.1.30, created on 2020-05-04 20:51:20
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_presentation.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafc837481b75_64527232',
+  'unifunc' => 'content_5eb00fc82404c5_73923330',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'cffcb46aff6386fa8d0231e37221078b842f2b17' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_presentation.tpl',
-      1 => 1588564745,
+      1 => 1588596678,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafc837481b75_64527232 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eb00fc82404c5_73923330 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -309,8 +309,9 @@ function content_5eafc837481b75_64527232 (Smarty_Internal_Template $_smarty_tpl)
                     <div style="padding: 0 3%;background: #2C2C2E;height: 370px;padding-top: 30px;">
                         <div style="color:#727679;font-size: 14px;padding-bottom: 10px;">
                             <input type="number" id="money" name="money" placeholder="请输入提现金额" style="padding: 0 10px;" onkeyup="this.value= this.value.match(/\d+(\.\d{0,2})?/) ? this.value.match(/\d+(\.\d{0,2})?/)[0] : ''">
-                            <p style="color: #2c7fbd;margin-top: 10px;font-size: 10px;padding-left: 10px;">提现手续费 <?php echo $_smarty_tpl->tpl_vars['webconfig']->value['presentationfee']['val'];?>
- 元</p>
+                            <p style="color: #2c7fbd;margin-top: 10px;font-size: 10px;padding-left: 10px;">最小提现金额 <?php echo $_smarty_tpl->tpl_vars['webconfig']->value['minwithdrawal']['val'];?>
+ 元，手续费 <?php echo $_smarty_tpl->tpl_vars['webconfig']->value['presentationfee']['val'];?>
+ %</p>
                         </div>
                         <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
                             <div>

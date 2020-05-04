@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 16:53:21
+/* Smarty version 3.1.30, created on 2020-05-04 20:28:09
   from "E:\u.xiangxin.me\app\views\app_cn_v1\apphome_itemstart.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafd801514661_65290484',
+  'unifunc' => 'content_5eb00a59b15174_52972300',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2541eba4a204eae559ecbf92d4fca5db00e1693b' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\apphome_itemstart.tpl',
-      1 => 1588476969,
+      1 => 1588595286,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafd801514661_65290484 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eb00a59b15174_52972300 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -185,7 +185,7 @@ function content_5eafd801514661_65290484 (Smarty_Internal_Template $_smarty_tpl)
 							</a>
 						</div>
 						<div style="text-align: center;width: 100%;margin-left: -40px;">
-							存入
+							买入
 						</div>
 					</div>
 				</div>
@@ -231,10 +231,10 @@ function content_5eafd801514661_65290484 (Smarty_Internal_Template $_smarty_tpl)
 						<p style="width:100%;font-size: 16px;line-height: 30px;margin-bottom: 10px;">温馨提示</p>
 						<ul class="ul1">
 							<li style="text-align: left;width: 100%;margin-bottom: 10px;color: #727679;">
-								<p style="display: inline-block;width: 90%;">存入时间按UTC+8时间计算，当日存入，次日0点计息。</p>
+								<p style="display: inline-block;width: 90%;">买入时间按UTC+8时间计算，当日存入，次日0点后计息。</p>
 							</li>
 							<li style="text-align: left;width: 100%;margin-bottom: 10px;color: #727679;">
-								<p style="display: inline-block;width: 90%;">定期存入不支持提前支取，到期后，本金+利息将自动转入余额。</p>
+								<p style="display: inline-block;width: 90%;">不支持提前支取，到期后本金+利息自动结算。</p>
 							</li>
 						</ul>
 					</div>

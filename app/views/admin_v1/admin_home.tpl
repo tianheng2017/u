@@ -176,11 +176,22 @@
                                             <form class="col s12" id="systinfoform">
                                                 <div class="row">
 													<{foreach from=$webconfig item=$webconfigi}>
+                                                    <{if $webconfigi['name']!="rechargeimg"}>
                                                     <div class="input-field col s6">
                                                         <input id="<{$webconfigi['name']}>" name="<{$webconfigi['name']}>" value="<{$webconfigi['val']}>" type="text">
                                                         <label for="<{$webconfigi['name']}>"><{$webconfigi['content']}></label>
                                                     </div>
+                                                    <{/if}>
                                                     <{/foreach}>
+                                                </div>
+
+                                                <div class="file-field input-field col s12">
+                                                    <label for="first_name">网站收款二维码</label>
+                                                    <input class="file-path validate" id="rechargeimg" name="rechargeimg" value="<{$webconfig['rechargeimg']['val']}>" type="text" onclick="imguM()" />
+                                                    <div class="btn">
+                                                        <span>上传</span>
+                                                        <input id="logof" type="file" />
+                                                    </div>
                                                 </div>
 
                                                 <div class="row">
@@ -355,7 +366,32 @@
         return false;
     });
 
-    
+    function imguM(){
+        var formData = new FormData();
+        var name = $("#logof").val();
+        formData.append("file",$("#logof")[0].files[0]);
+        formData.append("name",name);
+        $.ajax({
+            url : "<{WSURLSHOW($WsCtrlClass,'imguploaddo')}>",
+            type : 'POST',
+            data : formData,
+            processData : false,
+            contentType : false,
+            success : function(responseStr) {
+                if(responseStr==""){
+                    Materialize.toast('<span style="color: #ef192c">上传失败!</span>', 3000);
+                }else {
+                    Materialize.toast('<span style="color: #0fef72">上传成功!</span>', 3000);
+                    $("#rechargeimg").val(responseStr);
+                    $(".logoimg").attr("src","<{INSTALL_DIR}>/upload/images/a/"+responseStr);
+                }
+            },
+            error : function(responseStr) {
+                Materialize.toast('<span style="color: #ef192c">上传失败!</span>', 3000);
+                return;
+            }
+        });
+    }
 	
 	
 	

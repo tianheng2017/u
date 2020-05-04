@@ -59,7 +59,7 @@ class apphomeCtrl extends commonCtrl
 			//发放优惠券
             $item = Itemlist::find($v['item_id']);
             if ($item['coupon'] > 0){
-                Coupon::create([
+                $coupon = Coupon::create([
                     'uid'           =>  $v['uid'],
                     'money'         =>  $item['coupon'],
                     'item_id'       =>  $v['item_id'],
@@ -67,6 +67,10 @@ class apphomeCtrl extends commonCtrl
                     'status'        =>  1,
                     'create_time'   =>  time(),
                 ]);
+
+                $datetime = new \DateTime;
+                $mpcontent = "类型：优惠券获得 | 优惠券ID：" . $coupon->id;
+                OrderModel::insertMoneypath($v['uid'], +$item['coupon'], 169, $mpcontent, $coupon->id, $datetime->format('Y-m-d H:i:s'));
             }
 		}
 

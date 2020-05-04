@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-05-04 20:16:36
+  from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_upasswordtwo.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5eb007a4d72bd9_44671285',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'bcf61475313f9fe3e2388eda16d62806e80f4e19' => 
+    array (
+      0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_upasswordtwo.tpl',
+      1 => 1588594594,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5eb007a4d72bd9_44671285 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,16 +29,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#2196f3">
-    <title><{$webconfig.webtitle.val}></title>
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/style.css">
+    <title><?php echo $_smarty_tpl->tpl_vars['webconfig']->value['webtitle']['val'];?>
+</title>
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/style.css">
 	
 	<!--vue_alert_start-->
-	<link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/reset.css" />
-	<link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/iconfont.css" />
-	<link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/wu-ui.css" />
-	<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/vue.min.js"></script>
-	<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/wu-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/wu-ui.css" />
+	<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/vue.min.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/wu-ui.js"><?php echo '</script'; ?>
+>
 	<!--vue_alert_end-->
 	
 </head>
@@ -140,7 +176,8 @@
             </div>
             <div class="page-content" style="padding-top: 55px;">
 				<div style="height: 70px;color: #727679;font-size: 14px;text-align: center;padding-top: 10px;background: #2C2C2E;">
-					请为您<span style="color: #fff;"> <{$username}> </span>设置一个<br>
+					请为您<span style="color: #fff;"> <?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+ </span>设置一个<br>
 					<span style="text-align: center;">新密码</span>
 				</div>
                 <div class="login-box block">
@@ -184,11 +221,21 @@
         </div>
     </div>
 </div>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/framework7.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/app.js"></script>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/framework7.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/app.js"><?php echo '</script'; ?>
+>
 
-<script>
+<?php echo '<script'; ?>
+>
 	$(".poatformbtn").click(function () {
 		wu.showLoadingBg();
 		setTimeout(() => {
@@ -197,7 +244,8 @@
 		}, 3000);
 		
 		var options = {
-			url: "<{WSURLSHOW($WsCtrlClass,'upasswordtwoform')}>",
+			url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'upasswordtwoform');?>
+",
 			type: 'post',
 			dataType: 'json',
 			data: $("#form_post").serialize(),
@@ -279,7 +327,8 @@
 	var flagpcode=true;
 	var pcodetime=60;
 	$(".codeusernamebtn").click(function () {
-		var codeusername="<{$myuserinfo['username']}>";
+		var codeusername="<?php echo $_smarty_tpl->tpl_vars['myuserinfo']->value['username'];?>
+";
 		
 		if(!flagpcode){
 			return false;
@@ -290,7 +339,8 @@
 		
 		
 		var options = {
-			url: "<{WSURLSHOW($WsCtrlClass,'codeusername')}>",
+			url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'codeusername');?>
+",
 			type: 'post',
 			dataType: 'text',
 			data: "codeusername="+codeusername,
@@ -342,7 +392,10 @@
 		$.ajax(options);
 		return false;
 	});
-</script>
+<?php echo '</script'; ?>
+>
 
 </body>
 </html>
+<?php }
+}

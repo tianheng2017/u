@@ -418,14 +418,14 @@ class appuserCtrl extends commonCtrl
 	//获取个人资金接口
 	public function getUserMoneyData()
 	{		
-		$data['mymoney1'] = self::$myuserinfo['money'];
+		$data['mymoney1'] = number_format(self::$myuserinfo['money'], 2, '.', '');
 		$data['mymoney1_2'] = number_format(self::$myuserinfo['money'], 2, '.', '');
 		
 		$data['mymoney2'] = self::$myuserinfo['money2'];
 		
 		$data['mymoney3'] = self::$myuserinfo['money3'];
 		
-		$data['mymoneyall'] = number_format(self::$myuserinfo['money']+self::$myuserinfo['money2']+self::$myuserinfo['money3'], 4, '.', '');
+		$data['mymoneyall'] = number_format(self::$myuserinfo['money']+self::$myuserinfo['money2']+self::$myuserinfo['money3'], 2, '.', '');
 		
 		
 		$jtimev = date("Y-m-d 00:00:00");
@@ -443,8 +443,8 @@ class appuserCtrl extends commonCtrl
 		$data['alltramoneying'] = $alltramoneying;
 		$data['alltramoney'] = $alltramoney;
 		
-		$data['alltramoneying'] = number_format($data['alltramoneying'], 4, '.', '');
-		$data['alltramoney'] = number_format($data['alltramoney'], 4, '.', '');
+		$data['alltramoneying'] = number_format($data['alltramoneying'], 2, '.', '');
+		$data['alltramoney'] = number_format($data['alltramoney'], 2, '.', '');
 		
 		
 		
@@ -681,8 +681,8 @@ class appuserCtrl extends commonCtrl
 		$money = round($money,2);
 		
 		
-		if ($money < 1) {
-            error(-1003 , "提现金额最低1元");
+		if ($money < floatval(self::$webconfig['minwithdrawal']['val'])) {
+            error(-1003 , "最小提现金额".self::$webconfig['minwithdrawal']['val']."元");
         }
 		$userc = self::DB()->select("user" ,[
 			"id","money"
@@ -692,8 +692,9 @@ class appuserCtrl extends commonCtrl
 		
 		
 		if(count($userc)>0){
-			
-			if($userc[0]['money']<$money+$presentationfee){
+
+			$presentationfee = $money * $presentationfee/100;
+			if($userc[0]['money'] < $money + $presentationfee){
 				error(-1007 , "账户余额不足");
 			}
             if(empty($_FILES["img1"])){
@@ -815,8 +816,6 @@ class appuserCtrl extends commonCtrl
                 error(-1010 , "请上传收款二维码");
             }
 
-            Coupon::update(['status' => 2], ['id'=>$coupon->id]);
-
             $datetime = new \DateTime;
             $insert_id = self::DB()->insert("withdrawal", [
                 "uid" => $userc['id'],
@@ -825,9 +824,11 @@ class appuserCtrl extends commonCtrl
                 'img1'=> $imgurlval1,
                 'mtype'=> 2,
                 "state" => 1,
+                'coupon_id' =>  $coupon['id'],
                 "time" => $datetime->format('Y-m-d H:i:s')
             ]);
             if($insert_id){
+                Coupon::update(['status' => 2], ['id'=>$coupon->id]);
                 success(1 , "提交成功，审核中");
             }else{
                 error(-1008 , "提交中途异常");
@@ -916,6 +917,8 @@ class appuserCtrl extends commonCtrl
 	
 	public function upassword()
 	{
+	    $username = preg_replace('/(\d{3})\d{4}(\d{4})/', '$1****$2', self::$myuserinfo['username']);
+	    $this->assign('username', $username);
 		$this->display();
 	}
 	
@@ -999,6 +1002,8 @@ class appuserCtrl extends commonCtrl
 	
 	public function upasswordtwo()
 	{
+        $username = preg_replace('/(\d{3})\d{4}(\d{4})/', '$1****$2', self::$myuserinfo['username']);
+        $this->assign('username', $username);
 		$this->display();
 	}
 	
@@ -1640,6 +1645,7 @@ class appuserCtrl extends commonCtrl
         $this->assign('tradeorders', $tradeorders);
 		$this->display();
 	}
+
 	private function get_flbl($uid)
     {
 	    $lown = Regpath::where(['uid' => $_SESSION['userinfo']['id'], 'uidsubordinate' => $uid])->value('lown');
@@ -1846,6 +1852,7 @@ class appuserCtrl extends commonCtrl
 	        $data[$k]['name'] = $list['item_name'];
             $data[$k]['money'] = number_format($data[$k]['money'],2,'.','');
             $data[$k]['create_time'] = date('Y-m-d', strtotime($v['create_time']));
+            $data[$k]['bg'] = ($v['status'] == 1) ? 3 : 1;
         }
         $this->assign('data', $data);
         $this->display();

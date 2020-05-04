@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 17:14:33
+/* Smarty version 3.1.30, created on 2020-05-04 20:07:08
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_account.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafdcf99c4783_98920700',
+  'unifunc' => 'content_5eb0056c4337c5_33064804',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b0c046d7ffb3bff0b40061f8f2d39e3970c6255e' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_account.tpl',
-      1 => 1577801820,
+      1 => 1588594026,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafdcf99c4783_98920700 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eb0056c4337c5_33064804 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -188,14 +188,14 @@ function content_5eafdcf99c4783_98920700 (Smarty_Internal_Template $_smarty_tpl)
 							</div>
                         </li>
 						
-						<li>
+						<!--li>
                             <a href="<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'upuserinfo');?>
 " class="item-link item-content external">
                                 <div class="item-inner">
                                     <div class="item-title">修改资料</div>
                                 </div>
                             </a>
-                        </li>
+                        </li-->
 						
 						<li>
                             <span onclick="authenticationM()" class="item-link item-content external">

@@ -231,7 +231,7 @@
                 </div>
                 <div style="height: 120px;width: 95%;background: #242426;border-radius: 12px;margin: 0 auto;">
                     <div style="height: 75px;width: 49%;padding: 20px 3%;display: inline-block;text-align: center;">
-                        <p style="color:#727679;">存单总额</p>
+                        <p style="color:#727679;">有效存单总额</p>
                         <p style="font-size: 40px;color: #BC9568;font-weight: bold;"><{$moneya151}></p>
                     </div>
                     <div style="height: 75px;width: 49%;padding: 20px 3%;display: inline-block;text-align: center;">

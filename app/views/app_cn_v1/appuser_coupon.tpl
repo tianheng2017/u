@@ -279,7 +279,7 @@
     .stamp .copy {
         display: inline-block;
         padding:21px 14px;
-        width:100px;
+        width:110px;
         vertical-align: text-bottom;
         font-size: 30px;
         color:rgb(255,255,255);
@@ -307,7 +307,7 @@
         background-color:#D24161;
     }
     .stamp03 {
-        /*background: radial-gradient(transparent 0, transparent 5px, #7EAB1E 5px);*/
+        background: radial-gradient(transparent 0, transparent 5px, #7EAB1E 5px);
         background-size: 15px 15px;
         background-position: 9px 3px;
     }
@@ -386,7 +386,7 @@
                         <{if $data}>
                             <{foreach from=$data item=$v}>
                             <li>
-                                <div class="stamp stamp0<{$data.status == 1 ? 3 : 1}>">
+                                <div class="stamp stamp0<{$v.bg}>">
                                     <div class="par">
                                         <p><{$v.name}> 优惠劵</p>
                                         <sub class="sign">￥</sub>
@@ -397,7 +397,7 @@
                                         <{if $v.status == 1}>
                                             <a href="<{WSURLSHOW($WsCtrlClass,'coupon_detail')}>/id/<{$v.id}>" class="link external">立即提现</a>
                                         <{else}>
-                                            <span style="font-size: 16px;">提现审核中</span>
+                                            <span style="font-size: 16px;height: 100px;line-height: 100px;display: block;">提现审核中</span>
                                         <{/if}>
                                     </div>
                                 </div>

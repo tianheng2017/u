@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 18:29:23
+/* Smarty version 3.1.30, created on 2020-05-04 19:08:30
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_coupon.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafee83873e68_82352735',
+  'unifunc' => 'content_5eaff7ae983c23_69090207',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '22a4276cc821cc96210111610c53c56b3d5f0370' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_coupon.tpl',
-      1 => 1588588162,
+      1 => 1588590509,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafee83873e68_82352735 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eaff7ae983c23_69090207 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -320,7 +320,7 @@ function content_5eafee83873e68_82352735 (Smarty_Internal_Template $_smarty_tpl)
     .stamp .copy {
         display: inline-block;
         padding:21px 14px;
-        width:100px;
+        width:110px;
         vertical-align: text-bottom;
         font-size: 30px;
         color:rgb(255,255,255);
@@ -348,7 +348,7 @@ function content_5eafee83873e68_82352735 (Smarty_Internal_Template $_smarty_tpl)
         background-color:#D24161;
     }
     .stamp03 {
-        /*background: radial-gradient(transparent 0, transparent 5px, #7EAB1E 5px);*/
+        background: radial-gradient(transparent 0, transparent 5px, #7EAB1E 5px);
         background-size: 15px 15px;
         background-position: 9px 3px;
     }
@@ -431,7 +431,8 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
 ?>
                             <li>
-                                <div class="stamp stamp03">
+                                <div class="stamp stamp0<?php echo $_smarty_tpl->tpl_vars['v']->value['bg'];?>
+">
                                     <div class="par">
                                         <p><?php echo $_smarty_tpl->tpl_vars['v']->value['name'];?>
  优惠劵</p>
@@ -447,7 +448,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
 /id/<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
 " class="link external">立即提现</a>
                                         <?php } else { ?>
-                                            <span>提现审核中</span>
+                                            <span style="font-size: 16px;height: 100px;line-height: 100px;display: block;">提现审核中</span>
                                         <?php }?>
                                     </div>
                                 </div>

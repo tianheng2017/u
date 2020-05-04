@@ -159,6 +159,33 @@ class adminCtrl extends commonCtrl
 
 		echo $res;exit();
 	}
+
+    public function imguploaddo()
+    {
+        $imgurlval="";
+        if ( !empty( $_FILES ) ) {
+            $tempPath = $_FILES[ 'file' ][ 'tmp_name' ];
+            $photouploadtime= new \DateTime;
+            $randname=rand();
+            if ($_FILES["file"]["type"] == "image/gif"){
+                $photoname=strtotime($photouploadtime->format('Y-m-d H:i:s')).'-'.$randname.'.gif';
+            }elseif($_FILES["file"]["type"] == "image/jpg" || $_FILES["file"]["type"] == "image/jpeg" || $_FILES["file"]["type"] == "image/png"){
+                $photoname=strtotime($photouploadtime->format('Y-m-d H:i:s')).'-'.$randname.'.png';
+            }else{
+                exit;
+            }
+            $dirpath='upload/images/a';
+            $uploadPath =$dirpath.'/'.$photoname;
+            if (!file_exists($dirpath)){
+                mkdirs($dirpath);
+            }
+            $upre=move_uploaded_file( $tempPath, $uploadPath );
+            if($upre){
+                $imgurlval=$photoname;
+            }
+        }
+        echo $imgurlval;
+    }
 	
 }
 ?>
