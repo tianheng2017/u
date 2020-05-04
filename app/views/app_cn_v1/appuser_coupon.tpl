@@ -336,8 +336,7 @@
                         setTimeout(function () {
                             location.href = "<{WSURLSHOW('appuser','withdrawal')}>";
                         }, 1000);
-                    }
-                    if (res["state"] == "error") {
+                    } else {
                         var msg = "网络异常！";
 
                         if (res["code"] == -1001) {

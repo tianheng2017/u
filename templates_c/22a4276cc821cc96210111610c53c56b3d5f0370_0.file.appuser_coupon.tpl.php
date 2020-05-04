@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 14:41:48
+/* Smarty version 3.1.30, created on 2020-05-04 14:47:11
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_coupon.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafb92c78cea8_63436731',
+  'unifunc' => 'content_5eafba6f440852_84140780',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '22a4276cc821cc96210111610c53c56b3d5f0370' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_coupon.tpl',
-      1 => 1588574492,
+      1 => 1588574818,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafb92c78cea8_63436731 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafba6f440852_84140780 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -344,8 +344,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
 </p>
                                 </div>
                                 <div class="copy">
-                                    <a href="javascript:coupon_tx('<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
-')">立即提现</a>
+                                    <a href="javascript:coupon_tx(<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
+)">立即提现</a>
                                 </div>
                             </div>
                         </li>
@@ -414,8 +414,24 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                     }
                     if (res["state"] == "error") {
                         var msg = "网络异常！";
+
                         if (res["code"] == -1001) {
                             msg = "参数异常！";
+                        }
+                        if (res["code"] == -1020) {
+                            msg = "优惠卷不存在！";
+                        }
+                        if (res["code"] == -1010) {
+                            msg = "请上传收款二维码！";
+                        }
+                        if (res["code"] == -1011) {
+                            msg = "收款二维码格式有误！";
+                        }
+                        if (res["code"] == -1008) {
+                            msg = "提交中途异常！";
+                        }
+                        if (res["code"] == -1006) {
+                            msg = "提交失败！";
                         }
                         wu.showMessage({
                             title: msg,
