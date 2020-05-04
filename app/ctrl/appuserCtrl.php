@@ -5,6 +5,7 @@ namespace app\ctrl;
 use app\model\user\UserModel;
 
 use app\model\tram\OrderModel;
+use app\ormModel\Coupon;
 use app\ormModel\Itemlog;
 use app\ormModel\Itemlogp;
 use app\ormModel\Regpath;
@@ -1696,7 +1697,7 @@ class appuserCtrl extends commonCtrl
 
 			$tradeorders[$k]['flbl'] = $this->get_flbl($tradeorders[$k]['uid']);
 
-			$tradeorders[$k]['yjfl'] = Itemlogp::where('item_no', $tradeorders[$k]['id'])->value('smoney');
+			$tradeorders[$k]['yjfl'] = round(Itemlogp::where('item_no', $tradeorders[$k]['id'])->value('smoney'),2);
         }
         $this->assign('tradeorders', $tradeorders);
 		$this->display();
@@ -1903,6 +1904,12 @@ class appuserCtrl extends commonCtrl
             "id[=]" => $_SESSION['userinfo']['id']
         ]);
         success(1000 , "");
+    }
+
+    public function coupon(){
+	    $data = Coupon::where('status',1)->select()->toArray();
+        $this->assign('data', $data);
+        $this->display();
     }
 }
 ?>

@@ -260,6 +260,13 @@
                             </a>
                         </li>
                         <li>
+                            <a class="external" href="<{WSURLSHOW($WsCtrlClass,'coupon')}>">
+                                <img src="<{VIEW_ROOTPATH}>/assets/wap/img/yeji.png"/>
+                                <p>优惠卷</p>
+                                <i class="right_icon"></i>
+                            </a>
+                        </li>
+                        <li>
                             <a class="external" href="<{WSURLSHOW($WsCtrlClass,'account')}>">
                                 <img src="<{VIEW_ROOTPATH}>/assets/wap/img/anquan.png"/>
                                 <p>账户安全</p>
