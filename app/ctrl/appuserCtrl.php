@@ -764,20 +764,24 @@ class appuserCtrl extends commonCtrl
 		}
 		
 	}
+
     //提现接口
     public function coupon_tx()
     {
+        $id = intval(post('id'));
+
         $user = self::$myuserinfo;
         $userc = User::where('id', $user['id'])->field('id,money')->find();
-
-        $id = intval(post('id'));
-        $coupon = Coupon::where(['id'=>$id, 'uid'=>$userc['id']])->find();
+        $coupon = Coupon::where('id', $id)->find();
 
         if (empty($coupon)){
-            error(-1020 , "此优惠劵不存在".$userc['id']);
+            error(-1020 , "此优惠劵不存在");
+        }
+        if ($userc->id <> $coupon->uid){
+            error(-1021 , "数据错误");
         }
 
-        if(count($userc)>0){
+        if(!empty($userc)){
             if(empty($_FILES["img1"])){
                 error(-1010 , "请上传收款二维码");
             }
@@ -1838,6 +1842,7 @@ class appuserCtrl extends commonCtrl
         ]);
         success(1000 , "");
     }
+
     public function coupon(){
 	    $data = Coupon::where('status',1)->select()->toArray();
 	    foreach ($data as $k => $v){
@@ -1847,6 +1852,14 @@ class appuserCtrl extends commonCtrl
             $data[$k]['create_time'] = date('Y-m-d', strtotime($v['create_time']));
         }
         $this->assign('data', $data);
+        $this->display();
+    }
+
+    public function coupon_detail(){
+	    $id = intval(get('id'));
+	    $data = Coupon::where('id', $id)->find();
+	    $this->assign('data', $data);
+	    $this->assign('myuserinfo', self::$myuserinfo);
         $this->display();
     }
 }

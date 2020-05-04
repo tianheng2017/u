@@ -393,7 +393,7 @@
                                     <p>获得时间：<{$v.create_time}></p>
                                 </div>
                                 <div class="copy">
-                                    <a href="javascript:coupon_tx(<{$v.id}>)">立即提现</a>
+                                    <a href="<{WSURLSHOW($WsCtrlClass,'coupon_detail')}>/id/<{$v.id}>" class="link external">立即提现</a>
                                 </div>
                             </div>
                         </li>
@@ -412,74 +412,5 @@
 <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.qrcode.min.js"></script>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/bscroll.js"></script>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/scrollmenu.js"></script>
-<script type="text/javascript">
-    function coupon_tx(id) {
-        var confirmis=confirm("确定提现该优惠劵吗？");
-        if (confirmis==true){
-
-            var formData = new FormData();
-            formData.append("id", id);
-            var options = {
-                url: "<{WSURLSHOW($WsCtrlClass,'coupon_tx')}>",
-                type: 'post',
-                dataType: 'json',
-                processData: false,
-                contentType: false,
-                data: formData,
-                success: function (res) {
-                    if (res["state"] == "success" && res["code"] == 1) {
-                        wu.showMessage({
-                            title: "提交成功，审核中！",
-                            backgroundColor: '#2bde62',
-                            duration: 3000
-                        });
-                        setTimeout(function () {
-                            location.href = "<{WSURLSHOW('appuser','withdrawal')}>";
-                        }, 1000);
-                    } else {
-                        var msg = "网络异常！";
-
-                        if (res["code"] == -1001) {
-                            msg = "参数异常！";
-                        }
-                        if (res["code"] == -1020) {
-                            msg = "优惠卷不存在！";
-                        }
-                        if (res["code"] == -1010) {
-                            msg = "请上传收款二维码！";
-                        }
-                        if (res["code"] == -1011) {
-                            msg = "收款二维码格式有误！";
-                        }
-                        if (res["code"] == -1008) {
-                            msg = "提交中途异常！";
-                        }
-                        if (res["code"] == -1006) {
-                            msg = "提交失败！";
-                        }
-                        wu.showMessage({
-                            title: msg,
-                            backgroundColor: 'red',
-                            duration: 3000
-                        });
-                    }
-                },
-                complete: function (XMLHttpRequest, textStatus) {
-                },
-                error: function () {
-                    wu.showMessage({
-                        title: "网络异常！",
-                        backgroundColor: 'red',
-                        duration: 3000
-                    });
-                }
-            };
-            $.ajax(options);
-            return false;
-        }else{
-            return false;
-        }
-    }
-</script>
 </body>
 </html>
