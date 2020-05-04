@@ -349,7 +349,15 @@
                         if (res["code"] == -1010) {
                             msg = "请上传收款二维码！";
                         }
-
+                        if (res["code"] == -1011) {
+                            msg = "收款二维码格式有误！";
+                        }
+                        if (res["code"] == -1008) {
+                            msg = "提交中途异常！";
+                        }
+                        if (res["code"] == -1006) {
+                            msg = "提交失败！";
+                        }
                         wu.showMessage({
                             title: msg,
                             backgroundColor: 'red',
