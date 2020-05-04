@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 11:18:23
+/* Smarty version 3.1.30, created on 2020-05-04 13:34:03
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_recharge.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eaf897f4cd995_24400846',
+  'unifunc' => 'content_5eafa94b227530_09769406',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '14a967dc2ed762d234032430299989e777662dd8' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_recharge.tpl',
-      1 => 1588562269,
+      1 => 1588564238,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eaf897f4cd995_24400846 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafa94b227530_09769406 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -58,7 +58,7 @@ function content_5eaf897f4cd995_24400846 (Smarty_Internal_Template $_smarty_tpl)
 /assets/public/vuealert/css/wu-ui.css"/>
     <?php echo '<script'; ?>
  type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
-/assets/vuealert/js/vue.min.js"><?php echo '</script'; ?>
+/assets/public/vuealert/js/vue.min.js"><?php echo '</script'; ?>
 >
     <?php echo '<script'; ?>
  type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
@@ -289,22 +289,21 @@ function content_5eaf897f4cd995_24400846 (Smarty_Internal_Template $_smarty_tpl)
                     <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
                         <div>
 
-                            <input type="number" id="money" name="money" placeholder="请输入充值金额" style="padding: 0 10px;">
+                            <input type="number" id="money" name="money" placeholder="请输入充值金额" style="padding: 0 10px;" onkeyup="this.value= this.value.match(/\d+(\.\d{0,2})?/) ? this.value.match(/\d+(\.\d{0,2})?/)[0] : ''">
                         </div>
-                        <div style="color: #2c7fbd;margin-top: 5px;font-size: 10px;padding-left: 10px;">
+                        <div style="color: #2c7fbd;margin-top: 10px;font-size: 10px;padding-left: 10px;">
                             最小充值金额 <?php echo $_smarty_tpl->tpl_vars['webconfig']->value['minrechargemoney']['val'];?>
  元
                         </div>
                     </div>
                     <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
                         <div>
-
                             <input type="number" id="phone" name="phone" placeholder="请输入充值手机号" style="padding: 0 10px;">
                         </div>
                     </div>
                     <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
                         <div>
-                            <p style="text-align: center;">上传充值凭证</p>
+                            <p style="text-align: center;color:red;">上传充值凭证</p>
                             <div class="block">
                                 <div class="row">
                                     <div class="col-50" style="margin-left:25%;">
@@ -382,11 +381,9 @@ function content_5eaf897f4cd995_24400846 (Smarty_Internal_Template $_smarty_tpl)
                 wu.hideToast();
             }, 3000);
             var formData = new FormData();
-            //var formData = $("#form_post").serialize();
             formData.append("img1", $("#sfz1")[0].files[0]);
             formData.append("money", $("#money").val());
             formData.append("phone", $("#phone").val());
-            formData.append("address", $("#address").val());
             var options = {
                 url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'rechargeform');?>
 ",

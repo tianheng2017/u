@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 09:05:58
-  from "E:\u.xiangxin.me\app\views\app_cn_v1\apphome_itemsuccess.tpl" */
+/* Smarty version 3.1.30, created on 2020-05-04 13:46:01
+  from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_callus.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eaf6a768db437_09190357',
+  'unifunc' => 'content_5eafac19e86281_34707774',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '42e891fd98a1bcf076efb2f320d12059c8a94f9d' => 
+    'd1d64082b34023ae4502bf6cb05b0d0daa35c374' => 
     array (
-      0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\apphome_itemsuccess.tpl',
-      1 => 1588314987,
+      0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_callus.tpl',
+      1 => 1578462962,
       2 => 'file',
     ),
   ),
@@ -20,10 +20,10 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eaf6a768db437_09190357 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafac19e86281_34707774 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
@@ -37,12 +37,18 @@ function content_5eaf6a768db437_09190357 (Smarty_Internal_Template $_smarty_tpl)
 /assets/wap/css/framework7-icons.css">
     <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/css/style.css">
+	
+	
+	
 	<link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/scrollmenu/css/animate.css">
 	<link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/scrollmenu/css/scrollmenu.css">
+	
 	<link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
 /assets/wap2/css/style.css">
+	
+	
 	<!--vue_alert_start-->
 	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
 /assets/public/vuealert/css/reset.css" />
@@ -58,9 +64,11 @@ function content_5eaf6a768db437_09190357 (Smarty_Internal_Template $_smarty_tpl)
  type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
 /assets/public/vuealert/js/wu-ui.js"><?php echo '</script'; ?>
 >
+	
 	<link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
 /assets/alert/css/alert.css">
 </head>
+
 <style>
 	img {
 		display: initial;
@@ -71,11 +79,18 @@ function content_5eaf6a768db437_09190357 (Smarty_Internal_Template $_smarty_tpl)
 		background-color: rgba(255, 255, 255, 0.11);
 	}
 	.coininfodivlay{
-		border-top: 1px solid #ffffff42;
+		/*
+		width:90%;
+		background: #5186d6;
+		margin:2%;
+		border-radius: 7px;
+		*/
+		
 		margin:.6em 0 1em 0;
-		background: #2C2C2C !important;
-		font-size: 20px;
-		padding: 15px 25px 15px 25px;
+		background: rgba(255, 255, 255, 0.11);
+		
+		padding: 5% 3%;
+		
 		position: relative;
 	}
 	.coininfoicodiv{
@@ -101,19 +116,7 @@ function content_5eaf6a768db437_09190357 (Smarty_Internal_Template $_smarty_tpl)
 		width:97%;text-align:right;color:#fff;font-size:1.2rem;
 	}
 	.coininfotxt4{
-		width:97%;text-align:right;color:#fff;font-size:.7rem;
-	}
-	.coininfotxt12{
-		color:#fff;
-		font-size: .7rem;
-		margin-top: 0.2rem;
-	}
-	.coininfotxtsondiv12 {
-		width: 49%;
-		color: #8cdfff;
-		padding: 3px 0 3px 3%;
-		border: 1px solid rgba(190, 244, 255, 0.1);
-		display: inline-block;
+		width:76%;margin-left:12%;text-align:center;color:#fff;font-size:1rem;word-break: break-all;
 	}
 	.container {
 		padding: 0;
@@ -138,36 +141,54 @@ function content_5eaf6a768db437_09190357 (Smarty_Internal_Template $_smarty_tpl)
 	.user-menu li a:before{
 		float: inherit;
 	}
-	.menu-footer{
-		background-color: #242424;
-		border-top: 1px solid rgba(62, 62, 62, 0.88);
-		color:#D3D3D3;
+	
+	.coinnavspan{
+		width:32.5%;text-align:center;display: inline-block;
+		padding: 5px 0;
+		background: rgba(255, 255, 255, 0.06);
 	}
-	.menu-footer li span{
-		color: #D3D3D3;
+	canvas{
+		width: 50%;
+		border: 12px solid rgb(255, 255, 255);
 	}
-	.coininfodivlay ul li{
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		float: left;
-		width: 33.33%;
-		text-align: center;
-		margin-bottom: 5px;
+	.ios .theme-dark .navbar, .navbar.ios .theme-dark, .ios .navbar{
+		background: #282828!important;
 	}
-	.coininfodivlay ul li p{
-		color: #8E8D92;
-		font-size: 16px;
+	.ios .navbar{
+		background: #232323!important;
 	}
-	input::-webkit-input-placeholder {
-		color: #484848;
-		font-size: 18px;
+	.page-content{
+		background: #2C2C2E!important;
 	}
-	.ul1 li::before{
-		content: "◆";
-		color: #C5A176;
-		font-size: 14px;
-		margin-right: 10px;
+	.ios .block{
+		margin: 5px 0 35px 0;
+		background: #2c2c2c;
+	}
+	.ios .login-box .list .item-content{
+		border: 1px solid #565656;
+	}
+	.coininfodivlay{
+		background: #2C2C2C !important;
+		padding: 1rem 3%;
+	}
+	.coininfoicodiv{
+		width: 3rem;
+		height: 3rem;
+	}
+	.coininfotxt1{
+		font-size: 13px;
+		padding-left: 5px;
+	}
+	.coininfotxt2{
+		font-size: 13px;
+		margin-top: 13px;
+		padding-left: 5px;
+	}
+	.ios .list .item-inner{
+		border-bottom: 2px solid #2c2c2c;
+	}
+	body{
+		font-family:DINAlternate-Bold,DINAlternate;
 	}
 </style>
 	
@@ -176,47 +197,38 @@ function content_5eaf6a768db437_09190357 (Smarty_Internal_Template $_smarty_tpl)
     <div class="statusbar"></div>
     <div class="view view-main">
         <div class="page">
-			<div class="page-content" style="padding-bottom: 100px;background: #2c2c2e;">
-				<div class="navbar" style="position: fixed;background: #2C2C2E!important;font-size: 16px;height: 60px;">
+            
+            <div class="page-content" style="padding-top:60px;">
+				
+				<div class="navbar" style="position: fixed;background: #2C2C2E!important;height: 60px;line-height: 60px;">
 					<div class="navbar-inner">
 						<div class="left" style="font-weight: bold;color: #fff;">
-							<a href="javascript:window.location.href = '/apphome/index';" class="link icon-only external color-white">
+							<a href="javascript:history.go(-1);" class="link icon-only external color-white">
 								<i class="icon icon-back"></i>
 							</a>
 						</div>
-						<div style="text-align: center;width: 100%;">
-							存单
-						</div>
+						<span style="position: absolute;left: 46%;">客服</span>
 					</div>
 				</div>
-				<div style="height: 173px;width: 100%;border-bottom: 1px solid #323234;">
-					<div style="width: 100%;text-align: center;margin-top: 130px;">
-						<img src="<?php echo VIEW_ROOTPATH;?>
-/assets/wap/img/success.png" alt="" width="80" height="80">
-					</div>
-					<div style="width: 100%;text-align: center;margin-top: 12px;font-size: 16px;">
-						您已购买成功
-					</div>
+				<div style="text-align: center;margin-top: 165px;">
+					<img src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/img/kefu.png" alt="">
+					<p style="color: #727679; height: 50px; line-height: 50px; font-size: 16px;margin-top: 10px;">客服24h在线</p>
+					<p style="font-size: 23px;"><?php echo $_smarty_tpl->tpl_vars['webconfig']->value['callus']['val'];?>
+</p>
+					<input type="text" style="display: none;" value="<?php echo $_smarty_tpl->tpl_vars['webconfig']->value['callus']['val'];?>
+" id="copy">
+					<button class="copy" data-clipboard-target="#copy" style="cursor:pointer;color: #FFF; width: 75px; height: 30px;line-height: 30px; background: rgba(142,146,159,0.15); border-radius: 4px; opacity: 0.5; border: unset; margin-top: 20px;">复制</button>
 				</div>
-				<div style="padding: 15px 3%;font-size: 16px;">
-					<span style="color: #B8B8B8;">支付金额</span>
-					<span style="color: #727679;margin-left: 20px;">¥<?php echo $_smarty_tpl->tpl_vars['order']->value['money'];?>
-</span>
-				</div>
-				<div style="padding: 12px 3%;font-size: 16px;border-bottom: 1px solid #323234;">
-					<span style="color: #B8B8B8;">存单编号</span>
-					<span style="color: #727679;margin-left: 20px;"><?php echo $_smarty_tpl->tpl_vars['order']->value['id'];?>
-</span>
-				</div>
-				<div style="width: 100%;background: #2C2C2E;height: 97px;margin-top: 12px;">
-					<button id="view" data-id="<?php echo $_smarty_tpl->tpl_vars['order']->value['id'];?>
-" onclick="detail(this)" style="cursor:pointer;font-size:18px;width:90%;color:#fff;background:linear-gradient(128deg,rgba(223,199,161,1) 0%,rgba(188,149,104,1) 100%);
-box-shadow:0px 6px 21px 0px rgba(191,153,109,0.1);border-radius:4px;height: 50px;margin: 20px auto;border: unset;left: 5%;position: absolute;">查看订单</button>
-				</div>
-			</div>
+            </div>
         </div>
     </div>
 </div>
+
+
+
+
+
 <?php echo '<script'; ?>
  src="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/js/jquery.min.js"><?php echo '</script'; ?>
@@ -227,8 +239,18 @@ box-shadow:0px 6px 21px 0px rgba(191,153,109,0.1);border-radius:4px;height: 50px
 >
 <?php echo '<script'; ?>
  src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/clipboard.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/js/app.js"><?php echo '</script'; ?>
 >
+<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.qrcode.min.js"><?php echo '</script'; ?>
+>
+
+
 <?php echo '<script'; ?>
  src="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/scrollmenu/js/bscroll.js"><?php echo '</script'; ?>
@@ -237,18 +259,33 @@ box-shadow:0px 6px 21px 0px rgba(191,153,109,0.1);border-radius:4px;height: 50px
  src="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/scrollmenu/js/scrollmenu.js"><?php echo '</script'; ?>
 >
+
+
+
 <?php echo '<script'; ?>
- src='<?php echo VIEW_ROOTPATH;?>
-/assets/alert/js/alert.js'><?php echo '</script'; ?>
 >
-<?php echo '<script'; ?>
- type="text/javascript">
-	function detail(obj) {
-		var id = $(obj).attr('data-id');
-		window.location.href = '/apphome/tradeorderon_detail/id/' + id;
-	}
+	$(document).ready(function () {
+
+		var copycallM = function(){
+		
+			wu.showMessage({
+				title: "复制成功！",
+				backgroundColor: '#2bde62',
+				duration: 3000
+			});
+		
+		};
+		var clipboard1 = new ClipboardJS('.copy');
+		clipboard1.on('success', function(e) {
+			copycallM();
+			e.clearSelection();
+		});
+		
+	});
 <?php echo '</script'; ?>
 >
+
+
 </body>
 </html>
 <?php }

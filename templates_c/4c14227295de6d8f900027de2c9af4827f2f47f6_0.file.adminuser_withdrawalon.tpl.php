@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 10:55:46
+/* Smarty version 3.1.30, created on 2020-05-04 13:20:05
   from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_withdrawalon.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eaf8432b21fc7_70550648',
+  'unifunc' => 'content_5eafa6054ebbf6_15591266',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4c14227295de6d8f900027de2c9af4827f2f47f6' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_withdrawalon.tpl',
-      1 => 1577708654,
+      1 => 1588569591,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eaf8432b21fc7_70550648 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafa6054ebbf6_15591266 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -59,14 +59,14 @@ function content_5eaf8432b21fc7_70550648 (Smarty_Internal_Template $_smarty_tpl)
     <!-- For Windows Phone -->
 
 
-    <!-- CORE CSS-->    
+    <!-- CORE CSS-->
     <link href="<?php echo VIEW_ROOTPATH;?>
 /assets/exquisiteui/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="<?php echo VIEW_ROOTPATH;?>
 /assets/exquisiteui/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
 
 
-    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->    
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
     <link href="<?php echo VIEW_ROOTPATH;?>
 /assets/exquisiteui/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="<?php echo VIEW_ROOTPATH;?>
@@ -207,12 +207,9 @@ function content_5eaf8432b21fc7_70550648 (Smarty_Internal_Template $_smarty_tpl)
 										
 										<th data-field="">金额</th>
                                         <th data-field="">手续费</th>
-										<th data-field="">币种</th>
-										
-										<th data-field="">钱包地址</th>
-										
+
 										<th data-field="">提现类型</th>
-										
+                                        <th data-field="">收款二维码</th>
 										
 										<th data-field="">时间</th>
 										
@@ -240,30 +237,23 @@ foreach ($_from as $_smarty_tpl->tpl_vars['datai']->value) {
 </td>
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['presentationfee'];?>
 </td>
-										<td class="tdtcenter fontweight100"><?php echo $_smarty_tpl->tpl_vars['datai']->value['coin'];?>
-</td>
-										
-										<td class="tdtcenter fontweight100">
-											<span class="dif_span3"><?php echo $_smarty_tpl->tpl_vars['datai']->value['address'];?>
-</span>
-										</td>
-										
-										
 										<td class="tdtcenter fontweight100">
 											<?php if ($_smarty_tpl->tpl_vars['datai']->value['mtype'] == 1) {?>
-											USDT提现
+											人民币提现
 											<?php } elseif ($_smarty_tpl->tpl_vars['datai']->value['mtype'] == 2) {?>
-											佣金提现
+											优惠卷提现
 											<?php } else { ?>
 											其它
 											<?php }?>
 										</td>
-										
-										
-										<td class="tdtcenter fontcolorb6b6b6 fontweight100"><?php echo $_smarty_tpl->tpl_vars['datai']->value['time'];?>
+                                        <td class="tdtcenter"><img class="waves-effect waves-light modal-trigger" href="#modal1" style="height:5em;max-width:16em;" onclick="showimgM('<?php echo INSTALL_DIR;?>
+/upload/user/withdrawal/<?php echo $_smarty_tpl->tpl_vars['datai']->value['img1'];?>
+')" src="<?php echo INSTALL_DIR;?>
+/upload/user/withdrawal/<?php echo $_smarty_tpl->tpl_vars['datai']->value['img1'];?>
+"></td>
+
+                                        <td class="tdtcenter fontcolorb6b6b6 fontweight100"><?php echo $_smarty_tpl->tpl_vars['datai']->value['time'];?>
 </td>
-										
-										
 										<?php if ($_smarty_tpl->tpl_vars['datai']->value['state'] == 1) {?>
 										<td class="tdtcenter" style="background: rgba(91, 211, 96, 0.2);color:#000;">	审核中</td>
 										<?php } elseif ($_smarty_tpl->tpl_vars['datai']->value['state'] == -1) {?>
@@ -324,10 +314,21 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
 
                     <!-- //////////////////////////////////////////////////////////////////////////// -->
-					
-					
-					
-					
+
+
+
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <div class="row">
+                                <div class="input-field col s12" style="text-align:center;">
+                                    <img src="max-height:400px;" class="showimgv">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="waves-effect waves-red btn-flat modal-action modal-close">关闭</button>
+                        </div>
+                    </div>
 					
 					
 
@@ -438,8 +439,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     <!-- Toast Notification -->
     <?php echo '<script'; ?>
  type="text/javascript">
-        
-		
+
+        function showimgM(val) {
+            $(".showimgv").attr('src',val);
+        }
 		
         $(".seabtna").click(function () {
             self.location = '<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,$_smarty_tpl->tpl_vars['pagesign']->value);?>

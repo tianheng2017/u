@@ -267,33 +267,29 @@ class adminuserCtrl extends commonCtrl
             echo "请设置项目金额";exit;
         }
         if (post('day_num') < 2){
-            echo "产品天数不能低于2天";exit;
+            echo "投资天数不能低于2天";exit;
         }
-		$res = self::DB()->update("itemlist",[
+        if (floatval(post('arate')) <= 0){
+            echo "年化利率不能低于0";exit;
+        }
+        $info = Itemlist::update([
             "item_name" => post('item_name'),
             "price" => floatval(post('price')),
             "arate" => floatval(post('arate')),
             "day_num" => intval(post('day_num')),
-            "name" => post('name'),
             "desc" => post('desc'),
-            "rrule" => post('rrule'),
-            "srule" => post('srule'),
-            "deposit_time" => post('deposit_time'),
-            "sec_time" => post('sec_time'),
             "time" => time(),
             'isty' => intval(post('isty')),
             'tymoney' => floatval(post('tymoney')),
             'coupon' => intval(post('coupon')),
-            'expire' => intval(post('expire')),
-		], [
-			"id[=]" => post('id')
-		]);
-		if($res == 1){
-			echo "成功";		
-		} else {
-			echo "修改失败";	
-		}
-		
+        ],[
+            "id" => post('id')
+        ]);
+        if($info->id){
+            echo "成功";
+        }else{
+            echo "修改失败！";
+        }
 	}	
 	
 	
@@ -309,28 +305,25 @@ class adminuserCtrl extends commonCtrl
         if (post('day_num') < 2){
             echo "产品天数不能低于2天";exit;
         }
-		$last_insert_id = self::DB()->insert("itemlist", [
-                "item_name" => post('item_name'),
-                "price" => floatval(post('price')),
-                "arate" => floatval(post('arate')),
-                "day_num" => intval(post('day_num')),
-                "name" => post('name'),
-                "desc" => post('desc'),
-                "rrule" => post('rrule'),
-                "srule" => post('srule'),
-                "deposit_time" => post('deposit_time'),
-                "sec_time" => post('sec_time'),
-                "time" => time(),
-                'isty' => intval(post('isty')),
-                'tymoney' => floatval(post('tymoney')),
-                'coupon' => intval(post('coupon')),
-                'expire' => intval(post('expire')),
-			]);
-			if($last_insert_id){
-				echo "成功";
-			}else{
-				echo "添加失败！";
-			}
+        if (floatval(post('arate')) <= 0){
+            echo "年化利率不能低于0";exit;
+        }
+        $info = Itemlist::create([
+            "item_name" => post('item_name'),
+            "price" => floatval(post('price')),
+            "arate" => floatval(post('arate')),
+            "day_num" => intval(post('day_num')),
+            "desc" => post('desc'),
+            "time" => time(),
+            'isty' => intval(post('isty')),
+            'tymoney' => floatval(post('tymoney')),
+            'coupon' => intval(post('coupon')),
+        ]);
+        if($info->id){
+            echo "成功";
+        }else{
+            echo "添加失败！";
+        }
 	}
 	
 	public function itemlog()

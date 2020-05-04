@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 11:07:38
+/* Smarty version 3.1.30, created on 2020-05-04 13:44:47
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_rechargelog.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eaf86fa2f6815_98406993',
+  'unifunc' => 'content_5eafabcf7aafd8_35473116',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eaf86fa2f6815_98406993 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafabcf7aafd8_35473116 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>

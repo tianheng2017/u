@@ -79,7 +79,6 @@
                                     <div class="row">
                                         <form class="col s12" id="dataform">
                                             <div class="row">
-
                                                 <div class="input-field col s6">
                                                     <input id="username" name="item_name" type="text">
                                                     <label for="username">项目名称</label>
@@ -90,31 +89,15 @@
                                                 </div>
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="" name="arate" type="text">
-                                                    <label for="passwordtwo">年化率（%）</label>
+                                                    <label for="passwordtwo">年化利率（%）</label>
                                                 </div>
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="" name="day_num" type="text">
-                                                    <label for="passwordtwo">投资天数</label>
+                                                    <label for="passwordtwo">投资天数(天)</label>
                                                 </div>
                                                 <div class="input-field col s6" style="display:;">
                                                     <input id="password" value="" name="desc" type="text">
-                                                    <label for="password">描述</label>
-                                                </div>
-												<div class="input-field col s6" style="display:;">
-                                                    <input id="passwordtwo" value="" name="rrule" type="text">
-                                                    <label for="passwordtwo">收益规则</label>
-                                                </div>
-												<div class="input-field col s6" style="display:;">
-                                                    <input id="passwordtwo" value="" name="srule" type="text">
-                                                    <label for="passwordtwo">存入规则</label>
-                                                </div>
-												<div class="input-field col s6">
-                                                    <input id="username" name="deposit_time" type="text">
-                                                    <label for="username">存入时间</label>
-                                                </div>
-                                                <div class="input-field col s6" style="display:;">
-                                                    <input id="password" value="" name="sec_time" type="text">
-                                                    <label for="password">取出时间</label>
+                                                    <label for="password">产品特色</label>
                                                 </div>
                                                 <div class="input-field col s6" style="display:;">
                                                     <input id="password" value="0" name="isty" type="number">
@@ -128,15 +111,6 @@
                                                     <input id="coupon" value="0" name="coupon" type="text">
                                                     <label for="password">赠送优惠券金额（0为不赠送）</label>
                                                 </div>
-                                                <!--  <div class="input-field col s6" style="display:;">
-                                                 <input id="passwordtwo" value="" name="yield_time" type="text">
-                                                 <label for="passwordtwo">收益时间</label>
-                                             </div>
-
-                                         <div class="input-field col s12">
-                                                 <input id="remarks" name="remarks" type="text" value="">
-                                                 <label for="remarks">备注</label>
-                                             </div> -->
                                             </div>
                                             <div class="row adddiv">
                                                 <div class="input-field col s12">

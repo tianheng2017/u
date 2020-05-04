@@ -89,31 +89,15 @@
                                                 </div>
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="<{$data.arate}>" name="arate" type="text">
-                                                    <label for="passwordtwo">年化率（%）</label>
+                                                    <label for="passwordtwo">年化利率（%）</label>
                                                 </div>
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="<{$data.day_num}>" name="day_num" type="text">
-                                                    <label for="passwordtwo">产品天数</label>
+                                                    <label for="passwordtwo">产品天数(天)</label>
                                                 </div>
                                                 <div class="input-field col s6" style="display:;">
-                                                    <input id="password" value="<{$data.desc}>" name="desc" type="text">
-                                                    <label for="password">描述</label>
-                                                </div>
-												<div class="input-field col s6" style="display:;">
-                                                    <input id="passwordtwo" value="<{$data.rrule}>" name="rrule" type="text">
-                                                    <label for="passwordtwo">收益规则</label>
-                                                </div>
-												<div class="input-field col s6" style="display:;">
-                                                    <input id="passwordtwo" value="<{$data.srule}>" name="srule" type="text">
-                                                    <label for="passwordtwo">存入规则</label>
-                                                </div>
-												<div class="input-field col s6">
-                                                    <input id="username" value="<{$data.deposit_time}>" name="deposit_time" type="text">
-                                                    <label for="username">存入时间</label>
-                                                </div>
-                                                <div class="input-field col s6" style="display:;">
-                                                    <input id="password" value="<{$data.sec_time}>" name="sec_time" type="text">
-                                                    <label for="password">取出时间</label>
+                                                    <input id="password" value="" name="desc" type="text">
+                                                    <label for="password">产品特色</label>
                                                 </div>
                                                 <div class="input-field col s6" style="display:;">
                                                     <input id="password" value="<{$data.isty}>" name="isty" type="number">

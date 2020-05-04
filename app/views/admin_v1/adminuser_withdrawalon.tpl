@@ -28,12 +28,12 @@
     <!-- For Windows Phone -->
 
 
-    <!-- CORE CSS-->    
+    <!-- CORE CSS-->
     <link href="<{VIEW_ROOTPATH}>/assets/exquisiteui/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="<{VIEW_ROOTPATH}>/assets/exquisiteui/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
 
 
-    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->    
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
     <link href="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins/jvectormap/jquery-jvectormap.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
@@ -165,12 +165,9 @@
 										
 										<th data-field="">金额</th>
                                         <th data-field="">手续费</th>
-										<th data-field="">币种</th>
-										
-										<th data-field="">钱包地址</th>
-										
+
 										<th data-field="">提现类型</th>
-										
+                                        <th data-field="">收款二维码</th>
 										
 										<th data-field="">时间</th>
 										
@@ -188,27 +185,18 @@
 										<td class="tdtcenter"><{$datai['username']}></td>
 										<td class="tdtcenter" style="font-weight: bold;font-style: italic;"><{$datai['money']}></td>
 										<td class="tdtcenter"><{$datai['presentationfee']}></td>
-										<td class="tdtcenter fontweight100"><{$datai['coin']}></td>
-										
-										<td class="tdtcenter fontweight100">
-											<span class="dif_span3"><{$datai['address']}></span>
-										</td>
-										
-										
 										<td class="tdtcenter fontweight100">
 											<{if $datai['mtype']==1}>
-											USDT提现
+											人民币提现
 											<{elseif $datai['mtype']==2}>
-											佣金提现
+											优惠卷提现
 											<{else}>
 											其它
 											<{/if}>
 										</td>
-										
-										
-										<td class="tdtcenter fontcolorb6b6b6 fontweight100"><{$datai['time']}></td>
-										
-										
+                                        <td class="tdtcenter"><img class="waves-effect waves-light modal-trigger" href="#modal1" style="height:5em;max-width:16em;" onclick="showimgM('<{INSTALL_DIR}>/upload/user/withdrawal/<{$datai['img1']}>')" src="<{INSTALL_DIR}>/upload/user/withdrawal/<{$datai['img1']}>"></td>
+
+                                        <td class="tdtcenter fontcolorb6b6b6 fontweight100"><{$datai['time']}></td>
 										<{if $datai['state']==1}>
 										<td class="tdtcenter" style="background: rgba(91, 211, 96, 0.2);color:#000;">	审核中</td>
 										<{elseif $datai['state']==-1}>
@@ -260,10 +248,21 @@
 
 
                     <!-- //////////////////////////////////////////////////////////////////////////// -->
-					
-					
-					
-					
+
+
+
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <div class="row">
+                                <div class="input-field col s12" style="text-align:center;">
+                                    <img src="max-height:400px;" class="showimgv">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="waves-effect waves-red btn-flat modal-action modal-close">关闭</button>
+                        </div>
+                    </div>
 					
 					
 
@@ -333,8 +332,10 @@
     <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins.js"></script>
     <!-- Toast Notification -->
     <script type="text/javascript">
-        
-		
+
+        function showimgM(val) {
+            $(".showimgv").attr('src',val);
+        }
 		
         $(".seabtna").click(function () {
             self.location = '<{WSURLSHOW($WsCtrlClass,$pagesign)}>/querykeywords/'+$(".querykeywords").val();

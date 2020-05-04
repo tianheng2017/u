@@ -260,10 +260,10 @@
                         </div>
                     </div>
                 </div>
-                <form id="form_post">
+                <form action="#" id="form_post" name="form_post" method="post">
                     <div style="padding: 0 3%;background: #2C2C2E;height: 370px;padding-top: 30px;">
                         <div style="color:#727679;font-size: 14px;padding-bottom: 10px;">
-                            <input type="number" name="money" placeholder="请输入提现金额" style="padding: 0 10px;" onkeyup="this.value= this.value.match(/\d+(\.\d{0,2})?/) ? this.value.match(/\d+(\.\d{0,2})?/)[0] : ''">
+                            <input type="number" id="money" name="money" placeholder="请输入提现金额" style="padding: 0 10px;" onkeyup="this.value= this.value.match(/\d+(\.\d{0,2})?/) ? this.value.match(/\d+(\.\d{0,2})?/)[0] : ''">
                             <p style="color: #2c7fbd;margin-top: 10px;font-size: 10px;padding-left: 10px;">提现手续费 <{$webconfig.presentationfee.val}> 元</p>
                         </div>
                         <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
@@ -297,7 +297,6 @@
 <script src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.min.js"></script>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/js/framework7.min.js"></script>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/js/upload.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/clipboard.min.js"></script>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/js/app.js"></script>
 <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.qrcode.min.js"></script>
 <script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/bscroll.js"></script>
@@ -315,25 +314,22 @@
                 }
             });
         });
-        function getUMData() {
-            $.get("<{WSURLSHOW('appuser','getUserMoneyData')}>?" + Math.random(), function (json) {
-                var data = JSON.parse(json);
-                if (data.state == "success") {
-                    $('.mymoney1').html(data.data.mymoney1);
-                }
-            });
-        }
-        setInterval(getUMData, 1000);
         $("#submits").click(function () {
             wu.showLoadingBg();
             setTimeout(() => {
+                //隐藏loading
                 wu.hideToast();
             }, 3000);
+            var formData = new FormData();
+            formData.append("img1", $("#sfz1")[0].files[0]);
+            formData.append("money", $("#money").val());
             var options = {
-                url: "<{WSURLSHOW($WsCtrlClass,'presentationform')}>" + ectype,
+                url: "<{WSURLSHOW($WsCtrlClass,'presentationform')}>",
                 type: 'post',
                 dataType: 'json',
-                data: $("#form_post").serialize(),
+                processData: false,
+                contentType: false,
+                data: formData,
                 success: function (res) {
                     if (res["state"] == "success" && res["code"] == 1) {
                         wu.showMessage({
@@ -342,33 +338,43 @@
                             duration: 3000
                         });
                         setTimeout(function () {
-                            //history.go(-1);
                             location.href = "<{WSURLSHOW('appuser','withdrawal')}>";
-                        }, 2600);
+                        }, 1000);
                     }
                     if (res["state"] == "error") {
                         var msg = "网络异常！";
+
                         if (res["code"] == -1001) {
                             msg = "参数异常！";
                         }
+
                         if (res["code"] == -1002) {
-                            msg = "提现有误！";
+                            msg = "提现金额有误！";
                         }
                         if (res["code"] == -1003) {
-                            msg = "金额最小限0.01";
+                            msg = "提现金额最小限1元";
                         }
                         if (res["code"] == -1005) {
-                            msg = "请上传收款二维码！";
+                            msg = "请填写收款二维码！";
                         }
                         if (res["code"] == -1006) {
                             msg = "提交失败！";
                         }
                         if (res["code"] == -1007) {
-                            msg = "账户" + ectypev + "不足！";
+                            msg = "账户余额不足！";
                         }
+
                         if (res["code"] == -1008) {
                             msg = "提交中途异常！";
                         }
+
+                        if (res["code"] == -1010) {
+                            msg = "请上传收款二维码！";
+                        }
+                        if (res["code"] == -1011) {
+                            msg = "收款二维码格式有误！";
+                        }
+
                         wu.showMessage({
                             title: msg,
                             backgroundColor: 'red',
@@ -389,8 +395,6 @@
             $.ajax(options);
             return false;
         });
-
-
     });
 </script>
 </body>

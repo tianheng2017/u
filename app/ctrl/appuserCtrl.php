@@ -1,16 +1,12 @@
 <?php
-
 namespace app\ctrl;
-
 use app\model\user\UserModel;
-
 use app\model\tram\OrderModel;
 use app\ormModel\Coupon;
 use app\ormModel\Itemlist;
 use app\ormModel\Itemlog;
 use app\ormModel\Itemlogp;
 use app\ormModel\Regpath;
-
 class appuserCtrl extends commonCtrl
 {
 	public static $webconfig;
@@ -19,7 +15,6 @@ class appuserCtrl extends commonCtrl
 	public function __construct()
 	{
 	    $this->INDEX_OR_ADMIN = "app/views/app_cn_v1";
-
 		$this->assign('WsCtrlClass',self::$WsCtrlClass);
 		self::$webconfig = self::webconfig();
 		$this->assign('webconfig',self::$webconfig);
@@ -79,7 +74,6 @@ class appuserCtrl extends commonCtrl
         $this->assign('device_type',$this->get_device_type());
 		$this->display();
 	}
-
 	/**
 	 * 登录验证
 	 */
@@ -97,7 +91,6 @@ class appuserCtrl extends commonCtrl
 		}
         echo json_encode(['code'=>0,'msg'=>'false']);exit;
 	}
-
     /**
      * app登录验证
      */
@@ -115,7 +108,6 @@ class appuserCtrl extends commonCtrl
         }
         echo json_encode(['code'=>0,'msg'=>'false']);exit;
     }
-
 	// 判断客户端类型
     private function get_device_type()
     {
@@ -134,8 +126,6 @@ class appuserCtrl extends commonCtrl
         //echo $_SERVER['HTTP_USER_AGENT'];exit;
         return $type;
     }
-
-
 	/**
 	 * 退出登录
 	 */
@@ -239,8 +229,6 @@ class appuserCtrl extends commonCtrl
 					$regpath=$datasuperioruid[0]['id'];
 					
 					//uid	uidsubordinate	uiduidsubordinatesuperior	lown	authentication	regtime
-
-
 					self::DB()->insert("regpath", [
 						"uid" => $datasuperioruid[0]['id'],
 						"uidsubordinate" => $last_user_id,
@@ -298,7 +286,6 @@ class appuserCtrl extends commonCtrl
 		}
 		
 	}
-
     /**
      * 验证码发送
      */
@@ -331,7 +318,6 @@ class appuserCtrl extends commonCtrl
             echo "1002";exit();
         }
     }
-
 	/**
 	 * 找回密码
 	 */
@@ -504,7 +490,6 @@ class appuserCtrl extends commonCtrl
 		$sql="SELECT id,uid,mtype,money,additionalid,time,content,isty FROM moneypath"." ".$sqlwhereadd." order by id desc limit ".(($page-1)*$pagenum).",".$pagenum;
 		
 		$data = self::DB()->query($sql)->fetchAll();
-
 		$res = array();
 		$res["data"] = $data;
 		if(count($data)<1){
@@ -553,7 +538,7 @@ class appuserCtrl extends commonCtrl
         }
 		
 		
-		$money = round($money,4);
+		$money = round($money,2);
 		
 		
 		if ($money < $minrechargemoney) {
@@ -563,11 +548,9 @@ class appuserCtrl extends commonCtrl
 		if (empty($phone)) {
             error(-1004 , "请填写手机号");
         }
-
 		if (!preg_match("/^1[345789]\d{9}$/", $phone)){
             error(-1012 , "手机号格式有误");
         }
-
 		if(empty($_FILES["img1"])){
 			error(-1010 , "请上传充值凭证");
 		}
@@ -658,27 +641,7 @@ class appuserCtrl extends commonCtrl
 		}
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	/**
 	 * 提现
 	 */
@@ -694,14 +657,14 @@ class appuserCtrl extends commonCtrl
 		$presentationfee = self::$webconfig['presentationfee']['val'];
 		
 		if (!is_numeric($presentationfee)) {
-            $presentationfee = 10;
+            $presentationfee = 1;
         }
 		
-		$presentationfee = round($presentationfee,4);
+		$presentationfee = round($presentationfee,2);
 		
 		
 		if ($presentationfee < 0) {
-            $presentationfee = 10;
+            $presentationfee = 1;
         }
 		
 		
@@ -717,10 +680,9 @@ class appuserCtrl extends commonCtrl
 		$money = round($money,2);
 		
 		
-		if ($money < 0.01) {
-            error(-1003 , "金额最小限0.01");
+		if ($money < 1) {
+            error(-1003 , "提现金额最低1元");
         }
-
 		$userc = self::DB()->select("user" ,[
 			"id","money"
 		],["AND" =>[
@@ -730,15 +692,12 @@ class appuserCtrl extends commonCtrl
 		
 		if(count($userc)>0){
 			
-
 			if($userc[0]['money']<$money+$presentationfee){
 				error(-1007 , "账户余额不足");
 			}
-
             if(empty($_FILES["img1"])){
                 error(-1010 , "请上传收款二维码");
             }
-
             if ( !empty( $_FILES["img1"] ) ) {
                 $filetype = ['image/jpg', 'image/jpeg', 'image/bmp', 'image/png'];
                 if(!in_array($_FILES["img1"]["type"], $filetype)){
@@ -803,7 +762,6 @@ class appuserCtrl extends commonCtrl
 		}
 		
 	}
-
     //提现接口
     public function coupon_tx()
     {
@@ -813,19 +771,15 @@ class appuserCtrl extends commonCtrl
         if (empty($coupon)){
             error(-1020 , "优惠劵不存在");
         }
-
         $userc = self::DB()->select("user" ,[
             "id","money"
         ],["AND" =>[
             "id[=]" => $user['id']
         ]]);
-
         if(count($userc)>0){
-
             if(empty($_FILES["img1"])){
                 error(-1010 , "请上传收款二维码");
             }
-
             if ( !empty( $_FILES["img1"] ) ) {
                 $filetype = ['image/jpg', 'image/jpeg', 'image/bmp', 'image/png'];
                 if(!in_array($_FILES["img1"]["type"], $filetype)){
@@ -853,13 +807,11 @@ class appuserCtrl extends commonCtrl
             }else{
                 error(-1010 , "请上传收款二维码");
             }
-
             $usercup = self::DB()->update("user",[
                 "money" => $userc[0]['money'] + $coupon['money']
             ], [
                 "id[=]" => $userc[0]['id']
             ]);
-
             if($usercup){
                 $datetime = new \DateTime;
                 $insert_id = self::DB()->insert("withdrawal", [
@@ -871,24 +823,17 @@ class appuserCtrl extends commonCtrl
                     "state" => 1,
                     "time" => $datetime->format('Y-m-d H:i:s')
                 ]);
-
                 if($insert_id){
-
                     success(1 , "提交成功，审核中");
                 }else{
                     error(-1008 , "提交中途异常");
                 }
-
-
             }else{
                 error(-1006 , "提交失败");
             }
-
-
         }else{
             error(-1006 , "提交失败");
         }
-
     }
 	
 	
@@ -916,6 +861,9 @@ class appuserCtrl extends commonCtrl
 		$sql="SELECT id,uid,money,state,time FROM withdrawal"." ".$sqlwhereadd." order by  id desc limit ".(($page-1)*$pagenum).",".$pagenum;
 		
 		$data = self::DB()->query($sql)->fetchAll();
+		foreach ($data as $k => $v){
+		    $data[$k]['money'] = floatval($data[$k]['money']);
+        }
 		
 		
 		$res = array();
@@ -959,7 +907,6 @@ class appuserCtrl extends commonCtrl
 	    $this->assign('qrcode', '/'.$fileName);
 		$this->display();
 	}
-
 	
 	public function account()
 	{
@@ -1044,7 +991,6 @@ class appuserCtrl extends commonCtrl
 			echo json_encode($res,true);
 			exit();
 		}
-
 	}
 	
 	
@@ -1139,7 +1085,6 @@ class appuserCtrl extends commonCtrl
 			echo json_encode($res,true);
 			exit();
 		}
-
 	}
 	
 	
@@ -1156,7 +1101,6 @@ class appuserCtrl extends commonCtrl
         ],["AND" =>[
             "id[=]" => $_SESSION['userinfo']['id']
         ]])[0]['language'];
-
         $language = ($language==1) ? 'English' : '中文';
         $this->assign('language', $language);
 		$this->display();
@@ -1213,7 +1157,6 @@ class appuserCtrl extends commonCtrl
 			echo json_encode($res,true);
 			exit();
 		}
-
 	}
 	
 	
@@ -1247,7 +1190,6 @@ class appuserCtrl extends commonCtrl
 			echo json_encode($res,true);
 			exit();
 		}
-
 		if(empty($_FILES["img2"])){
 			$res["data"]["state"] = "false";
 			$res["data"]["msg"] = "1007";//请上传身份证背面照片！
@@ -1350,7 +1292,6 @@ class appuserCtrl extends commonCtrl
 			echo json_encode($res,true);
 			exit();
 		}
-
 	}
 	
 	
@@ -1648,17 +1589,13 @@ class appuserCtrl extends commonCtrl
 		$countteaml1 = self::DB()->query("SELECT COUNT(*) countteaml1 FROM `regpath` WHERE uid='".self::$myuserinfo['id']."' and lown=1 ")->fetchAll();
 		$countteaml1 = $countteaml1[0]['countteaml1']?: 0;
 		$this->assign('countteaml1',$countteaml1);
-
         $countteaml2 = self::DB()->query("SELECT COUNT(*) countteaml2 FROM `regpath` WHERE uid='".self::$myuserinfo['id']."' and lown=2 ")->fetchAll();
         $countteaml2 = $countteaml2[0]['countteaml2']?: 0;
         $this->assign('countteaml2',$countteaml2);
-
         $moneya153 = self::DB()->query("SELECT SUM(money) summoney FROM moneypath where mtype = 153 and  uid = '".$_SESSION['userinfo']['id']."'")->fetchAll();
         $teamfanli = $moneya153[0]['summoney']?: 0;
         $this->assign('teamfanli', $teamfanli);
-
         $ids = Regpath::where([['uid', '=', $_SESSION['userinfo']['id']], ['lown', 'in', [1,2]]])->column('uidsubordinate');
-
         $tradeorders = Itemlog::whereIn('uid', $ids)->where('status', 0)->order('id','desc')->select()->toArray();
         foreach($tradeorders as $k=>$v){
             $tradeorders[$k]['timesv'] = round( (time()-$v['time']) / ($v['stime']-$v['time']) * 100 ,2);
@@ -1672,10 +1609,8 @@ class appuserCtrl extends commonCtrl
 			$tradeorders[$k]['timev2'] = date('Y-m-d H:i:s',$tradeorders[$k]['time']+3600*24);
 			
 			$tradeorders[$k]['stime1'] = date('Y-m-d',$tradeorders[$k]['stime']);
-
             $tradeorders[$k]['time'] = date('Y-m-d',$v['time']);
             $tradeorders[$k]['stime'] = date('Y-m-d',$v['stime']);
-
             $info =  self::DB()->query("SELECT item_name from `itemlist` where id = '".$v['item_id']."'")->fetchAll();
             $tradeorders[$k]['item_name'] = $info[0]['item_name'];
             if($v['status'] == 0){
@@ -1698,15 +1633,12 @@ class appuserCtrl extends commonCtrl
 			}
 			
 			$tradeorders[$k]['timesv'] = $tradeorders[$k]['statusd4'];
-
 			$tradeorders[$k]['flbl'] = $this->get_flbl($tradeorders[$k]['uid']);
-
 			$tradeorders[$k]['yjfl'] = round(Itemlogp::where('item_no', $tradeorders[$k]['id'])->value('smoney'),2);
         }
         $this->assign('tradeorders', $tradeorders);
 		$this->display();
 	}
-
 	private function get_flbl($uid)
     {
 	    $lown = Regpath::where(['uid' => $_SESSION['userinfo']['id'], 'uidsubordinate' => $uid])->value('lown');
@@ -1872,19 +1804,16 @@ class appuserCtrl extends commonCtrl
 			error(-1007 , "设置失败");
 		}
 	}
-
 	//推荐人返利
 	public function cashback()
     {
         $this->display();
     }
-
     //返利说明
     public function cashbackinfo()
     {
         $this->display();
     }
-
     public function language()
     {
         $language = self::DB()->select("user" ,[
@@ -1895,7 +1824,6 @@ class appuserCtrl extends commonCtrl
         $this->assign('language', $language);
         $this->display();
     }
-
     public function languagedo()
     {
         $language = intval(post('lang'));
@@ -1909,7 +1837,6 @@ class appuserCtrl extends commonCtrl
         ]);
         success(1000 , "");
     }
-
     public function coupon(){
 	    $data = Coupon::where('status',1)->select()->toArray();
 	    foreach ($data as $k => $v){

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 09:03:55
+/* Smarty version 3.1.30, created on 2020-05-04 13:51:16
   from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_itemedit.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eaf69fb478119_79989240',
+  'unifunc' => 'content_5eafad54ad2582_61038231',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ff352f8a6c8efae8bce7cfa6624b1eaff005772b' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_itemedit.tpl',
-      1 => 1588554207,
+      1 => 1588571345,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eaf69fb478119_79989240 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafad54ad2582_61038231 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -131,37 +131,16 @@ function content_5eaf69fb478119_79989240 (Smarty_Internal_Template $_smarty_tpl)
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['arate'];?>
 " name="arate" type="text">
-                                                    <label for="passwordtwo">年化率（%）</label>
+                                                    <label for="passwordtwo">年化利率（%）</label>
                                                 </div>
 												<div class="input-field col s6" style="display:;">
                                                     <input id="passwordtwo" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['day_num'];?>
 " name="day_num" type="text">
-                                                    <label for="passwordtwo">产品天数</label>
+                                                    <label for="passwordtwo">产品天数(天)</label>
                                                 </div>
                                                 <div class="input-field col s6" style="display:;">
-                                                    <input id="password" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['desc'];?>
-" name="desc" type="text">
-                                                    <label for="password">描述</label>
-                                                </div>
-												<div class="input-field col s6" style="display:;">
-                                                    <input id="passwordtwo" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['rrule'];?>
-" name="rrule" type="text">
-                                                    <label for="passwordtwo">收益规则</label>
-                                                </div>
-												<div class="input-field col s6" style="display:;">
-                                                    <input id="passwordtwo" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['srule'];?>
-" name="srule" type="text">
-                                                    <label for="passwordtwo">存入规则</label>
-                                                </div>
-												<div class="input-field col s6">
-                                                    <input id="username" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['deposit_time'];?>
-" name="deposit_time" type="text">
-                                                    <label for="username">存入时间</label>
-                                                </div>
-                                                <div class="input-field col s6" style="display:;">
-                                                    <input id="password" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['sec_time'];?>
-" name="sec_time" type="text">
-                                                    <label for="password">取出时间</label>
+                                                    <input id="password" value="" name="desc" type="text">
+                                                    <label for="password">产品特色</label>
                                                 </div>
                                                 <div class="input-field col s6" style="display:;">
                                                     <input id="password" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['isty'];?>

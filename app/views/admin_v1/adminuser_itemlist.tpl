@@ -16,7 +16,7 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
     <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
-    <title><{$pagesigntitle}>-<{$webconfig.webtitle.val}></title>
+    <title><{$webconfig.webtitle.val}></title>
 
     <!-- Favicons-->
     <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
@@ -104,7 +104,7 @@
 							
                             <div class="col s12 pagecontenttitle">
                                 <ul class="collection">
-                                    <div class="collection-item"><{$pagesigntitle}>-第<{$page}>页</div>
+                                    <div class="collection-item">项目管理 - 第<{$page}>页</div>
                                 </ul>
                             </div>
 
@@ -138,15 +138,10 @@
                                     <tr>
 										<th data-field="">ID</th>
                                         <th data-field="">项目名称</th>
-										<th data-field="">项目金额</th>
-										<th data-field="">年化收益</th>
-										<th data-field="">产品天数</th>
-                                        <th data-field="">赠送优惠券</th>
-                                        <!--th data-field="">优惠券有效期(月)</th>
-										<th data-field="">收益规则</th>
-										<th data-field="">存入规则</th>
-                                      	<th data-field="">存入时间</th>
-										<th data-field="">取出时间</th-->
+										<th data-field="">项目金额(元)</th>
+										<th data-field="">年化利率(%)</th>
+										<th data-field="">产品天数(天)</th>
+                                        <th data-field="">赠送优惠券(元)</th>
 										<th data-field="">添加时间</th>
 										<th data-field="">操作</th>
                                     </tr>
@@ -157,18 +152,12 @@
 										<td class="tdtcenter"><{$datai['id']}></td>
 										<td class="tdtcenter"><{$datai['item_name']}></td>
 										<td class="tdtcenter"><{$datai['price']}></td>
-										<td class="tdtcenter"><{$datai['arate']}>%</td>
-										<td class="tdtcenter"><{$datai['day_num']}>天</td>
-                                        <td class="tdtcenter"><{$datai['coupon']}>元</td>
-                                        <!--td class="tdtcenter"><{$datai['expire']}></td>
-										<td class="tdtcenter"><{$datai['rrule']}></td>
-										<td class="tdtcenter"><{$datai['srule']}></td>
-										<td class="tdtcenter"><{$datai['deposit_time']}></td>
-                                        <td class="tdtcenter"><{$datai['sec_time']}></td-->
+										<td class="tdtcenter"><{$datai['arate']}></td>
+										<td class="tdtcenter"><{$datai['day_num']}></td>
+                                        <td class="tdtcenter"><{$datai['coupon']}></td>
 										<td class="tdtcenter"><{$datai['time']}></td>
                                         <td class="tdtcenter">
 											<a href="<{WSURLSHOW($WsCtrlClass,'itemedit')}>/id/<{$datai['id']}>/" class="purple lighten-2 waves-effect waves-light btn modal-trigger  light-blue">编辑</a>			
-										<!-- 	<div onclick="sendmoneyidM('<{$datai['id']}>')" class="orange darken-1 waves-effect waves-light btn modal-trigger  light-blue" href="#modal3">删除</div> -->
 										</td>
                                     </tr>
                                     <{/foreach}>

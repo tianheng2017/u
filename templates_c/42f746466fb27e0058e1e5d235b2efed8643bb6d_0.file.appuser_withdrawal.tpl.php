@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 11:09:18
+/* Smarty version 3.1.30, created on 2020-05-04 12:00:34
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_withdrawal.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eaf875e0f59d9_25902395',
+  'unifunc' => 'content_5eaf93620b01a4_99487207',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '42f746466fb27e0058e1e5d235b2efed8643bb6d' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_withdrawal.tpl',
-      1 => 1588561745,
+      1 => 1588564832,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eaf875e0f59d9_25902395 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eaf93620b01a4_99487207 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -226,7 +226,6 @@ function seldata(){
 							'<div class="item-inner">'+
 								'<div class="item-title">'+
 									'提现'+
-                                    '<div style="word-wrap: break-word;" class="item-footer">'+res["data"][i]["address"]+'</div>'+
 									'<div class="item-footer" style="margin-top: 5px;">'+res["data"][i]["time"]+'</div>'+
 								'</div>'+
                                 '<div style="position: absolute;color: #9D3F3F;right: 120px;border: 1px solid;padding: 2px 5px;border-radius: 10px;font-size: 12px;">' + mtypev + '</div>' +

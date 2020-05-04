@@ -20,7 +20,7 @@
 	<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/vue.min.js"></script>
 	<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/wu-ui.js"></script>
 	<!--vue_alert_end-->
-	
+
 	<style>
 	img {
 		display: initial;
@@ -176,7 +176,6 @@ function seldata(){
 							'<div class="item-inner">'+
 								'<div class="item-title">'+
 									'提现'+
-                                    '<div style="word-wrap: break-word;" class="item-footer">'+res["data"][i]["address"]+'</div>'+
 									'<div class="item-footer" style="margin-top: 5px;">'+res["data"][i]["time"]+'</div>'+
 								'</div>'+
                                 '<div style="position: absolute;color: #9D3F3F;right: 120px;border: 1px solid;padding: 2px 5px;border-radius: 10px;font-size: 12px;">' + mtypev + '</div>' +

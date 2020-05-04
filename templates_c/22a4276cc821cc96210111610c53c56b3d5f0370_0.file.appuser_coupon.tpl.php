@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 10:23:09
+/* Smarty version 3.1.30, created on 2020-05-04 13:45:27
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_coupon.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eaf7c8d33bd92_60649698',
+  'unifunc' => 'content_5eafabf7aef7a3_38148328',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eaf7c8d33bd92_60649698 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafabf7aef7a3_38148328 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">

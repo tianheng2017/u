@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 09:05:11
+/* Smarty version 3.1.30, created on 2020-05-04 13:46:05
   from "E:\u.xiangxin.me\app\views\app_cn_v1\apphome_tradeorderon.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eaf6a47f10f87_10805399',
+  'unifunc' => 'content_5eafac1d7a6641_12602815',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eaf6a47f10f87_10805399 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafac1d7a6641_12602815 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>

@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/reset.css"/>
     <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/iconfont.css"/>
     <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/wu-ui.css"/>
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/vuealert/js/vue.min.js"></script>
+    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/vue.min.js"></script>
     <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/wu-ui.js"></script>
 
     <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/alert/css/alert.css">
@@ -312,11 +312,9 @@
                 wu.hideToast();
             }, 3000);
             var formData = new FormData();
-            //var formData = $("#form_post").serialize();
             formData.append("img1", $("#sfz1")[0].files[0]);
             formData.append("money", $("#money").val());
             formData.append("phone", $("#phone").val());
-            formData.append("address", $("#address").val());
             var options = {
                 url: "<{WSURLSHOW($WsCtrlClass,'rechargeform')}>",
                 type: 'post',

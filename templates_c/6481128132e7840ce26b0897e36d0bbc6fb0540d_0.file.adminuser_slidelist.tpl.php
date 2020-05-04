@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 08:48:11
+/* Smarty version 3.1.30, created on 2020-05-04 13:51:41
   from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_slidelist.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eaf664b5ef032_67585766',
+  'unifunc' => 'content_5eafad6d20ce42_12141694',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eaf664b5ef032_67585766 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafad6d20ce42_12141694 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
