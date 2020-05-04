@@ -65,7 +65,6 @@ class apphomeCtrl extends commonCtrl
                     'item_id'       =>  $v['item_id'],
                     'item_no'       =>  $v['id'],
                     'status'        =>  1,
-                    'expire_time'   =>  time() + 86400 * 30 * intval(self::$webconfig['coupon_expire']['val']),
                 ]);
             }
 		}
@@ -280,9 +279,12 @@ class apphomeCtrl extends commonCtrl
             $item = self::DB()->select("itemlist","*",['id[=]'=>$v['item_id']]);
             $item = $item[0];
             $day_num =  ceil((time() - $v['time'])/3600/24)-2;
-
-            $moneyp = ($v['smoney'] - $v['money'])/($item['day_num']-2) * $day_num;
-            $tradeorders[$k]['sy'] = round($moneyp,2);
+            if ($day_num <= 0){
+                $tradeorders[$k]['sy'] = number_format(0, 2, '.', '');
+            }else{
+                $moneyp = ($v['smoney'] - $v['money'])/($item['day_num']-2) * $day_num;
+                $tradeorders[$k]['sy'] = round($moneyp,2);
+            }
 
 			$m152 += $moneyp;
 		}
@@ -320,7 +322,6 @@ class apphomeCtrl extends commonCtrl
 	public function tradeorderon_detail()
     {
         $id = intval($_GET['id']);
-        //$tradeorder = self::DB()->query("SELECT * from `tradeorder` where state = 1 and id = '".$id."'")->fetchAll();
 		$tradeorder = self::DB()->query("SELECT * from `itemlog` where id = '".$id."' and uid = '".$_SESSION['userinfo']['id']."' ")->fetchAll();
 		//print_r($tradeorder);exit;
 		$tradeorder[0]['time1'] = date('Y-m-d',$tradeorder[0]['time']);
@@ -350,10 +351,13 @@ class apphomeCtrl extends commonCtrl
         $item = self::DB()->select("itemlist","*",['id[=]'=>$tradeorder[0]['item_id']]);
         $item = $item[0];
         $day_num =  ceil((time() - $tradeorder[0]['time'])/3600/24)-2;
+        if ($day_num <= 0){
+            $tradeorder[0]['sy'] = number_format(0, 2, '.', '');
+        }else{
+            $moneyp = ($tradeorder[0]['smoney'] - $tradeorder[0]['money'])/($item['day_num']-2) * $day_num;
+            $tradeorder[0]['sy'] = round($moneyp,2);
+        }
 
-        $moneyp = ($tradeorder[0]['smoney'] - $tradeorder[0]['money'])/($item['day_num']-2) * $day_num;
-        $tradeorder[0]['sy'] = round($moneyp,2);
-		
         $this->assign('tradeorder',$tradeorder[0]);
         $this->display();
     }
