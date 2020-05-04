@@ -772,7 +772,7 @@ class appuserCtrl extends commonCtrl
             "id[=]" => $user['id']
         ]]);
 
-        $id = post('id');
+        $id = intval(post('id'));
         $coupon = Coupon::where(['id'=>$id, 'uid'=>$userc[0]['id']])->find();
 
         if (empty($coupon)){
