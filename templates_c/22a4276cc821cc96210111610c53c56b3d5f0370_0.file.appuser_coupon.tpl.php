@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 15:26:55
+/* Smarty version 3.1.30, created on 2020-05-04 15:35:55
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_coupon.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafc3bf4068c8_78630796',
+  'unifunc' => 'content_5eafc5db651d22_79783809',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '22a4276cc821cc96210111610c53c56b3d5f0370' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_coupon.tpl',
-      1 => 1588577213,
+      1 => 1588577743,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafc3bf4068c8_78630796 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafc5db651d22_79783809 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -358,7 +358,7 @@ function content_5eafc3bf4068c8_78630796 (Smarty_Internal_Template $_smarty_tpl)
     .stamp03 .copy {
         padding: 10px 6px 10px 12px;
         font-size: 24px;
-        margin-top: 45px;
+        margin-top: 50px;
     }
     .stamp03 .copy p {
         font-size: 14px;

@@ -317,7 +317,7 @@
     .stamp03 .copy {
         padding: 10px 6px 10px 12px;
         font-size: 24px;
-        margin-top: 45px;
+        margin-top: 50px;
     }
     .stamp03 .copy p {
         font-size: 14px;
