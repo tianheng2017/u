@@ -65,7 +65,7 @@ class apphomeCtrl extends commonCtrl
                     'item_id'       =>  $v['item_id'],
                     'item_no'       =>  $v['id'],
                     'status'        =>  1,
-                    'expire_time'   =>  time() + 86400 * 30 * 3,
+                    'expire_time'   =>  time() + 86400 * 30 * intval(self::$webconfig['coupon_expire']['val']),
                 ]);
             }
 		}
