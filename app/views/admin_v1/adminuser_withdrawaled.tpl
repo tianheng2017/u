@@ -176,11 +176,11 @@
 										<td class="tdtcenter"><{number_format($datai['presentationfee'],'2','.','')}></td>
                                         <td class="tdtcenter fontweight100" style="font-weight: bold;">
                                             <{if $datai['mtype']==1}>
-                                            人民币提现
+                                            【人民币提现】
                                             <{elseif $datai['mtype']==2}>
-                                            优惠卷提现
+                                            【优惠卷提现】
                                             <{else}>
-                                            其它
+                                            【其它】
                                             <{/if}>
                                         </td>
 

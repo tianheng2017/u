@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 17:03:39
+/* Smarty version 3.1.30, created on 2020-05-04 17:31:13
   from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_recharge.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafda6bdd5593_90516837',
+  'unifunc' => 'content_5eafe0e1c8f917_87951299',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '8fb5d458e216c0436259ed063be833542d08ea38' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_recharge.tpl',
-      1 => 1588583018,
+      1 => 1588584672,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eafda6bdd5593_90516837 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafe0e1c8f917_87951299 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -193,7 +193,7 @@ function content_5eafda6bdd5593_90516837 (Smarty_Internal_Template $_smarty_tpl)
 										<th data-field="">金额</th>
 										<!--th data-field="">转款地址</th-->
 										<th data-field="">手机号</th>
-										<th data-field="">转款凭证</th>
+										<th data-field="">充值转账凭证</th>
 										
 										<th data-field="">充值状态</th>
 										

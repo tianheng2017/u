@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 17:32:14
-  from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_withdrawalon.tpl" */
+/* Smarty version 3.1.30, created on 2020-05-04 17:27:27
+  from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_slidelist.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafe11e89af11_79054878',
+  'unifunc' => 'content_5eafdfff173743_40427691',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '4c14227295de6d8f900027de2c9af4827f2f47f6' => 
+    '6481128132e7840ce26b0897e36d0bbc6fb0540d' => 
     array (
-      0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_withdrawalon.tpl',
-      1 => 1588584726,
+      0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_slidelist.tpl',
+      1 => 1588572395,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eafe11e89af11_79054878 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafdfff173743_40427691 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -59,14 +59,14 @@ function content_5eafe11e89af11_79054878 (Smarty_Internal_Template $_smarty_tpl)
     <!-- For Windows Phone -->
 
 
-    <!-- CORE CSS-->
+    <!-- CORE CSS-->    
     <link href="<?php echo VIEW_ROOTPATH;?>
 /assets/exquisiteui/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="<?php echo VIEW_ROOTPATH;?>
 /assets/exquisiteui/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
 
 
-    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->    
     <link href="<?php echo VIEW_ROOTPATH;?>
 /assets/exquisiteui/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="<?php echo VIEW_ROOTPATH;?>
@@ -147,7 +147,7 @@ function content_5eafe11e89af11_79054878 (Smarty_Internal_Template $_smarty_tpl)
 -第<?php echo $_smarty_tpl->tpl_vars['page']->value;?>
 页</div>
 									
-									<div class="input-field col s10">
+									<!-- <div class="input-field col s10">
 										<input class="querykeywords" id="querykeywords" name="querykeywords" value="<?php echo $_smarty_tpl->tpl_vars['querykeywords']->value;?>
 " placeholder="请输入用户ID或用户名" type="text">
 										<label for="first_name">搜索</label>
@@ -156,11 +156,9 @@ function content_5eafe11e89af11_79054878 (Smarty_Internal_Template $_smarty_tpl)
 										<div class="btn cyan waves-effect waves-light right seabtna">查询
 											<i class="mdi-content-send right"></i>
 										</div>
-									</div>
+									</div> -->
                                 </ul>
                             </div>
-
-
 							<style>
 								.dif_span{
 									width:5em;
@@ -170,7 +168,6 @@ function content_5eafe11e89af11_79054878 (Smarty_Internal_Template $_smarty_tpl)
 									text-align:center;
 									border-bottom:1px solid #fff;
 								}
-								
 								.dif_span2{
 									min-width:10em;
 									width:10em;
@@ -178,45 +175,18 @@ function content_5eafe11e89af11_79054878 (Smarty_Internal_Template $_smarty_tpl)
 									display: inline-block;
 									text-align:left;
 								}
-								
-								.dif_span3{
-									max-width:20em;
-									overflow: hidden;
-									display: inline-block;
-									background: rgba(159, 188, 212, 0.39);
-									text-align:left;
-									border-bottom:1px solid #fff;
-									word-wrap: break-word;
-									padding: .2em 1em;
-								}
 							</style>
-							
-							
                             <div class="col s12">
-																								
 								<form class="s12" id="pdataform">
-							
                                 <table class="striped" style="border: 1px solid #bdbdbd;">
                                     <thead>
                                     <tr>
 										<th data-field="">ID</th>
-                                        <th data-field="">用户ID</th>
-
-										
-										<th data-field="">用户名</th>
-										
-										<th data-field="">金额</th>
-                                        <th data-field="">手续费</th>
-
-										<th data-field="">提现类型</th>
-                                        <th data-field="">收款二维码</th>
-										
-										<th data-field="">时间</th>
-										
-										<th data-field="">状态</th>
-										
+                                        <th data-field="">幻灯片名称</th>
+										<th data-field="">图片</th>
+                                        <th data-field="">状态</th>
+										<th data-field="">添加时间</th>
 										<th data-field="">操作</th>
-										
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -229,58 +199,25 @@ foreach ($_from as $_smarty_tpl->tpl_vars['datai']->value) {
 ">
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
 </td>
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['uid'];?>
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['name'];?>
 </td>
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['username'];?>
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['img'];?>
 </td>
-										<td class="tdtcenter" style="font-weight: bold;"><?php echo number_format($_smarty_tpl->tpl_vars['datai']->value['money'],'2','.','');?>
-</td>
-										<td class="tdtcenter"><?php echo number_format($_smarty_tpl->tpl_vars['datai']->value['presentationfee'],'2','.','');?>
-</td>
-										<td class="tdtcenter fontweight100" style="font-weight: bold;">
-											<?php if ($_smarty_tpl->tpl_vars['datai']->value['mtype'] == 1) {?>
-											【人民币提现】
-											<?php } elseif ($_smarty_tpl->tpl_vars['datai']->value['mtype'] == 2) {?>
-											【优惠卷提现】
-											<?php } else { ?>
-											【其它】
-											<?php }?>
-										</td>
-                                        <td class="tdtcenter"><img class="waves-effect waves-light modal-trigger" href="#modal1" style="height:5em;max-width:16em;" onclick="showimgM('<?php echo INSTALL_DIR;?>
-/upload/user/withdrawal/<?php echo $_smarty_tpl->tpl_vars['datai']->value['img1'];?>
-')" src="<?php echo INSTALL_DIR;?>
-/upload/user/withdrawal/<?php echo $_smarty_tpl->tpl_vars['datai']->value['img1'];?>
-"></td>
-
-                                        <td class="tdtcenter fontcolorb6b6b6 fontweight100"><?php echo $_smarty_tpl->tpl_vars['datai']->value['time'];?>
-</td>
-										<?php if ($_smarty_tpl->tpl_vars['datai']->value['state'] == 1) {?>
-										<td class="tdtcenter" style="background: rgba(91, 211, 96, 0.2);color:#000;">	审核中</td>
-										<?php } elseif ($_smarty_tpl->tpl_vars['datai']->value['state'] == -1) {?>
-										<td class="tdtcenter" style="background: rgba(255, 90, 146, 0.2);color:#000;">	失败</td>
-										<?php } elseif ($_smarty_tpl->tpl_vars['datai']->value['state'] == 2) {?>
-										<td class="tdtcenter" style="background: rgba(0, 188, 212, 0.2);color:#000;">	成功</td>
-										<?php } else { ?>
-										<td class="tdtcenter" style="background: #fff;color:#000;">	其它</td>
-										<?php }?>
-										
-										
 										<td class="tdtcenter">
-											
-											
-											<div onclick="upstateM('<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
-',-1)" class="btn">驳回</div>
-											<div onclick="upstateM('<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
-',2)" class="btn cyan">通过</div>
-											
-										
+                                            <?php if ($_smarty_tpl->tpl_vars['datai']->value['status'] == 1) {?>
+                                            <span style="background: #87dde6;color:#fff;padding: 4px 10px;border-radius: 2px;">	启用</span>
+                                            <?php }?>
+                                            <?php if ($_smarty_tpl->tpl_vars['datai']->value['type'] == 0) {?>
+                                            <span style="background: #00bcd4;color:#fff;padding: 4px 10px;border-radius: 2px;">	停用</span>
+                                            <?php }?>
+                                        </td>
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['time'];?>
+</td>
+                                        <td class="tdtcenter">
+											<a href="<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'slideedit');?>
+/id/<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
+/" class="purple lighten-2 waves-effect waves-light btn modal-trigger  light-blue">编辑</a>
 										</td>
-										
-										
-										
-										
-										
-										
                                     </tr>
                                     <?php
 }
@@ -290,90 +227,23 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
                                     </tbody>
                                 </table>
-								
-								
-								
 								</form>
-								
-								
-                                
-
-
 								<?php $_smarty_tpl->_subTemplateRender("file:public/pagination.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-
-
-
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <!--card stats end-->
-
-
-                    <!-- //////////////////////////////////////////////////////////////////////////// -->
-
-
-
-                    <div id="modal1" class="modal">
-                        <div class="modal-content">
-                            <div class="row">
-                                <div class="input-field col s12" style="text-align:center;">
-                                    <img src="max-height:400px;" class="showimgv">
-                                </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button class="waves-effect waves-red btn-flat modal-action modal-close">关闭</button>
-                        </div>
                     </div>
-					
-					
-
                 </div>
-                <!--end container-->
             </section>
-            <!-- END CONTENT -->
-
-            <!-- //////////////////////////////////////////////////////////////////////////// -->
-            <!-- START RIGHT SIDEBAR NAV-->
             <?php $_smarty_tpl->_subTemplateRender("file:r_nav_useradmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-            <!-- LEFT RIGHT SIDEBAR NAV-->
-
         </div>
-        <!-- END WRAPPER -->
-
     </div>
-    <!-- END MAIN -->
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- //////////////////////////////////////////////////////////////////////////// -->
-
-    <!-- START FOOTER -->
     <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-    <!-- END FOOTER -->
-
-    <!-- ================================================
-    Scripts
-    ================================================ -->
-    
-    <!-- jQuery Library -->
     <?php echo '<script'; ?>
  src="<?php echo VIEW_ROOTPATH;?>
 /assets/exquisiteui/js/jquery-1.10.2.js"><?php echo '</script'; ?>
@@ -388,8 +258,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
  type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
 /assets/exquisiteui/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"><?php echo '</script'; ?>
 >
-       
-
     <!-- chartist -->
     <?php echo '<script'; ?>
  type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
@@ -439,19 +307,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     <!-- Toast Notification -->
     <?php echo '<script'; ?>
  type="text/javascript">
-
-        function showimgM(val) {
-            $(".showimgv").attr('src',val);
-        }
-		
-        $(".seabtna").click(function () {
-            self.location = '<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,$_smarty_tpl->tpl_vars['pagesign']->value);?>
-/querykeywords/'+$(".querykeywords").val();
-        });
-		
-		
-		
-		function upstateM(val,state) {
+        function upstopM(val) {
 			
 			var confirmis=confirm("确定该操作吗？");
 			if (confirmis==true)
@@ -463,11 +319,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 			
             var trobj="usertr"+val;
             var options = {
-                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'upwithdrawalstate');?>
+                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'upuserstate');?>
 ",
                 type: 'post',
                 dataType: 'text',
-                data: 'id='+val+'&state='+state,
+                data: 'id='+val,
                 success: function (data) {
                     if (data.length > 0) {
                         if (data == '成功') {
@@ -481,15 +337,133 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                         if (data == '失败') {
                             Materialize.toast('<span style="color: #ef192c">操作失败!</span>', 3000);
                         }
-						if (data == 'ed') {
-                            Materialize.toast('<span style="color: #ef192c">该订单已处理过了!</span>', 3000);
-                        }
                     }
                 }
             };
             $.ajax(options);
             return false;
         }
+		
+		
+		
+		
+		
+		
+		
+		
+		var useridc = 0;
+		
+		function uppasidM(val) {
+			useridc = val;
+		}
+        function uppasM() {
+			
+			var useridcc = useridc;
+			useridc = 0;
+			
+			
+			var passwordv = $(".pasinp").val();
+			$(".pasinp").val("");
+			
+            var options = {
+                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'upuserpas');?>
+/id/"+useridcc,
+                type: 'post',
+                dataType: 'text',
+                data: 'password='+passwordv,
+                success: function (data) {
+                    if (data.length > 0) {
+                        if (data == '成功') {
+							Materialize.toast('<span style="color: #0fef72">修改成功!</span>', 3000);
+						}
+						if (data == '失败') {
+							Materialize.toast('<span style="color: #ef192c">修改失败!</span>', 3000);
+						}
+						if (data == '相同') {
+							Materialize.toast('<span style="color: #ef192c">数据相同，无需修改!</span>', 3000);
+						}
+						if (data == 'none') {
+							Materialize.toast('<span style="color: #ef192c">不可为空哟!</span>', 3000);
+						}
+                    }
+                }
+            };
+            $.ajax(options);
+            return false;
+        }
+		
+		
+		
+		
+		function sendmoneyidM(val) {
+			useridc = val;
+		}
+		
+		function sendmoneyM() {
+			
+			var useridcc = useridc;
+			useridc = 0;
+			
+			
+			var moneyv = $(".moneyinp").val();
+			$(".moneyinp").val("");
+			
+            var options = {
+                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'sendmoneydo');?>
+/id/"+useridcc,
+                type: 'post',
+                dataType: 'text',
+                data: 'money='+moneyv,
+                success: function (data) {
+                    if (data.length > 0) {
+                        if (data == '成功') {
+							Materialize.toast('<span style="color: #0fef72">充值成功!</span>', 3000);
+							
+							setTimeout(function(){
+								location.reload();
+							}, 500);
+						}
+						if (data == '失败') {
+							Materialize.toast('<span style="color: #ef192c">充值失败!</span>', 3000);
+						}
+
+						if (data == 'moneye') {
+							Materialize.toast('<span style="color: #ef192c">金额有误!</span>', 3000);
+						}
+						
+						
+                    }
+                }
+            };
+     		$.ajax(options);
+            return false;
+        }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+        $(".seabtna").click(function () {
+            self.location = '<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,$_smarty_tpl->tpl_vars['pagesign']->value);?>
+/querykeywords/'+$(".querykeywords").val();
+        });
+		
+		
+		
+		
 		
     <?php echo '</script'; ?>
 >

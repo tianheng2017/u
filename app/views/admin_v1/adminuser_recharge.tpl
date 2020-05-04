@@ -151,7 +151,7 @@
 										<th data-field="">金额</th>
 										<!--th data-field="">转款地址</th-->
 										<th data-field="">手机号</th>
-										<th data-field="">转款凭证</th>
+										<th data-field="">充值转账凭证</th>
 										
 										<th data-field="">充值状态</th>
 										

@@ -187,11 +187,11 @@
 										<td class="tdtcenter"><{number_format($datai['presentationfee'],'2','.','')}></td>
 										<td class="tdtcenter fontweight100" style="font-weight: bold;">
 											<{if $datai['mtype']==1}>
-											人民币提现
+											【人民币提现】
 											<{elseif $datai['mtype']==2}>
-											优惠卷提现
+											【优惠卷提现】
 											<{else}>
-											其它
+											【其它】
 											<{/if}>
 										</td>
                                         <td class="tdtcenter"><img class="waves-effect waves-light modal-trigger" href="#modal1" style="height:5em;max-width:16em;" onclick="showimgM('<{INSTALL_DIR}>/upload/user/withdrawal/<{$datai['img1']}>')" src="<{INSTALL_DIR}>/upload/user/withdrawal/<{$datai['img1']}>"></td>

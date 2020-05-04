@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 17:03:11
+/* Smarty version 3.1.30, created on 2020-05-04 17:32:49
   from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_withdrawaled.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafda4fae1fc0_09760158',
+  'unifunc' => 'content_5eafe141a9cf39_34216357',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '680195a53e68a65b6a13c7c7ca8f96b2ef398929' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_withdrawaled.tpl',
-      1 => 1588582990,
+      1 => 1588584733,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eafda4fae1fc0_09760158 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafe141a9cf39_34216357 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -228,11 +228,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['datai']->value) {
 </td>
                                         <td class="tdtcenter fontweight100" style="font-weight: bold;">
                                             <?php if ($_smarty_tpl->tpl_vars['datai']->value['mtype'] == 1) {?>
-                                            人民币提现
+                                            【人民币提现】
                                             <?php } elseif ($_smarty_tpl->tpl_vars['datai']->value['mtype'] == 2) {?>
-                                            优惠卷提现
+                                            【优惠卷提现】
                                             <?php } else { ?>
-                                            其它
+                                            【其它】
                                             <?php }?>
                                         </td>
 
