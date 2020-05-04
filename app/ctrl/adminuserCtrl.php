@@ -254,10 +254,8 @@ class adminuserCtrl extends commonCtrl
 	
 	public function itemedit()
 	{
-//		$sql = "SELECT * FROM `itemlist` where id = ".$_GET['id'];
-//		$data = self::DB()->query($sql)->fetchAll();
-		$data = Itemlist::find($_GET['id']);
-		$this->assign('data',$data[0]);
+		$data = Itemlist::where('id',$_GET['id'])->find();
+		$this->assign('data',$data);
 		$this->display();
 	}
 	
