@@ -7,6 +7,8 @@ use app\ormModel\Itemlist;
 use app\ormModel\Itemlog;
 use app\ormModel\Itemlogp;
 use app\ormModel\Regpath;
+use app\ormModel\User;
+
 class appuserCtrl extends commonCtrl
 {
 	public static $webconfig;
@@ -766,17 +768,13 @@ class appuserCtrl extends commonCtrl
     public function coupon_tx()
     {
         $user = self::$myuserinfo;
-        $userc = self::DB()->select("user" ,[
-            "id","money"
-        ],["AND" =>[
-            "id[=]" => $user['id']
-        ]]);
+        $userc = User::where('id', $user['id'])->field('id,money')->find();
 
         $id = intval(post('id'));
-        $coupon = Coupon::where(['id'=>$id, 'uid'=>$userc[0]['id']])->find();
+        $coupon = Coupon::where(['id'=>$id, 'uid'=>$userc['id']])->find();
 
         if (empty($coupon)){
-            error(-1020 , "此优惠劵不存在");
+            error(-1020 , "此优惠劵不存在".$userc['id']);
         }
 
         if(count($userc)>0){
@@ -811,14 +809,14 @@ class appuserCtrl extends commonCtrl
                 error(-1010 , "请上传收款二维码");
             }
             $usercup = self::DB()->update("user",[
-                "money" => $userc[0]['money'] + $coupon['money']
+                "money" => $userc['money'] + $coupon['money']
             ], [
-                "id[=]" => $userc[0]['id']
+                "id[=]" => $userc['id']
             ]);
             if($usercup){
                 $datetime = new \DateTime;
                 $insert_id = self::DB()->insert("withdrawal", [
-                    "uid" => $userc[0]['id'],
+                    "uid" => $userc['id'],
                     'money'=> $coupon['money'],
                     'presentationfee'=> 0,
                     'img1'=> $imgurlval1,
