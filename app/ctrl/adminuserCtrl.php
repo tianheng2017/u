@@ -311,8 +311,8 @@ class adminuserCtrl extends commonCtrl
         }
 		$last_insert_id = self::DB()->insert("itemlist", [
                 "item_name" => post('item_name'),
-                "price" => intval(post('price')),
-                "arate" => intval(post('arate')),
+                "price" => floatval(post('price')),
+                "arate" => floatval(post('arate')),
                 "day_num" => intval(post('day_num')),
                 "name" => post('name'),
                 "desc" => post('desc'),
@@ -322,7 +322,7 @@ class adminuserCtrl extends commonCtrl
                 "sec_time" => post('sec_time'),
                 "time" => time(),
                 'isty' => intval(post('isty')),
-                'tymoney' => post('tymoney'),
+                'tymoney' => floatval(post('tymoney')),
                 'coupon' => intval(post('coupon')),
                 'coupon_expire' => intval(post('coupon_exipre')),
 			]);
