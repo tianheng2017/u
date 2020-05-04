@@ -158,7 +158,7 @@
 										<td class="tdtcenter"><{$datai['time']}></td>
                                         <td class="tdtcenter">
 											<a href="<{WSURLSHOW($WsCtrlClass,'itemedit')}>/id/<{$datai['id']}>/" class="purple lighten-2 waves-effect waves-light btn modal-trigger  light-blue">编辑</a>
-                                            <div onclick="itemdel('<{$datai['id']}>')" class="orange darken-1 waves-effect waves-light btn modal-trigger  light-blue" href="#modal3">删除</div>
+                                            <div onclick="itemdel('<{$datai['id']}>')" class="orange darken-1 waves-effect waves-light btn modal-trigger light-blue">删除</div>
                                         </td>
                                     </tr>
                                     <{/foreach}>
@@ -366,7 +366,6 @@
 		}
 
         function itemdel(val) {
-
             var confirmis=confirm("确定删除该项目吗？");
             if (confirmis==true)
             {
@@ -384,6 +383,9 @@
                                 }, 500);
                             }else{
                                 Materialize.toast('<span style="color: #ef192c">'+ data +'!</span>', 3000);
+                                setTimeout(function(){
+                                    location.reload();
+                                }, 3000);
                             }
                         }
                     }

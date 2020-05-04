@@ -330,12 +330,16 @@ class adminuserCtrl extends commonCtrl
 
 	public function itemdel(){
 	    $id = post('id');
+	    if(empty($id)){
+            echo "项目不存在!";exit;
+        }
 	    $a = Itemlog::where(['item_id'=>$id,'status'=>0])->count();
 	    $b = Itemlogp::where(['item_id'=>$id,'status'=>0])->count();
 	    if ($a || $b){
-	        echo "删除失败, 该项目有投资者尚未结算!";
+	        echo "删除失败, 该项目有订单尚未结算!";exit;
         }else{
-	        echo "成功";
+	        Itemlist::where('id', $id)->delete();
+	        echo "成功";exit;
         }
     }
 	

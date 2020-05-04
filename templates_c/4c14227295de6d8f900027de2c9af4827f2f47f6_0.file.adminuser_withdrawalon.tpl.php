@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 14:36:27
-  from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_itemlist.tpl" */
+/* Smarty version 3.1.30, created on 2020-05-04 14:36:48
+  from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_withdrawalon.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafb7eb39ab94_71843332',
+  'unifunc' => 'content_5eafb8002f2f97_49188359',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'a4b939720a9bffd897e2d8fb2264de464cc8ea41' => 
+    '4c14227295de6d8f900027de2c9af4827f2f47f6' => 
     array (
-      0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_itemlist.tpl',
-      1 => 1588574185,
+      0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_withdrawalon.tpl',
+      1 => 1588569591,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eafb7eb39ab94_71843332 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafb8002f2f97_49188359 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,8 @@ function content_5eafb7eb39ab94_71843332 (Smarty_Internal_Template $_smarty_tpl)
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
     <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
-    <title><?php echo $_smarty_tpl->tpl_vars['webconfig']->value['webtitle']['val'];?>
+    <title><?php echo $_smarty_tpl->tpl_vars['pagesigntitle']->value;?>
+-<?php echo $_smarty_tpl->tpl_vars['webconfig']->value['webtitle']['val'];?>
 </title>
 
     <!-- Favicons-->
@@ -58,14 +59,14 @@ function content_5eafb7eb39ab94_71843332 (Smarty_Internal_Template $_smarty_tpl)
     <!-- For Windows Phone -->
 
 
-    <!-- CORE CSS-->    
+    <!-- CORE CSS-->
     <link href="<?php echo VIEW_ROOTPATH;?>
 /assets/exquisiteui/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="<?php echo VIEW_ROOTPATH;?>
 /assets/exquisiteui/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
 
 
-    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->    
+    <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
     <link href="<?php echo VIEW_ROOTPATH;?>
 /assets/exquisiteui/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
     <link href="<?php echo VIEW_ROOTPATH;?>
@@ -142,8 +143,20 @@ function content_5eafb7eb39ab94_71843332 (Smarty_Internal_Template $_smarty_tpl)
 							
                             <div class="col s12 pagecontenttitle">
                                 <ul class="collection">
-                                    <div class="collection-item">项目管理 - 第<?php echo $_smarty_tpl->tpl_vars['page']->value;?>
+                                    <div class="collection-item"><?php echo $_smarty_tpl->tpl_vars['pagesigntitle']->value;?>
+-第<?php echo $_smarty_tpl->tpl_vars['page']->value;?>
 页</div>
+									
+									<div class="input-field col s10">
+										<input class="querykeywords" id="querykeywords" name="querykeywords" value="<?php echo $_smarty_tpl->tpl_vars['querykeywords']->value;?>
+" placeholder="请输入用户ID或用户名" type="text">
+										<label for="first_name">搜索</label>
+									</div>
+									<div class="input-field col s2">
+										<div class="btn cyan waves-effect waves-light right seabtna">查询
+											<i class="mdi-content-send right"></i>
+										</div>
+									</div>
                                 </ul>
                             </div>
 
@@ -165,6 +178,17 @@ function content_5eafb7eb39ab94_71843332 (Smarty_Internal_Template $_smarty_tpl)
 									display: inline-block;
 									text-align:left;
 								}
+								
+								.dif_span3{
+									max-width:20em;
+									overflow: hidden;
+									display: inline-block;
+									background: rgba(159, 188, 212, 0.39);
+									text-align:left;
+									border-bottom:1px solid #fff;
+									word-wrap: break-word;
+									padding: .2em 1em;
+								}
 							</style>
 							
 							
@@ -176,13 +200,23 @@ function content_5eafb7eb39ab94_71843332 (Smarty_Internal_Template $_smarty_tpl)
                                     <thead>
                                     <tr>
 										<th data-field="">ID</th>
-                                        <th data-field="">项目名称</th>
-										<th data-field="">项目金额(元)</th>
-										<th data-field="">年化利率(%)</th>
-										<th data-field="">产品天数(天)</th>
-                                        <th data-field="">赠送优惠券(元)</th>
-										<th data-field="">添加时间</th>
+                                        <th data-field="">用户ID</th>
+
+										
+										<th data-field="">用户名</th>
+										
+										<th data-field="">金额</th>
+                                        <th data-field="">手续费</th>
+
+										<th data-field="">提现类型</th>
+                                        <th data-field="">收款二维码</th>
+										
+										<th data-field="">时间</th>
+										
+										<th data-field="">状态</th>
+										
 										<th data-field="">操作</th>
+										
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -195,25 +229,58 @@ foreach ($_from as $_smarty_tpl->tpl_vars['datai']->value) {
 ">
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
 </td>
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['item_name'];?>
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['uid'];?>
 </td>
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['price'];?>
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['username'];?>
 </td>
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['arate'];?>
+										<td class="tdtcenter" style="font-weight: bold;font-style: italic;"><?php echo $_smarty_tpl->tpl_vars['datai']->value['money'];?>
 </td>
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['day_num'];?>
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['presentationfee'];?>
 </td>
-                                        <td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['coupon'];?>
+										<td class="tdtcenter fontweight100">
+											<?php if ($_smarty_tpl->tpl_vars['datai']->value['mtype'] == 1) {?>
+											人民币提现
+											<?php } elseif ($_smarty_tpl->tpl_vars['datai']->value['mtype'] == 2) {?>
+											优惠卷提现
+											<?php } else { ?>
+											其它
+											<?php }?>
+										</td>
+                                        <td class="tdtcenter"><img class="waves-effect waves-light modal-trigger" href="#modal1" style="height:5em;max-width:16em;" onclick="showimgM('<?php echo INSTALL_DIR;?>
+/upload/user/withdrawal/<?php echo $_smarty_tpl->tpl_vars['datai']->value['img1'];?>
+')" src="<?php echo INSTALL_DIR;?>
+/upload/user/withdrawal/<?php echo $_smarty_tpl->tpl_vars['datai']->value['img1'];?>
+"></td>
+
+                                        <td class="tdtcenter fontcolorb6b6b6 fontweight100"><?php echo $_smarty_tpl->tpl_vars['datai']->value['time'];?>
 </td>
-										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['time'];?>
-</td>
-                                        <td class="tdtcenter">
-											<a href="<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'itemedit');?>
-/id/<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
-/" class="purple lighten-2 waves-effect waves-light btn modal-trigger  light-blue">编辑</a>
-                                            <div onclick="itemdel('<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
-')" class="orange darken-1 waves-effect waves-light btn modal-trigger light-blue">删除</div>
-                                        </td>
+										<?php if ($_smarty_tpl->tpl_vars['datai']->value['state'] == 1) {?>
+										<td class="tdtcenter" style="background: rgba(91, 211, 96, 0.2);color:#000;">	审核中</td>
+										<?php } elseif ($_smarty_tpl->tpl_vars['datai']->value['state'] == -1) {?>
+										<td class="tdtcenter" style="background: rgba(255, 90, 146, 0.2);color:#000;">	失败</td>
+										<?php } elseif ($_smarty_tpl->tpl_vars['datai']->value['state'] == 2) {?>
+										<td class="tdtcenter" style="background: rgba(0, 188, 212, 0.2);color:#000;">	成功</td>
+										<?php } else { ?>
+										<td class="tdtcenter" style="background: #fff;color:#000;">	其它</td>
+										<?php }?>
+										
+										
+										<td class="tdtcenter">
+											
+											
+											<div onclick="upstateM('<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
+',-1)" class="btn">驳回</div>
+											<div onclick="upstateM('<?php echo $_smarty_tpl->tpl_vars['datai']->value['id'];?>
+',2)" class="btn cyan">通过</div>
+											
+										
+										</td>
+										
+										
+										
+										
+										
+										
                                     </tr>
                                     <?php
 }
@@ -223,52 +290,47 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
                                     </tbody>
                                 </table>
+								
+								
+								
 								</form>
+								
+								
+                                
+
+
 								<?php $_smarty_tpl->_subTemplateRender("file:public/pagination.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
+
+
+
                             </div>
+
+
                         </div>
                     </div>
                     <!--card stats end-->
 
 
                     <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+
+
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <div class="row">
+                                <div class="input-field col s12" style="text-align:center;">
+                                    <img src="max-height:400px;" class="showimgv">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="waves-effect waves-red btn-flat modal-action modal-close">关闭</button>
+                        </div>
+                    </div>
 					
 					
-					
-					
-					
-					<div id="modal1" class="modal">
-					  <div class="modal-content">
-						<div class="row">
-							<div class="input-field col s12">
-							  <input placeholder="请输入密码" id="pasinp" type="password" class="pasinp">
-							  <label for="pasinp" class="active">修改密码</label>
-							</div>
-						</div>
-					  </div>
-					  <div class="modal-footer">
-						<button class="waves-effect waves-red btn-flat modal-action modal-close">取消</button>
-						<button onclick="uppasM()" class="waves-effect waves-red btn-flat modal-action modal-close">确定</button>
-					  </div>
-					</div>
-					
-					
-					<div id="modal3" class="modal">
-					  <div class="modal-content">
-						<div class="row">
-							<div class="input-field col s12">
-							  <input placeholder="请输入充值金额（可填负数）" id="moneyinp" type="text" class="moneyinp">
-							  <label for="moneyinp" class="active">后台充值</label>
-							</div>
-						</div>
-					  </div>
-					  <div class="modal-footer">
-						<button class="waves-effect waves-red btn-flat modal-action modal-close">取消</button>
-						<button onclick="sendmoneyM()" class="waves-effect waves-red btn-flat modal-action modal-close">确定</button>
-					  </div>
-					</div>
 
                 </div>
                 <!--end container-->
@@ -377,7 +439,19 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     <!-- Toast Notification -->
     <?php echo '<script'; ?>
  type="text/javascript">
-        function upstopM(val) {
+
+        function showimgM(val) {
+            $(".showimgv").attr('src',val);
+        }
+		
+        $(".seabtna").click(function () {
+            self.location = '<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,$_smarty_tpl->tpl_vars['pagesign']->value);?>
+/querykeywords/'+$(".querykeywords").val();
+        });
+		
+		
+		
+		function upstateM(val,state) {
 			
 			var confirmis=confirm("确定该操作吗？");
 			if (confirmis==true)
@@ -389,11 +463,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 			
             var trobj="usertr"+val;
             var options = {
-                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'upuserstate');?>
+                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'upwithdrawalstate');?>
 ",
                 type: 'post',
                 dataType: 'text',
-                data: 'id='+val,
+                data: 'id='+val+'&state='+state,
                 success: function (data) {
                     if (data.length > 0) {
                         if (data == '成功') {
@@ -407,110 +481,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
                         if (data == '失败') {
                             Materialize.toast('<span style="color: #ef192c">操作失败!</span>', 3000);
                         }
-                    }
-                }
-            };
-            $.ajax(options);
-            return false;
-        }
-		
-		
-		
-		
-		
-		
-		
-		
-		var useridc = 0;
-		
-		function uppasidM(val) {
-			useridc = val;
-		}
-        function uppasM() {
-			
-			var useridcc = useridc;
-			useridc = 0;
-			
-			
-			var passwordv = $(".pasinp").val();
-			$(".pasinp").val("");
-			
-            var options = {
-                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'upuserpas');?>
-/id/"+useridcc,
-                type: 'post',
-                dataType: 'text',
-                data: 'password='+passwordv,
-                success: function (data) {
-                    if (data.length > 0) {
-                        if (data == '成功') {
-							Materialize.toast('<span style="color: #0fef72">修改成功!</span>', 3000);
-						}
-						if (data == '失败') {
-							Materialize.toast('<span style="color: #ef192c">修改失败!</span>', 3000);
-						}
-						if (data == '相同') {
-							Materialize.toast('<span style="color: #ef192c">数据相同，无需修改!</span>', 3000);
-						}
-						if (data == 'none') {
-							Materialize.toast('<span style="color: #ef192c">不可为空哟!</span>', 3000);
-						}
-                    }
-                }
-            };
-            $.ajax(options);
-            return false;
-        }
-		
-		
-		
-		
-		function sendmoneyidM(val) {
-			useridc = val;
-		}
-
-        function itemdel(val) {
-            var confirmis=confirm("确定删除该项目吗？");
-            if (confirmis==true)
-            {
-                var options = {
-                    url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'itemdel');?>
-",
-                    type: 'post',
-                    dataType: 'text',
-                    data: 'id='+val,
-                    success: function (data) {
-                        if (data.length > 0) {
-                            if (data == '成功') {
-                                Materialize.toast('<span style="color: #0fef72">操作成功!</span>', 3000);
-                                setTimeout(function(){
-                                    location.reload();
-                                }, 500);
-                            }else{
-                                Materialize.toast('<span style="color: #ef192c">'+ data +'!</span>', 3000);
-                                setTimeout(function(){
-                                    location.reload();
-                                }, 3000);
-                            }
+						if (data == 'ed') {
+                            Materialize.toast('<span style="color: #ef192c">该订单已处理过了!</span>', 3000);
                         }
                     }
-                };
-                $.ajax(options);
-                return false;
-            }else{
-                return false;
-            }
+                }
+            };
+            $.ajax(options);
+            return false;
         }
-
-		
-        $(".seabtna").click(function () {
-            self.location = '<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,$_smarty_tpl->tpl_vars['pagesign']->value);?>
-/querykeywords/'+$(".querykeywords").val();
-        });
-		
-		
-		
-		
 		
     <?php echo '</script'; ?>
 >
