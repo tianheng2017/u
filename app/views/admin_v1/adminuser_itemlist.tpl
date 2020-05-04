@@ -142,7 +142,7 @@
 										<th data-field="">年化收益</th>
 										<th data-field="">产品天数</th>
                                         <th data-field="">赠送优惠券</th>
-                                        <th data-field="">优惠券有效期</th>
+                                        <th data-field="">优惠券有效期(月)</th>
 										<!--th data-field="">收益规则</th>
 										<th data-field="">存入规则</th>
                                       	<th data-field="">存入时间</th>
@@ -160,7 +160,7 @@
 										<td class="tdtcenter"><{$datai['arate']}>%</td>
 										<td class="tdtcenter"><{$datai['day_num']}>天</td>
                                         <td class="tdtcenter"><{$datai['coupon']}>元</td>
-                                        <td class="tdtcenter"><{$datai['coupon_expire']}>个月</td>
+                                        <td class="tdtcenter"><{$datai['coupon_expire']}></td>
 										<!--td class="tdtcenter"><{$datai['rrule']}></td>
 										<td class="tdtcenter"><{$datai['srule']}></td>
 										<td class="tdtcenter"><{$datai['deposit_time']}></td>
