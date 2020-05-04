@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26377a9f-8eef-43d8-abb1-d9c60923e747" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates_c/3751be86c063b00be2a18f731935177f7a4f7c2c_0.file.appuser_myteam.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/b0c046d7ffb3bff0b40061f8f2d39e3970c6255e_0.file.appuser_account.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/b94554951edf80151dfda6a3871f3655f98a7e04_0.file.apphome_itemdetail.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/c66990883c75e133bfc6512253589ddda682884f_0.file.apphome_index.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/ee184f7d11fa2b3b7fce13bd22a00d94a230bdd8_0.file.appuser_index.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/f6e03c885ed15387892417e862322a538f1664b8_0.file.apphome_tradeorderon.tpl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates_c/fe3df882719eda5c573c1206b048aed07e861e98_0.file.appuser_moneypath.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/22a4276cc821cc96210111610c53c56b3d5f0370_0.file.appuser_coupon.tpl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates_c/ccb8acfddcfc1dc0cc345b0314840c70dc9f0cca_0.file.appuser_invitation.tpl.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/app_cn_v1/apphome_tradeorderon.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/app_cn_v1/apphome_tradeorderon.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/app_cn_v1/appuser_index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/app_cn_v1/appuser_index.tpl" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,14 +71,7 @@
       <updated>1588306269412</updated>
       <workItem from="1588306270741" duration="16851000" />
       <workItem from="1588468961414" duration="19835000" />
-      <workItem from="1588550590307" duration="44247000" />
-    </task>
-    <task id="LOCAL-00033" summary="commit">
-      <created>1588494973773</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1588494973773</updated>
+      <workItem from="1588550590307" duration="44412000" />
     </task>
     <task id="LOCAL-00034" summary="commit">
       <created>1588495778532</created>
@@ -421,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588600678832</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="commit">
+      <created>1588601106743</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1588601106743</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,10 +432,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588557089247" />
-    <state x="414" y="84" key="CommitChangelistDialog2" timestamp="1588600677118">
+    <state x="414" y="84" key="CommitChangelistDialog2" timestamp="1588601104310">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="84" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588600677118" />
+    <state x="414" y="84" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588601104310" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1588309884503">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

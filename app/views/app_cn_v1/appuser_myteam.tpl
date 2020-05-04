@@ -184,7 +184,7 @@
 							</a>
 						</div>
 						<div style="text-align: center;width: 100%;">
-							团队返利
+							下级返利
 						</div>
 						<div onclick="javascript:window.location.href='/appuser/invitation'" style="color: #727679;display: inline-block;width: 80px;text-align: right;cursor: pointer;">
 							邀请码

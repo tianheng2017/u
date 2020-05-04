@@ -248,7 +248,7 @@
                         <li>
                             <a class="external" href="<{WSURLSHOW($WsCtrlClass,'myteam')}>">
                                 <img src="<{VIEW_ROOTPATH}>/assets/wap/img/tuandui.png"/>
-                                <p>团队返利</p>
+                                <p>下级返利</p>
                                 <i class="right_icon"></i>
                             </a>
                         </li>
