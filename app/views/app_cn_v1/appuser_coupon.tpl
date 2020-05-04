@@ -296,7 +296,7 @@
                                     <p>获得时间：<{$v.create_time}></p>
                                 </div>
                                 <div class="copy">
-                                    <a href="#">立即提现</a>
+                                    <a href="javascript:coupon_tx('<{$v.id}>')">立即提现</a>
                                 </div>
                             </div>
                         </li>
@@ -314,9 +314,57 @@
 <script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/scrollmenu.js"></script>
 <script src='<{VIEW_ROOTPATH}>/assets/alert/js/alert.js'></script>
 <script type="text/javascript">
-    $('#start').on('click',function () {
-        window.location.href = '';
-    });
+    function coupon_tx(val) {
+        var confirmis=confirm("确定提现该优惠劵吗？");
+        if (confirmis==true){
+            wu.showLoadingBg();
+            setTimeout(() => {
+                wu.hideToast();
+            }, 3000);
+            var options = {
+                url: "<{WSURLSHOW($WsCtrlClass,'coupon_tx')}>",
+                type: 'post',
+                dataType: 'text',
+                data: 'id='+val,
+                success: function (data) {
+                    if (res["state"] == "success" && res["code"] == 1) {
+                        wu.showMessage({
+                            title: "提交成功，审核中！",
+                            backgroundColor: '#2bde62',
+                            duration: 3000
+                        });
+                        setTimeout(function () {
+                            location.href = "<{WSURLSHOW('appuser','withdrawal')}>";
+                        }, 1000);
+                    }
+                    if (res["state"] == "error") {
+                        var msg = "网络异常！";
+                        if (res["code"] == -1001) {
+                            msg = "参数异常！";
+                        }
+                        wu.showMessage({
+                            title: msg,
+                            backgroundColor: 'red',
+                            duration: 3000
+                        });
+                    }
+                },
+                complete: function (XMLHttpRequest, textStatus) {
+                },
+                error: function () {
+                    wu.showMessage({
+                        title: "网络异常！",
+                        backgroundColor: 'red',
+                        duration: 3000
+                    });
+                }
+            };
+            $.ajax(options);
+            return false;
+        }else{
+            return false;
+        }
+    }
 </script>
 </body>
 </html>
