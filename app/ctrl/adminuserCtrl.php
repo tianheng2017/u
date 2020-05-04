@@ -271,21 +271,21 @@ class adminuserCtrl extends commonCtrl
             echo "产品天数不能低于2天";exit;
         }
 		$res = self::DB()->update("itemlist",[
-			"item_name" => post('item_name'),
-            "price" => post('price'),
-			"arate" => post('arate'),
-			"day_num" => post('day_num'),
-			"name" => post('name'),
-			"desc" => post('desc'),
-			"rrule" => post('rrule'),
-			"srule" => post('srule'),
-			"deposit_time" => post('deposit_time'),
-			"sec_time" => post('sec_time'),
-			"time" => time(),
-            'isty' => post('isty'),
+            "item_name" => post('item_name'),
+            "price" => intval(post('price')),
+            "arate" => intval(post('arate')),
+            "day_num" => intval(post('day_num')),
+            "name" => post('name'),
+            "desc" => post('desc'),
+            "rrule" => post('rrule'),
+            "srule" => post('srule'),
+            "deposit_time" => post('deposit_time'),
+            "sec_time" => post('sec_time'),
+            "time" => time(),
+            'isty' => intval(post('isty')),
             'tymoney' => post('tymoney'),
-            'coupon' => post('coupon'),
-            'coupon_expire' => post('coupon_exipre'),
+            'coupon' => intval(post('coupon')),
+            'coupon_expire' => intval(post('coupon_exipre')),
 		], [
 			"id[=]" => post('id')
 		]);
@@ -311,21 +311,21 @@ class adminuserCtrl extends commonCtrl
             echo "产品天数不能低于2天";exit;
         }
 		$last_insert_id = self::DB()->insert("itemlist", [
-				"item_name" => post('item_name'),
-				"price" => post('price'),
-				"arate" => post('arate'),
-				"day_num" => post('day_num'),
-				"name" => post('name'),
-				"desc" => post('desc'),
-				"rrule" => post('rrule'),
-				"srule" => post('srule'),
-				"deposit_time" => post('deposit_time'),
-				"sec_time" => post('sec_time'),
-				"time" => time(),
-                'isty' => post('isty'),
+                "item_name" => post('item_name'),
+                "price" => intval(post('price')),
+                "arate" => intval(post('arate')),
+                "day_num" => intval(post('day_num')),
+                "name" => post('name'),
+                "desc" => post('desc'),
+                "rrule" => post('rrule'),
+                "srule" => post('srule'),
+                "deposit_time" => post('deposit_time'),
+                "sec_time" => post('sec_time'),
+                "time" => time(),
+                'isty' => intval(post('isty')),
                 'tymoney' => post('tymoney'),
-                'coupon' => post('coupon'),
-                'coupon_expire' => post('coupon_exipre'),
+                'coupon' => intval(post('coupon')),
+                'coupon_expire' => intval(post('coupon_exipre')),
 			]);
 			if($last_insert_id){
 				echo "成功";

@@ -105,16 +105,6 @@
                             <div class="col s12 pagecontenttitle">
                                 <ul class="collection">
                                     <div class="collection-item"><{$pagesigntitle}>-第<{$page}>页</div>
-									
-									<!-- <div class="input-field col s10">
-										<input class="querykeywords" id="querykeywords" name="querykeywords" value="<{$querykeywords}>" placeholder="请输入用户ID或用户名" type="text">
-										<label for="first_name">搜索</label>
-									</div>
-									<div class="input-field col s2">
-										<div class="btn cyan waves-effect waves-light right seabtna">查询
-											<i class="mdi-content-send right"></i>
-										</div>
-									</div> -->
                                 </ul>
                             </div>
 
