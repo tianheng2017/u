@@ -273,7 +273,7 @@ class adminuserCtrl extends commonCtrl
 		$res = self::DB()->update("itemlist",[
             "item_name" => post('item_name'),
             "price" => intval(post('price')),
-            "arate" => intval(post('arate')),
+            "arate" => post('arate'),
             "day_num" => intval(post('day_num')),
             "name" => post('name'),
             "desc" => post('desc'),
