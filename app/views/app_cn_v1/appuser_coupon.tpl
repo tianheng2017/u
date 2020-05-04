@@ -386,7 +386,7 @@
                         <{if $data}>
                             <{foreach from=$data item=$v}>
                             <li>
-                                <div class="stamp stamp03">
+                                <div class="stamp stamp0<{$data.status == 1 ? 3 : 1}>">
                                     <div class="par">
                                         <p><{$v.name}> 优惠劵</p>
                                         <sub class="sign">￥</sub>
@@ -397,7 +397,7 @@
                                         <{if $v.status == 1}>
                                             <a href="<{WSURLSHOW($WsCtrlClass,'coupon_detail')}>/id/<{$v.id}>" class="link external">立即提现</a>
                                         <{else}>
-                                            <span>提现审核中</span>
+                                            <span style="font-size: 16px;">提现审核中</span>
                                         <{/if}>
                                     </div>
                                 </div>

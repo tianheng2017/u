@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 16:58:39
+/* Smarty version 3.1.30, created on 2020-05-04 19:00:14
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_coupon_detail.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafd93f84c5f1_43736024',
+  'unifunc' => 'content_5eaff5bec2d5c3_29165651',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '60561f8461c9f453f4134ce619b0678e844b8052' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_coupon_detail.tpl',
-      1 => 1588582709,
+      1 => 1588590012,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafd93f84c5f1_43736024 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eaff5bec2d5c3_29165651 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -279,9 +279,6 @@ function content_5eafd93f84c5f1_43736024 (Smarty_Internal_Template $_smarty_tpl)
                         <div>
                             <!--img style="width: 30px;position: absolute;left: 40%;top: 70px;" src="<?php echo VIEW_ROOTPATH;?>
 /assets/wap/images/tether_200_200.png" /-->
-                            <div style="font-size: 18px;color: #808080;display: block;text-align: center;height: 30px;margin-top: 30px;">账户余额</div>
-                            <div style="color:#BC9568;font-size: 28px;text-align: center;display: block;" class="mymoney1"><?php echo number_format($_smarty_tpl->tpl_vars['myuserinfo']->value["money"],2,'.','');?>
-</div>
                             <div style="font-size: 18px;color: #808080;display: block;text-align: center;height: 30px;margin-top: 10px;">提现金额</div>
                             <div style="color:#BC9568;font-size: 28px;text-align: center;display: block;"><?php echo number_format($_smarty_tpl->tpl_vars['data']->value['money'],'2','.','');?>
 </div>
@@ -310,7 +307,7 @@ function content_5eafd93f84c5f1_43736024 (Smarty_Internal_Template $_smarty_tpl)
                 <form action="#" id="form_post" name="form_post" method="post">
                     <input type="hidden" name="id" id="id" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['id'];?>
 ">
-                    <div style="padding: 0 3%;background: #2C2C2E;height: 370px;padding-top: 50px;">
+                    <div style="padding: 0 3%;background: #2C2C2E;height: 370px;padding-top: 0px;">
                         <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
                             <div>
                                 <p style="text-align: center;color:red;">上传收款二维码</p>

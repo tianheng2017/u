@@ -237,8 +237,6 @@
                     <div style="width:100%;">
                         <div>
                             <!--img style="width: 30px;position: absolute;left: 40%;top: 70px;" src="<{VIEW_ROOTPATH}>/assets/wap/images/tether_200_200.png" /-->
-                            <div style="font-size: 18px;color: #808080;display: block;text-align: center;height: 30px;margin-top: 30px;">账户余额</div>
-                            <div style="color:#BC9568;font-size: 28px;text-align: center;display: block;" class="mymoney1"><{number_format($myuserinfo["money"], 2, '.', '')}></div>
                             <div style="font-size: 18px;color: #808080;display: block;text-align: center;height: 30px;margin-top: 10px;">提现金额</div>
                             <div style="color:#BC9568;font-size: 28px;text-align: center;display: block;"><{number_format($data.money,'2','.','')}></div>
                         </div>
@@ -264,7 +262,7 @@
                 </div>
                 <form action="#" id="form_post" name="form_post" method="post">
                     <input type="hidden" name="id" id="id" value="<{$data.id}>">
-                    <div style="padding: 0 3%;background: #2C2C2E;height: 370px;padding-top: 50px;">
+                    <div style="padding: 0 3%;background: #2C2C2E;height: 370px;padding-top: 0px;">
                         <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
                             <div>
                                 <p style="text-align: center;color:red;">上传收款二维码</p>
