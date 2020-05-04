@@ -319,6 +319,7 @@
             }, 3000);
             var formData = new FormData();
             formData.append("id", $('#id').val());
+            formData.append("img1", $("#sfz1")[0].files[0]);
             var options = {
                 url: "<{WSURLSHOW($WsCtrlClass,'coupon_tx')}>",
                 type: 'post',
