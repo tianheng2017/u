@@ -349,15 +349,10 @@ class apphomeCtrl extends commonCtrl
 		}
         $item = self::DB()->select("itemlist","*",['id[=]'=>$tradeorder[0]['item_id']]);
         $item = $item[0];
-        $day_num =  ceil((time() - $tradeorder[0]['time'])/3600/24)-1;
+        $day_num =  ceil((time() - $tradeorder[0]['time'])/3600/24)-2;
 
-        if ($tradeorder[0]['isty']){
-            $moneyp = $tradeorder[0]['smoney'] * $item['arate']/100/$item['day_num'] * $day_num;
-            $tradeorder[0]['sy'] = number_format($moneyp,2,'.','');
-        }else{
-            $moneyp = $tradeorder[0]['money'] * $item['arate']/100/$item['day_num'] * $day_num;
-            $tradeorder[0]['sy'] = number_format($moneyp,2,'.','');
-        }
+        $moneyp = ($tradeorder[0]['smoney'] - $tradeorder[0]['money'])/($item['day_num']-2) * $day_num;
+        $tradeorder[0]['sy'] = round($moneyp,2);
 		
         $this->assign('tradeorder',$tradeorder[0]);
         $this->display();

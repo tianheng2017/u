@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 08:29:06
+/* Smarty version 3.1.30, created on 2020-05-04 09:04:22
   from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_itemlist.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eaf61d2ae3718_02673188',
+  'unifunc' => 'content_5eaf6a165519f5_80260852',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a4b939720a9bffd897e2d8fb2264de464cc8ea41' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_itemlist.tpl',
-      1 => 1588551867,
+      1 => 1588554225,
       2 => 'file',
     ),
   ),
@@ -25,7 +25,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eaf61d2ae3718_02673188 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eaf6a165519f5_80260852 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -183,8 +183,8 @@ function content_5eaf61d2ae3718_02673188 (Smarty_Internal_Template $_smarty_tpl)
 										<th data-field="">年化收益</th>
 										<th data-field="">产品天数</th>
                                         <th data-field="">赠送优惠券</th>
-                                        <th data-field="">优惠券有效期</th>
-										<!--th data-field="">收益规则</th>
+                                        <!--th data-field="">优惠券有效期(月)</th>
+										<th data-field="">收益规则</th>
 										<th data-field="">存入规则</th>
                                       	<th data-field="">存入时间</th>
 										<th data-field="">取出时间</th-->
@@ -212,9 +212,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['datai']->value) {
 天</td>
                                         <td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['coupon'];?>
 元</td>
-                                        <td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['coupon_expire'];?>
-个月</td>
-										<!--td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['rrule'];?>
+                                        <!--td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['expire'];?>
+</td>
+										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['rrule'];?>
 </td>
 										<td class="tdtcenter"><?php echo $_smarty_tpl->tpl_vars['datai']->value['srule'];?>
 </td>

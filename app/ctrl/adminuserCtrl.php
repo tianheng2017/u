@@ -284,7 +284,7 @@ class adminuserCtrl extends commonCtrl
             'isty' => intval(post('isty')),
             'tymoney' => floatval(post('tymoney')),
             'coupon' => intval(post('coupon')),
-            'coupon_expire' => intval(post('coupon_exipre')),
+            'expire' => intval(post('expire')),
 		], [
 			"id[=]" => post('id')
 		]);
@@ -324,7 +324,7 @@ class adminuserCtrl extends commonCtrl
                 'isty' => intval(post('isty')),
                 'tymoney' => floatval(post('tymoney')),
                 'coupon' => intval(post('coupon')),
-                'coupon_expire' => intval(post('coupon_exipre')),
+                'expire' => intval(post('expire')),
 			]);
 			if($last_insert_id){
 				echo "成功";

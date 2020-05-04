@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 08:29:26
+/* Smarty version 3.1.30, created on 2020-05-04 09:04:54
   from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_itemadd.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eaf61e6394378_94640038',
+  'unifunc' => 'content_5eaf6a36736f34_68714370',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6cddb1f122e883a1c1e6d7a9dde952a36758a8cc' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_itemadd.tpl',
-      1 => 1588551446,
+      1 => 1588554207,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eaf61e6394378_94640038 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eaf6a36736f34_68714370 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -166,10 +166,6 @@ function content_5eaf61e6394378_94640038 (Smarty_Internal_Template $_smarty_tpl)
                                                 <div class="input-field col s6" style="display:;">
                                                     <input id="coupon" value="0" name="coupon" type="text">
                                                     <label for="password">赠送优惠券金额（0为不赠送）</label>
-                                                </div>
-                                                <div class="input-field col s6" style="display:;">
-                                                    <input id="coupon_expire" value="3" name="coupon_expire" type="text">
-                                                    <label for="password">优惠券有效期几个月</label>
                                                 </div>
                                                 <!--  <div class="input-field col s6" style="display:;">
                                                  <input id="passwordtwo" value="" name="yield_time" type="text">

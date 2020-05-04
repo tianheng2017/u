@@ -127,10 +127,6 @@
                                                     <input id="coupon" value="<{$data.coupon}>" name="coupon" type="text">
                                                     <label for="password">赠送优惠券金额（0为不赠送）</label>
                                                 </div>
-                                                <div class="input-field col s6" style="display:;">
-                                                    <input id="coupon_expire" value="<{$data.coupon_expire}>" name="coupon_expire" type="text">
-                                                    <label for="password">优惠券有效期几个月</label>
-                                                </div>
                                                 <input type="hidden" name="id" value="<{$data.id}>">
                                             </div>
                                             <div class="row adddiv">
