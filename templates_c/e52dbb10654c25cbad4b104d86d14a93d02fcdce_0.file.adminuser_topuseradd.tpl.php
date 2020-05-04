@@ -1,3 +1,31 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-05-04 17:04:33
+  from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_topuseradd.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5eafdaa195d209_21977722',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'e52dbb10654c25cbad4b104d86d14a93d02fcdce' => 
+    array (
+      0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_topuseradd.tpl',
+      1 => 1588583072,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:h_l_nav_useradmin.tpl' => 1,
+    'file:r_nav_useradmin.tpl' => 1,
+    'file:footer.tpl' => 1,
+    'file:public/paginationjs.tpl' => 1,
+  ),
+),false)) {
+function content_5eafdaa195d209_21977722 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +44,9 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
     <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
-    <title><{$pagesigntitle}>-<{$webconfig.webtitle.val}></title>
+    <title><?php echo $_smarty_tpl->tpl_vars['pagesigntitle']->value;?>
+-<?php echo $_smarty_tpl->tpl_vars['webconfig']->value['webtitle']['val'];?>
+</title>
 
     <!-- Favicons-->
     <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
@@ -29,15 +59,21 @@
 
 
     <!-- CORE CSS-->    
-    <link href="<{VIEW_ROOTPATH}>/assets/exquisiteui/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="<{VIEW_ROOTPATH}>/assets/exquisiteui/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
 
 
     <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->    
-    <link href="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins/jvectormap/jquery-jvectormap.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="<{VIEW_ROOTPATH}>/assets/exquisiteui/css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/plugins/jvectormap/jquery-jvectormap.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
     <style>
         .cyan {
             background-color: #2C2C2E !important;
@@ -59,7 +95,9 @@
 
 <body>
             <!-- Start Page Loading --><!-- START HEADER --><!-- START LEFT SIDEBAR NAV-->
-            <{include file="h_l_nav_useradmin.tpl"}>
+            <?php $_smarty_tpl->_subTemplateRender("file:h_l_nav_useradmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
             <!-- End Page Loading --><!-- END HEADER --><!-- END LEFT SIDEBAR NAV-->
             <!-- //////////////////////////////////////////////////////////////////////////// -->
 
@@ -75,7 +113,8 @@
                         <div class="row">
                             <div class="col s12">
                                 <div class="card-panel">
-                                    <h4 class="header2"><{$pagesigntitle}></h4>
+                                    <h4 class="header2"><?php echo $_smarty_tpl->tpl_vars['pagesigntitle']->value;?>
+</h4>
                                     <div class="row">
                                         <form class="col s12" id="dataform">
                                             <div class="row">
@@ -142,7 +181,9 @@
 
             <!-- //////////////////////////////////////////////////////////////////////////// -->
             <!-- START RIGHT SIDEBAR NAV-->
-            <{include file="r_nav_useradmin.tpl"}>
+            <?php $_smarty_tpl->_subTemplateRender("file:r_nav_useradmin.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
             <!-- LEFT RIGHT SIDEBAR NAV-->
 
         </div>
@@ -165,7 +206,9 @@
     <!-- //////////////////////////////////////////////////////////////////////////// -->
 
     <!-- START FOOTER -->
-    <{include file="footer.tpl"}>
+    <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
     <!-- END FOOTER -->
 
     <!-- ================================================
@@ -173,38 +216,76 @@
     ================================================ -->
     
     <!-- jQuery Library -->
-    <script src="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/jquery-1.10.2.js"></script>
+    <?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/jquery-1.10.2.js"><?php echo '</script'; ?>
+>
     <!--materialize js-->
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/materialize.min.js"></script>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/materialize.min.js"><?php echo '</script'; ?>
+>
     <!--scrollbar-->
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"><?php echo '</script'; ?>
+>
        
 
     <!-- chartist -->
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins/chartist-js/chartist.min.js"></script>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/plugins/chartist-js/chartist.min.js"><?php echo '</script'; ?>
+>
 
     <!-- chartjs -->
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins/chartjs/chart.min.js"></script>
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins/chartjs/chart-script.js"></script>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/plugins/chartjs/chart.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/plugins/chartjs/chart-script.js"><?php echo '</script'; ?>
+>
 
     <!-- sparkline -->
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins/sparkline/jquery.sparkline.min.js"></script>
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins/sparkline/sparkline-script.js"></script>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/plugins/sparkline/jquery.sparkline.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/plugins/sparkline/sparkline-script.js"><?php echo '</script'; ?>
+>
     
     <!--jvectormap-->
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins/jvectormap/vectormap-script.js"></script>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/plugins/jvectormap/vectormap-script.js"><?php echo '</script'; ?>
+>
     
     
     <!--plugins.js - Some Specific JS codes for Plugin Settings-->
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/plugins.js"></script>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/plugins.js"><?php echo '</script'; ?>
+>
     <!-- Toast Notification -->
-    <script type="text/javascript">
+    <?php echo '<script'; ?>
+ type="text/javascript">
         $(".btnvideoadd").click(function () {
             $(".adddiv").fadeOut();$(".jxadddiv").fadeIn();
             var options = {
-                url: "<{WSURLSHOW($WsCtrlClass,'topuseradddo')}>",
+                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'topuseradddo');?>
+",
                 type: 'post',
                 dataType: 'text',
                 data: $("#dataform").serialize(),
@@ -228,13 +309,21 @@
             $(".jxadddiv").fadeOut();$(".adddiv").fadeIn();
         });
 		
-    </script>
+    <?php echo '</script'; ?>
+>
 	
-	<{include file="public/paginationjs.tpl"}>
+	<?php $_smarty_tpl->_subTemplateRender("file:public/paginationjs.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
 
 	
     <!--prism-->
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/exquisiteui/js/prism.js"></script>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/exquisiteui/js/prism.js"><?php echo '</script'; ?>
+>
 </body>
 
 </html>
+<?php }
+}

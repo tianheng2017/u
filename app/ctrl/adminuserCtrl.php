@@ -9,6 +9,7 @@ use app\model\tram\OrderModel;
 use app\ormModel\Itemlist;
 use app\ormModel\Itemlog;
 use app\ormModel\Itemlogp;
+use app\ormModel\User;
 
 class adminuserCtrl extends commonCtrl
 {
@@ -361,6 +362,7 @@ class adminuserCtrl extends commonCtrl
             }else{
                 $data[$i]['lx'] = number_format($data[$i]['smoney'] - $data[$i]['money'], 4, '.', '');
             }
+            $data[$i]['uid_username'] = User::where('id', $data[$i]['uid'])->value('username');
 		}
 		$sqlall="SELECT id FROM `itemlog`";
 		$dallnum = self::DB()->query($sqlall)->fetchAll();
@@ -386,6 +388,8 @@ class adminuserCtrl extends commonCtrl
 			$data[$i]['stime'] = date('Y-m-d H:i:s',$data[$i]['stime']);
 			$info = self::DB()->query("select day_num FROM `itemlist` where id = ".$data[$i]['item_id'])->fetchAll();
 			$data[$i]['day_num'] =  $info[0]['day_num'];
+            $data[$i]['uid_username'] = User::where('id', $data[$i]['uid'])->value('username');
+            $data[$i]['fuid_username'] = User::where('id', $data[$i]['fuid'])->value('username');
 		}
 		$sqlall="SELECT id FROM `itemlogp`";
 		$dallnum = self::DB()->query($sqlall)->fetchAll();

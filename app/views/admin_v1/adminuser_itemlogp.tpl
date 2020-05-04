@@ -148,8 +148,8 @@
                                     <tr>
 										<th data-field="">ID</th>
 										<th data-field="">投资编号</th>
-										<th data-field="">推广收益人id</th>
-                                        <th data-field="">投资人id</th>
+										<th data-field="">推广收益人</th>
+                                        <th data-field="">投资人</th>
 										<th data-field="">项目id</th>
 										<th data-field="">产品天数</th>
 										<th data-field="">投资金额</th>
@@ -169,12 +169,12 @@
                                     <tr class="usertr<{$datai['id']}>">
 										<td class="tdtcenter"><{$datai['id']}></td>
 										<td class="tdtcenter"><{$datai['item_no']}></td>
-										<td class="tdtcenter"><{$datai['uid']}></td>
-										<td class="tdtcenter"><{$datai['fuid']}></td>											
+										<td class="tdtcenter"><{$datai['uid_username']}></td>
+										<td class="tdtcenter"><{$datai['fuid_username']}></td>
 										<td class="tdtcenter"><{$datai['item_id']}></td>
 										<td class="tdtcenter"><{$datai['day_num']}></td>
-										<td class="tdtcenter"><{$datai['money']}></td>
-										<td class="tdtcenter"><{$datai['smoney']}></td>
+                                        <td class="tdtcenter"><{number_format($datai['money'],2,'.','')}></td>
+                                        <td class="tdtcenter"><{number_format($datai['smoney'],2,'.','')}></td>
 										<td class="tdtcenter"><{$datai['time']}></td>
 										<td class="tdtcenter"><{$datai['stime']}></td>
 										<td class="tdtcenter"><{if $datai['status']==0}>

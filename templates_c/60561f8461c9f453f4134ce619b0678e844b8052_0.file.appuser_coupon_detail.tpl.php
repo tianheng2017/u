@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 16:43:56
+/* Smarty version 3.1.30, created on 2020-05-04 16:58:39
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_coupon_detail.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafd5cc940c73_73646939',
+  'unifunc' => 'content_5eafd93f84c5f1_43736024',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '60561f8461c9f453f4134ce619b0678e844b8052' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_coupon_detail.tpl',
-      1 => 1588581835,
+      1 => 1588582709,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafd5cc940c73_73646939 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafd93f84c5f1_43736024 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html>
@@ -387,6 +387,7 @@ function content_5eafd5cc940c73_73646939 (Smarty_Internal_Template $_smarty_tpl)
             }, 3000);
             var formData = new FormData();
             formData.append("id", $('#id').val());
+            formData.append("img1", $("#sfz1")[0].files[0]);
             var options = {
                 url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'coupon_tx');?>
 ",
