@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-05-04 11:40:54
+  from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_presentation.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5eaf8ec62fde47_00944294',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'cffcb46aff6386fa8d0231e37221078b842f2b17' => 
+    array (
+      0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_presentation.tpl',
+      1 => 1588563652,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5eaf8ec62fde47_00944294 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,26 +30,43 @@
           content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#2196f3">
-    <title><{$webconfig.webtitle.val}></title>
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7-icons.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/style.css">
+    <title><?php echo $_smarty_tpl->tpl_vars['webconfig']->value['webtitle']['val'];?>
+</title>
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7-icons.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/style.css">
 
 
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/css/animate.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/css/scrollmenu.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/css/animate.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/css/scrollmenu.css">
 
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap2/css/style.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap2/css/style.css">
 
 
     <!--vue_alert_start-->
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/iconfont.css"/>
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/wu-ui.css"/>
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/vue.min.js"></script>
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/wu-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/wu-ui.css"/>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/vue.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/wu-ui.js"><?php echo '</script'; ?>
+>
 
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/alert/css/alert.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/alert/css/alert.css">
 </head>
 <style>
     img {
@@ -236,16 +277,19 @@
                 <div class="coininfodivlay" style="height: 135px;position: unset!important;">
                     <div style="width:100%;">
                         <div>
-                            <!--img style="width: 30px;position: absolute;left: 40%;top: 70px;" src="<{VIEW_ROOTPATH}>/assets/wap/images/tether_200_200.png" /-->
+                            <!--img style="width: 30px;position: absolute;left: 40%;top: 70px;" src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/images/tether_200_200.png" /-->
                             <div style="font-size: 18px;color: #5f5f5f;display: block;text-align: center;height: 30px;margin-top: 30px;">账户余额</div>
-                            <div style="color:#BC9568;font-size: 28px;text-align: center;display: block;" class="mymoney1"><{number_format($myuserinfo["money"], 2, '.', '')}></div>
+                            <div style="color:#BC9568;font-size: 28px;text-align: center;display: block;" class="mymoney1"><?php echo number_format($_smarty_tpl->tpl_vars['myuserinfo']->value["money"],2,'.','');?>
+</div>
                         </div>
                     </div>
                 </div>
                 <div class="navbar" style="position: fixed;background: #2C2C2E!important;">
                     <div class="navbar-inner">
                         <div class="left" style="font-weight: bold;color: #fff;">
-                            <a href="<{WSURLSHOW('appuser','index')}>" class="link icon-only external color-white">
+                            <a href="<?php echo WSURLSHOW('appuser','index');?>
+" class="link icon-only external color-white">
                                 <i class="icon icon-back"></i>
                             </a>
                         </div>
@@ -254,17 +298,19 @@
                         </span>
                         <div class="title text-color-white"></div>
                         <div class="right">
-                            <a class="external" href="<{WSURLSHOW('appuser','withdrawal')}>" style="color: #727679;padding-right: 0.7rem;">
+                            <a class="external" href="<?php echo WSURLSHOW('appuser','withdrawal');?>
+" style="color: #727679;padding-right: 0.7rem;">
                                 提现记录
                             </a>
                         </div>
                     </div>
                 </div>
-                <form id="form_post">
+                <form action="#" id="form_post" name="form_post" method="post">
                     <div style="padding: 0 3%;background: #2C2C2E;height: 370px;padding-top: 30px;">
                         <div style="color:#727679;font-size: 14px;padding-bottom: 10px;">
                             <input type="number" name="money" placeholder="请输入提现金额" style="padding: 0 10px;" onkeyup="this.value= this.value.match(/\d+(\.\d{0,2})?/) ? this.value.match(/\d+(\.\d{0,2})?/)[0] : ''">
-                            <p style="color: #2c7fbd;margin-top: 10px;font-size: 10px;padding-left: 10px;">提现手续费 <{$webconfig.presentationfee.val}> 元</p>
+                            <p style="color: #2c7fbd;margin-top: 10px;font-size: 10px;padding-left: 10px;">提现手续费 <?php echo $_smarty_tpl->tpl_vars['webconfig']->value['presentationfee']['val'];?>
+ 元</p>
                         </div>
                         <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
                             <div>
@@ -294,15 +340,40 @@
         </div>
     </div>
 </div>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/framework7.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/upload.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/clipboard.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/app.js"></script>
-<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.qrcode.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/bscroll.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/scrollmenu.js"></script>
-<script>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/framework7.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/upload.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/clipboard.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/app.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.qrcode.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/js/bscroll.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/js/scrollmenu.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
     $(document).ready(function () {
         $('.img-upload').each(function (i) {
             i = i + 1;
@@ -316,7 +387,8 @@
             });
         });
         function getUMData() {
-            $.get("<{WSURLSHOW('appuser','getUserMoneyData')}>?" + Math.random(), function (json) {
+            $.get("<?php echo WSURLSHOW('appuser','getUserMoneyData');?>
+?" + Math.random(), function (json) {
                 var data = JSON.parse(json);
                 if (data.state == "success") {
                     $('.mymoney1').html(data.data.mymoney1);
@@ -330,7 +402,8 @@
                 wu.hideToast();
             }, 3000);
             var options = {
-                url: "<{WSURLSHOW($WsCtrlClass,'presentationform')}>" + ectype,
+                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'presentationform');?>
+" + ectype,
                 type: 'post',
                 dataType: 'json',
                 data: $("#form_post").serialize(),
@@ -343,7 +416,8 @@
                         });
                         setTimeout(function () {
                             //history.go(-1);
-                            location.href = "<{WSURLSHOW('appuser','withdrawal')}>";
+                            location.href = "<?php echo WSURLSHOW('appuser','withdrawal');?>
+";
                         }, 2600);
                     }
                     if (res["state"] == "error") {
@@ -392,6 +466,9 @@
 
 
     });
-</script>
+<?php echo '</script'; ?>
+>
 </body>
 </html>
+<?php }
+}

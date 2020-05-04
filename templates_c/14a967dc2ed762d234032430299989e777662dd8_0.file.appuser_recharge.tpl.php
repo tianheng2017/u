@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-05-04 11:18:23
+  from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_recharge.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5eaf897f4cd995_24400846',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '14a967dc2ed762d234032430299989e777662dd8' => 
+    array (
+      0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_recharge.tpl',
+      1 => 1588562269,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5eaf897f4cd995_24400846 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,26 +30,43 @@
           content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#2196f3">
-    <title><{$webconfig.webtitle.val}></title>
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7-icons.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/style.css">
+    <title><?php echo $_smarty_tpl->tpl_vars['webconfig']->value['webtitle']['val'];?>
+</title>
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7-icons.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/style.css">
 
 
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/css/animate.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/css/scrollmenu.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/css/animate.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/css/scrollmenu.css">
 
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap2/css/style.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap2/css/style.css">
 
 
     <!--vue_alert_start-->
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/iconfont.css"/>
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/wu-ui.css"/>
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/vuealert/js/vue.min.js"></script>
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/wu-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/wu-ui.css"/>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/vuealert/js/vue.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/wu-ui.js"><?php echo '</script'; ?>
+>
 
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/alert/css/alert.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/alert/css/alert.css">
 </head>
 <style>
     img {
@@ -228,7 +269,8 @@
                 <div class="navbar" style="position: fixed;height: 55px;">
                     <div class="navbar-inner">
                         <div class="left" style="font-weight: bold;color: #fff;">
-                            <a href="<{WSURLSHOW('appuser','index')}>" class="link icon-only external color-white">
+                            <a href="<?php echo WSURLSHOW('appuser','index');?>
+" class="link icon-only external color-white">
                                 <i class="icon icon-back"></i>
                             </a>
                         </div>
@@ -236,7 +278,8 @@
                             充值
                         </span>
                         <div class="right">
-                            <a class="external" href="<{WSURLSHOW('appuser','rechargelog')}>" style="color: #727679;padding-right: 0.7rem;">
+                            <a class="external" href="<?php echo WSURLSHOW('appuser','rechargelog');?>
+" style="color: #727679;padding-right: 0.7rem;">
                                 充值记录
                             </a>
                         </div>
@@ -246,20 +289,22 @@
                     <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
                         <div>
 
-                            <input type="number" id="money" name="money" placeholder="请输入充值金额" style="padding: 0 10px;" onkeyup="this.value= this.value.match(/\d+(\.\d{0,2})?/) ? this.value.match(/\d+(\.\d{0,2})?/)[0] : ''">
+                            <input type="number" id="money" name="money" placeholder="请输入充值金额" style="padding: 0 10px;">
                         </div>
-                        <div style="color: #2c7fbd;margin-top: 10px;font-size: 10px;padding-left: 10px;">
-                            最小充值金额 <{$webconfig.minrechargemoney.val}> 元
+                        <div style="color: #2c7fbd;margin-top: 5px;font-size: 10px;padding-left: 10px;">
+                            最小充值金额 <?php echo $_smarty_tpl->tpl_vars['webconfig']->value['minrechargemoney']['val'];?>
+ 元
                         </div>
                     </div>
                     <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
                         <div>
+
                             <input type="number" id="phone" name="phone" placeholder="请输入充值手机号" style="padding: 0 10px;">
                         </div>
                     </div>
                     <div style="padding: 0 3%;color: #727679;margin: 20px 0;">
                         <div>
-                            <p style="text-align: center;color:red;">上传充值凭证</p>
+                            <p style="text-align: center;">上传充值凭证</p>
                             <div class="block">
                                 <div class="row">
                                     <div class="col-50" style="margin-left:25%;">
@@ -284,15 +329,40 @@
         </div>
     </div>
 </div>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/framework7.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/upload.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/clipboard.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/app.js"></script>
-<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.qrcode.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/bscroll.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/scrollmenu.js"></script>
-<script>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/framework7.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/upload.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/clipboard.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/app.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.qrcode.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/js/bscroll.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/js/scrollmenu.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
     $(document).ready(function () {
         $('.img-upload').each(function (i) {
             i = i + 1;
@@ -318,7 +388,8 @@
             formData.append("phone", $("#phone").val());
             formData.append("address", $("#address").val());
             var options = {
-                url: "<{WSURLSHOW($WsCtrlClass,'rechargeform')}>",
+                url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'rechargeform');?>
+",
                 type: 'post',
                 dataType: 'json',
                 processData: false,
@@ -332,7 +403,8 @@
                             duration: 3000
                         });
                         setTimeout(function () {
-                            location.href = "<{WSURLSHOW('appuser','rechargelog')}>";
+                            location.href = "<?php echo WSURLSHOW('appuser','rechargelog');?>
+";
                         }, 1000);
                     }
                     if (res["state"] == "error") {
@@ -346,7 +418,8 @@
                             msg = "充值金额有误！";
                         }
                         if (res["code"] == -1003) {
-                            msg = "充值金额最小限 <{$webconfig.minrechargemoney.val}> USDT";
+                            msg = "充值金额最小限 <?php echo $_smarty_tpl->tpl_vars['webconfig']->value['minrechargemoney']['val'];?>
+ USDT";
                         }
                         if (res["code"] == -1004) {
                             msg = "请填写手机号！";
@@ -393,6 +466,9 @@
             return false;
         });
     });
-</script>
+<?php echo '</script'; ?>
+>
 </body>
 </html>
+<?php }
+}

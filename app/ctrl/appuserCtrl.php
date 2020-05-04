@@ -6,6 +6,7 @@ use app\model\user\UserModel;
 
 use app\model\tram\OrderModel;
 use app\ormModel\Coupon;
+use app\ormModel\Itemlist;
 use app\ormModel\Itemlog;
 use app\ormModel\Itemlogp;
 use app\ormModel\Regpath;
@@ -546,7 +547,6 @@ class appuserCtrl extends commonCtrl
 		
 		$money = post('money');
 		$phone = post('phone');
-		$address = post('address');
 		
 		if (!is_numeric($money)) {
             error(-1002 , "充值金额有误");
@@ -563,20 +563,20 @@ class appuserCtrl extends commonCtrl
 		if (empty($phone)) {
             error(-1004 , "请填写手机号");
         }
-		if (empty($address)) {
-            error(-1005 , "请填写收款地址");
+
+		if (!preg_match("/^1[345789]\d{9}$/", $phone)){
+            error(-1012 , "手机号格式有误");
         }
-		
-		
+
 		if(empty($_FILES["img1"])){
-			error(-1010 , "请上传转款凭证");
+			error(-1010 , "请上传充值凭证");
 		}
 		
 		
 		if ( !empty( $_FILES["img1"] ) ) {
 			$filetype = ['image/jpg', 'image/jpeg', 'image/bmp', 'image/png'];
 			if(!in_array($_FILES["img1"]["type"], $filetype)){
-				error(-1011 , "转款凭证格式有误");
+				error(-1011 , "充值凭证格式有误");
 			}
 			$tempPath = $_FILES[ 'img1' ][ 'tmp_name' ];
 			$photouploadtime= new \DateTime;
@@ -595,10 +595,10 @@ class appuserCtrl extends commonCtrl
 			if($upre){
 				$imgurlval1=$photoname;
 			}else{
-				error(-1011 , "转款凭证格式有误");
+				error(-1011 , "充值凭证格式有误");
 			}
 		}else{
-			error(-1010 , "请上传转款凭证");
+			error(-1010 , "请上传充值凭证");
 		}
 		
 		
@@ -646,7 +646,9 @@ class appuserCtrl extends commonCtrl
 		
 		$data = self::DB()->query($sql)->fetchAll();
 		
-		
+		foreach ($data as $k => $v){
+		    $data[$k]['money'] = floatval($data[$k]['money']);
+        }
 		$res = array();
 		$res["data"] = $data;
 		if(count($data)<1){
@@ -687,7 +689,7 @@ class appuserCtrl extends commonCtrl
 	
 	
 	//提现接口
-	public function presentationform1()
+	public function presentationform()
 	{
 		$presentationfee = self::$webconfig['presentationfee']['val'];
 		
@@ -706,8 +708,6 @@ class appuserCtrl extends commonCtrl
 		$user = self::$myuserinfo;
 		
 		$money = post('money');
-		$coin = post('coin');
-		$address = post('address');
 		
 		if (!is_numeric($money)) {
             error(-1002 , "提现金额有误");
@@ -720,16 +720,7 @@ class appuserCtrl extends commonCtrl
 		if ($money < 0.01) {
             error(-1003 , "金额最小限0.01");
         }
-		
-		$coin = "USDT";
-		if (empty($coin)) {
-            error(-1004 , "请填写收款币种");
-        }
-		if (empty($address)) {
-            error(-1005 , "请填写收款地址");
-        }
-		
-		
+
 		$userc = self::DB()->select("user" ,[
 			"id","money"
 		],["AND" =>[
@@ -743,6 +734,38 @@ class appuserCtrl extends commonCtrl
 			if($userc[0]['money']<$money+$presentationfee){
 				error(-1007 , "账户余额不足");
 			}
+
+            if(empty($_FILES["img1"])){
+                error(-1010 , "请上传收款二维码");
+            }
+
+            if ( !empty( $_FILES["img1"] ) ) {
+                $filetype = ['image/jpg', 'image/jpeg', 'image/bmp', 'image/png'];
+                if(!in_array($_FILES["img1"]["type"], $filetype)){
+                    error(-1011 , "收款二维码格式有误");
+                }
+                $tempPath = $_FILES[ 'img1' ][ 'tmp_name' ];
+                $photouploadtime= new \DateTime;
+                $randname=md5(rand(999,9999)."_1_".$_SESSION['userinfo']['id']);
+                if ($_FILES["img1"]["type"] == "image/gif"){
+                    $photoname=strtotime($photouploadtime->format('Y-m-d H:i:s')).'_'.$randname.'.gif';
+                }else{
+                    $photoname=strtotime($photouploadtime->format('Y-m-d H:i:s')).'_'.$randname.'.png';
+                }
+                $dirpath='upload/user/withdrawal';
+                $uploadPath =$dirpath.'/'.$photoname;
+                if (!file_exists($dirpath)){
+                    mkdirs($dirpath);
+                }
+                $upre=move_uploaded_file( $tempPath, $uploadPath );
+                if($upre){
+                    $imgurlval1=$photoname;
+                }else{
+                    error(-1011 , "收款二维码有误");
+                }
+            }else{
+                error(-1010 , "请上传收款二维码");
+            }
 			
 			$usercup = self::DB()->update("user",[
 				"money" => $userc[0]['money']-$money-$presentationfee
@@ -756,19 +779,13 @@ class appuserCtrl extends commonCtrl
 					"uid" => $userc[0]['id'],
 					'money'=> $money,
 					'presentationfee'=> $presentationfee,
-					'coin'=> $coin,
-					'address'=> $address,
+					'img1'=> $imgurlval1,
 					'mtype'=> 1,
 					"state" => 1,
 					"time" => $datetime->format('Y-m-d H:i:s')
 				]);
 				
 				if($insert_id){
-					/**换到审核成功再记录
-					$datetime = new \DateTime;
-					$mpcontent = "类型：用户提现 | 提现ID：".$insert_id;
-					OrderModel::insertMoneypath($userc[0]['id'],-$money,"112",$mpcontent,$insert_id,$datetime->format('Y-m-d H:i:s'));
-					*/
 					
 					success(1 , "提交成功，审核中");
 				}else{
@@ -786,106 +803,93 @@ class appuserCtrl extends commonCtrl
 		}
 		
 	}
-	public function presentationform3()
-	{
-		$presentationfee = self::$webconfig['presentationfee']['val'];
-		
-		if (!is_numeric($presentationfee)) {
-            $presentationfee = 10;
-        }
-		
-		
-		$presentationfee = round($presentationfee,4);
-		
-		
-		if ($presentationfee < 0) {
-            $presentationfee = 10;
-        }
-		
-		
-		$user = self::$myuserinfo;
-		
-		$money = post('money');
-		$coin = post('coin');
-		$address = post('address');
-		
-		if (!is_numeric($money)) {
-            error(-1002 , "提现金额有误");
-        }
-		
-		
-		$money = round($money,2);
-		
-		
-		if ($money < 0.01) {
-            error(-1003 , "金额最小限0.01");
-        }
-		
-		$coin = "USDT";
-		if (empty($coin)) {
-            error(-1004 , "请填写收款币种");
-        }
-		if (empty($address)) {
-            error(-1005 , "请填写收款地址");
-        }
-		
-		
-		$userc = self::DB()->select("user" ,[
-			"id","money3"
-		],["AND" =>[
-			"id[=]" => $user['id']
-		]]);
-		
-		
-		if(count($userc)>0){
-			
 
-			if($userc[0]['money3']<$money+$presentationfee){
-				error(-1007 , "账户余额不足");
-			}
-			
-			$usercup = self::DB()->update("user",[
-				"money3" => $userc[0]['money3']-$money-$presentationfee
-			], [
-				"id[=]" => $userc[0]['id']
-			]);
-			
-			if($usercup){
-				$datetime = new \DateTime;
-				$insert_id = self::DB()->insert("withdrawal", [
-					"uid" => $userc[0]['id'],
-					'money'=> $money,
-					'presentationfee'=> $presentationfee,
-					'coin'=> $coin,
-					'address'=> $address,
-					'mtype'=> 2,
-					"state" => 1,
-					"time" => $datetime->format('Y-m-d H:i:s')
-				]);
-				
-				if($insert_id){
-					/**换到审核成功再记录
-					$datetime = new \DateTime;
-					$mpcontent = "类型：用户提现 | 提现ID：".$insert_id;
-					OrderModel::insertMoneypath($userc[0]['id'],-$money,"112",$mpcontent,$insert_id,$datetime->format('Y-m-d H:i:s'));
-					*/
-					
-					success(1 , "提交成功，审核中");
-				}else{
-					error(-1008 , "提交中途异常");
-				}
-				
-				
-			}else{
-				error(-1006 , "提交失败");
-			}
-			
-			
-		}else{
-			error(-1006 , "提交失败");
-		}
-		
-	}
+    //提现接口
+    public function coupon_tx()
+    {
+        $user = self::$myuserinfo;
+        $id = post('id');
+        $coupon = Coupon::where(['id'=>$id, 'uid'=>$user['id']])->find();
+        if (empty($coupon)){
+            error(-1020 , "优惠劵不存在");
+        }
+
+        $userc = self::DB()->select("user" ,[
+            "id","money"
+        ],["AND" =>[
+            "id[=]" => $user['id']
+        ]]);
+
+        if(count($userc)>0){
+
+            if(empty($_FILES["img1"])){
+                error(-1010 , "请上传收款二维码");
+            }
+
+            if ( !empty( $_FILES["img1"] ) ) {
+                $filetype = ['image/jpg', 'image/jpeg', 'image/bmp', 'image/png'];
+                if(!in_array($_FILES["img1"]["type"], $filetype)){
+                    error(-1011 , "收款二维码格式有误");
+                }
+                $tempPath = $_FILES[ 'img1' ][ 'tmp_name' ];
+                $photouploadtime= new \DateTime;
+                $randname=md5(rand(999,9999)."_1_".$_SESSION['userinfo']['id']);
+                if ($_FILES["img1"]["type"] == "image/gif"){
+                    $photoname=strtotime($photouploadtime->format('Y-m-d H:i:s')).'_'.$randname.'.gif';
+                }else{
+                    $photoname=strtotime($photouploadtime->format('Y-m-d H:i:s')).'_'.$randname.'.png';
+                }
+                $dirpath='upload/user/withdrawal';
+                $uploadPath =$dirpath.'/'.$photoname;
+                if (!file_exists($dirpath)){
+                    mkdirs($dirpath);
+                }
+                $upre=move_uploaded_file( $tempPath, $uploadPath );
+                if($upre){
+                    $imgurlval1=$photoname;
+                }else{
+                    error(-1011 , "收款二维码有误");
+                }
+            }else{
+                error(-1010 , "请上传收款二维码");
+            }
+
+            $usercup = self::DB()->update("user",[
+                "money" => $userc[0]['money'] + $coupon['money']
+            ], [
+                "id[=]" => $userc[0]['id']
+            ]);
+
+            if($usercup){
+                $datetime = new \DateTime;
+                $insert_id = self::DB()->insert("withdrawal", [
+                    "uid" => $userc[0]['id'],
+                    'money'=> $money,
+                    'presentationfee'=> $presentationfee,
+                    'img1'=> $imgurlval1,
+                    'mtype'=> 1,
+                    "state" => 1,
+                    "time" => $datetime->format('Y-m-d H:i:s')
+                ]);
+
+                if($insert_id){
+
+                    success(1 , "提交成功，审核中");
+                }else{
+                    error(-1008 , "提交中途异常");
+                }
+
+
+            }else{
+                error(-1006 , "提交失败");
+            }
+
+
+        }else{
+            error(-1006 , "提交失败");
+        }
+
+    }
 	
 	
 	
@@ -909,7 +913,7 @@ class appuserCtrl extends commonCtrl
 		
 		$pagenum=SelPageApiDataNumber;
 		$sqlwhereadd=" WHERE uid like '".$_SESSION['userinfo']['id']."'";
-		$sql="SELECT id,uid,money,coin,address,state,time FROM withdrawal"." ".$sqlwhereadd." order by  id desc limit ".(($page-1)*$pagenum).",".$pagenum;
+		$sql="SELECT id,uid,money,state,time FROM withdrawal"." ".$sqlwhereadd." order by  id desc limit ".(($page-1)*$pagenum).",".$pagenum;
 		
 		$data = self::DB()->query($sql)->fetchAll();
 		
@@ -1908,6 +1912,12 @@ class appuserCtrl extends commonCtrl
 
     public function coupon(){
 	    $data = Coupon::where('status',1)->select()->toArray();
+	    foreach ($data as $k => $v){
+	        $list = Itemlist::find($v['item_id']);
+	        $data[$k]['name'] = $list['item_name'];
+            $data[$k]['money'] = number_format($data[$k]['money'],2,'.','');
+            $data[$k]['create_time'] = date('Y-m-d', strtotime($v['create_time']));
+        }
         $this->assign('data', $data);
         $this->display();
     }

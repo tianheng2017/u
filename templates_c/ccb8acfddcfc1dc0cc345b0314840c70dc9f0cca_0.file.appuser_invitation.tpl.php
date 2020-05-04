@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-05-04 10:15:15
+  from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_invitation.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5eaf7ab398e3b7_71702970',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'ccb8acfddcfc1dc0cc345b0314840c70dc9f0cca' => 
+    array (
+      0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_invitation.tpl',
+      1 => 1588558514,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5eaf7ab398e3b7_71702970 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,27 +29,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#2196f3">
-    <title><{$webconfig.webtitle.val}></title>
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7-icons.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/style.css">
+    <title><?php echo $_smarty_tpl->tpl_vars['webconfig']->value['webtitle']['val'];?>
+</title>
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7-icons.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/style.css">
 	
 	
 	
-	<link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/css/animate.css">
-	<link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/css/scrollmenu.css">
+	<link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/css/animate.css">
+	<link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/css/scrollmenu.css">
 	
-	<link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap2/css/style.css">
+	<link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap2/css/style.css">
 	
 	
 	<!--vue_alert_start-->
-	<link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/reset.css" />
-	<link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/iconfont.css" />
-	<link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/wu-ui.css" />
-	<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/vuealert/js/vue.min.js"></script>
-	<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/wu-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/wu-ui.css" />
+	<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/vuealert/js/vue.min.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/wu-ui.js"><?php echo '</script'; ?>
+>
 	
-	<link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/alert/css/alert.css">
+	<link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/alert/css/alert.css">
 </head>
 
 <style>
@@ -168,8 +209,10 @@
 					</div>
 					<div style="width: 300px;height: 315px;background:rgba(44,44,46,1);box-shadow:0 1px 50px 0 rgba(0,0,0,0.5) inset;border-radius:20px;margin: 30px auto 0;position: relative;">
 						<p style="color: #FFFFFF;position: absolute;top: 7%;left: 30.5%;font-size: 15px;">您的专属邀请码</p>
-						<p style="font-size: 30px;font-weight:bold;color: #BC9568;position: absolute;top: 13.4%;left: 36%;"><{$myuserinfo["id"]}></p>
-						<img src="<{$qrcode}>" alt="" style="width: 185px;position: absolute;top: 28.5%;left: 20%;">
+						<p style="font-size: 30px;font-weight:bold;color: #BC9568;position: absolute;top: 13.4%;left: 36%;"><?php echo $_smarty_tpl->tpl_vars['myuserinfo']->value["id"];?>
+</p>
+						<img src="<?php echo $_smarty_tpl->tpl_vars['qrcode']->value;?>
+" alt="" style="width: 185px;position: absolute;top: 28.5%;left: 20%;">
 					</div>
 					<!--div style="margin-top: 20px;width: 100%;text-align: center;">
 						<button style="cursor:pointer;font-size: 16px;display:inline-block;color:#BC9568;background:none;width: 140px;height:48px;border-radius:44px;border:1px solid rgba(188,149,104,1);">分享链接</button>
@@ -180,14 +223,36 @@
         </div>
     </div>
 </div>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/framework7.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/clipboard.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/app.js"></script>
-<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.qrcode.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/bscroll.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/scrollmenu.js"></script>
-<script>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/framework7.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/clipboard.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/app.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.qrcode.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/js/bscroll.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/js/scrollmenu.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
 	$(document).ready(function () {
 		var copycallM = function(){
 			wu.showMessage({
@@ -202,8 +267,11 @@
 			e.clearSelection();
 		});
 	});
-</script>
+<?php echo '</script'; ?>
+>
 
 
 </body>
 </html>
+<?php }
+}

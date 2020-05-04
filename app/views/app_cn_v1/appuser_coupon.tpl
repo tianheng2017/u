@@ -119,12 +119,11 @@
         font-size: 16px;
     }
     ul li{
-        width: 95%;
+        width: 100%;
         margin: 2px auto 0;
-        background:rgba(36,36,38,1);
         border-radius:12px;
         list-style: none;
-        padding: 15px;
+        padding: 15px 5px;
         cursor: pointer;
         margin-bottom: 10px;
     }
@@ -137,7 +136,7 @@
         font-family:"Microsoft YaHei", 'Source Code Pro', Menlo, Consolas, Monaco, monospace;
     }
     .stamp {
-        width: 387px;
+        width: 100%;
         height: 140px;
         padding: 0 10px;
         margin-bottom: 50px;
@@ -153,15 +152,6 @@
         right:10px;
         z-index: -1;
     }
-    .stamp i {
-        position: absolute;
-        left: 20%;
-        top: 45px;
-        height: 190px;
-        width: 390px;
-        background-color: rgba(255, 255, 255, .15);
-        transform: rotate(-30deg);
-    }
     .stamp .par {
         float: left;
         padding: 16px 15px;
@@ -173,6 +163,7 @@
         color:#fff;
         font-size: 16px;
         line-height: 21px;
+        text-align: center;
     }
     .stamp .par span {
         font-size: 50px;
@@ -219,7 +210,7 @@
         background-color:#D24161;
     }
     .stamp03 {
-        background: radial-gradient(transparent 0, transparent 5px, #7EAB1E 5px);
+        /*background: radial-gradient(transparent 0, transparent 5px, #7EAB1E 5px);*/
         background-size: 15px 15px;
         background-position: 9px 3px;
     }
@@ -229,6 +220,7 @@
     .stamp03 .copy {
         padding: 10px 6px 10px 12px;
         font-size: 24px;
+        margin-top: 45px;
     }
     .stamp03 .copy p {
         font-size: 14px;
@@ -292,14 +284,20 @@
                         </div>
                     </div>
                 </div>
-                <div style="width: 100%;padding: 10px">
+                <div style="width: 100%;padding: 10px;margin-top: 70px;text-align: center;">
                     <ul>
                         <{foreach from=$data item=$v}>
                         <li>
                             <div class="stamp stamp03">
-                                <div class="par"><p>大头网折扣店</p><sub class="sign">￥</sub><span>50.00</span><sub>优惠券</sub><p>订单满100.00元</p></div>
-                                <div class="copy">副券<p>2015-08-13<br>2016-08-13</p><a href="#">立即使用</a></div>
-                                <i></i>
+                                <div class="par">
+                                    <p><{$v.name}> 优惠劵</p>
+                                    <sub class="sign">￥</sub>
+                                    <span><{$v.money}></span>
+                                    <p>获得时间：<{$v.create_time}></p>
+                                </div>
+                                <div class="copy">
+                                    <a href="#">立即提现</a>
+                                </div>
                             </div>
                         </li>
                         <{/foreach}>
