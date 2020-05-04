@@ -230,9 +230,7 @@ class adminuserCtrl extends commonCtrl
 		}
 		
 		$pagenum=self::$webconfig['pagelistnumber']['val'];
-		
-//		$sql="SELECT * FROM `itemlist` order by id desc limit ".(($_GET['page']-1)*$pagenum).",".$pagenum;
-//		$data = self::DB()->query($sql)->fetchAll();
+
 		$data = Itemlist::order('id','desc')->page(($_GET['page']-1)*$pagenum, $pagenum)->select()->toArray();
 		for($i=0;$i<count($data);$i++){
 			$data[$i]['time'] = date('Y-m-d H:i:s',$data[$i]['time']);
