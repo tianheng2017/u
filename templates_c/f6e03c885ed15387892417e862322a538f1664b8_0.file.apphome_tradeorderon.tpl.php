@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-05-04 22:04:31
+  from "E:\u.xiangxin.me\app\views\app_cn_v1\apphome_tradeorderon.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5eb020ef45c086_01412664',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'f6e03c885ed15387892417e862322a538f1664b8' => 
+    array (
+      0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\apphome_tradeorderon.tpl',
+      1 => 1588601069,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5eb020ef45c086_01412664 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,20 +30,37 @@
           content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#2196f3">
-    <title><{$webconfig.webtitle.val}></title>
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7-icons.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/style.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/css/animate.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/css/scrollmenu.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap2/css/style.css">
+    <title><?php echo $_smarty_tpl->tpl_vars['webconfig']->value['webtitle']['val'];?>
+</title>
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7-icons.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/style.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/css/animate.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/css/scrollmenu.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap2/css/style.css">
     <!--vue_alert_start-->
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/reset.css"/>
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/iconfont.css"/>
-    <link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/wu-ui.css"/>
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/vuealert/js/vue.min.js"></script>
-    <script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/wu-ui.js"></script>
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/alert/css/alert.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/wu-ui.css"/>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/vuealert/js/vue.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/wu-ui.js"><?php echo '</script'; ?>
+>
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/alert/css/alert.css">
 </head>
 <style>
     img {
@@ -207,20 +248,26 @@
         <div class="page">
             <ul class="menu-footer clearfix">
                 <li>
-                    <a href="<{WSURLSHOW('apphome','index')}>" class="external">
-                        <img src="<{VIEW_ROOTPATH}>/assets/wap/img/licai.png" alt="" width="22" height="22" style="margin-bottom: 5px;">
+                    <a href="<?php echo WSURLSHOW('apphome','index');?>
+" class="external">
+                        <img src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/img/licai.png" alt="" width="22" height="22" style="margin-bottom: 5px;">
                         <span style="color: #505253;">理财</span>
                     </a>
                 </li>
                 <li>
-                    <a href="<{WSURLSHOW('apphome','tradeorderon')}>" class="external">
-                        <img src="<{VIEW_ROOTPATH}>/assets/wap/img/cundan_on.png" alt="" width="22" height="22" style="margin-bottom: 5px;">
+                    <a href="<?php echo WSURLSHOW('apphome','tradeorderon');?>
+" class="external">
+                        <img src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/img/cundan_on.png" alt="" width="22" height="22" style="margin-bottom: 5px;">
                         <span>存单</span>
                     </a>
                 </li>
                 <li class="active">
-                    <a href="<{WSURLSHOW('appuser','index')}>" class="external">
-                        <img src="<{VIEW_ROOTPATH}>/assets/wap/img/wode.png" alt="" width="22" height="22" style="margin-bottom: 5px;">
+                    <a href="<?php echo WSURLSHOW('appuser','index');?>
+" class="external">
+                        <img src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/img/wode.png" alt="" width="22" height="22" style="margin-bottom: 5px;">
                         <span style="color: #505253;">我的</span>
                     </a>
                 </li>
@@ -232,110 +279,184 @@
                 <div style="height: 120px;width: 95%;background: #242426;border-radius: 12px;margin: 0 auto;">
                     <div style="height: 75px;width: 49%;padding: 20px 3%;display: inline-block;text-align: center;">
                         <p style="color:#727679;">有效存单总额</p>
-                        <p style="font-size: 40px;color: #BC9568;font-weight: bold;"><{$moneya151}></p>
+                        <p style="font-size: 40px;color: #BC9568;font-weight: bold;"><?php echo $_smarty_tpl->tpl_vars['moneya151']->value;?>
+</p>
                     </div>
                     <div style="height: 75px;width: 49%;padding: 20px 3%;display: inline-block;text-align: center;">
                         <p style="color:#727679">累积获得回报</p>
-                        <p style="font-size: 40px;color: #BC9568;"><{$moneya152}></p>
+                        <p style="font-size: 40px;color: #BC9568;"><?php echo $_smarty_tpl->tpl_vars['moneya152']->value;?>
+</p>
                     </div>
                 </div>
                 <div style="height: 55px;line-height: 55px;padding: 0 3%;font-size: 16px;color: #B8B8B8;">
                     持有存单
                 </div>
-                <{if $tradeorders}>
-                    <{foreach from=$tradeorders item=$tradeorder}>
-                    <div class="coininfodivlay" style="width: 95%;margin: 0 auto 7px!important;height: 110px;border-radius:12px;cursor: pointer;" id="<{$tradeorder.id}>" onclick="detail(this);">
+                <?php if ($_smarty_tpl->tpl_vars['tradeorders']->value) {?>
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['tradeorders']->value, 'tradeorder');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['tradeorder']->value) {
+?>
+                    <div class="coininfodivlay" style="width: 95%;margin: 0 auto 7px!important;height: 110px;border-radius:12px;cursor: pointer;" id="<?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['id'];?>
+" onclick="detail(this);">
                         <div style="width:100%;">
                             <div class="coininfotxtdiv">
                                 <div class="coininfotxt1">
-                                    <{$tradeorder.item_name}>
+                                    <?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['item_name'];?>
+
                                 </div>
                                 <div class="coininfotxt2">
                                     <div class="cpck_address" style="font-size:10px;color: #727679!important;position: absolute;top: 5.5rem;">
-                                        存单时间：<{$tradeorder.time}>
+                                        存单时间：<?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['time'];?>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div>
                             <span style="font-size:12px;text-align:center;color:#727679;border-radius: 1px;min-width:7rem;padding: 5px;display:inline-block;position:absolute;right:.7rem;top: .6rem;">
-                                项目金额 <{$tradeorder['money']}> 元
+                                项目金额 <?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['money'];?>
+ 元
                             </span>
                         </div>
 
                         <div class="progress_bar">
                             <div class="pro-bar">
-                                <{if $tradeorder.timesv<=25}>
-                                <{$tradeorder.timesv = 25}>
+                                <?php if ($_smarty_tpl->tpl_vars['tradeorder']->value['timesv'] <= 25) {?>
+                                <?php $_tmp_array = isset($_smarty_tpl->tpl_vars['tradeorder']) ? $_smarty_tpl->tpl_vars['tradeorder']->value : array();
+if (!is_array($_tmp_array) || $_tmp_array instanceof ArrayAccess) {
+settype($_tmp_array, 'array');
+}
+$_tmp_array['timesv'] = 25;
+$_smarty_tpl->_assignInScope('tradeorder', $_tmp_array);
+?>
                                 <span style="width: 7px;height: 7px;background: #d7a973;border-radius: 50%;position: absolute;left: 25%;top: -2px;margin-left:-3.5px;"></span>
                                 <span style="width: 7px;height: 7px;background: #514e36;border-radius: 50%;position: absolute;left: 50%;top: -2px;margin-left:-3.5px;"></span>
                                 <span style="width: 7px;height: 7px;background: #514e36;border-radius: 50%;position: absolute;left: 75%;top: -2px;margin-left:-3.5px;"></span>
-                                <span class="progress-bar-inner" style="background-color: #d7a973; width: <{$tradeorder.timesv}>%;" data-value="<{$tradeorder.timesv}>" data-percentage-value="<{$tradeorder.timesv}>"></span>
-                                <{/if}>
+                                <span class="progress-bar-inner" style="background-color: #d7a973; width: <?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['timesv'];?>
+%;" data-value="<?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['timesv'];?>
+" data-percentage-value="<?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['timesv'];?>
+"></span>
+                                <?php }?>
 
-                                <{if $tradeorder.timesv>25 && $tradeorder.timesv<=50}>
-                                <{$tradeorder.timesv = 50}>
+                                <?php if ($_smarty_tpl->tpl_vars['tradeorder']->value['timesv'] > 25 && $_smarty_tpl->tpl_vars['tradeorder']->value['timesv'] <= 50) {?>
+                                <?php $_tmp_array = isset($_smarty_tpl->tpl_vars['tradeorder']) ? $_smarty_tpl->tpl_vars['tradeorder']->value : array();
+if (!is_array($_tmp_array) || $_tmp_array instanceof ArrayAccess) {
+settype($_tmp_array, 'array');
+}
+$_tmp_array['timesv'] = 50;
+$_smarty_tpl->_assignInScope('tradeorder', $_tmp_array);
+?>
                                 <span style="width: 7px;height: 7px;background: #d7a973;border-radius: 50%;position: absolute;left: 25%;top: -2px;margin-left:-3.5px;"></span>
                                 <span style="width: 7px;height: 7px;background: #d7a973;border-radius: 50%;position: absolute;left: 50%;top: -2px;margin-left:-3.5px;"></span>
                                 <span style="width: 7px;height: 7px;background: #514e36;border-radius: 50%;position: absolute;left: 75%;top: -2px;margin-left:-3.5px;"></span>
-                                <span class="progress-bar-inner" style="background-color: #d7a973; width: <{$tradeorder.timesv}>%;" data-value="<{$tradeorder.timesv}>" data-percentage-value="<{$tradeorder.timesv}>"></span>
-                                <{/if}>
+                                <span class="progress-bar-inner" style="background-color: #d7a973; width: <?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['timesv'];?>
+%;" data-value="<?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['timesv'];?>
+" data-percentage-value="<?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['timesv'];?>
+"></span>
+                                <?php }?>
 
-                                <{if $tradeorder.timesv>50 && $tradeorder.timesv<=75}>
-                                <{$tradeorder.timesv = 75}>
+                                <?php if ($_smarty_tpl->tpl_vars['tradeorder']->value['timesv'] > 50 && $_smarty_tpl->tpl_vars['tradeorder']->value['timesv'] <= 75) {?>
+                                <?php $_tmp_array = isset($_smarty_tpl->tpl_vars['tradeorder']) ? $_smarty_tpl->tpl_vars['tradeorder']->value : array();
+if (!is_array($_tmp_array) || $_tmp_array instanceof ArrayAccess) {
+settype($_tmp_array, 'array');
+}
+$_tmp_array['timesv'] = 75;
+$_smarty_tpl->_assignInScope('tradeorder', $_tmp_array);
+?>
                                 <span style="width: 7px;height: 7px;background: #d7a973;border-radius: 50%;position: absolute;left: 25%;top: -2px;margin-left:-3.5px;"></span>
                                 <span style="width: 7px;height: 7px;background: #d7a973;border-radius: 50%;position: absolute;left: 50%;top: -2px;margin-left:-3.5px;"></span>
                                 <span style="width: 7px;height: 7px;background: #d7a973;border-radius: 50%;position: absolute;left: 75%;top: -2px;margin-left:-3.5px;"></span>
-                                <span class="progress-bar-inner" style="background-color: #d7a973; width: <{$tradeorder.timesv}>%;" data-value="<{$tradeorder.timesv}>" data-percentage-value="<{$tradeorder.timesv}>"></span>
-                                <{/if}>
+                                <span class="progress-bar-inner" style="background-color: #d7a973; width: <?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['timesv'];?>
+%;" data-value="<?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['timesv'];?>
+" data-percentage-value="<?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['timesv'];?>
+"></span>
+                                <?php }?>
 
-                                <{if $tradeorder.timesv>75}>
-                                <{$tradeorder.timesv = 100}>
+                                <?php if ($_smarty_tpl->tpl_vars['tradeorder']->value['timesv'] > 75) {?>
+                                <?php $_tmp_array = isset($_smarty_tpl->tpl_vars['tradeorder']) ? $_smarty_tpl->tpl_vars['tradeorder']->value : array();
+if (!is_array($_tmp_array) || $_tmp_array instanceof ArrayAccess) {
+settype($_tmp_array, 'array');
+}
+$_tmp_array['timesv'] = 100;
+$_smarty_tpl->_assignInScope('tradeorder', $_tmp_array);
+?>
                                 <span style="width: 7px;height: 7px;background: #d7a973;border-radius: 50%;position: absolute;left: 25%;top: -2px;margin-left:-3.5px;"></span>
                                 <span style="width: 7px;height: 7px;background: #d7a973;border-radius: 50%;position: absolute;left: 50%;top: -2px;margin-left:-3.5px;"></span>
                                 <span style="width: 7px;height: 7px;background: #d7a973;border-radius: 50%;position: absolute;left: 75%;top: -2px;margin-left:-3.5px;"></span>
-                                <span class="progress-bar-inner" style="background-color: #d7a973; width: <{$tradeorder.timesv}>%;" data-value="<{$tradeorder.timesv}>" data-percentage-value="<{$tradeorder.timesv}>"></span>
-                                <{/if}>
+                                <span class="progress-bar-inner" style="background-color: #d7a973; width: <?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['timesv'];?>
+%;" data-value="<?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['timesv'];?>
+" data-percentage-value="<?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['timesv'];?>
+"></span>
+                                <?php }?>
                             </div>
                         </div>
 
                         <div style="width:100%;margin-top:.1rem;">
                             <div class="coininfotxt3" style="color: #BC9568;width: 100%;top: 2.3rem;right: 1rem;">
-                                +<{$tradeorder.sy}>
+                                +<?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['sy'];?>
+
                             </div>
                         </div>
                         <div style="text-align: right;color: #727679;font-size: 10px;position: absolute;top: 5.5rem;right: .8rem;">
-                            <span>收益时间：<{$tradeorder.stime}></span>
+                            <span>收益时间：<?php echo $_smarty_tpl->tpl_vars['tradeorder']->value['stime'];?>
+</span>
                         </div>
                     </div>
-                    <{/foreach}>
-                <{else}>
+                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
+?>
+
+                <?php } else { ?>
                     <span style="display: block;text-align: center;color: #727679;">暂无存单</span>
-                <{/if}>
+                <?php }?>
             </div>
         </div>
     </div>
 </div>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/framework7.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/app.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/bscroll.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/scrollmenu/js/scrollmenu.js"></script>
-<script src='<{VIEW_ROOTPATH}>/assets/alert/js/alert.js'></script>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/framework7.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/app.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/js/bscroll.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/scrollmenu/js/scrollmenu.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src='<?php echo VIEW_ROOTPATH;?>
+/assets/alert/js/alert.js'><?php echo '</script'; ?>
+>
 
-<script type="text/javascript">
+<?php echo '<script'; ?>
+ type="text/javascript">
     function detail(obj) {
         var id = $(obj).attr('id');
         window.location.href = '/apphome/tradeorderon_detail/id/' + id;
     }
     $(document).ready(function () {
         function gettraorderonallData() {
-            $.get("<{WSURLSHOW($WsCtrlClass,'gettraorderonallData')}>?" + Math.random(), function (json) {
+            $.get("<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'gettraorderonallData');?>
+?" + Math.random(), function (json) {
                 var data = JSON.parse(json);
                 if (data.state == "success") {
 
 
-                    $('.profit_p').html('<img style="height:1em;vertical-align: sub;" class="xuanzhuns1" src="<{VIEW_ROOTPATH}>/assets/wap/images/stop01.png" />已完成');
+                    $('.profit_p').html('<img style="height:1em;vertical-align: sub;" class="xuanzhuns1" src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/images/stop01.png" />已完成');
 
 
                     //console.log(data);
@@ -357,6 +478,9 @@
         gettraorderonallData();
         setInterval(gettraorderonallData, 1000);
     });
-</script>
+<?php echo '</script'; ?>
+>
 </body>
 </html>
+<?php }
+}
