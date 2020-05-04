@@ -174,19 +174,19 @@ class appuserCtrl extends commonCtrl
 			echo "10006";exit();//安全密码长度不能小于6位！
 		}
 		
-//		if(!empty($_SESSION["ucode"])&&!empty($_SESSION["ucode"]["codeusername"])&&$_SESSION["ucode"]["codeusername"]==$username&&!empty($_SESSION["ucode"]["code"])&&$_SESSION["ucode"]["code"]==post('codeusername')&&!empty($_SESSION["ucode"]["time"])){
-//			if((time()-$_SESSION["ucode"]["time"]>60*5)){
-//				echo "1007";exit();//验证码已超时，请重新发送！
-//			}else{
-//				if($_SESSION["ucode"]["code"]==post('codeusername')){
-//
-//				}else{
-//					echo "1008";exit();//验证码错误！
-//				}
-//			}
-//		}else{
-//			echo "1009";exit();//验证码错误！
-//		}
+		if(!empty($_SESSION["ucode"])&&!empty($_SESSION["ucode"]["codeusername"])&&$_SESSION["ucode"]["codeusername"]==$username&&!empty($_SESSION["ucode"]["code"])&&$_SESSION["ucode"]["code"]==post('codeusername')&&!empty($_SESSION["ucode"]["time"])){
+			if((time()-$_SESSION["ucode"]["time"]>60*5)){
+				echo "1007";exit();//验证码已超时，请重新发送！
+			}else{
+				if($_SESSION["ucode"]["code"]==post('codeusername')){
+
+				}else{
+					echo "1008";exit();//验证码错误！
+				}
+			}
+		}else{
+			echo "1009";exit();//验证码错误！
+		}
 		
 		
 		$datasuperioruid = self::DB()->select("user", [
