@@ -333,7 +333,7 @@
             var options = {
                 url: "<{WSURLSHOW($WsCtrlClass,'coupon_tx')}>",
                 type: 'post',
-                dataType: 'text',
+                dataType: 'json',
                 data: 'id='+val,
                 success: function (data) {
                     if (res["state"] == "success" && res["code"] == 1) {
