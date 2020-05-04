@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-03 09:50:49
+/* Smarty version 3.1.30, created on 2020-05-04 08:20:25
   from "E:\u.xiangxin.me\app\views\admin_v1\adminuser_itemedit.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eae237935be53_96711152',
+  'unifunc' => 'content_5eaf5fc9a105f3_60167313',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ff352f8a6c8efae8bce7cfa6624b1eaff005772b' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\admin_v1\\adminuser_itemedit.tpl',
-      1 => 1588470515,
+      1 => 1588551364,
       2 => 'file',
     ),
   ),
@@ -24,7 +24,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:public/paginationjs.tpl' => 1,
   ),
 ),false)) {
-function content_5eae237935be53_96711152 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eaf5fc9a105f3_60167313 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <!DOCTYPE html>
@@ -177,6 +177,11 @@ function content_5eae237935be53_96711152 (Smarty_Internal_Template $_smarty_tpl)
                                                     <input id="coupon" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['coupon'];?>
 " name="coupon" type="text">
                                                     <label for="password">赠送优惠券金额（0为不赠送）</label>
+                                                </div>
+                                                <div class="input-field col s6" style="display:;">
+                                                    <input id="coupon_expire" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['coupon_expire'];?>
+" name="coupon_expire" type="text">
+                                                    <label for="password">优惠券有效期几个月</label>
                                                 </div>
                                                 <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['id'];?>
 ">
