@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9554b864-9e91-448e-9225-6b100a489b8f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/ctrl/appuserCtrl.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/ctrl/appuserCtrl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/0806b66c1b4be706905963a739037fd973cda447_0.file.admin_home.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/22a4276cc821cc96210111610c53c56b3d5f0370_0.file.appuser_coupon.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/3751be86c063b00be2a18f731935177f7a4f7c2c_0.file.appuser_myteam.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/4149104a9ea0d554de92f3f12087118370613140_0.file.footer.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/b0c046d7ffb3bff0b40061f8f2d39e3970c6255e_0.file.appuser_account.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/b4f05125b13dcd83298a3413cb67594baa9f8aa0_0.file.admin_login.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/b94554951edf80151dfda6a3871f3655f98a7e04_0.file.apphome_itemdetail.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/c66990883c75e133bfc6512253589ddda682884f_0.file.apphome_index.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/ccb8acfddcfc1dc0cc345b0314840c70dc9f0cca_0.file.appuser_invitation.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/e92ffa739b4fb1864355dbaba9d74d0348924d44_0.file.appuser_login.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/ee184f7d11fa2b3b7fce13bd22a00d94a230bdd8_0.file.appuser_index.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/f6e03c885ed15387892417e862322a538f1664b8_0.file.apphome_tradeorderon.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/f8f0355c887f1a689b112cdf3432756e4e0bdde0_0.file.r_nav_useradmin.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/fb5b6bd44582e5815fb6c945825f2389a68fbd19_0.file.h_l_nav_useradmin.tpl.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates_c/fe3df882719eda5c573c1206b048aed07e861e98_0.file.appuser_moneypath.tpl.php" beforeDir="false" />
-    </list>
+    <list default="true" id="9554b864-9e91-448e-9225-6b100a489b8f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,8 +43,26 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1588603891903</updated>
-      <workItem from="1588603896261" duration="84000" />
+      <workItem from="1588603896261" duration="189000" />
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <created>1588604000382</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1588604000382</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="473" y="84" key="CommitChangelistDialog2" timestamp="1588603997728">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="473" y="84" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588603997728" />
   </component>
 </project>
