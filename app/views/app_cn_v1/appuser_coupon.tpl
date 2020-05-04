@@ -394,7 +394,11 @@
                                         <p>获得时间：<{$v.create_time}></p>
                                     </div>
                                     <div class="copy">
-                                        <a href="<{WSURLSHOW($WsCtrlClass,'coupon_detail')}>/id/<{$v.id}>" class="link external">立即提现</a>
+                                        <{if $v.status == 1}>
+                                            <a href="<{WSURLSHOW($WsCtrlClass,'coupon_detail')}>/id/<{$v.id}>" class="link external">立即提现</a>
+                                        <{else}>
+                                            <span>提现审核中</span>
+                                        <{/if}>
                                     </div>
                                 </div>
                             </li>

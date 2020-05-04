@@ -1,3 +1,27 @@
+<?php
+/* Smarty version 3.1.30, created on 2020-05-04 17:34:26
+  from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_moneypath.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_5eafe1a2e291c3_18388839',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'fe3df882719eda5c573c1206b048aed07e861e98' => 
+    array (
+      0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_moneypath.tpl',
+      1 => 1588576544,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5eafe1a2e291c3_18388839 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,17 +29,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#2196f3">
-    <title><{$webconfig.webtitle.val}></title>
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7.ios.min.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/framework7-icons.css">
-    <link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap/css/style.css">
-	<link rel="stylesheet" href="<{VIEW_ROOTPATH}>/assets/wap2/css/style.css">
+    <title><?php echo $_smarty_tpl->tpl_vars['webconfig']->value['webtitle']['val'];?>
+</title>
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/framework7-icons.css">
+    <link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/css/style.css">
+	<link rel="stylesheet" href="<?php echo VIEW_ROOTPATH;?>
+/assets/wap2/css/style.css">
 	<!--vue_alert_start-->
-	<link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/reset.css" />
-	<link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/iconfont.css" />
-	<link rel="stylesheet" type="text/css" href="<{VIEW_ROOTPATH}>/assets/public/vuealert/css/wu-ui.css" />
-	<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/vue.min.js"></script>
-	<script type="text/javascript" src="<{VIEW_ROOTPATH}>/assets/public/vuealert/js/wu-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/iconfont.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/css/wu-ui.css" />
+	<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/vue.min.js"><?php echo '</script'; ?>
+>
+	<?php echo '<script'; ?>
+ type="text/javascript" src="<?php echo VIEW_ROOTPATH;?>
+/assets/public/vuealert/js/wu-ui.js"><?php echo '</script'; ?>
+>
 	<!--vue_alert_end-->
 	
 	<style>
@@ -129,10 +167,20 @@
         </div>
     </div>
 </div>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/jquery.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/framework7.min.js"></script>
-<script src="<{VIEW_ROOTPATH}>/assets/wap/js/app.js"></script>
-<script>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/jquery.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/framework7.min.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+ src="<?php echo VIEW_ROOTPATH;?>
+/assets/wap/js/app.js"><?php echo '</script'; ?>
+>
+<?php echo '<script'; ?>
+>
 $('.path').fadeIn();
 $('.path2').fadeIn();
 
@@ -186,7 +234,8 @@ function seldata(){
 	}, 3000);
 	
 	var options = {
-		url: "<{WSURLSHOW($WsCtrlClass,'selmoneypathdo')}>/page/"+page,
+		url: "<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'selmoneypathdo');?>
+/page/"+page,
 		type: 'post',
 		dataType: 'json',
 		data: "",
@@ -250,7 +299,8 @@ function seldata(){
 						mtypev="提现";
 					}
 					if(res["data"][i]["mtype"]=="163"){
-						mtypev="优惠券提现";
+						mtypev="佣金提现";
+						moneyoi="-";
 					}
 					if(res["data"][i]["mtype"]=="167"){
 						mtypev="提现手续费";
@@ -274,7 +324,8 @@ function seldata(){
 				}
 				
 				
-				if(page==1&&res["data"].length<<{SelPageApiDataNumber}>){
+				if(page==1&&res["data"].length<<?php echo SelPageApiDataNumber;?>
+){
 					selfalg = false;
 					$(".dataloading").fadeOut();
 					$(".datanone").fadeIn();
@@ -321,7 +372,10 @@ function seldata(){
 
 
 
-</script>
+<?php echo '</script'; ?>
+>
 
 </body>
 </html>
+<?php }
+}

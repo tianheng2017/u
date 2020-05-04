@@ -592,7 +592,6 @@ class appuserCtrl extends commonCtrl
 			"uid" => $user['id'],
 			'money'=> $money,
 			'phone'=> htmlspecialchars($phone),
-			'address'=> htmlspecialchars($address),
 			'img1'=> $imgurlval1,
 			"state" => 1,
 			"time" => $datetime->format('Y-m-d H:i:s')
@@ -777,6 +776,9 @@ class appuserCtrl extends commonCtrl
         if (empty($coupon)){
             error(-1020 , "此优惠劵不存在");
         }
+        if ($coupon->status <> 1){
+            error(-1022 , "此优惠券已被使用");
+        }
         if ($userc->id <> $coupon->uid){
             error(-1021 , "数据错误");
         }
@@ -812,29 +814,23 @@ class appuserCtrl extends commonCtrl
             }else{
                 error(-1010 , "请上传收款二维码");
             }
-            $usercup = self::DB()->update("user",[
-                "money" => $userc['money'] + $coupon['money']
-            ], [
-                "id[=]" => $userc['id']
+
+            Coupon::update(['status' => 2], ['id'=>$coupon->id]);
+
+            $datetime = new \DateTime;
+            $insert_id = self::DB()->insert("withdrawal", [
+                "uid" => $userc['id'],
+                'money'=> $coupon['money'],
+                'presentationfee'=> 0,
+                'img1'=> $imgurlval1,
+                'mtype'=> 2,
+                "state" => 1,
+                "time" => $datetime->format('Y-m-d H:i:s')
             ]);
-            if($usercup){
-                $datetime = new \DateTime;
-                $insert_id = self::DB()->insert("withdrawal", [
-                    "uid" => $userc['id'],
-                    'money'=> $coupon['money'],
-                    'presentationfee'=> 0,
-                    'img1'=> $imgurlval1,
-                    'mtype'=> 2,
-                    "state" => 1,
-                    "time" => $datetime->format('Y-m-d H:i:s')
-                ]);
-                if($insert_id){
-                    success(1 , "提交成功，审核中");
-                }else{
-                    error(-1008 , "提交中途异常");
-                }
+            if($insert_id){
+                success(1 , "提交成功，审核中");
             }else{
-                error(-1006 , "提交失败");
+                error(-1008 , "提交中途异常");
             }
         }else{
             error(-1006 , "提交失败");
@@ -1844,7 +1840,7 @@ class appuserCtrl extends commonCtrl
     }
 
     public function coupon(){
-	    $data = Coupon::where(['status'=>1, 'uid'=>self::$myuserinfo['id']])->select()->toArray();
+	    $data = Coupon::where([['status', 'in', [1,2]], ['uid', '=', self::$myuserinfo['id']]])->select()->toArray();
 	    foreach ($data as $k => $v){
 	        $list = Itemlist::find($v['item_id']);
 	        $data[$k]['name'] = $list['item_name'];

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2020-05-04 16:53:15
+/* Smarty version 3.1.30, created on 2020-05-04 18:29:23
   from "E:\u.xiangxin.me\app\views\app_cn_v1\appuser_coupon.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5eafd7fb0924a5_85766514',
+  'unifunc' => 'content_5eafee83873e68_82352735',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '22a4276cc821cc96210111610c53c56b3d5f0370' => 
     array (
       0 => 'E:\\u.xiangxin.me\\app\\views\\app_cn_v1\\appuser_coupon.tpl',
-      1 => 1588582390,
+      1 => 1588588162,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5eafd7fb0924a5_85766514 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5eafee83873e68_82352735 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -442,9 +442,13 @@ foreach ($_from as $_smarty_tpl->tpl_vars['v']->value) {
 </p>
                                     </div>
                                     <div class="copy">
-                                        <a href="<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'coupon_detail');?>
+                                        <?php if ($_smarty_tpl->tpl_vars['v']->value['status'] == 1) {?>
+                                            <a href="<?php echo WSURLSHOW($_smarty_tpl->tpl_vars['WsCtrlClass']->value,'coupon_detail');?>
 /id/<?php echo $_smarty_tpl->tpl_vars['v']->value['id'];?>
 " class="link external">立即提现</a>
+                                        <?php } else { ?>
+                                            <span>提现审核中</span>
+                                        <?php }?>
                                     </div>
                                 </div>
                             </li>

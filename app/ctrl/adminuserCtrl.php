@@ -6,6 +6,7 @@ use app\model\admin\AdminModel;
 
 use app\model\user\UserModel;
 use app\model\tram\OrderModel;
+use app\ormModel\Coupon;
 use app\ormModel\Itemlist;
 use app\ormModel\Itemlog;
 use app\ormModel\Itemlogp;
@@ -1359,35 +1360,44 @@ class adminuserCtrl extends commonCtrl
 		]]);
 		
 		if($res){
-			
+
 			$mtypev = "money";
-			$mtypename = "USDT";
+			$mtypename = "RMB";
 			$mtypepv = 161;
 			$mtypepfv = 167;
 			if($withdrawali[0]["mtype"]==2){
 				$mtypev = "money3";
-				$mtypename = "佣金";
+				$mtypename = "优惠券";
 				$mtypepv = 163;
 				$mtypepfv = 168;
 			}
 			
 			if($state == -1){
-				
-				$userc = self::DB()->select("user" ,[
-					"id",$mtypev
-				],["AND" =>[
-					"id[=]" => $withdrawali[0]["uid"]
-				]]);
-				
-				
-				if(count($userc)>0 && is_numeric($withdrawali[0]["money"])){
-					
-					$usercup = self::DB()->update("user",[
-						$mtypev => $userc[0][$mtypev]+$withdrawali[0]["money"]+$withdrawali[0]["presentationfee"]
-					], [
-						"id[=]" => $userc[0]['id']
-					]);
-				}
+			    if ($withdrawali[0]['mtype'] == 2){
+
+			        Coupon::update([
+			            'status' => 1
+                    ], [
+                        'id' => $withdrawali[0]["coupon_id"]
+                    ]);
+
+                }else{
+                    $userc = self::DB()->select("user" ,[
+                        "id",$mtypev
+                    ],["AND" =>[
+                        "id[=]" => $withdrawali[0]["uid"]
+                    ]]);
+
+
+                    if(count($userc)>0 && is_numeric($withdrawali[0]["money"])){
+
+                        $usercup = self::DB()->update("user",[
+                            $mtypev => $userc[0][$mtypev]+$withdrawali[0]["money"]+$withdrawali[0]["presentationfee"]
+                        ], [
+                            "id[=]" => $userc[0]['id']
+                        ]);
+                    }
+                }
 			}
 			
 			if($state == 2){
