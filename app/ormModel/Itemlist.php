@@ -14,4 +14,8 @@ class Itemlist extends Model
     public function getArateAttr($value){
         return floatval($value);
     }
+
+    public function getPriceAttr($value){
+        return floatval($value);
+    }
 }
