@@ -285,6 +285,7 @@ class adminuserCtrl extends commonCtrl
             'isty' => post('isty'),
             'tymoney' => post('tymoney'),
             'coupon' => post('coupon'),
+            'coupon_expire' => post('coupon_exipre'),
 		], [
 			"id[=]" => post('id')
 		]);
@@ -323,6 +324,8 @@ class adminuserCtrl extends commonCtrl
 				"time" => time(),
                 'isty' => post('isty'),
                 'tymoney' => post('tymoney'),
+                'coupon' => post('coupon'),
+                'coupon_expire' => post('coupon_exipre'),
 			]);
 			if($last_insert_id){
 				echo "成功";

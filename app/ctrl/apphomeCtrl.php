@@ -65,7 +65,7 @@ class apphomeCtrl extends commonCtrl
                     'item_id'       =>  $v['item_id'],
                     'item_no'       =>  $v['id'],
                     'status'        =>  1,
-                    'create_time'   =>  time(),
+                    'expire_time'   =>  time() + 86400 * 30 * 3,
                 ]);
             }
 		}
