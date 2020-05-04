@@ -1,1 +1,13 @@
-php 7.2
+
+最好使用php 7.2，不支持7以下版本
+
+
+
+后台：/admin/login/token/kW0w9Sl2mcl6dc8Xv7n
+admin
+admin888
+
+
+前台
+13111111111
+123456
